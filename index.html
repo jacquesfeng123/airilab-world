@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v14</title>
+<title>Airi Lab World v15</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,13 +19,18 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 #data-badge{font-size:8px;padding:2px 6px;background:#202838;color:#78D8A8;border:1px solid #304848;font-family:'Press Start 2P','Courier New',monospace;letter-spacing:0.05em}
 #data-badge.offline{background:#383020;color:#D8A828;border-color:#485030}
 #data-badge.simulated{background:#282030;color:#A878E8;border-color:#483868}
-/* Mobile-first: office-wrap fills full viewport minus header */
-#office-wrap{position:relative;width:100%;height:calc(100vh - 36px);overflow:hidden;background:#0A0A14;display:block}
-#office-scale{transform-origin:top left;position:absolute;top:0;left:0}
-#canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;cursor:crosshair}
+#office-wrap{position:relative;width:100%;height:calc(100vh - 36px);overflow:hidden;background:#0A0A14;display:flex;align-items:center;justify-content:center}
+#canvas{
+  display:block;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  cursor:crosshair;
+  max-width:100%;
+  max-height:100%;
+}
 #cards-view{display:none;width:100%;height:calc(100vh - 36px);overflow-y:auto;background:#0A0A14;padding:16px}
 #cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1400px;margin:0 auto}
-.card{background:#1A1A28;border:1px solid #303048;padding:10px;cursor:pointer;display:flex;gap:10px;align-items:flex-start;transition:background 0.1s,border-color 0.1s;min-height:120px}
+.card{background:#1A1A28;border:1px solid #303048;padding:10px;cursor:pointer;display:flex;gap:10px;align-items:flex-start;transition:background 0.1s,border-color 0.1s;min-height:100px}
 .card:hover{background:#1E2030;border-color:#4A5870}
 .card.selected{background:#1A2840;border:2px solid #4A90D9}
 .card-avatar{flex-shrink:0;image-rendering:pixelated;image-rendering:crisp-edges}
@@ -38,7 +43,6 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 .card-progress-bar{height:5px;background:#40C060;transition:width 0.3s}
 .card-ts{font-size:6px;color:#606070;font-family:'Press Start 2P','Courier New',monospace}
 .status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-/* Desktop side panel */
 #side-panel{position:fixed;right:-400px;top:36px;width:380px;height:calc(100vh - 36px);background:#0E0E1A;border-left:2px solid #252535;z-index:200;overflow-y:auto;transition:right 0.2s ease-out}
 #side-panel.open{right:0}
 #side-panel-header{background:#1A1A2A;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #303048;position:sticky;top:0;z-index:10}
@@ -63,23 +67,9 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 #tooltip .tt-task{color:#A8A8B8;margin-bottom:4px;font-size:7px}
 #tooltip .tt-progress-wrap{background:#282830;height:5px;width:80px;display:inline-block}
 #tooltip .tt-progress-bar{height:5px;background:#40C060;display:block}
-/* Mobile overrides */
 @media (max-width:768px){
   #cards-grid{grid-template-columns:repeat(2,1fr)}
-  /* Side panel as bottom sheet on mobile */
-  #side-panel{
-    right:auto !important;
-    bottom:-100%;
-    left:0;
-    top:auto;
-    width:100%;
-    height:auto;
-    max-height:70vh;
-    border-left:none;
-    border-top:2px solid #252535;
-    border-radius:16px 16px 0 0;
-    transition:bottom 0.3s ease-out;
-  }
+  #side-panel{right:auto !important;bottom:-100%;left:0;top:auto;width:100%;height:auto;max-height:70vh;border-left:none;border-top:2px solid #252535;border-radius:16px 16px 0 0;transition:bottom 0.3s ease-out;}
   #side-panel.open{bottom:0;right:auto !important}
   #side-content{padding:8px 12px 24px}
   #side-panel-header{padding:8px 12px}
@@ -98,9 +88,7 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
   </div>
 </div>
 <div id="office-wrap">
-  <div id="office-scale">
-    <canvas id="canvas" width="1440" height="864"></canvas>
-  </div>
+  <canvas id="canvas" width="480" height="320"></canvas>
 </div>
 <div id="cards-view"></div>
 <div id="side-panel">
@@ -118,109 +106,94 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 </div>
 
 <script>
-// ==================== CONSTANTS ====================
-const T = 48;
+// ==================== CONSTANTS (v15: TILE=16, logical 480x320) ====================
+const TILE = 16;
 const COLS = 30;
-const ROWS = 18;
-const CANVAS_W = 1440;
-const CANVAS_H = 864;
+const ROWS = 20;
+const CANVAS_W = 480;
+const CANVAS_H = 320;
 
 // ==================== ROOMS ====================
+// Top zone (rows 0-8): 3 rooms side by side
+// Row 9: horizontal corridor
+// Bottom zone (rows 10-19): Meeting A (left) + Meeting B (right, includes break area)
 const ROOMS = [
-  {id:'exec', name:'Executive Suite', col:0, row:0, w:8, h:6, floorType:'wood', wallColor:'#F5EDD8', wallShadow:'#D4C8A8'},
-  {id:'tech', name:'Tech Lab', col:9, row:0, w:12, h:6, floorType:'tech', wallColor:'#4A5568', wallShadow:'#2D3748'},
-  {id:'pm', name:'Strategy', col:22, row:0, w:8, h:6, floorType:'wood2', wallColor:'#9BB59B', wallShadow:'#7A9478'},
-  {id:'design', name:'Design Studio', col:0, row:7, w:10, h:7, floorType:'wood3', wallColor:'#C47B5A', wallShadow:'#A05A3A'},
-  {id:'meetA', name:'Meeting Room A', col:11, row:7, w:8, h:5, floorType:'carpetBlue', wallColor:'#3D4A5A', wallShadow:'#2A3545'},
-  {id:'meetB', name:'Meeting Room B', col:11, row:12, w:8, h:5, floorType:'carpetGreen', wallColor:'#2D5A3D', wallShadow:'#1E3D28'},
-  {id:'qa', name:'QA Lab', col:20, row:7, w:10, h:7, floorType:'techQA', wallColor:'#2A6DB5', wallShadow:'#1A4D90'},
-  {id:'break', name:'Break Room', col:0, row:14, w:30, h:3, floorType:'terra', wallColor:'#B05A3A', wallShadow:'#883820'},
+  {id:'exec',    name:'Exec Suite',    col:0,  row:0, w:9,  h:9,  floorType:'wood'},
+  {id:'tech',    name:'Tech Room',     col:10, row:0, w:9,  h:9,  floorType:'carpet_blue'},
+  {id:'design',  name:'Design Studio', col:20, row:0, w:10, h:9,  floorType:'carpet_green'},
+  {id:'meetA',   name:'Meeting A',     col:0,  row:10,w:14, h:10, floorType:'carpet_blue'},
+  {id:'meetB',   name:'Meeting B',     col:15, row:10,w:15, h:10, floorType:'carpet_green'},
 ];
 
 // ==================== WALKABLE SET ====================
 const WALKABLE = new Set();
-for(let r=0;r<=5;r++) WALKABLE.add(`8,${r}`);
-for(let r=0;r<=5;r++) WALKABLE.add(`21,${r}`);
-for(let c=0;c<=29;c++) WALKABLE.add(`${c},6`);
-for(let r=7;r<=16;r++) WALKABLE.add(`10,${r}`);
-for(let r=7;r<=16;r++) WALKABLE.add(`19,${r}`);
-for(let c=0;c<=29;c++) WALKABLE.add(`${c},17`);
-for(let r=14;r<=16;r++) for(let c=0;c<=29;c++) WALKABLE.add(`${c},${r}`);
-for(let c=11;c<=18;c++){WALKABLE.add(`${c},7`);WALKABLE.add(`${c},11`);}
-for(let r=7;r<=11;r++){WALKABLE.add(`11,${r}`);WALKABLE.add(`18,${r}`);}
-for(let c=11;c<=18;c++){WALKABLE.add(`${c},12`);WALKABLE.add(`${c},16`);}
-for(let r=12;r<=16;r++){WALKABLE.add(`11,${r}`);WALKABLE.add(`18,${r}`);}
-for(let c=0;c<=7;c++) for(let r=0;r<=5;r++) WALKABLE.add(`${c},${r}`);
-for(let c=9;c<=20;c++) for(let r=0;r<=5;r++) WALKABLE.add(`${c},${r}`);
-for(let c=22;c<=29;c++) for(let r=0;r<=5;r++) WALKABLE.add(`${c},${r}`);
-for(let c=0;c<=9;c++) for(let r=7;r<=13;r++) WALKABLE.add(`${c},${r}`);
-for(let c=20;c<=29;c++) for(let r=7;r<=13;r++) WALKABLE.add(`${c},${r}`);
-const BLOCKED = new Set([
-  '0,0','1,0','0,1','1,1','20,1','20,2','20,3','29,0','29,1','29,2',
-  '0,7','0,8','0,9','8,7','9,7','29,7','29,8','29,9','29,10','20,7','20,8','20,9',
-  '13,8','14,8','15,8','16,8','13,9','14,9','15,9','16,9','13,10','14,10','15,10','16,10',
-  '13,13','14,13','15,13','16,13','13,14','14,14','15,14','16,14','13,15','14,15','15,15','16,15',
-]);
-BLOCKED.forEach(k => WALKABLE.delete(k));
+// Everything walkable except outer boundary
+for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) WALKABLE.add(`${c},${r}`);
+// Row 9 = horizontal corridor (already walkable)
+// Col 9 and col 19 = vertical corridors in top zone (already walkable)
+// Col 14 = vertical corridor in bottom zone (already walkable)
 
-// ==================== AGENTS ====================
+// ==================== AGENT LIST ====================
 const AGENT_LIST = [
-  {id:'jacques', name:'Jacques', role:'CEO', dept:'exec', desk:{col:2,row:2}, room:'exec', spriteKey:'jacques'},
-  {id:'trump', name:'Trump', role:'Assistant', dept:'exec', desk:{col:5,row:2}, room:'exec', spriteKey:'trump'},
-  {id:'ops', name:'Operations', role:'COO', dept:'exec', desk:{col:2,row:4}, room:'exec', spriteKey:'ops'},
-  {id:'growth', name:'Growth', role:'Head of Growth', dept:'exec', desk:{col:5,row:4}, room:'exec', spriteKey:'growth'},
-  {id:'frontend', name:'Frontend', role:'Sr. FE Engineer', dept:'tech', desk:{col:10,row:1}, room:'tech', spriteKey:'frontend'},
-  {id:'backend', name:'Backend', role:'Sr. BE Engineer', dept:'tech', desk:{col:12,row:1}, room:'tech', spriteKey:'backend'},
-  {id:'devops', name:'DevOps', role:'DevOps Engineer', dept:'tech', desk:{col:14,row:1}, room:'tech', spriteKey:'devops'},
-  {id:'data', name:'Data', role:'Data Engineer', dept:'tech', desk:{col:16,row:1}, room:'tech', spriteKey:'data'},
-  {id:'security', name:'Security', role:'Sec. Engineer', dept:'tech', desk:{col:18,row:1}, room:'tech', spriteKey:'security'},
-  {id:'arch', name:'Tech Architect', role:'Architect', dept:'tech', desk:{col:11,row:4}, room:'tech', spriteKey:'arch'},
-  {id:'research', name:'Research', role:'Researcher', dept:'tech', desk:{col:14,row:4}, room:'tech', spriteKey:'research'},
-  {id:'analytics', name:'Analytics', role:'Data Analyst', dept:'tech', desk:{col:17,row:4}, room:'tech', spriteKey:'analytics'},
-  {id:'pm', name:'PM', role:'Product Manager', dept:'pm', desk:{col:23,row:1}, room:'pm', spriteKey:'pm'},
-  {id:'product', name:'Product', role:'Product Lead', dept:'pm', desk:{col:26,row:1}, room:'pm', spriteKey:'product'},
-  {id:'marketing', name:'Marketing', role:'Marketing Lead', dept:'pm', desk:{col:23,row:4}, room:'pm', spriteKey:'marketing'},
-  {id:'sales', name:'Sales', role:'Sales Lead', dept:'pm', desk:{col:26,row:4}, room:'pm', spriteKey:'sales'},
-  {id:'designer', name:'Chief Designer', role:'Design Director', dept:'design', desk:{col:2,row:8}, room:'design', spriteKey:'designer'},
-  {id:'uiux', name:'UIUX', role:'UI/UX Designer', dept:'design', desk:{col:5,row:8}, room:'design', spriteKey:'uiux'},
-  {id:'content', name:'Content', role:'Content Writer', dept:'design', desk:{col:2,row:11}, room:'design', spriteKey:'content'},
-  {id:'cs', name:'Customer Success', role:'CS Lead', dept:'design', desk:{col:5,row:11}, room:'design', spriteKey:'cs'},
-  {id:'qa', name:'QA', role:'QA Engineer', dept:'qa', desk:{col:22,row:9}, room:'qa', spriteKey:'qa'},
-  {id:'tester', name:'Tester', role:'Test Engineer', dept:'qa', desk:{col:26,row:9}, room:'qa', spriteKey:'tester'},
+  // Exec Suite (cols 0-8, rows 0-8)
+  {id:'jacques',  name:'Jacques',  role:'CEO',           dept:'exec',   desk:{col:2,row:2}, room:'exec',   hairColor:'#3A2005', shirtColor:'#1A1A1A'},
+  {id:'trump',    name:'Trump',    role:'Assistant',     dept:'exec',   desk:{col:5,row:2}, room:'exec',   hairColor:'#D4A017', shirtColor:'#1A1A2E'},
+  {id:'ops',      name:'Ops',      role:'COO',           dept:'exec',   desk:{col:2,row:5}, room:'exec',   hairColor:'#2A1808', shirtColor:'#E8C040'},
+  {id:'growth',   name:'Growth',   role:'Head of Growth',dept:'exec',   desk:{col:5,row:5}, room:'exec',   hairColor:'#6A3A18', shirtColor:'#E8C040'},
+  // Tech Room (cols 10-18, rows 0-8)
+  {id:'frontend', name:'Frontend', role:'Sr. FE Eng',    dept:'tech',   desk:{col:11,row:1},room:'tech',   hairColor:'#303030', shirtColor:'#2A4A8C'},
+  {id:'backend',  name:'Backend',  role:'Sr. BE Eng',    dept:'tech',   desk:{col:13,row:1},room:'tech',   hairColor:'#1A1A1A', shirtColor:'#2A4A8C'},
+  {id:'devops',   name:'DevOps',   role:'DevOps Eng',    dept:'tech',   desk:{col:15,row:1},room:'tech',   hairColor:'#4A2810', shirtColor:'#2A4A8C'},
+  {id:'data',     name:'Data',     role:'Data Eng',      dept:'tech',   desk:{col:17,row:1},room:'tech',   hairColor:'#1A1A1A', shirtColor:'#2A4A8C'},
+  {id:'security', name:'Security', role:'Sec Eng',       dept:'tech',   desk:{col:11,row:4},room:'tech',   hairColor:'#2A1808', shirtColor:'#1A2A4A'},
+  {id:'arch',     name:'Architect',role:'Tech Arch',     dept:'tech',   desk:{col:13,row:4},room:'tech',   hairColor:'#888880', shirtColor:'#2A4A8C'},
+  {id:'research', name:'Research', role:'Researcher',    dept:'tech',   desk:{col:15,row:4},room:'tech',   hairColor:'#5A3010', shirtColor:'#2A4A8C'},
+  {id:'analytics',name:'Analytics',role:'Data Analyst',  dept:'tech',   desk:{col:17,row:4},room:'tech',   hairColor:'#1A1818', shirtColor:'#2A4A8C'},
+  // Design Studio (cols 20-29, rows 0-8)
+  {id:'designer', name:'Designer', role:'Design Director',dept:'design', desk:{col:21,row:1},room:'design', hairColor:'#1A1010', shirtColor:'#2A7A3A'},
+  {id:'uiux',     name:'UIUX',     role:'UI/UX Designer',dept:'design',  desk:{col:24,row:1},room:'design', hairColor:'#281838', shirtColor:'#2A7A3A'},
+  {id:'content',  name:'Content',  role:'Content Writer', dept:'design',  desk:{col:21,row:4},room:'design', hairColor:'#A07040', shirtColor:'#2A7A3A'},
+  {id:'cs',       name:'CS',       role:'CS Lead',        dept:'design',  desk:{col:24,row:4},room:'design', hairColor:'#E8B828', shirtColor:'#2A7A3A'},
+  {id:'pm',       name:'PM',       role:'Product Mgr',    dept:'design',  desk:{col:27,row:2},room:'design', hairColor:'#5A3010', shirtColor:'#308898'},
+  {id:'product',  name:'Product',  role:'Product Lead',   dept:'design',  desk:{col:27,row:5},room:'design', hairColor:'#2A1808', shirtColor:'#308898'},
+  // Meeting Room A (cols 0-13, rows 10-19)
+  {id:'marketing',name:'Marketing',role:'Marketing Lead', dept:'meetA',   desk:{col:3,row:12},room:'meetA',  hairColor:'#8A3010', shirtColor:'#308898'},
+  {id:'sales',    name:'Sales',    role:'Sales Lead',     dept:'meetA',   desk:{col:7,row:12},room:'meetA',  hairColor:'#3A1E08', shirtColor:'#308898'},
+  // Meeting Room B (cols 15-29, rows 10-19)
+  {id:'qa',       name:'QA',       role:'QA Engineer',    dept:'meetB',   desk:{col:17,row:12},room:'meetB', hairColor:'#1A1818', shirtColor:'#6848A8'},
+  {id:'tester',   name:'Tester',   role:'Test Engineer',  dept:'meetB',   desk:{col:21,row:12},room:'meetB', hairColor:'#4A2810', shirtColor:'#6848A8'},
 ];
 
-const DEPT_COLORS = {exec:'#F0C060',tech:'#78B8F8',design:'#78D878',pm:'#50C8D8',qa:'#A878E8'};
+const DEPT_COLORS = {exec:'#F0C060',tech:'#78B8F8',design:'#78D878',meetA:'#50C8D8',meetB:'#A878E8'};
 
 // ==================== AGENT STATE ====================
 const agentState = {};
 AGENT_LIST.forEach((a, idx) => {
   agentState[a.id] = {
-    status: 'idle', task: '', progress: 0, blocked_by: null,
-    collaborating_with: null, priority: null, last_updated: '',
-    currentTile: {...a.desk},
-    targetTile: {...a.desk},
-    path: [],
-    facing: 'south',
-    walkFrame: 0,
-    idleTimer: 0,
-    animPhase: (idx * 1.618033) % (Math.PI * 2),
-    atHome: true,
-    fidgetTimer: 0,
+    status:'idle', task:'', progress:0, blocked_by:null,
+    collaborating_with:null, priority:null, last_updated:'',
+    currentTile:{...a.desk},
+    targetTile:{...a.desk},
+    path:[],
+    facing:'south',
+    walkFrame:0,
+    idleTimer:0,
+    animPhase:(idx * 1.618033) % (Math.PI * 2),
+    atHome:true,
+    fidgetTimer:0,
   };
 });
 
 // ==================== MEETING SEATS ====================
 const MEET_A_SEATS = [
-  {col:13,row:7},{col:14,row:7},{col:15,row:7},{col:16,row:7},
-  {col:13,row:11},{col:14,row:11},{col:15,row:11},{col:16,row:11},
-  {col:11,row:9},{col:18,row:9}
+  {col:4,row:11},{col:6,row:11},{col:8,row:11},{col:10,row:11},
+  {col:4,row:14},{col:6,row:14},{col:8,row:14},{col:10,row:14},
 ];
 const MEET_B_SEATS = [
-  {col:13,row:12},{col:14,row:12},{col:15,row:12},{col:16,row:12},
-  {col:13,row:16},{col:14,row:16},{col:15,row:16},{col:16,row:16},
-  {col:11,row:14},{col:18,row:14}
+  {col:17,row:11},{col:19,row:11},{col:21,row:11},{col:23,row:11},
+  {col:17,row:14},{col:19,row:14},{col:21,row:14},{col:23,row:14},
 ];
-const COFFEE_TILE = {col:12, row:15};
+const COFFEE_TILE = {col:22, row:16};
 
 const MEETING_PAIRS = [
   ['pm','frontend','A'],['pm','backend','A'],['pm','designer','B'],['pm','uiux','B'],
@@ -228,7 +201,7 @@ const MEETING_PAIRS = [
   ['backend','data','A'],['arch','frontend','A'],['arch','backend','A'],
   ['designer','uiux','B'],['qa','tester','B'],['marketing','sales','B'],
   ['analytics','pm','A'],['trump','jacques','A'],['ops','growth','B'],
-  ['devops','backend','A'],['devops','security','A'],['research','product','B'],
+  ['devops','backend','A'],['research','product','B'],
   ['product','pm','A'],['cs','marketing','B'],['content','marketing','B'],
 ];
 
@@ -246,7 +219,7 @@ function findPath(from, to) {
       const nc = cur.col+dc, nr = cur.row+dr;
       const key = `${nc},${nr}`;
       if (nc<0||nc>=COLS||nr<0||nr>=ROWS) continue;
-      if (!WALKABLE.has(key) || BLOCKED.has(key)) continue;
+      if (!WALKABLE.has(key)) continue;
       if (visited.has(key)) continue;
       visited.add(key);
       const newPath = [...path, {col:nc,row:nr}];
@@ -283,68 +256,41 @@ function doWalkTick() {
       }
     } else {
       st.walkFrame = 0;
-      // Idle fidget: only for 'idle' status, every ~50 walk ticks (~10s at 200ms interval)
       if (st.status === 'idle') {
         st.fidgetTimer = (st.fidgetTimer || 0) + 1;
         if (st.fidgetTimer > 50 + (agent.id.charCodeAt(0) % 20)) {
           st.fidgetTimer = 0;
-          // Small ±1 tile fidget if at home
           if (st.atHome) {
             const dx = (Math.floor(walkTick * 0.7 + agent.desk.col) % 3) - 1;
             const dy = (Math.floor(walkTick * 0.5 + agent.desk.row) % 3) - 1;
-            const fidgetTile = {col: agent.desk.col + dx, col_: agent.desk.col + dx, row: agent.desk.row + dy};
-            const fk = `${fidgetTile.col},${fidgetTile.row}`;
-            if (WALKABLE.has(fk) && !BLOCKED.has(fk)) {
-              walkTo(agent.id, fidgetTile);
-              // Return home shortly after
+            const ft = {col: agent.desk.col + dx, row: agent.desk.row + dy};
+            const fk = `${ft.col},${ft.row}`;
+            if (ft.col>=0&&ft.col<COLS&&ft.row>=0&&ft.row<ROWS&&WALKABLE.has(fk)) {
+              walkTo(agent.id, ft);
               setTimeout(() => walkHome(agent.id), 2000 + (agent.id.charCodeAt(0) % 1000));
             }
           }
         }
       }
-      // Blocked agents: pace back and forth deterministically
       if (st.status === 'blocked' || st.status === 'error') {
         st.fidgetTimer = (st.fidgetTimer || 0) + 1;
         if (st.fidgetTimer > 8) {
           st.fidgetTimer = 0;
           const paceDir = (Math.floor(walkTick / 8) % 2 === 0) ? 1 : -1;
-          const paceTile = {col: agent.desk.col + paceDir, row: agent.desk.row};
-          const pk = `${paceTile.col},${paceTile.row}`;
-          if (WALKABLE.has(pk) && !BLOCKED.has(pk)) {
-            walkTo(agent.id, paceTile);
-          }
+          const pt = {col: agent.desk.col + paceDir, row: agent.desk.row};
+          const pk = `${pt.col},${pt.row}`;
+          if (pt.col>=0&&pt.col<COLS&&WALKABLE.has(pk)) walkTo(agent.id, pt);
         }
       }
     }
   });
 }
-
-const WALL_BLOCKED = new Set();
-function buildWallBlockedSet() {
-  ROOMS.forEach(room => {
-    for (let c = room.col; c < room.col + room.w; c++) {
-      for (let r = room.row; r < room.row + room.h; r++) {
-        const isPerimeter = (c === room.col || c === room.col + room.w - 1 ||
-                             r === room.row || r === room.row + room.h - 1);
-        if (isPerimeter) WALL_BLOCKED.add(`${c},${r}`);
-      }
-    }
-  });
-  const doors = [
-    {c:3,r:5},{c:4,r:5},{c:14,r:5},{c:15,r:5},{c:25,r:5},{c:26,r:5},
-    {c:9,r:10},{c:9,r:11},{c:11,r:9},{c:18,r:9},{c:11,r:14},{c:18,r:14},
-    {c:20,r:10},{c:20,r:11},{c:5,r:14},{c:6,r:14},{c:14,r:14},{c:15,r:14},
-  ];
-  doors.forEach(({c,r}) => WALL_BLOCKED.delete(`${c},${r}`));
-}
-buildWallBlockedSet();
 
 function walkTo(agentId, targetTile) {
   const st = agentState[agentId];
   const tKey = `${targetTile.col},${targetTile.row}`;
   const cKey = `${st.currentTile.col},${st.currentTile.row}`;
   if (tKey === cKey) return;
-  if (WALL_BLOCKED.has(tKey)) return;
   st.targetTile = {...targetTile};
   st.path = findPath(st.currentTile, targetTile);
 }
@@ -354,42 +300,7 @@ function walkHome(agentId) {
   if (agent) walkTo(agentId, agent.desk);
 }
 
-// ==================== SIMULATION ====================
-const AGENT_SCRIPTS = {
-  jacques:   ['working','working','working','working','thinking','working','working','working'],
-  trump:     ['working','working','in_meeting','working','working','thinking','working','coffee_break'],
-  ops:       ['working','working','coffee_break','working','working','idle','working','working'],
-  growth:    ['working','thinking','working','working','coffee_break','working','working','idle'],
-  frontend:  ['working','working','working','coffee_break','working','blocked','working','working'],
-  backend:   ['working','working','blocked','working','working','thinking','working','coffee_break'],
-  devops:    ['working','working','working','thinking','working','working','coffee_break','working'],
-  data:      ['working','working','thinking','working','idle','working','working','working'],
-  security:  ['working','thinking','working','working','working','coffee_break','working','blocked'],
-  arch:      ['working','working','working','in_meeting','working','working','thinking','working'],
-  research:  ['working','thinking','working','working','coffee_break','working','working','idle'],
-  analytics: ['working','working','working','thinking','working','coffee_break','blocked','working'],
-  pm:        ['working','working','working','in_meeting','thinking','working','working','coffee_break'],
-  product:   ['working','working','thinking','working','working','in_meeting','working','coffee_break'],
-  marketing: ['working','coffee_break','working','working','thinking','working','working','idle'],
-  sales:     ['working','working','working','coffee_break','blocked','working','thinking','working'],
-  designer:  ['working','working','thinking','working','working','coffee_break','working','idle'],
-  uiux:      ['working','working','working','thinking','in_meeting','working','coffee_break','working'],
-  content:   ['working','thinking','working','working','coffee_break','working','idle','working'],
-  cs:        ['working','working','coffee_break','blocked','working','working','thinking','working'],
-  qa:        ['working','blocked','working','working','thinking','coffee_break','working','working'],
-  tester:    ['working','working','thinking','blocked','working','coffee_break','working','working'],
-};
-const AGENT_TASKS = {
-  working: ['Building feature...','Reviewing code...','Writing tests...','Fixing pipeline...','Updating docs...','Optimizing API...','Refactoring module...','Code review...'],
-  thinking: ['Planning sprint...','Analyzing metrics...','Researching solution...','Evaluating options...'],
-  blocked: ['Waiting for unblock...','Dependency pending...','Blocked on review...'],
-  in_meeting: ['Meeting in progress...','Sprint planning...','Design review...'],
-  coffee_break: [''],
-  idle: [''],
-};
-const AGENT_TASK_IDX = {};
-AGENT_LIST.forEach((a,i) => { AGENT_TASK_IDX[a.id] = i % 8; });
-
+// ==================== STATUS APPLICATION ====================
 function applyStatus(agentId, status, task, progress, blockedBy, collabWith, priority) {
   const st = agentState[agentId];
   const agent = AGENT_LIST.find(a => a.id === agentId);
@@ -403,21 +314,10 @@ function applyStatus(agentId, status, task, progress, blockedBy, collabWith, pri
 
   if (status === 'coffee_break') {
     walkTo(agentId, COFFEE_TILE);
-  } else if (status === 'working') {
-    // Working agents STAY at desk — return home if away
+  } else if (status === 'working' || status === 'idle') {
     const cur = st.currentTile;
-    if (cur.col !== agent.desk.col || cur.row !== agent.desk.row) {
-      walkHome(agentId);
-    } else {
-      // Already at desk, clear any leftover path
-      st.path = [];
-    }
-  } else if (status === 'idle') {
-    // Idle agents stay at desk too — fidget handled in doWalkTick
-    const cur = st.currentTile;
-    if (cur.col !== agent.desk.col || cur.row !== agent.desk.row) {
-      walkHome(agentId);
-    }
+    if (cur.col !== agent.desk.col || cur.row !== agent.desk.row) walkHome(agentId);
+    else st.path = [];
   } else if (prevStatus === 'coffee_break' && status !== 'coffee_break') {
     walkHome(agentId);
   }
@@ -447,7 +347,7 @@ function processMeetings(queueData) {
     const seat1 = seats[occupied.length];
     const seat2 = seats[occupied.length + 1];
     occupied.push(a1, a2);
-    meetingState[a1] = { roomId: room }; meetingState[a2] = { roomId: room };
+    meetingState[a1] = {roomId:room}; meetingState[a2] = {roomId:room};
     walkTo(a1, seat1); walkTo(a2, seat2);
   });
 }
@@ -473,11 +373,8 @@ function updateBadge(text, offline, sim) {
   el.className = offline ? 'offline' : (sim ? 'simulated' : '');
 }
 function applyQueueData(data) {
-  // Support both array and {queue:[...]} format
   const entries = Array.isArray(data) ? data : (data.queue || []);
-  // Reset all to idle first
   AGENT_LIST.forEach(a => applyStatus(a.id, 'idle', '', 0, null, null, 'normal'));
-  // Apply latest entry per assignee (last wins)
   const byAgent = {};
   entries.forEach(entry => {
     const id = entry.assignee || entry.agent;
@@ -487,12 +384,24 @@ function applyQueueData(data) {
   Object.entries(byAgent).forEach(([id, entry]) => {
     const agent = AGENT_LIST.find(a => a.id === id || a.name === id);
     if (!agent) return;
-    // Map work-queue status to display status
+    // v15 STATUS MAP FIX: running→working, done→idle, failed→blocked
     let status = entry.status || 'idle';
-    if (status === 'done') status = 'done';
-    else if (status === 'in_progress') status = 'working';
-    else if (status === 'pending') status = 'pending';
-    else if (status === 'blocked') status = 'blocked';
+    const statusMap = {
+      'running': 'working',
+      'in_progress': 'working',
+      'done': 'idle',
+      'failed': 'blocked',
+      'pending': 'waiting',
+      'idle': 'idle',
+      'blocked': 'blocked',
+      'working': 'working',
+      'waiting': 'waiting',
+      'coffee_break': 'coffee_break',
+      'in_meeting': 'in_meeting',
+      'reviewing': 'reviewing',
+      'thinking': 'thinking',
+    };
+    status = statusMap[status] || status;
     const task = entry.payload?.title || entry.payload?.task || entry.payload?.project || entry.type || '';
     applyStatus(agent.id, status, task, entry.progress||0,
       entry.blocked_by, entry.collaborating_with, entry.priority||'normal');
@@ -502,234 +411,305 @@ function applyQueueData(data) {
   if (currentTab === 'cards') updateCards();
 }
 
-// ==================== SPRITE DRAWING ====================
-const S = 5; // 5x scale = 80x120px sprites
+// ==================== PIXEL ART DRAW FUNCTIONS ====================
 
-function px(ctx, x, y, w, h, color) {
-  ctx.fillStyle = color;
-  ctx.fillRect(x, y, w*S, h*S);
-}
-function darken(hex, factor) {
-  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
-  return '#'+[r,g,b].map(v=>Math.min(255,Math.round(v*factor)).toString(16).padStart(2,'0')).join('');
-}
-function lighten(hex, factor) {
-  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
-  return '#'+[r,g,b].map(v=>Math.min(255,Math.round(v*factor)).toString(16).padStart(2,'0')).join('');
-}
-
-function drawBody(ctx, ox, oy, opts) {
-  const {hair='#3A2010',skin='#E8C898',shirt='#3A6AB0',pants='#2A3848'} = opts;
-  const shirtDark = darken(shirt, 0.7);
-  const hairLight = lighten(hair, 1.2);
-  px(ctx,ox+2*S,oy+0*S,12,4,hair);
-  px(ctx,ox+2*S,oy+0*S,2,2,hairLight);
-  px(ctx,ox+2*S,oy+3*S,12,5,skin);
-  px(ctx,ox+4*S,oy+4*S,2,2,'#282828');
-  px(ctx,ox+10*S,oy+4*S,2,2,'#282828');
-  px(ctx,ox+6*S,oy+6*S,4,1,'#8A5A3A');
-  px(ctx,ox+6*S,oy+8*S,4,2,skin);
-  px(ctx,ox+2*S,oy+9*S,12,10,shirt);
-  px(ctx,ox+2*S,oy+9*S,2,10,shirtDark);
-  px(ctx,ox+2*S,oy+9*S,2,1,lighten(shirt,1.2));
-  px(ctx,ox+0*S,oy+9*S,2,8,shirtDark);
-  px(ctx,ox+14*S,oy+9*S,2,8,shirt);
-  px(ctx,ox+0*S,oy+17*S,2,2,skin);
-  px(ctx,ox+14*S,oy+17*S,2,2,skin);
-  px(ctx,ox+2*S,oy+19*S,12,4,pants);
-  px(ctx,ox+2*S,oy+19*S,2,4,darken(pants,0.7));
-  px(ctx,ox+2*S,oy+23*S,5,1,'#1A1A1A');
-  px(ctx,ox+9*S,oy+23*S,5,1,'#1A1A1A');
-}
-
-function drawJacques(ctx, ox, oy, frame) {
-  const hair='#3A2010', skin='#C8906A', muzzle='#D4A87A';
-  px(ctx,ox+1*S,oy+0*S,14,3,hair);
-  px(ctx,ox+0*S,oy+2*S,2,4,hair);
-  px(ctx,ox+14*S,oy+2*S,2,4,hair);
-  px(ctx,ox+2*S,oy+2*S,12,6,skin);
-  px(ctx,ox+5*S,oy+5*S,6,3,muzzle);
-  px(ctx,ox+3*S,oy+4*S,2,2,'#181010');
-  px(ctx,ox+11*S,oy+4*S,2,2,'#181010');
-  px(ctx,ox+3*S,oy+4*S,1,1,'#F8F8F8');
-  px(ctx,ox+11*S,oy+4*S,1,1,'#F8F8F8');
-  px(ctx,ox+7*S,oy+6*S,2,1,'#1A0A08');
-  px(ctx,ox+6*S,oy+8*S,4,1,skin);
-  px(ctx,ox+2*S,oy+9*S,12,10,'#181818');
-  px(ctx,ox+2*S,oy+9*S,2,10,'#282828');
-  px(ctx,ox+0*S,oy+9*S,2,8,'#181818');
-  px(ctx,ox+14*S,oy+9*S,2,8,'#181818');
-  px(ctx,ox+0*S,oy+17*S,2,2,skin);
-  px(ctx,ox+14*S,oy+17*S,2,2,skin);
-  px(ctx,ox+2*S,oy+19*S,12,4,'#2A3040');
-  px(ctx,ox+2*S,oy+23*S,5,1,'#1A1A1A');
-  px(ctx,ox+9*S,oy+23*S,5,1,'#1A1A1A');
-  if (frame===1) { px(ctx,ox+2*S,oy+19*S,5,5,'#2A3040'); px(ctx,ox+9*S,oy+20*S,5,4,'#1E2838'); }
-  if (frame===3) { px(ctx,ox+2*S,oy+20*S,5,4,'#1E2838'); px(ctx,ox+9*S,oy+19*S,5,5,'#2A3040'); }
+function drawFloorTile(ctx2, x, y, type) {
+  switch(type) {
+    case 'wood':
+      ctx2.fillStyle = '#C8904A';
+      ctx2.fillRect(x, y, TILE, TILE);
+      ctx2.fillStyle = '#A87030';
+      ctx2.fillRect(x, y+7, TILE, 1);
+      ctx2.fillStyle = '#986820';
+      ctx2.fillRect(x+3, y+3, 2, 2);
+      break;
+    case 'carpet_blue':
+      ctx2.fillStyle = '#1A3A7A';
+      ctx2.fillRect(x, y, TILE, TILE);
+      ctx2.fillStyle = '#1E4282';
+      ctx2.fillRect(x+4, y+4, 1, 1);
+      ctx2.fillRect(x+12, y+12, 1, 1);
+      break;
+    case 'carpet_green':
+      ctx2.fillStyle = '#2A5A2A';
+      ctx2.fillRect(x, y, TILE, TILE);
+      ctx2.fillStyle = '#2E6430';
+      ctx2.fillRect(x+6, y+2, 1, 1);
+      ctx2.fillRect(x+2, y+10, 1, 1);
+      break;
+    case 'corridor':
+      ctx2.fillStyle = '#505050';
+      ctx2.fillRect(x, y, TILE, TILE);
+      ctx2.fillStyle = '#484848';
+      ctx2.fillRect(x, y, TILE, 1);
+      ctx2.fillRect(x, y, 1, TILE);
+      break;
+    default:
+      ctx2.fillStyle = '#404040';
+      ctx2.fillRect(x, y, TILE, TILE);
+  }
 }
 
-// TRUMP — FEMALE sprite: long gold-tipped hair, feminine face, dark blazer
-function drawTrump(ctx, ox, oy, frame) {
-  const hairRoot = '#6B3A2A';   // dark roots
-  const hairGold = '#D4A017';   // gold/blonde tips
-  const hairMid  = '#B87820';   // mid-shaft blend
-  const skin     = '#F0C898';   // fair skin
-  const blazer   = '#1A1A2E';   // dark blazer body
-  const blazerH  = '#2E2E4A';   // blazer highlight
-  const lapel    = '#3A3A5E';   // lapel/collar
-  const pants    = '#28283A';
+function drawSprite(ctx2, x, y, agent, frame) {
+  const hairColor = agent.hairColor || '#3A2005';
+  const shirtColor = agent.shirtColor || '#2A4A8C';
+  const skinColor = '#E8C090';
 
-  // Long hair — dark roots at top, gold at bottom/tips
-  // Hair top (rows 0-2): dark roots, wider for feminine silhouette
-  px(ctx,ox+1*S,oy+0*S,14,3,hairRoot);
-  // Side hair flows down past shoulders
-  px(ctx,ox+0*S,oy+2*S,2,12,hairRoot);   // left hair stream - roots
-  px(ctx,ox+0*S,oy+8*S,2,6,hairMid);    // left - mid
-  px(ctx,ox+0*S,oy+14*S,2,4,hairGold);  // left - gold tips
-  px(ctx,ox+14*S,oy+2*S,2,12,hairRoot); // right hair stream - roots
-  px(ctx,ox+14*S,oy+8*S,2,6,hairMid);   // right - mid
-  px(ctx,ox+14*S,oy+14*S,2,4,hairGold); // right - gold tips
-  // Back hair strip (behind body) for volume
-  px(ctx,ox+1*S,oy+2*S,1,14,hairRoot);
-  px(ctx,ox+15*S,oy+2*S,1,14,hairRoot);
-
-  // Rounder face (rows 2-7, wider = 13px)
-  px(ctx,ox+2*S,oy+2*S,12,6,skin);
-  // Softer eyes (slightly bigger, slight eyelash suggestion)
-  px(ctx,ox+4*S,oy+4*S,2,2,'#282020');
-  px(ctx,ox+10*S,oy+4*S,2,2,'#282020');
-  // Eyelash dots
-  px(ctx,ox+3*S,oy+3*S,1,1,'#1A1010');
-  px(ctx,ox+11*S,oy+3*S,1,1,'#1A1010');
-  px(ctx,ox+5*S,oy+3*S,1,1,'#1A1010');
-  px(ctx,ox+13*S,oy+3*S,1,1,'#1A1010');
-  // Slight blush
-  px(ctx,ox+3*S,oy+5*S,2,1,'#E8A0A0');
-  px(ctx,ox+11*S,oy+5*S,2,1,'#E8A0A0');
-  // Feminine lips (slightly fuller)
-  px(ctx,ox+5*S,oy+7*S,6,1,'#C05858');
-  px(ctx,ox+6*S,oy+7*S,4,1,'#D06868');
-  // Neck (slimmer)
-  px(ctx,ox+6*S,oy+8*S,4,2,skin);
-
-  // Dark blazer body
-  px(ctx,ox+2*S,oy+9*S,12,10,blazer);
-  px(ctx,ox+2*S,oy+9*S,2,10,darken(blazer,0.6));   // left shadow
-  px(ctx,ox+12*S,oy+9*S,2,10,blazerH);              // right highlight
-  // Lapels (V-shape)
-  px(ctx,ox+6*S,oy+9*S,2,4,lapel);
-  px(ctx,ox+8*S,oy+9*S,2,4,lapel);
-  px(ctx,ox+7*S,oy+12*S,2,2,lapel);
-  // Small white shirt underneath lapels
-  px(ctx,ox+7*S,oy+10*S,2,2,'#E8E8F0');
-  // Arms (blazer)
-  px(ctx,ox+0*S,oy+9*S,2,8,blazer);
-  px(ctx,ox+14*S,oy+9*S,2,8,blazerH);
-  // Hands
-  px(ctx,ox+0*S,oy+17*S,2,2,skin);
-  px(ctx,ox+14*S,oy+17*S,2,2,skin);
-
-  // Pants/skirt hint
-  px(ctx,ox+2*S,oy+19*S,12,4,pants);
-  px(ctx,ox+2*S,oy+19*S,2,4,darken(pants,0.7));
+  // Hair (3px tall, 8px wide centered)
+  ctx2.fillStyle = hairColor;
+  ctx2.fillRect(x+4, y, 8, 3);
+  // Head (8x6px)
+  ctx2.fillStyle = skinColor;
+  ctx2.fillRect(x+4, y+2, 8, 6);
+  // Eyes (1px each)
+  ctx2.fillStyle = '#1A0A00';
+  ctx2.fillRect(x+6, y+4, 1, 1);
+  ctx2.fillRect(x+9, y+4, 1, 1);
+  // Body/shirt (10px wide, 8px tall)
+  ctx2.fillStyle = shirtColor;
+  ctx2.fillRect(x+3, y+8, 10, 8);
+  // Arms
+  ctx2.fillRect(x+1, y+8, 2, 6);
+  ctx2.fillRect(x+13, y+8, 2, 6);
+  // Hands skin
+  ctx2.fillStyle = skinColor;
+  ctx2.fillRect(x+1, y+13, 2, 2);
+  ctx2.fillRect(x+13, y+13, 2, 2);
+  // Pants
+  ctx2.fillStyle = '#1A2A3A';
+  ctx2.fillRect(x+3, y+16, 10, 5);
+  // Legs with walk animation
+  if (frame % 2 === 0) {
+    ctx2.fillRect(x+3, y+21, 4, 3);
+    ctx2.fillRect(x+9, y+21, 4, 3);
+  } else {
+    ctx2.fillRect(x+4, y+21, 3, 3);
+    ctx2.fillRect(x+8, y+21, 4, 3);
+  }
   // Shoes
-  px(ctx,ox+2*S,oy+23*S,5,1,'#1A1A2A');
-  px(ctx,ox+9*S,oy+23*S,5,1,'#1A1A2A');
-
-  // Walk animation
-  if (frame===1) { px(ctx,ox+2*S,oy+19*S,5,5,pants); px(ctx,ox+9*S,oy+20*S,5,4,darken(pants,0.8)); }
-  if (frame===3) { px(ctx,ox+2*S,oy+20*S,5,4,darken(pants,0.8)); px(ctx,ox+9*S,oy+19*S,5,5,pants); }
+  ctx2.fillStyle = '#0A0A0A';
+  ctx2.fillRect(x+3, y+21, 4, 3);
+  ctx2.fillRect(x+9, y+21, 4, 3);
 }
 
-function drawAgent(ctx, ox, oy, spriteKey, frame) {
-  const configs = {
-    ops:    {hair:'#2A1808',shirt:'#E8C040',pants:'#303848'},
-    growth: {hair:'#6A3A18',shirt:'#E8C040',pants:'#303848'},
-    frontend:{hair:'#303030',shirt:'#3A6AB0',pants:'#1A2838'},
-    backend: {hair:'#1A1A1A',shirt:'#3A6AB0',pants:'#1A2838'},
-    devops:  {hair:'#4A2810',shirt:'#3A6AB0',pants:'#1A2838'},
-    data:    {hair:'#1A1A1A',shirt:'#3A6AB0',pants:'#1A2838'},
-    security:{hair:'#2A1808',shirt:'#1A2A4A',pants:'#1A2838'},
-    arch:    {hair:'#888880',shirt:'#3A6AB0',pants:'#1A2838'},
-    research:{hair:'#5A3010',shirt:'#3A6AB0',pants:'#1A2838'},
-    analytics:{hair:'#1A1818',shirt:'#3A6AB0',pants:'#1A2838'},
-    pm:      {hair:'#5A3010',shirt:'#308898',pants:'#2A3848'},
-    product: {hair:'#2A1808',shirt:'#308898',pants:'#2A3848'},
-    marketing:{hair:'#8A3010',shirt:'#308898',pants:'#2A3848'},
-    sales:   {hair:'#3A1E08',shirt:'#308898',pants:'#2A3848'},
-    designer:{hair:'#1A1010',shirt:'#3A8848',pants:'#2A3040'},
-    uiux:    {hair:'#281838',shirt:'#3A8848',pants:'#2A3040'},
-    content: {hair:'#A07040',shirt:'#3A8848',pants:'#2A3040'},
-    cs:      {hair:'#E8B828',shirt:'#3A8848',pants:'#2A3040'},
-    qa:      {hair:'#1A1818',shirt:'#6848A8',pants:'#2A2A38'},
-    tester:  {hair:'#4A2810',shirt:'#6848A8',pants:'#2A2A38'},
+function drawStatusDot(ctx2, cx, headY, status) {
+  const colors = {
+    working:'#00C040', idle:'#808080', blocked:'#F04020',
+    waiting:'#F0A020', coffee_break:'#C08040', done:'#4080FF',
+    in_meeting:'#4888D8', reviewing:'#9848C8', thinking:'#F0A020',
+    error:'#E02020'
   };
-  const c = configs[spriteKey] || {hair:'#3A2010',shirt:'#505050',pants:'#303030'};
-  drawBody(ctx, ox, oy, {hair:c.hair,skin:c.skin||'#E8C898',shirt:c.shirt,pants:c.pants||'#2A3848'});
+  const color = colors[status] || '#808080';
+  ctx2.fillStyle = color;
+  ctx2.fillRect(cx-1, headY-4, 3, 3);
+  ctx2.strokeStyle = '#FFFFFF';
+  ctx2.lineWidth = 0.5;
+  ctx2.strokeRect(cx-1.5, headY-4.5, 4, 4);
+  ctx2.lineWidth = 1;
+}
 
-  if (spriteKey==='frontend') {
-    px(ctx,ox+3*S,oy+0*S,2,2,'#4878D8');
-    px(ctx,ox+11*S,oy+0*S,2,2,'#4878D8');
-    px(ctx,ox+1*S,oy+1*S,2,2,'#282828');
-    px(ctx,ox+13*S,oy+1*S,2,2,'#282828');
-    px(ctx,ox+1*S,oy+0*S,14,1,'#282828');
-  }
-  if (spriteKey==='arch') {
-    px(ctx,ox+3*S,oy+4*S,4,1,'#404040');
-    px(ctx,ox+9*S,oy+4*S,4,1,'#404040');
-    px(ctx,ox+7*S,oy+4*S,2,1,'#404040');
-    px(ctx,ox+5*S,oy+0*S,2,4,'#E8E8E8');
-    px(ctx,ox+9*S,oy+0*S,2,4,'#E8E8E8');
-  }
-  if (spriteKey==='designer') {
-    px(ctx,ox+1*S,oy+0*S,14,3,'#B02820');
-    px(ctx,ox+3*S,oy+2*S,10,2,'#B02820');
-    px(ctx,ox+2*S,oy+4*S,12,5,'#E8C898');
-    px(ctx,ox+4*S,oy+5*S,2,2,'#282828');
-    px(ctx,ox+10*S,oy+5*S,2,2,'#282828');
-  }
-  if (spriteKey==='uiux') {
-    px(ctx,ox+2*S,oy+0*S,12,4,'#281838');
-    px(ctx,ox+1*S,oy+2*S,2,3,'#281838');
-    px(ctx,ox+13*S,oy+2*S,2,3,'#281838');
-    px(ctx,ox+15*S,oy+13*S,1,4,'#A0A0A8');
-  }
-  if (spriteKey==='ops') {
-    px(ctx,ox+7*S,oy+12*S,4,5,'#F8F8F8');
-    px(ctx,ox+8*S,oy+11*S,2,2,'#A0A0A0');
-    px(ctx,ox+7*S,oy+13*S,4,1,'#C8C8C8');
-    px(ctx,ox+7*S,oy+15*S,4,1,'#C8C8C8');
-  }
-  if (spriteKey==='security') {
-    px(ctx,ox+6*S,oy+11*S,4,2,'#D8E040');
-    px(ctx,ox+7*S,oy+13*S,2,2,'#D8E040');
-  }
-  if (spriteKey==='qa') {
-    px(ctx,ox+6*S,oy+11*S,4,2,'#E04040');
-    px(ctx,ox+5*S,oy+13*S,2,1,'#E04040');
-    px(ctx,ox+9*S,oy+13*S,2,1,'#E04040');
-  }
-  if (frame===1||frame===3) {
-    const dy = frame===1?1:-1;
-    px(ctx,ox+2*S,oy+19*S,5,5,c.pants||'#2A3848');
-    px(ctx,ox+9*S,oy+(19-dy)*S,5,5+dy,c.pants||'#2A3848');
+function drawNameLabel(ctx2, cx, footY, name) {
+  ctx2.font = '5px monospace';
+  ctx2.textAlign = 'center';
+  ctx2.fillStyle = 'rgba(0,0,0,0.8)';
+  ctx2.fillText(name, cx+1, footY+9);
+  ctx2.fillStyle = '#FFFFFF';
+  ctx2.fillText(name, cx, footY+8);
+}
+
+function drawDesk(ctx2, x, y, hasMonitor) {
+  const dx = x+1, dy = y+6;
+  ctx2.fillStyle = '#A07820';
+  ctx2.fillRect(dx, dy, 14, 8);
+  ctx2.fillStyle = '#705010';
+  ctx2.fillRect(dx, dy+7, 14, 2);
+  ctx2.fillStyle = '#C09830';
+  ctx2.fillRect(dx, dy, 14, 2);
+  if (hasMonitor) {
+    ctx2.fillStyle = '#0A0A1A';
+    ctx2.fillRect(dx+4, dy-5, 6, 5);
+    ctx2.fillStyle = '#2A60C0';
+    ctx2.fillRect(dx+5, dy-4, 4, 3);
+    ctx2.fillStyle = '#60A0F0';
+    ctx2.fillRect(dx+5, dy-4, 1, 1);
   }
 }
 
+function drawDoor(ctx2, col, row) {
+  const x = col*TILE, y = row*TILE;
+  ctx2.fillStyle = '#1A0A00';
+  ctx2.fillRect(x, y, TILE*2, TILE);
+  ctx2.fillStyle = '#5A3A10';
+  ctx2.fillRect(x, y-2, TILE*2, 3);
+  ctx2.fillStyle = '#3A2005';
+  ctx2.fillRect(x-1, y-2, 2, TILE+2);
+  ctx2.fillRect(x+TILE*2-1, y-2, 2, TILE+2);
+  ctx2.fillStyle = '#D4B04A';
+  ctx2.fillRect(x+TILE-2, y+TILE/2, 2, 2);
+}
+
+// ==================== CANVAS SETUP ====================
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+
+// ==================== FLOOR DRAWING ====================
+function drawFloor() {
+  // Background
+  ctx.fillStyle = '#2A2A3A';
+  ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+  // Draw room floors
+  ROOMS.forEach(room => {
+    for(let r = room.row; r < room.row + room.h; r++) {
+      for(let c = room.col; c < room.col + room.w; c++) {
+        drawFloorTile(ctx, c*TILE, r*TILE, room.floorType);
+      }
+    }
+  });
+
+  // Corridor row 9 (horizontal) and vertical connectors
+  for(let c = 0; c < COLS; c++) drawFloorTile(ctx, c*TILE, 9*TILE, 'corridor');
+  // Vertical corridors in top zone: col 9, col 19
+  for(let r = 0; r < 9; r++) {
+    drawFloorTile(ctx, 9*TILE, r*TILE, 'corridor');
+    drawFloorTile(ctx, 19*TILE, r*TILE, 'corridor');
+  }
+  // Vertical corridor between meeting rooms: col 14
+  for(let r = 10; r < ROWS; r++) drawFloorTile(ctx, 14*TILE, r*TILE, 'corridor');
+
+  // Room wall tops (north wall of each room = dark strip at top)
+  ROOMS.forEach(room => {
+    ctx.fillStyle = '#3A2808';
+    ctx.fillRect(room.col*TILE, room.row*TILE, room.w*TILE, 3);
+    ctx.fillStyle = '#5A3A10';
+    ctx.fillRect(room.col*TILE, room.row*TILE, room.w*TILE, 1);
+  });
+
+  // Room name labels
+  ctx.font = '5px "Press Start 2P","Courier New",monospace';
+  ctx.textAlign = 'center';
+  ROOMS.forEach(room => {
+    const lx = (room.col + room.w/2) * TILE;
+    const ly = room.row * TILE + 12;
+    const tw = ctx.measureText(room.name).width;
+    ctx.fillStyle = 'rgba(0,0,0,0.5)';
+    ctx.fillRect(lx - tw/2 - 2, ly - 6, tw + 4, 8);
+    ctx.fillStyle = 'rgba(255,255,255,0.65)';
+    ctx.fillText(room.name, lx, ly);
+  });
+  ctx.textAlign = 'left';
+
+  // Doors: at room boundaries opening onto corridors
+  // Top rooms → corridor row 9: simple door mark at south wall
+  // Exec: col 3-4, row 8 (door to row 9)
+  ctx.fillStyle = '#1A0A00';
+  ctx.fillRect(3*TILE, 8*TILE+12, 2*TILE, 4);
+  ctx.fillRect(13*TILE, 8*TILE+12, 2*TILE, 4);
+  ctx.fillRect(23*TILE, 8*TILE+12, 2*TILE, 4);
+  // Bottom rooms → corridor row 9
+  ctx.fillStyle = '#1A0A00';
+  ctx.fillRect(5*TILE, 9*TILE+12, 2*TILE, 4);
+  ctx.fillRect(18*TILE, 9*TILE+12, 2*TILE, 4);
+}
+
+// ==================== FURNITURE DRAWING ====================
+let animTick = 0;
+setInterval(() => { animTick++; }, 50);
+
+function drawFurniture() {
+  // Desks for all agents
+  AGENT_LIST.forEach(agent => {
+    drawDesk(ctx, agent.desk.col*TILE, agent.desk.row*TILE, true);
+  });
+
+  // Meeting tables
+  // Meeting Room A table (cols 4-9, row 12 area)
+  ctx.fillStyle = '#6A4010';
+  ctx.fillRect(4*TILE+2, 11*TILE+6, 8*TILE-4, 3*TILE-4);
+  ctx.fillStyle = '#A07820';
+  ctx.fillRect(4*TILE+4, 11*TILE+8, 8*TILE-8, 3*TILE-8);
+  ctx.fillStyle = '#C09830';
+  ctx.fillRect(4*TILE+4, 11*TILE+8, 8*TILE-8, 2);
+  // Meeting Room B table
+  ctx.fillStyle = '#1A4A1A';
+  ctx.fillRect(17*TILE+2, 11*TILE+6, 8*TILE-4, 3*TILE-4);
+  ctx.fillStyle = '#2A6A2A';
+  ctx.fillRect(17*TILE+4, 11*TILE+8, 8*TILE-8, 3*TILE-8);
+  ctx.fillStyle = '#3A8A3A';
+  ctx.fillRect(17*TILE+4, 11*TILE+8, 8*TILE-8, 2);
+
+  // Break area in Meeting B (cols 20-29, rows 14-19)
+  ctx.fillStyle = '#3A1A0A';
+  ctx.fillRect(20*TILE, 14*TILE, 10*TILE, 6*TILE);
+  ctx.fillStyle = '#2A5A2A';
+  ctx.fillRect(20*TILE, 14*TILE, 10*TILE, 1);
+
+  // Sofa
+  ctx.fillStyle = '#7A4A88';
+  ctx.fillRect(21*TILE, 15*TILE+2, 4*TILE, TILE-4);
+  ctx.fillStyle = '#9068A8';
+  ctx.fillRect(21*TILE+2, 15*TILE+4, 4*TILE-4, TILE-8);
+
+  // Coffee machine (pixel art, no arc except steam)
+  const cmX = 22*TILE+2, cmY = 16*TILE+2;
+  ctx.fillStyle = '#3D2B1F';
+  ctx.fillRect(cmX, cmY, 12, 14);
+  ctx.fillStyle = '#5A3A28';
+  ctx.fillRect(cmX+2, cmY+2, 8, 8);
+  ctx.fillStyle = '#E84040';
+  ctx.fillRect(cmX+4, cmY+4, 4, 4);
+  ctx.fillStyle = '#FF6060';
+  ctx.fillRect(cmX+5, cmY+5, 2, 2);
+  ctx.fillStyle = '#2A1A0E';
+  ctx.fillRect(cmX+3, cmY-3, 6, 3);
+  ctx.fillStyle = '#281A0E';
+  ctx.fillRect(cmX+1, cmY+12, 10, 3);
+  // Steam dots (animated arcs OK for coffee steam per spec)
+  [0, Math.PI*0.66, Math.PI*1.33].forEach((phase, i) => {
+    const drift = (animTick * 0.3 + phase * 3) % 8;
+    const alpha = 0.3 + 0.3 * Math.sin(animTick * 0.1 + phase);
+    ctx.fillStyle = `rgba(220,220,220,${alpha})`;
+    ctx.beginPath();
+    ctx.arc(cmX+2+i*4, cmY-3-drift, 1.5, 0, Math.PI*2);
+    ctx.fill();
+  });
+
+  // Small plant in exec suite
+  ctx.fillStyle = '#B06840';
+  ctx.fillRect(7*TILE+4, 7*TILE+6, 6, 8);
+  ctx.fillStyle = '#58A840';
+  ctx.fillRect(6*TILE+2, 7*TILE+2, 8, 6);
+
+  // Bookshelf in design studio
+  ctx.fillStyle = '#705030';
+  ctx.fillRect(20*TILE, 0, 2, 8*TILE);
+  ['#D04040','#E8C040','#4068B0','#40A050','#F87840'].forEach((c,i)=>{
+    ctx.fillStyle=c; ctx.fillRect(20*TILE, i*TILE+2, 2, TILE-4);
+  });
+
+  // Server rack in tech room
+  ctx.fillStyle = '#1A1A2A';
+  ctx.fillRect(18*TILE+2, 7*TILE, TILE-4, 2*TILE);
+  for(let i=0;i<4;i++){
+    ctx.fillStyle='#2A2A3A'; ctx.fillRect(18*TILE+4,7*TILE+3+i*8,TILE-8,6);
+    ctx.fillStyle=(i%2===0)?'#00FF88':'#0088FF';
+    ctx.fillRect(18*TILE+TILE-8,7*TILE+5+i*8,3,3);
+  }
+}
+
+// ==================== SPRITE CACHE ====================
 function spriteForAgent(agent, frame) {
   const oc = document.createElement('canvas');
-  oc.width = 16*S; oc.height = 24*S;
+  oc.width = 16; oc.height = 24;
   const ctx2 = oc.getContext('2d');
   ctx2.imageSmoothingEnabled = false;
-  if (agent.spriteKey === 'jacques') drawJacques(ctx2, 0, 0, frame||0);
-  else if (agent.spriteKey === 'trump') drawTrump(ctx2, 0, 0, frame||0);
-  else drawAgent(ctx2, 0, 0, agent.spriteKey, frame||0);
+  drawSprite(ctx2, 0, 0, agent, frame);
   return oc;
 }
-
 const spriteCache = {};
 function getSprite(agentId, frame) {
-  const key = `${agentId}_${frame}`;
+  const key = `${agentId}_${frame%2}`;
   if (!spriteCache[key]) {
     const agent = AGENT_LIST.find(a => a.id === agentId);
     spriteCache[key] = spriteForAgent(agent, frame);
@@ -737,473 +717,13 @@ function getSprite(agentId, frame) {
   return spriteCache[key];
 }
 
-// ==================== FLOOR TILE PATTERNS ====================
-function makeFloorPattern(ctx2, type) {
-  const pc = document.createElement('canvas');
-  pc.width = 48; pc.height = 48;
-  const pctx = pc.getContext('2d');
-  switch(type) {
-    case 'wood': case 'wood2': case 'wood3': {
-      const baseColor = type==='wood'?'#C8A46E':type==='wood2'?'#D8B880':'#E8C890';
-      const darkLine = '#A07848'; const highlight = '#D4B478';
-      pctx.fillStyle = baseColor; pctx.fillRect(0,0,48,48);
-      [0,16,32].forEach(y => {
-        pctx.fillStyle = highlight; pctx.fillRect(0,y,48,3);
-        if(y>0){pctx.fillStyle=darkLine;pctx.fillRect(0,y,48,2);}
-      });
-      pctx.fillStyle='rgba(160,120,72,0.2)';
-      for(let x=0;x<48;x+=8) pctx.fillRect(x,0,1,48);
-      break;
-    }
-    case 'tech': case 'techQA': {
-      const base = type==='techQA'?'#DDE8EE':'#E8EEF4';
-      pctx.fillStyle=base; pctx.fillRect(0,0,48,48);
-      pctx.fillStyle='#C8D4DC';
-      pctx.fillRect(24,0,1,48); pctx.fillRect(0,24,48,1);
-      [[1,1],[1,46],[46,1],[46,46]].forEach(([x,y])=>{
-        pctx.fillStyle='#B0C0CC'; pctx.fillRect(x,y,2,2);
-      });
-      break;
-    }
-    case 'carpetBlue': {
-      pctx.fillStyle='#2A4A8C'; pctx.fillRect(0,0,48,48);
-      // Diamond pattern
-      pctx.fillStyle='#3A5AA0';
-      for(let cy2=0;cy2<3;cy2++) for(let cx2=0;cx2<3;cx2++) {
-        pctx.fillRect(cx2*16+5,cy2*16+7,6,2);
-        pctx.fillRect(cx2*16+7,cy2*16+5,2,6);
-      }
-      pctx.fillStyle='#1A3A7A'; pctx.fillRect(0,0,48,2); pctx.fillRect(0,46,48,2);
-      pctx.fillRect(0,0,2,48); pctx.fillRect(46,0,2,48);
-      break;
-    }
-    case 'carpetGreen': {
-      pctx.fillStyle='#6BAF7A'; pctx.fillRect(0,0,48,48);
-      pctx.fillStyle='#589A68';
-      for(let cy=0;cy<3;cy++) for(let cx=0;cx<3;cx++) pctx.fillRect(cx*16+7,cy*16+7,2,2);
-      pctx.fillStyle='#4A8A58'; pctx.fillRect(0,0,48,1); pctx.fillRect(0,47,48,1);
-      break;
-    }
-    case 'terra': {
-      pctx.fillStyle='#D4956A'; pctx.fillRect(0,0,48,48);
-      pctx.fillStyle='#E8A870'; pctx.fillRect(0,0,15,15);
-      pctx.fillStyle='#B07050'; pctx.fillRect(33,33,15,15);
-      pctx.fillStyle='#C07858'; pctx.fillRect(24,0,1,48); pctx.fillRect(0,24,48,1);
-      break;
-    }
-    default: { pctx.fillStyle='#A0A0A0'; pctx.fillRect(0,0,48,48); }
-  }
-  return ctx2.createPattern(pc, 'repeat') || null;
-}
-
-// ==================== DOOR DRAWING ====================
-// Door gap positions: {c, r, axis:'h'|'v'} — tiles that form door openings
-const DOOR_POSITIONS = [
-  // Exec → main corridor: bottom row=5, cols 3-4
-  {c:3,r:5,axis:'h'},{c:4,r:5,axis:'h'},
-  // Tech → main corridor: row=5, cols 14-15
-  {c:14,r:5,axis:'h'},{c:15,r:5,axis:'h'},
-  // PM → main corridor: row=5, cols 25-26
-  {c:25,r:5,axis:'h'},{c:26,r:5,axis:'h'},
-  // Design → V corridor: col=9, rows 10-11
-  {c:9,r:10,axis:'v'},{c:9,r:11,axis:'v'},
-  // Meeting A: left col=11 row=9, right col=18 row=9
-  {c:11,r:9,axis:'v'},{c:18,r:9,axis:'v'},
-  // Meeting B: col=11 row=14, col=18 row=14
-  {c:11,r:14,axis:'v'},{c:18,r:14,axis:'v'},
-  // QA → V corridor: col=20, rows 10-11
-  {c:20,r:10,axis:'v'},{c:20,r:11,axis:'v'},
-  // Break room entries
-  {c:5,r:14,axis:'h'},{c:6,r:14,axis:'h'},
-  {c:14,r:14,axis:'h'},{c:15,r:14,axis:'h'},
-];
-
-function drawDoors(ctx2) {
-  const doorFloor = '#D4B84A';   // bright golden door tile
-  const doorFrameOuter = '#2A1405';  // very dark wood frame (more visible)
-  const doorFrameInner = '#7A4A18';  // lighter wood inner
-  const doorGlow = 'rgba(255,220,100,0.35)';
-
-  DOOR_POSITIONS.forEach(({c, r, axis}) => {
-    const x = c * T, y = r * T;
-    // Bright floor tile for door
-    ctx2.fillStyle = doorFloor;
-    ctx2.fillRect(x, y, T, T);
-    // Inner glow
-    ctx2.fillStyle = doorGlow;
-    ctx2.fillRect(x+4, y+4, T-8, T-8);
-
-    if (axis === 'h') {
-      // Top frame beam (visible in 3/4 view) — thick 6px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, T, 6);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+1, y+1, T-2, 4);
-      // Side posts — thick 5px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, 5, T);
-      ctx2.fillRect(x+T-5, y, 5, T);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+2, y+6, 2, T-6);
-      ctx2.fillRect(x+T-4, y+6, 2, T-6);
-    } else {
-      // Left/right frame posts — thick 5px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, 5, T);
-      ctx2.fillRect(x+T-5, y, 5, T);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+2, y, 2, T);
-      ctx2.fillRect(x+T-4, y, 2, T);
-      // Top beam — thick 6px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, T, 6);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+5, y+1, T-10, 4);
-    }
-    // Door direction arrow marker
-    ctx2.fillStyle = 'rgba(255,220,80,0.95)';
-    ctx2.font = 'bold 14px monospace';
-    ctx2.textAlign = 'center';
-    ctx2.textBaseline = 'middle';
-    ctx2.fillText(axis === 'h' ? '▼' : '▶', x + T/2, y + T/2);
-    ctx2.textBaseline = 'alphabetic';
-  });
-}
-
-// ==================== MEETING TABLE ====================
-function drawMeetingTable(ctx2, tx, ty) {
-  // Completely flat rectangular table for Meeting Room A
-  const tw = 3*T, th = 2*T; // Width: three tiles; Height: two tiles
-  tx = Math.floor(tx);
-  ty = Math.floor(ty);
-
-  // Table outer border (4px thick, clearly rectangular)
-  ctx2.fillStyle = '#2E1E1C'; // Deep brown
-  ctx2.fillRect(tx - 4, ty - 4, tw + 8, th + 8);
-
-  // Table inner surface (solid fill)
-  ctx2.fillStyle = '#A87840'; // Warm wood-tone
-  ctx2.fillRect(tx, ty, tw, th);
-
-  // Explicit corner anchors for visual clarity
-  ctx2.fillStyle = '#E8D080'; // Light yellow markers
-  ctx2.fillRect(tx, ty, 6, 6);
-  ctx2.fillRect(tx + tw - 6, ty, 6, 6);
-  ctx2.fillRect(tx, ty + th - 6, 6, 6);
-  ctx2.fillRect(tx + tw - 6, ty + th - 6, 6, 6);
-
-  // Table base shadow for depth (flat strip at the bottom edge)
-  ctx2.fillStyle = '#483928';
-  ctx2.fillRect(tx, ty + th, tw, 4);
-
-  // Ensure rectangle proportions are sharp (no curved illusions)
-}
-
-// ==================== CANVAS RENDERING ====================
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
-ctx.imageSmoothingEnabled = false;
-
-const floorPatterns = {};
-function getPattern(type) {
-  if (!floorPatterns[type]) floorPatterns[type] = makeFloorPattern(ctx, type);
-  return floorPatterns[type];
-}
-
-function drawFloor() {
-  ROOMS.forEach(room => {
-    const pattern = getPattern(room.floorType || 'stone');
-    ctx.fillStyle = pattern || '#C8904A';
-    ctx.fillRect(room.col*T, room.row*T, room.w*T, room.h*T);
-    // North wall
-    ctx.fillStyle = room.wallColor;
-    ctx.fillRect(room.col*T, room.row*T, room.w*T, 8);
-    ctx.fillStyle = room.wallShadow;
-    ctx.fillRect(room.col*T, (room.row*T)+6, room.w*T, 4);
-  });
-
-  // Corridors
-  const corridorPattern = getPattern('stone') || '#A0A0A0';
-  ctx.fillStyle = corridorPattern;
-  ctx.fillRect(8*T, 0, T, 6*T);
-  ctx.fillRect(21*T, 0, T, 6*T);
-  ctx.fillRect(0, 6*T, CANVAS_W, T);
-  ctx.fillRect(10*T, 7*T, T, 10*T);
-  ctx.fillRect(19*T, 7*T, T, 10*T);
-  ctx.fillRect(0, 17*T, CANVAS_W, T);
-
-  // Room labels — centered pill style
-  ROOMS.forEach(room => {
-    if (room.id === 'break') return;
-    const label = room.name;
-    ctx.font = '8px "Press Start 2P","Courier New",monospace';
-    const tw = ctx.measureText(label).width;
-    const lx = room.col*T + room.w*T/2;
-    const ly = room.row*T + 20;
-    const pad = 4;
-    ctx.fillStyle = 'rgba(0,0,0,0.45)';
-    // Simple rounded-ish rect via multiple fillRect
-    ctx.fillRect(lx - tw/2 - pad, ly - 11, tw + pad*2, 14);
-    ctx.fillStyle = 'rgba(255,255,255,0.75)';
-    ctx.textAlign = 'center';
-    ctx.fillText(label, lx, ly);
-    ctx.textAlign = 'left';
-  });
-
-  // Doors
-  drawDoors(ctx);
-}
-
-function drawFurniture() {
-  function desk(col, row, hasMonitor) {
-    const x = col*T, y = row*T;
-    // 3/4 view: desk drawn in furniture layer (on top of agents)
-    // Desk fills bottom 60% of tile so it clearly covers agent lower body
-    const dTop = y + 8;  // start higher in tile
-    const dH = T - 4;    // tall enough to cover agent legs
-    
-    // Front face (depth, most visible)
-    ctx.fillStyle = '#5C3D0A';
-    ctx.fillRect(x, dTop + dH - 10, T, 10);
-    // Main surface
-    ctx.fillStyle = '#8B6914';
-    ctx.fillRect(x, dTop, T, dH - 10);
-    // Top highlight
-    ctx.fillStyle = '#B89A30';
-    ctx.fillRect(x, dTop, T, 5);
-    // Outline
-    ctx.strokeStyle = '#3A2005';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(x+1, dTop+1, T-2, dH-2);
-    ctx.lineWidth = 1;
-
-    if (hasMonitor) {
-      ctx.fillStyle = '#0A0A1E';
-      ctx.fillRect(x+8, dTop+2, T-16, dH-14);
-      ctx.fillStyle = '#2A70C9';
-      ctx.fillRect(x+10, dTop+4, T-20, dH-18);
-      ctx.fillStyle = '#58B8E8';
-      ctx.fillRect(x+11, dTop+5, 14, 2);
-      ctx.fillStyle = '#30A040';
-      ctx.fillRect(x+11, dTop+8, 10, 2);
-      ctx.fillRect(x+11, dTop+11, 14, 2);
-    }
-  }
-
-  function plant(col, row, large) {
-    const x=col*T, y=row*T;
-    if(large){
-      ctx.fillStyle='#B06840'; ctx.fillRect(x+6,y+28,20,18);
-      ctx.fillStyle='#58A840'; ctx.fillRect(x+4,y+6,24,22);
-      ctx.fillStyle='#387828'; ctx.fillRect(x+8,y+22,20,6);
-      ctx.fillStyle='#4A6830'; ctx.fillRect(x+14,y+22,4,8);
-    } else {
-      ctx.fillStyle='#B06840'; ctx.fillRect(x+12,y+32,12,14);
-      ctx.fillStyle='#58A840'; ctx.fillRect(x+6,y+16,10,16); ctx.fillRect(x+20,y+16,10,16);
-      ctx.fillStyle='#387828'; ctx.fillRect(x+6,y+27,10,5); ctx.fillRect(x+20,y+27,10,5);
-      ctx.fillStyle='#4A6830'; ctx.fillRect(x+16,y+28,4,8);
-    }
-  }
-
-  // Executive Suite
-  ctx.fillStyle='#8A5820'; ctx.fillRect(0,0,2*T,T);
-  ctx.fillStyle='#6A3808';
-  ['#D04040','#E8C040','#4068B0','#40A050'].forEach((c,i)=>{ctx.fillStyle=c;ctx.fillRect(4+i*22,4,16,38);});
-  ctx.fillStyle='#6A3808'; ctx.fillRect(0,40,2*T,4);
-  ['#D04040','#40A050','#E8C040','#4068B0'].forEach((c,i)=>{ctx.fillStyle=c;ctx.fillRect(4+i*22,44,14,38);});
-  desk(2,2,true); desk(5,2,true); desk(2,4,true); desk(5,4,true);
-  plant(3,0); plant(6,0);
-  const sX=0,sY=3*T+4;
-  ctx.fillStyle='#7A4A88'; ctx.fillRect(sX+2,sY,T,T-8);
-  ctx.fillStyle='#9068A8'; ctx.fillRect(sX+4,sY+10,T-8,T-20);
-  ctx.fillStyle='#402830'; ctx.fillRect(sX+4,sY+T-10,4,6); ctx.fillRect(sX+T-8,sY+T-10,4,6);
-
-  // Tech Lab
-  [10,12,14,16,18].forEach(c=>desk(c,1,true));
-  [11,14,17].forEach(c=>desk(c,4,true));
-  ctx.fillStyle='#1A1A2A'; ctx.fillRect(20*T+4,T+4,T-8,3*T-8);
-  for(let i=0;i<6;i++){
-    ctx.fillStyle='#2A2A3A'; ctx.fillRect(20*T+6,T+8+i*18,T-12,12);
-    ctx.fillStyle=(i%2===0)?'#00FF88':'#0088FF';
-    ctx.fillRect(20*T+T-10,T+10+i*18,4,4);
-  }
-
-  // PM Office
-  desk(23,1,true); desk(26,1,true); desk(23,4,true); desk(26,4,true);
-  plant(24,0); plant(27,0);
-  ctx.fillStyle='#C0C0C0'; ctx.fillRect(29*T,0,T,3*T);
-  ctx.fillStyle='#F8F8F8'; ctx.fillRect(29*T+3,6,T-6,3*T-12);
-  ctx.fillStyle='#2040B0';
-  for(let i=0;i<5;i++) ctx.fillRect(29*T+6,16+i*18,T-18,2);
-  ['#F8E040','#F87880','#78F8A0','#78A8F8'].forEach((c,i)=>{
-    ctx.fillStyle=c; ctx.fillRect(29*T+4+(i%2)*18,3*T+2+(Math.floor(i/2))*18,14,14);
-  });
-
-  // Design Studio
-  desk(2,8,true); desk(5,8,true); desk(2,11,true); desk(5,11,true);
-  ctx.fillStyle='#A07040'; ctx.fillRect(0,7*T,T,3*T);
-  ['#E84040','#F8C040','#40C080','#8080F8','#F87840'].forEach((c,i)=>{
-    ctx.fillStyle=c; ctx.fillRect(4,7*T+6+i*26,T-8,18);
-  });
-  ctx.fillStyle='#181818'; ctx.fillRect(8*T,7*T+4,2*T-4,T+16);
-  ctx.fillStyle='#2A4A7A'; ctx.fillRect(8*T+4,7*T+8,2*T-12,T+6);
-  plant(7,12);
-
-  // Meeting Room A — clean table only, no plants inside
-  drawMeetingTable(ctx, 11.5*T, 8.2*T);
-
-  // Meeting Room B
-  drawMeetingTable(ctx, 11.5*T, 13.2*T);
-  ctx.fillStyle='#C0C0C0'; ctx.fillRect(11*T,12*T,1*T,2*T);
-  ctx.fillStyle='#F8F8F8'; ctx.fillRect(11*T+3,12*T+4,T-6,2*T-8);
-  plant(18,16);
-
-  // QA Lab
-  desk(22,9,true); desk(26,9,true);
-  ctx.fillStyle='#1A1A2A'; ctx.fillRect(20*T,7*T,T,3*T);
-  ['#E04040','#E0B040','#40C060'].forEach((c,i)=>{
-    for(let j=0;j<3;j++){
-      ctx.fillStyle=c; ctx.beginPath();
-      ctx.arc(20*T+12+j*14,7*T+16+i*20,5,0,Math.PI*2); ctx.fill();
-    }
-  });
-  ctx.fillStyle='#2A2A3A'; ctx.fillRect(29*T,7*T,T,4*T);
-  for(let i=0;i<4;i++){
-    ctx.fillStyle='#1A3A5A'; ctx.fillRect(29*T+4,7*T+6+i*22,T-8,16);
-    ctx.fillStyle='#4A90D9'; ctx.fillRect(29*T+8,7*T+10+i*22,6,4);
-  }
-
-  // Break Room — proper pixel-art coffee machine
-  const cmX = 12*T+4, cmY = 15*T+4;
-  // Machine body
-  ctx.fillStyle = '#3D2B1F';
-  ctx.fillRect(cmX, cmY, 28, 36);
-  // Front panel
-  ctx.fillStyle = '#5A3A28';
-  ctx.fillRect(cmX+4, cmY+4, 20, 20);
-  // Red button
-  ctx.fillStyle = '#E84040';
-  ctx.beginPath(); ctx.arc(cmX+14, cmY+14, 4, 0, Math.PI*2); ctx.fill();
-  ctx.fillStyle = '#FF6060';
-  ctx.beginPath(); ctx.arc(cmX+13, cmY+13, 2, 0, Math.PI); ctx.fill();
-  // Spout at top
-  ctx.fillStyle = '#2A1A0E';
-  ctx.fillRect(cmX+10, cmY-6, 8, 6);
-  ctx.fillRect(cmX+12, cmY-8, 4, 3);
-  // Cup tray
-  ctx.fillStyle = '#281A0E';
-  ctx.fillRect(cmX+2, cmY+28, 24, 6);
-  // Steam dots animated (3 dots drifting up)
-  const steamOffsets = [0, Math.PI*0.66, Math.PI*1.33];
-  steamOffsets.forEach((phase, i) => {
-    const drift = (animTick * 0.5 + phase * 5) % 18;
-    const alpha = 0.25 + 0.4 * Math.sin(animTick * 0.1 + phase);
-    ctx.fillStyle = `rgba(220,220,220,${alpha})`;
-    ctx.beginPath();
-    ctx.arc(cmX + 8 + i*6, cmY - 8 - drift, 2.5, 0, Math.PI*2);
-    ctx.fill();
-  });
-  // 2 chairs: 10x10px squares
-  ctx.fillStyle = '#6B4C1E';
-  ctx.fillRect(12*T + 36, 15*T + 20, 10, 10);
-  ctx.fillRect(12*T + 50, 15*T + 20, 10, 10);
-  ctx.fillStyle = '#4A3010';
-  ctx.fillRect(12*T + 36, 15*T + 20, 2, 10);
-  ctx.fillRect(12*T + 50, 15*T + 20, 2, 10);
-  // Floor text
-  ctx.font = '7px "Press Start 2P","Courier New",monospace';
-  ctx.fillStyle = 'rgba(255,220,160,0.5)';
-  ctx.textAlign = 'center';
-  ctx.fillText('☕ BREAK', 12*T + T, 15*T + T - 4);
-  ctx.textAlign = 'left';
-  // Fridge
-  ctx.fillStyle='#C8D8E8'; ctx.fillRect(14*T+4,15*T+4,T-8,T-4);
-  ctx.fillStyle='#A8B8C8'; ctx.fillRect(14*T+4,15*T+22,T-8,2);
-  ctx.fillStyle='#6888A8'; ctx.fillRect(14*T+T-12,15*T+8,4,12);
-  // Sofa cluster
-  ctx.fillStyle='#7A4A88'; ctx.fillRect(20*T,14*T+4,5*T,T-8);
-  ctx.fillStyle='#9068A8'; ctx.fillRect(20*T+4,14*T+8,5*T-8,T-16);
-  ctx.fillStyle='#7A4A88';
-  ctx.fillRect(20*T,14*T+4,T,T-8);
-  ctx.fillRect(24*T,14*T+4,T,T-8);
-  // Snack shelf
-  ctx.fillStyle='#A07040'; ctx.fillRect(2*T,15*T+4,2*T,T-4);
-  ['#F84040','#F8B840','#40B840','#8040F8'].forEach((c,i)=>{
-    ctx.fillStyle=c; ctx.fillRect(2*T+6+i*10,15*T+8,8,14);
-  });
-  plant(0,14,true); plant(1,14); plant(29,15);
-}
-
-// ==================== CHAIR DRAWING ====================
-function drawChair(ctx2, tileX, tileY) {
-  const cx = tileX + (T - 20) / 2;
-  const cy = tileY + T - 20;
-  ctx2.fillStyle = '#6B3A10';
-  ctx2.fillRect(Math.round(cx), Math.round(cy+4), 20, 10);
-  ctx2.fillStyle = '#4A2808';
-  ctx2.fillRect(Math.round(cx), Math.round(cy+4), 3, 10);
-  ctx2.fillStyle = '#8A5020';
-  ctx2.fillRect(Math.round(cx+3), Math.round(cy+4), 17, 2);
-  ctx2.fillStyle = '#6B3A10';
-  ctx2.fillRect(Math.round(cx+2), Math.round(cy), 16, 5);
-  ctx2.fillStyle = '#4A2808';
-  ctx2.fillRect(Math.round(cx+2), Math.round(cy), 2, 5);
-  ctx2.fillStyle = '#4A2808';
-  ctx2.fillRect(Math.round(cx+1), Math.round(cy+14), 3, 5);
-  ctx2.fillRect(Math.round(cx+16), Math.round(cy+14), 3, 5);
-}
-
+// ==================== STATUS COLORS ====================
 const STATUS_COLORS = {
   idle:'#909090', working:'#40C860', blocked:'#E04040',
-  in_meeting:'#4888D8', reviewing:'#9848C8', coffee_break:'#B07030',
-  done:'#F0C020', error:'#E02020', default:'#909090'
+  in_meeting:'#4888D8', reviewing:'#9848C8', coffee_break:'#C08040',
+  done:'#4080FF', error:'#E02020', waiting:'#F0A020', thinking:'#F0A020',
+  default:'#909090'
 };
-
-let animTick = 0;
-setInterval(() => { animTick++; }, 50);
-
-// ==================== STATUS BUBBLE — SMALL ====================
-function getStatusBubble(status) {
-  switch(status) {
-    case 'working': case 'in_progress': return { color:'#E84040', text:'BUSY' };
-    case 'in_meeting': case 'reviewing': return { color:'#E84040', text:'MTG' };
-    case 'blocked': case 'error': return { color:'#F5A623', text:'BLK' };
-    case 'pending': case 'pending_review': case 'pending_test': case 'waiting': return { color:'#F5A623', text:'WAIT' };
-    case 'coffee_break': return { color:'#F5C84A', text:'☕' };
-    case 'thinking': return { color:'#F5A623', text:'...' };
-    case 'idle': return { color:'#52C41A', text:'ZZ' };
-    case 'done': return { color:'#52C41A', text:'✓' };
-    default: return null;
-  }
-}
-
-function drawStatusBubble(ctx2, cx, cy, status) {
-  const bubble = getStatusBubble(status);
-  if (!bubble) return;
-  ctx2.save();
-  ctx2.font = 'bold 11px "Press Start 2P","Courier New",monospace';
-  const tw = ctx2.measureText(bubble.text).width;
-  const pw = tw + 20, ph = 22;
-  const px2 = cx - pw/2, py2 = cy - ph/2;
-  // Drop shadow
-  ctx2.fillStyle = 'rgba(0,0,0,0.8)';
-  ctx2.fillRect(px2+2, py2+2, pw, ph);
-  // Pill background
-  ctx2.fillStyle = bubble.color;
-  ctx2.fillRect(px2, py2, pw, ph);
-  // White border
-  ctx2.strokeStyle = 'rgba(255,255,255,0.6)';
-  ctx2.lineWidth = 1.5;
-  ctx2.strokeRect(px2+1, py2+1, pw-2, ph-2);
-  ctx2.lineWidth = 1;
-  // Text
-  ctx2.fillStyle = '#FFFFFF';
-  ctx2.textAlign = 'center';
-  ctx2.textBaseline = 'middle';
-  ctx2.fillText(bubble.text, cx, cy + 1);
-  ctx2.restore();
-  ctx2.textBaseline = 'alphabetic';
-}
 
 // ==================== RENDER LOOP ====================
 let animFrame = null;
@@ -1211,90 +731,55 @@ let animFrame = null;
 function render(timestamp) {
   try {
     ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
-    ctx.fillStyle = '#0A0A14';
-    ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
     drawFloor();
-    drawAgentsFixed(timestamp);  // agents first (behind desks)
-    drawFurniture();             // desks/furniture on top (3/4 depth)
+    drawAgents(timestamp);
+    drawFurniture();
   } catch(e) {
-    console.error('[render error]', e);
+    console.error('[render]', e);
   }
   animFrame = requestAnimationFrame(render);
 }
 
-function drawAgentsFixed(timestamp) {
+function drawAgents(timestamp) {
   const sorted = [...AGENT_LIST].sort((a,b) =>
     agentState[a.id].currentTile.row - agentState[b.id].currentTile.row
   );
   sorted.forEach(agent => {
     const st = agentState[agent.id];
-    const tileCol = st.currentTile.col;
-    const tileRow = st.currentTile.row;
-    const tileX = tileCol * T, tileY = tileRow * T;
-    const spriteW = 16*S, spriteH = 24*S;
-    const spriteX = tileX + (T - spriteW)/2;
-    const spriteY = tileY - spriteH + T;
+    const tileX = st.currentTile.col * TILE;
+    const tileY = st.currentTile.row * TILE;
+    // sprite 16x24, center in tile horizontally, align bottom to tile bottom
+    const spriteX = tileX + (TILE - 16) / 2;
+    const spriteY = tileY - 24 + TILE;
 
     let frame = 0;
-    if (st.path.length > 0) {
-      frame = Math.floor(timestamp / 100) % 4;
-    } else if (st.status === 'working') {
-      frame = Math.floor(timestamp / 600) % 2;
-    }
-    const bob = (st.status === 'idle') ? Math.round(Math.sin(timestamp/1500 + st.animPhase)) : 0;
+    if (st.path.length > 0) frame = Math.floor(timestamp / 150) % 4;
+    else if (st.status === 'working') frame = Math.floor(timestamp / 800) % 2;
 
-    if (st.priority === 'critical') {
-      const pulse = 0.5 + 0.5*Math.sin(timestamp/300);
-      ctx.shadowColor = `rgba(255,32,32,${pulse})`;
-      ctx.shadowBlur = 16;
-    } else if (st.priority === 'high') {
-      ctx.shadowColor = 'rgba(255,128,32,0.5)';
-      ctx.shadowBlur = 10;
-    }
+    const bob = (st.status === 'idle') ? Math.round(Math.sin(timestamp/2000 + st.animPhase) * 0.5) : 0;
 
-    // Draw chair behind agent
-    drawChair(ctx, agent.desk.col * T, agent.desk.row * T);
-
-    // Draw sprite
     const sp = getSprite(agent.id, frame);
-    ctx.drawImage(sp, spriteX, spriteY + bob, spriteW, spriteH);
-    ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
+    ctx.drawImage(sp, spriteX, spriteY + bob, 16, 24);
 
-    // Status bubble — large pill, well above head
-    const bubbleCX = spriteX + spriteW / 2;
-    const bubbleCY = spriteY + bob - 24;
-    drawStatusBubble(ctx, bubbleCX, bubbleCY, st.status);
+    // Status dot (3x3px) above head
+    const headCX = spriteX + 8;
+    const headY = spriteY + bob;
+    drawStatusDot(ctx, headCX, headY, st.status);
 
-    // Name label
-    ctx.font = '7px "Press Start 2P","Courier New",monospace';
-    ctx.textAlign = 'center';
-    const nw = ctx.measureText(agent.name).width;
-    ctx.fillStyle = 'rgba(0,0,0,0.65)';
-    ctx.fillRect(bubbleCX - nw/2 - 2, spriteY - 26 + bob, nw + 4, 11);
-    ctx.fillStyle = '#FFFFFF';
-    ctx.fillText(agent.name, bubbleCX, spriteY - 17 + bob);
-    ctx.textAlign = 'left';
-
-    // Progress bar
-    if (st.status === 'working' && st.progress > 0) {
-      const barY = tileY + T - 5, barW = T - 4;
-      ctx.fillStyle = '#282830';
-      ctx.fillRect(tileX + 2, barY, barW, 4);
-      const pc = st.progress < 34 ? '#E04848' : st.progress < 67 ? '#E0B828' : '#40C060';
-      ctx.fillStyle = pc;
-      ctx.fillRect(tileX + 2, barY, Math.round(barW * st.progress / 100), 4);
-    }
+    // Name label (5px font) below feet
+    const footY = spriteY + 24 + bob;
+    drawNameLabel(ctx, headCX, footY, agent.name);
 
     // Collaboration line
     if (st.collaborating_with) {
       const other = AGENT_LIST.find(a => a.id === st.collaborating_with || a.name === st.collaborating_with);
       if (other) {
         const ost = agentState[other.id];
-        ctx.save(); ctx.setLineDash([4,4]);
-        ctx.strokeStyle = 'rgba(74,144,217,0.55)'; ctx.lineWidth = 2;
+        ctx.save(); ctx.setLineDash([2,3]);
+        ctx.strokeStyle = 'rgba(74,144,217,0.5)'; ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(tileX+T/2, tileY+T/2);
-        ctx.lineTo(ost.currentTile.col*T+T/2, ost.currentTile.row*T+T/2);
+        ctx.moveTo(tileX+TILE/2, tileY+TILE/2);
+        ctx.lineTo(ost.currentTile.col*TILE+TILE/2, ost.currentTile.row*TILE+TILE/2);
         ctx.stroke(); ctx.restore();
       }
     }
@@ -1303,11 +788,11 @@ function drawAgentsFixed(timestamp) {
       const other = AGENT_LIST.find(a => a.id === st.blocked_by || a.name === st.blocked_by);
       if (other) {
         const ost = agentState[other.id];
-        ctx.save(); ctx.setLineDash([3,4]);
-        ctx.strokeStyle = 'rgba(224,64,64,0.65)'; ctx.lineWidth = 2;
+        ctx.save(); ctx.setLineDash([2,3]);
+        ctx.strokeStyle = 'rgba(224,64,64,0.5)'; ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(tileX+T/2, tileY+T/2);
-        ctx.lineTo(ost.currentTile.col*T+T/2, ost.currentTile.row*T+T/2);
+        ctx.moveTo(tileX+TILE/2, tileY+TILE/2);
+        ctx.lineTo(ost.currentTile.col*TILE+TILE/2, ost.currentTile.row*TILE+TILE/2);
         ctx.stroke(); ctx.restore();
       }
     }
@@ -1318,10 +803,11 @@ function drawAgentsFixed(timestamp) {
 const tooltip = document.getElementById('tooltip');
 canvas.addEventListener('click', e => {
   const rect = canvas.getBoundingClientRect();
-  const scale = rect.width / CANVAS_W;
-  const mx = (e.clientX - rect.left) / scale;
-  const my = (e.clientY - rect.top) / scale;
-  const tileCol = Math.floor(mx / T), tileRow = Math.floor(my / T);
+  const scaleX = CANVAS_W / rect.width;
+  const scaleY = CANVAS_H / rect.height;
+  const mx = (e.clientX - rect.left) * scaleX;
+  const my = (e.clientY - rect.top) * scaleY;
+  const tileCol = Math.floor(mx / TILE), tileRow = Math.floor(my / TILE);
   const clicked = AGENT_LIST.find(a => {
     const st = agentState[a.id];
     return st.currentTile.col === tileCol && st.currentTile.row === tileRow;
@@ -1364,17 +850,14 @@ function openSidePanel(agentId) {
   const st = agentState[agentId];
   document.getElementById('side-panel-title').textContent = agent.name;
 
-  // Larger avatar for panel: 192px (4x base sprite scale for panel)
-  const panelAvatarPx = 192;
-  const panelAvatarH = Math.round(panelAvatarPx * 24/16);  // maintain 16:24 ratio = 288
-  const sp = getSprite(agentId, 0);
+  // Avatar: draw sprite at 4x scale = 64x96px
   const avatarCanvas = document.createElement('canvas');
-  avatarCanvas.width = panelAvatarPx; avatarCanvas.height = panelAvatarH;
-  avatarCanvas.style.cssText = `image-rendering:pixelated;image-rendering:crisp-edges;width:${panelAvatarPx}px;height:${panelAvatarH}px`;
+  avatarCanvas.width = 64; avatarCanvas.height = 96;
+  avatarCanvas.style.cssText = 'image-rendering:pixelated;image-rendering:crisp-edges;width:64px;height:96px';
   const ac = avatarCanvas.getContext('2d');
   ac.imageSmoothingEnabled = false;
-  // src sprite is 48x72 → draw scaled up
-  ac.drawImage(sp, 0, 0, 16*S, 24*S, 0, 0, panelAvatarPx, panelAvatarH);
+  const sp = getSprite(agentId, 0);
+  ac.drawImage(sp, 0, 0, 16, 24, 0, 0, 64, 96);
 
   const dColor = DEPT_COLORS[agent.dept] || '#888888';
   const sColor = STATUS_COLORS[st.status] || '#909090';
@@ -1406,7 +889,6 @@ function openSidePanel(agentId) {
       <div class="side-row"><span class="side-label">Desk</span><span class="side-value">(${agent.desk.col}, ${agent.desk.row})</span></div>
     </div>
   `;
-
   const avatarWrap = document.querySelector('#side-content .side-avatar-wrap');
   if (avatarWrap) {
     avatarCanvas.style.border = `3px solid ${dColor}`;
@@ -1414,7 +896,6 @@ function openSidePanel(agentId) {
   }
   document.getElementById('side-panel').classList.add('open');
 }
-
 document.getElementById('side-close').addEventListener('click', () => {
   document.getElementById('side-panel').classList.remove('open');
 });
@@ -1430,10 +911,10 @@ function buildCards() {
     card.className = 'card'; card.dataset.agentId = agent.id;
     const sp = getSprite(agent.id, 0);
     const ac = document.createElement('canvas');
-    ac.width=64; ac.height=96; ac.className='card-avatar';
-    ac.style.cssText=`width:64px;height:96px;border:2px solid ${DEPT_COLORS[agent.dept]||'#888'}`;
+    ac.width=48; ac.height=72; ac.className='card-avatar';
+    ac.style.cssText=`width:48px;height:72px;border:2px solid ${DEPT_COLORS[agent.dept]||'#888'}`;
     const acc=ac.getContext('2d'); acc.imageSmoothingEnabled=false;
-    acc.drawImage(sp,0,0,48,72,0,0,64,96);
+    acc.drawImage(sp,0,0,16,24,0,0,48,72);
     const sColor=STATUS_COLORS[st.status]||'#909090';
     const progColor=(st.progress||0)<34?'#E04848':(st.progress||0)<67?'#E0B828':'#40C060';
     const info=document.createElement('div'); info.className='card-info';
@@ -1473,8 +954,8 @@ function updateCards() {
     if(ts) ts.textContent=st.last_updated?new Date(st.last_updated).toLocaleString():'No data';
     const ac=card.querySelector('canvas');
     if(ac){
-      const acc=ac.getContext('2d'); acc.clearRect(0,0,64,96); acc.imageSmoothingEnabled=false;
-      acc.drawImage(getSprite(agent.id,0),0,0,48,72,0,0,64,96);
+      const acc=ac.getContext('2d'); acc.clearRect(0,0,48,72); acc.imageSmoothingEnabled=false;
+      acc.drawImage(getSprite(agent.id,0),0,0,16,24,0,0,48,72);
     }
   });
 }
@@ -1487,7 +968,7 @@ document.querySelectorAll('.tab').forEach(btn => {
     document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     if (tab === 'office') {
-      document.getElementById('office-wrap').style.display = 'block';
+      document.getElementById('office-wrap').style.display = 'flex';
       document.getElementById('cards-view').style.display = 'none';
       currentTab = 'office';
       if (!animFrame) animFrame = requestAnimationFrame(render);
@@ -1499,21 +980,14 @@ document.querySelectorAll('.tab').forEach(btn => {
   });
 });
 
-// ==================== AUTO-SCALE (mobile-fixed) ====================
+// ==================== CANVAS SCALING ====================
 function applyScale() {
   const wrap = document.getElementById('office-wrap');
   const containerW = wrap.clientWidth || window.innerWidth;
   const containerH = wrap.clientHeight || (window.innerHeight - 36);
-  // Fill screen proportionally — use min so nothing gets cut off
   const scale = Math.min(containerW / CANVAS_W, containerH / CANVAS_H);
-  const scaleEl = document.getElementById('office-scale');
-  scaleEl.style.transform = `scale(${scale})`;
-  scaleEl.style.transformOrigin = 'top left';
-  // Center canvas horizontally when scale leaves horizontal space
-  const scaledW = CANVAS_W * scale;
-  const scaledH = CANVAS_H * scale;
-  scaleEl.style.left = Math.max(0, (containerW - scaledW) / 2) + 'px';
-  scaleEl.style.top = Math.max(0, (containerH - scaledH) / 2) + 'px';
+  canvas.style.width = Math.round(CANVAS_W * scale) + 'px';
+  canvas.style.height = Math.round(CANVAS_H * scale) + 'px';
 }
 window.addEventListener('resize', applyScale);
 
@@ -1527,12 +1001,46 @@ setInterval(updateClock, 1000);
 updateClock();
 
 // ==================== WALK TICK ====================
+const AGENT_SCRIPTS = {
+  jacques:   ['working','working','working','working','thinking','working','working','working'],
+  trump:     ['working','working','in_meeting','working','working','thinking','working','coffee_break'],
+  ops:       ['working','working','coffee_break','working','working','idle','working','working'],
+  growth:    ['working','thinking','working','working','coffee_break','working','working','idle'],
+  frontend:  ['working','working','working','coffee_break','working','blocked','working','working'],
+  backend:   ['working','working','blocked','working','working','thinking','working','coffee_break'],
+  devops:    ['working','working','working','thinking','working','working','coffee_break','working'],
+  data:      ['working','working','thinking','working','idle','working','working','working'],
+  security:  ['working','thinking','working','working','working','coffee_break','working','blocked'],
+  arch:      ['working','working','working','in_meeting','working','working','thinking','working'],
+  research:  ['working','thinking','working','working','coffee_break','working','working','idle'],
+  analytics: ['working','working','working','thinking','working','coffee_break','blocked','working'],
+  pm:        ['working','working','working','in_meeting','thinking','working','working','coffee_break'],
+  product:   ['working','working','thinking','working','working','in_meeting','working','coffee_break'],
+  marketing: ['working','coffee_break','working','working','thinking','working','working','idle'],
+  sales:     ['working','working','working','coffee_break','blocked','working','thinking','working'],
+  designer:  ['working','working','thinking','working','working','coffee_break','working','idle'],
+  uiux:      ['working','working','working','thinking','in_meeting','working','coffee_break','working'],
+  content:   ['working','thinking','working','working','coffee_break','working','idle','working'],
+  cs:        ['working','working','coffee_break','blocked','working','working','thinking','working'],
+  qa:        ['working','blocked','working','working','thinking','coffee_break','working','working'],
+  tester:    ['working','working','thinking','blocked','working','coffee_break','working','working'],
+};
+const AGENT_TASKS = {
+  working:['Building feature...','Reviewing code...','Writing tests...','Fixing pipeline...','Updating docs...','Optimizing API...'],
+  thinking:['Planning sprint...','Analyzing metrics...','Researching solution...'],
+  blocked:['Waiting for unblock...','Dependency pending...'],
+  in_meeting:['Meeting in progress...','Sprint planning...'],
+  coffee_break:[''],
+  idle:[''],
+};
+const AGENT_TASK_IDX = {};
+AGENT_LIST.forEach((a,i) => { AGENT_TASK_IDX[a.id] = i % 8; });
+
 setInterval(() => {
   doWalkTick();
   if (dataSource === 'SIMULATED') runSimulation();
 }, 200);
 
-// ==================== SIMULATION ====================
 let simTick = 0;
 const SIM_TICKS_PER_STEP = 15;
 function runSimulation() {
@@ -1559,7 +1067,7 @@ window.addEventListener('focus', fetchQueue);
 
 // ==================== INIT STATES ====================
 const initStates = [
-  ['frontend','working','Building v13 dashboard...',72,null,null,'critical'],
+  ['frontend','working','Building v15 pixel canvas...',72,null,null,'critical'],
   ['trump','working','Coordinating all agents...',45,null,'frontend','high'],
   ['pm','working','Writing sprint spec...',88,null,null,'normal'],
   ['uiux','working','Designing new screens...',60,null,'frontend','normal'],
@@ -1586,11 +1094,11 @@ setTimeout(() => {
   agentState['trump'].collaborating_with = 'frontend';
   agentState['frontend'].status = 'in_meeting';
   agentState['frontend'].collaborating_with = 'trump';
-  walkTo('trump', {col:14,row:7});
-  walkTo('frontend', {col:15,row:7});
+  walkTo('trump', MEET_A_SEATS[0]);
+  walkTo('frontend', MEET_A_SEATS[1]);
 }, 5000);
 
-// Start render
+// ==================== START ====================
 animFrame = requestAnimationFrame(render);
 applyScale();
 </script>
