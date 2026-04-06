@@ -160,6 +160,11 @@ const BLOCKED = new Set([
   '0,7','0,8','0,9','8,7','9,7','29,7','29,8','29,9','29,10','20,7','20,8','20,9',
   '13,8','14,8','15,8','16,8','13,9','14,9','15,9','16,9','13,10','14,10','15,10','16,10',
   '13,13','14,13','15,13','16,13','13,14','14,14','15,14','16,14','13,15','14,15','15,15','16,15',
+  // Desk tiles — agents cannot walk onto desks
+  '2,2','5,2','10,1','12,1','14,1','16,1','18,1','23,1','26,1',
+  '2,4','5,4','11,4','14,4','17,4','23,4','26,4',
+  '2,8','5,8','22,9','26,9',
+  '2,11','5,11',
 ]);
 BLOCKED.forEach(k => WALKABLE.delete(k));
 
@@ -283,22 +288,27 @@ function doWalkTick() {
       }
     } else {
       st.walkFrame = 0;
-      // Idle fidget: only for 'idle' status, every ~50 walk ticks (~10s at 200ms interval)
+      // Idle fidget: wander to break room or stroll corridors
       if (st.status === 'idle') {
         st.fidgetTimer = (st.fidgetTimer || 0) + 1;
-        if (st.fidgetTimer > 50 + (agent.id.charCodeAt(0) % 20)) {
+        if (st.fidgetTimer > 40 + (agent.id.charCodeAt(0) % 30)) {
           st.fidgetTimer = 0;
-          // Small ±1 tile fidget if at home
-          if (st.atHome) {
-            const dx = (Math.floor(walkTick * 0.7 + agent.desk.col) % 3) - 1;
-            const dy = (Math.floor(walkTick * 0.5 + agent.desk.row) % 3) - 1;
-            const fidgetTile = {col: agent.desk.col + dx, col_: agent.desk.col + dx, row: agent.desk.row + dy};
-            const fk = `${fidgetTile.col},${fidgetTile.row}`;
-            if (WALKABLE.has(fk) && !BLOCKED.has(fk)) {
-              walkTo(agent.id, fidgetTile);
-              // Return home shortly after
-              setTimeout(() => walkHome(agent.id), 2000 + (agent.id.charCodeAt(0) % 1000));
-            }
+          // Pick random break room or corridor tile to stroll to
+          const breakTiles = [];
+          for(let c=1;c<=28;c++) for(let r=14;r<=16;r++) {
+            if(WALKABLE.has(`${c},${r}`) && !BLOCKED.has(`${c},${r}`)) breakTiles.push({col:c,row:r});
+          }
+          const corridorTiles = [];
+          for(let c=0;c<=29;c++) {
+            if(WALKABLE.has(`${c},6`)) corridorTiles.push({col:c,row:6});
+            if(WALKABLE.has(`${c},17`)) corridorTiles.push({col:c,row:17});
+          }
+          const pool = [...breakTiles, ...corridorTiles];
+          if(pool.length > 0) {
+            const dest = pool[Math.floor((walkTick * 7 + agent.id.charCodeAt(0) * 3) % pool.length)];
+            walkTo(agent.id, dest);
+            // Return home after ~5s
+            setTimeout(() => walkHome(agent.id), 4000 + (agent.id.charCodeAt(0) % 2000));
           }
         }
       }
@@ -489,10 +499,11 @@ function applyQueueData(data) {
     if (!agent) return;
     // Map work-queue status to display status
     let status = entry.status || 'idle';
-    if (status === 'done') status = 'done';
-    else if (status === 'in_progress') status = 'working';
-    else if (status === 'pending') status = 'pending';
-    else if (status === 'blocked') status = 'blocked';
+    if (status === 'running' || status === 'in_progress') status = 'working';
+    else if (status === 'done' || status === 'completed') status = 'idle';
+    else if (status === 'failed' || status === 'error') status = 'blocked';
+    else if (status === 'pending') status = 'waiting';
+    else if (!['working','idle','blocked','waiting','coffee_break','in_meeting','thinking','reviewing'].includes(status)) status = 'idle';
     const task = entry.payload?.title || entry.payload?.task || entry.payload?.project || entry.type || '';
     applyStatus(agent.id, status, task, entry.progress||0,
       entry.blocked_by, entry.collaborating_with, entry.priority||'normal');
@@ -503,7 +514,7 @@ function applyQueueData(data) {
 }
 
 // ==================== SPRITE DRAWING ====================
-const S = 5; // 5x scale = 80x120px sprites
+const S = 3; // 3x scale = 48x72px sprites
 
 function px(ctx, x, y, w, h, color) {
   ctx.fillStyle = color;
@@ -819,55 +830,8 @@ const DOOR_POSITIONS = [
 ];
 
 function drawDoors(ctx2) {
-  const doorFloor = '#D4B84A';   // bright golden door tile
-  const doorFrameOuter = '#2A1405';  // very dark wood frame (more visible)
-  const doorFrameInner = '#7A4A18';  // lighter wood inner
-  const doorGlow = 'rgba(255,220,100,0.35)';
-
-  DOOR_POSITIONS.forEach(({c, r, axis}) => {
-    const x = c * T, y = r * T;
-    // Bright floor tile for door
-    ctx2.fillStyle = doorFloor;
-    ctx2.fillRect(x, y, T, T);
-    // Inner glow
-    ctx2.fillStyle = doorGlow;
-    ctx2.fillRect(x+4, y+4, T-8, T-8);
-
-    if (axis === 'h') {
-      // Top frame beam (visible in 3/4 view) — thick 6px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, T, 6);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+1, y+1, T-2, 4);
-      // Side posts — thick 5px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, 5, T);
-      ctx2.fillRect(x+T-5, y, 5, T);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+2, y+6, 2, T-6);
-      ctx2.fillRect(x+T-4, y+6, 2, T-6);
-    } else {
-      // Left/right frame posts — thick 5px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, 5, T);
-      ctx2.fillRect(x+T-5, y, 5, T);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+2, y, 2, T);
-      ctx2.fillRect(x+T-4, y, 2, T);
-      // Top beam — thick 6px
-      ctx2.fillStyle = doorFrameOuter;
-      ctx2.fillRect(x, y, T, 6);
-      ctx2.fillStyle = doorFrameInner;
-      ctx2.fillRect(x+5, y+1, T-10, 4);
-    }
-    // Door direction arrow marker
-    ctx2.fillStyle = 'rgba(255,220,80,0.95)';
-    ctx2.font = 'bold 14px monospace';
-    ctx2.textAlign = 'center';
-    ctx2.textBaseline = 'middle';
-    ctx2.fillText(axis === 'h' ? '▼' : '▶', x + T/2, y + T/2);
-    ctx2.textBaseline = 'alphabetic';
-  });
+  // Doors = wall gaps only. No arcs. The opening IS the door.
+  // Nothing to draw here — gaps are cut by the wall segmentation above.
 }
 
 // ==================== MEETING TABLE ====================
@@ -915,11 +879,9 @@ function drawFloor() {
     const pattern = getPattern(room.floorType || 'stone');
     ctx.fillStyle = pattern || '#C8904A';
     ctx.fillRect(room.col*T, room.row*T, room.w*T, room.h*T);
-    // North wall
+    // North wall thin strip
     ctx.fillStyle = room.wallColor;
-    ctx.fillRect(room.col*T, room.row*T, room.w*T, 8);
-    ctx.fillStyle = room.wallShadow;
-    ctx.fillRect(room.col*T, (room.row*T)+6, room.w*T, 4);
+    ctx.fillRect(room.col*T, room.row*T, room.w*T, 4);
   });
 
   // Corridors
@@ -931,6 +893,69 @@ function drawFloor() {
   ctx.fillRect(10*T, 7*T, T, 10*T);
   ctx.fillRect(19*T, 7*T, T, 10*T);
   ctx.fillRect(0, 17*T, CANVAS_W, T);
+
+  // ── WALLS: 5px black lines, with gaps where doors are ──
+  ctx.strokeStyle = '#111111';
+  ctx.lineWidth = 5;
+  ctx.lineCap = 'square';
+
+  // Build gap map: hGaps[y_px] = [[x1,x2],...], vGaps[x_px] = [[y1,y2],...]
+  const hGaps = {}, vGaps = {};
+  DOOR_POSITIONS.forEach(({c, r, axis}) => {
+    ROOMS.forEach(room => {
+      const rl=room.col, rr=room.col+room.w, rt=room.row, rb=room.row+room.h;
+      if(axis==='h') {
+        // bottom wall at y=rb*T
+        if(r===rb-1 && c>=rl && c<rr) {
+          const wy=rb*T; if(!hGaps[wy]) hGaps[wy]=[]; hGaps[wy].push([c*T,(c+1)*T]);
+        }
+        // top wall at y=rt*T
+        if(r===rt && c>=rl && c<rr) {
+          const wy=rt*T; if(!hGaps[wy]) hGaps[wy]=[]; hGaps[wy].push([c*T,(c+1)*T]);
+        }
+      } else {
+        // right wall at x=rr*T
+        if(c===rr-1 && r>=rt && r<rb) {
+          const wx=rr*T; if(!vGaps[wx]) vGaps[wx]=[]; vGaps[wx].push([r*T,(r+1)*T]);
+        }
+        // left wall at x=rl*T
+        if(c===rl && r>=rt && r<rb) {
+          const wx=rl*T; if(!vGaps[wx]) vGaps[wx]=[]; vGaps[wx].push([r*T,(r+1)*T]);
+        }
+      }
+    });
+  });
+
+  function drawSegmented(isHoriz, fixedPx, start, end, gaps) {
+    const relevant = (gaps||[]).filter(([a,b]) => a>=start && b<=end);
+    relevant.sort((a,b)=>a[0]-b[0]);
+    let cur = start;
+    relevant.forEach(([a,b]) => {
+      if(cur < a) {
+        ctx.beginPath();
+        if(isHoriz){ctx.moveTo(cur,fixedPx);ctx.lineTo(a,fixedPx);}
+        else{ctx.moveTo(fixedPx,cur);ctx.lineTo(fixedPx,a);}
+        ctx.stroke();
+      }
+      cur = b;
+    });
+    if(cur < end) {
+      ctx.beginPath();
+      if(isHoriz){ctx.moveTo(cur,fixedPx);ctx.lineTo(end,fixedPx);}
+      else{ctx.moveTo(fixedPx,cur);ctx.lineTo(fixedPx,end);}
+      ctx.stroke();
+    }
+  }
+
+  ROOMS.forEach(room => {
+    const xl=room.col*T+2.5, xr=(room.col+room.w)*T-2.5;
+    const yt=room.row*T+2.5, yb=(room.row+room.h)*T-2.5;
+    drawSegmented(true,  yt, xl, xr, hGaps[room.row*T]);
+    drawSegmented(true,  yb, xl, xr, hGaps[(room.row+room.h)*T]);
+    drawSegmented(false, xl, yt, yb, vGaps[room.col*T]);
+    drawSegmented(false, xr, yt, yb, vGaps[(room.col+room.w)*T]);
+  });
+  ctx.lineWidth = 1;
 
   // Room labels — centered pill style
   ROOMS.forEach(room => {
@@ -1260,19 +1285,55 @@ function drawAgentsFixed(timestamp) {
     ctx.drawImage(sp, spriteX, spriteY + bob, spriteW, spriteH);
     ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
 
-    // Status bubble — large pill, well above head
-    const bubbleCX = spriteX + spriteW / 2;
-    const bubbleCY = spriteY + bob - 24;
-    drawStatusBubble(ctx, bubbleCX, bubbleCY, st.status);
+    const spriteCX = spriteX + spriteW / 2;
+    const spriteTop = spriteY + bob;
+    const spriteBottom = spriteY + bob + spriteH;
 
-    // Name label
-    ctx.font = '7px "Press Start 2P","Courier New",monospace';
+    // Status speech bubble — above head, colored bg + text + tail pointing down to agent
+    if (st.status && st.status !== 'idle') {
+      const bubble = getStatusBubble(st.status);
+      if (bubble) {
+        ctx.save();
+        ctx.font = 'bold 7px "Courier New",monospace';
+        const tw = ctx.measureText(bubble.text).width;
+        const pw = tw + 10, ph = 13;
+        const bx = spriteCX - pw/2, by = spriteTop - ph - 8;
+        // Shadow
+        ctx.fillStyle = 'rgba(0,0,0,0.5)';
+        ctx.fillRect(bx+2, by+2, pw, ph);
+        // Bubble bg
+        ctx.fillStyle = bubble.color;
+        ctx.fillRect(bx, by, pw, ph);
+        // White border
+        ctx.strokeStyle = 'rgba(255,255,255,0.7)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(bx, by, pw, ph);
+        // Tail (small triangle pointing down toward agent head)
+        ctx.fillStyle = bubble.color;
+        ctx.beginPath();
+        ctx.moveTo(spriteCX - 4, by + ph);
+        ctx.lineTo(spriteCX + 4, by + ph);
+        ctx.lineTo(spriteCX, by + ph + 5);
+        ctx.closePath();
+        ctx.fill();
+        // Text
+        ctx.fillStyle = '#FFFFFF';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(bubble.text, spriteCX, by + ph/2);
+        ctx.restore();
+        ctx.textBaseline = 'alphabetic';
+      }
+    }
+
+    // Name label — BELOW feet (no overlap with bubble)
+    ctx.font = 'bold 8px "Courier New",monospace';
     ctx.textAlign = 'center';
     const nw = ctx.measureText(agent.name).width;
-    ctx.fillStyle = 'rgba(0,0,0,0.65)';
-    ctx.fillRect(bubbleCX - nw/2 - 2, spriteY - 26 + bob, nw + 4, 11);
+    ctx.fillStyle = 'rgba(0,0,0,0.75)';
+    ctx.fillRect(spriteCX - nw/2 - 3, spriteBottom + 2, nw + 6, 11);
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillText(agent.name, bubbleCX, spriteY - 17 + bob);
+    ctx.fillText(agent.name, spriteCX, spriteBottom + 11);
     ctx.textAlign = 'left';
 
     // Progress bar
