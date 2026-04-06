@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v12</title>
+<title>Airi Lab World v13</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -39,6 +39,11 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 .status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 #side-panel{position:fixed;right:-380px;top:36px;width:380px;height:calc(100vh - 36px);background:#0E0E1A;border-left:2px solid #252535;z-index:200;overflow-y:auto;transition:right 0.2s ease-out}
 #side-panel.open{right:0}
+@media(max-width:768px){
+  #side-panel{right:auto;left:0;bottom:-100vh;top:auto;width:100%;height:auto;max-height:70vh;border-left:none;border-top:2px solid #252535;border-radius:16px 16px 0 0;transition:bottom 0.25s ease-out}
+  #side-panel.open{bottom:0}
+  #side-close{min-width:44px;min-height:44px;font-size:18px;display:flex;align-items:center;justify-content:center}
+}
 #side-panel-header{background:#1A1A2A;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #303048;position:sticky;top:0}
 #side-panel-header h2{font-size:10px;color:#F8F8F8}
 #side-close{background:none;border:none;color:#889090;cursor:pointer;font-size:14px;padding:2px 6px}
@@ -564,34 +569,55 @@ function drawJacques(ctx, ox, oy, frame) {
 }
 
 function drawTrump(ctx, ox, oy, frame) {
-  const hair = '#D4A828';
-  const streak = '#F8E060';
-  const skin = '#F0C898';
-  // Hair
-  px(ctx,ox+2*S,oy+0*S,12,5,hair);
-  px(ctx,ox+2*S,oy+0*S,2,5,streak); // left streak
-  px(ctx,ox+12*S,oy+0*S,2,5,streak); // right streak
-  // Face
-  px(ctx,ox+2*S,oy+4*S,12,5,skin);
-  // Eyes (slightly narrowed)
+  // Trump — female AI assistant, long gold-highlighted hair, dark blazer
+  const hairDark = '#6B3A2A';  // dark roots
+  const hairGold = '#D4A017';  // gold highlights
+  const skin = '#F5C8A0';
+  const blazer = '#2A2A3A';    // dark navy blazer
+  const blouse = '#C8A8D8';    // soft purple inner blouse
+  const pants = '#1A1A2A';
+
+  // Long hair - extends below shoulders (feminine silhouette)
+  // Top/crown
+  px(ctx,ox+2*S,oy+0*S,12,4,hairDark);
+  // Gold highlight streaks on crown
+  px(ctx,ox+4*S,oy+0*S,3,2,hairGold);
+  px(ctx,ox+9*S,oy+0*S,3,2,hairGold);
+  // Side hair flowing down (long hair effect)
+  px(ctx,ox+0*S,oy+3*S,2,14,hairDark);  // left long hair
+  px(ctx,ox+14*S,oy+3*S,2,14,hairDark); // right long hair
+  px(ctx,ox+0*S,oy+5*S,2,8,hairGold);   // gold left streak
+  px(ctx,ox+14*S,oy+7*S,2,6,hairGold);  // gold right streak
+
+  // Face - slightly rounder/softer than male
+  px(ctx,ox+2*S,oy+4*S,12,6,skin);
+  // Eyes - larger, with lashes
   px(ctx,ox+4*S,oy+5*S,2,1,'#282828');
   px(ctx,ox+10*S,oy+5*S,2,1,'#282828');
-  // Mouth - confident
-  px(ctx,ox+5*S,oy+7*S,6,1,'#8A4A2A');
+  px(ctx,ox+3*S,oy+4*S,3,1,'#282828'); // left lash
+  px(ctx,ox+10*S,oy+4*S,3,1,'#282828'); // right lash
+  // Small smile
+  px(ctx,ox+6*S,oy+8*S,4,1,'#C06060');
+
   // Neck
-  px(ctx,ox+6*S,oy+9*S,4,1,skin);
-  // Shirt - purple/teal gradient effect
-  px(ctx,ox+2*S,oy+9*S,6,10,'#7848A8'); // left half purple
-  px(ctx,ox+8*S,oy+9*S,6,10,'#20A8A0'); // right half teal
-  // Arms
-  px(ctx,ox+0*S,oy+9*S,2,8,'#7848A8');
-  px(ctx,ox+14*S,oy+9*S,2,8,'#20A8A0');
-  px(ctx,ox+0*S,oy+17*S,2,2,skin);
-  px(ctx,ox+14*S,oy+17*S,2,2,skin);
-  // Pants
-  px(ctx,ox+2*S,oy+19*S,12,4,'#303850');
-  px(ctx,ox+2*S,oy+23*S,5,1,'#1A1A2A');
-  px(ctx,ox+9*S,oy+23*S,5,1,'#1A1A2A');
+  px(ctx,ox+6*S,oy+10*S,4,2,skin);
+
+  // Blazer - dark professional jacket
+  px(ctx,ox+2*S,oy+12*S,12,10,blazer);
+  // Lapels
+  px(ctx,ox+6*S,oy+12*S,2,5,blouse);  // left lapel
+  px(ctx,ox+8*S,oy+12*S,2,5,blouse);  // right lapel (V-neck blouse showing)
+  // Arms (blazer sleeves)
+  px(ctx,ox+0*S,oy+12*S,2,9,blazer);
+  px(ctx,ox+14*S,oy+12*S,2,9,blazer);
+  // Wrists/hands
+  px(ctx,ox+0*S,oy+20*S,2,2,skin);
+  px(ctx,ox+14*S,oy+20*S,2,2,skin);
+
+  // Pants/skirt
+  px(ctx,ox+2*S,oy+22*S,12,2,pants);
+  px(ctx,ox+2*S,oy+23*S,5,1,pants);
+  px(ctx,ox+9*S,oy+23*S,5,1,pants);
 }
 
 function drawAgent(ctx, ox, oy, spriteKey, frame) {
