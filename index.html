@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v11</title>
+<title>Airi Lab World v12</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -303,6 +303,8 @@ function walkTo(agentId, targetTile) {
   const tKey = `${targetTile.col},${targetTile.row}`;
   const cKey = `${st.currentTile.col},${st.currentTile.row}`;
   if (tKey === cKey) return;
+  // If target is a wall tile, skip (stay put)
+  if (WALL_BLOCKED.has(tKey)) return;
   st.targetTile = {...targetTile};
   const path = findPath(st.currentTile, targetTile);
   st.path = path;
@@ -883,15 +885,14 @@ function drawFloor() {
   // H-Bottom
   ctx.fillRect(0, 17*T, CANVAS_W, T);
   
-  // Room labels
-  ctx.fillStyle = '#F0E8D0';
+  // Room labels (name at top-left of floor area, subtle)
   ctx.font = '8px "Press Start 2P", "Courier New", monospace';
   ctx.textAlign = 'left';
   ROOMS.forEach(room => {
     if (room.id === 'break') return;
     ctx.fillStyle = 'rgba(0,0,0,0.5)';
     ctx.fillRect(room.col*T+2, room.row*T+8, ctx.measureText(room.name).width+6, 13);
-    ctx.fillStyle = '#F0E8D0';
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.fillText(room.name, room.col*T+4, room.row*T+18);
   });
   ctx.textAlign = 'left';
@@ -1084,17 +1085,42 @@ function drawFurniture() {
   }
   
   // Break room
-  // Coffee machine
-  ctx.fillStyle = '#282020';
+  // Coffee machine (enhanced)
+  ctx.fillStyle = '#3D2010'; // dark brown body
   ctx.fillRect(12*T+4, 15*T+4, T-8, T-8);
-  ctx.fillStyle = '#C84820';
+  ctx.fillStyle = '#6B3010'; // front panel
   ctx.fillRect(12*T+8, 15*T+8, T-16, 14);
-  ctx.fillStyle = '#181010';
+  ctx.fillStyle = '#181010'; // base
   ctx.fillRect(12*T+4, 15*T+T-12, T-8, 8);
-  // Steam
-  ctx.fillStyle = 'rgba(240,240,240,0.7)';
-  ctx.fillRect(12*T+22, 15*T+2, 3, 4);
-  ctx.fillRect(12*T+28, 15*T+1, 2, 5);
+  ctx.fillStyle = '#C84820'; // coffee button
+  ctx.fillRect(12*T+18, 15*T+10, 6, 6);
+  ctx.fillStyle = '#282828'; // nozzle
+  ctx.fillRect(12*T+20, 15*T+22, 4, 4);
+  // Steam animation (dots drifting upward with animTick)
+  const steamOffsets = [0, Math.PI*0.66, Math.PI*1.33];
+  steamOffsets.forEach((phase, i) => {
+    const drift = (animTick * 0.5 + phase * 5) % 16;
+    const alpha = 0.3 + 0.4 * Math.sin(animTick * 0.1 + phase);
+    ctx.fillStyle = `rgba(220,220,220,${alpha})`;
+    ctx.beginPath();
+    ctx.arc(12*T+20 + i*4, 15*T+2 - drift, 2, 0, Math.PI*2);
+    ctx.fill();
+  });
+  // Break room chairs near coffee machine
+  ctx.fillStyle = '#5A3818'; // chair 1
+  ctx.fillRect(12*T+T+4, 15*T+20, 10, 10);
+  ctx.fillStyle = '#4A2808';
+  ctx.fillRect(12*T+T+4, 15*T+20, 2, 10);
+  ctx.fillStyle = '#5A3818'; // chair 2
+  ctx.fillRect(12*T+T+18, 15*T+20, 10, 10);
+  ctx.fillStyle = '#4A2808';
+  ctx.fillRect(12*T+T+18, 15*T+20, 2, 10);
+  // Floor label
+  ctx.font = '8px "Press Start 2P", "Courier New", monospace';
+  ctx.fillStyle = 'rgba(255,220,180,0.65)';
+  ctx.textAlign = 'center';
+  ctx.fillText('☕ BREAK', 12*T + T, 15*T + T - 4);
+  ctx.textAlign = 'left';
   // Fridge
   ctx.fillStyle = '#C8D8E8';
   ctx.fillRect(14*T+4, 15*T+4, T-8, T-4);
@@ -1155,6 +1181,97 @@ const STATUS_COLORS = {
   done:'#F0C020', error:'#E02020', default:'#909090'
 };
 
+
+// ==================== ANIM TICK (for pulse/steam) ====================
+let animTick = 0;
+setInterval(() => { animTick++; }, 50); // ~20fps tick for animations
+
+// ==================== STATUS BUBBLE CONFIG ====================
+function getStatusBubble(status) {
+  switch(status) {
+    case 'working': case 'in_progress': return { color:'#E84040', text:'BUSY', pulse:true };
+    case 'in_meeting': case 'reviewing': return { color:'#E84040', text:'MTG', pulse:false };
+    case 'blocked': case 'error': return { color:'#F5A623', text:'BLOCK', pulse:true };
+    case 'pending': case 'pending_review': case 'pending_test': case 'waiting': return { color:'#F5A623', text:'WAIT', pulse:false };
+    case 'coffee_break': return { color:'#F5C84A', text:'☕', pulse:false };
+    case 'thinking': return { color:'#F5A623', text:'WAIT', pulse:false };
+    case 'idle': return { color:'#52C41A', text:'ZZ', pulse:false };
+    case 'done': return { color:'#52C41A', text:'✓', pulse:false };
+    default: return null;
+  }
+}
+
+function drawStatusBubble(ctx, cx, cy, status) {
+  const bubble = getStatusBubble(status);
+  if (!bubble) return;
+  const R = 7;
+  let scale = 1.0;
+  if (bubble.pulse) {
+    scale = 1.0 + 0.2 * Math.sin(animTick * 0.18);
+  }
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.scale(scale, scale);
+  // Background circle
+  ctx.fillStyle = 'rgba(0,0,0,0.65)';
+  ctx.beginPath(); ctx.arc(0, 0, R+1.5, 0, Math.PI*2); ctx.fill();
+  // Colored circle
+  ctx.fillStyle = bubble.color;
+  ctx.beginPath(); ctx.arc(0, 0, R, 0, Math.PI*2); ctx.fill();
+  // Text
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = `bold 6px "Press Start 2P", "Courier New", monospace`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  const t = bubble.text;
+  if (t === '☕' || t === '✓') {
+    ctx.font = 'bold 8px serif';
+  }
+  ctx.fillText(t, 0, 0.5);
+  ctx.restore();
+  ctx.textBaseline = 'alphabetic';
+}
+
+// ==================== WALL COLLISION (blocked tiles set) ====================
+const WALL_BLOCKED = new Set();
+function buildWallBlockedSet() {
+  ROOMS.forEach(room => {
+    // Perimeter tiles of this room
+    for (let c = room.col; c < room.col + room.w; c++) {
+      for (let r = room.row; r < room.row + room.h; r++) {
+        const isPerimeter = (c === room.col || c === room.col + room.w - 1 ||
+                             r === room.row || r === room.row + room.h - 1);
+        if (isPerimeter) {
+          WALL_BLOCKED.add(`${c},${r}`);
+        }
+      }
+    }
+  });
+  // Door gaps: 2-tile opening on the side facing the main corridor/center
+  // We use a simple approach: open the side that's closest to a corridor
+  // Main corridor is row 6; vertical corridors at col 8, 10, 19, 21
+  // For each room, decide door side and position
+  const doors = [
+    // exec (row 0-5): door at bottom row=5, center col
+    {c:3, r:5}, {c:4, r:5},
+    // tech (row 0-5): door at bottom row=5
+    {c:14, r:5}, {c:15, r:5},
+    // pm (row 0-5): door at bottom row=5
+    {c:25, r:5}, {c:26, r:5},
+    // design (col 0-9, row 7-13): door at right col=9, center row
+    {c:9, r:10}, {c:9, r:11},
+    // meetA (col 11-18, row 7-11): door at left col=11 and right col=18
+    {c:11, r:9}, {c:18, r:9},
+    // meetB (col 11-18, row 12-16): door at left col=11 and right col=18
+    {c:11, r:14}, {c:18, r:14},
+    // qa (col 20-29, row 7-13): door at left col=20, center row
+    {c:20, r:10}, {c:20, r:11},
+    // break (row 14-16): full corridor anyway - open top row=14
+    {c:5, r:14}, {c:6, r:14}, {c:14, r:14}, {c:15, r:14},
+  ];
+  doors.forEach(({c, r}) => WALL_BLOCKED.delete(`${c},${r}`));
+}
+buildWallBlockedSet();
 
 // ==================== RENDER LOOP ====================
 let animFrame = null;
@@ -1236,6 +1353,11 @@ function drawAgentsFixed(timestamp) {
     ctx.beginPath(); ctx.arc(dotX, dotY, 7, 0, Math.PI*2); ctx.fill();
     ctx.fillStyle = sColor;
     ctx.beginPath(); ctx.arc(dotX, dotY, 5, 0, Math.PI*2); ctx.fill();
+    
+    // Status bubble above sprite (spec: y = spriteCenter - spriteH/2 - 10 = spriteY - 10)
+    const bubbleCX = spriteX + spriteW / 2;
+    const bubbleCY = spriteY - 10 + bob;
+    drawStatusBubble(ctx, bubbleCX, bubbleCY, st.status);
     
     // Name label
     ctx.font = '7px "Press Start 2P", "Courier New", monospace';
@@ -1352,8 +1474,10 @@ function showTooltip(cx, cy, agent) {
 
 // ==================== SECURITY: HTML ESCAPE ====================
 function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
+// Alias per spec
+const escapeHTML = escHtml;
 
 // ==================== SIDE PANEL ====================
 function openSidePanel(agentId) {
@@ -1594,7 +1718,7 @@ window.addEventListener('focus', fetchQueue);
 
 // Initial state: set a few agents to working
 const initStates = [
-  ['frontend', 'working', 'Building v11 dashboard...', 72, null, null, 'critical'],
+  ['frontend', 'working', 'Building v12 dashboard...', 72, null, null, 'critical'],
   ['trump', 'working', 'Coordinating all agents...', 45, null, 'frontend', 'high'],
   ['pm', 'working', 'Writing sprint spec...', 88, null, null, 'normal'],
   ['uiux', 'working', 'Designing new screens...', 60, null, 'frontend', 'normal'],
