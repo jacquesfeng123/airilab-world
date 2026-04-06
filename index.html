@@ -455,6 +455,7 @@ function processMeetings(queueData) {
 // ==================== DATA FETCHING ====================
 let lastGoodData = null;
 let dataSource = 'SIMULATED';
+let _firstLoad = true;
 async function fetchQueue() {
   try {
     const resp = await fetch('/data/work-queue.json', {cache:'no-store'});
@@ -466,6 +467,7 @@ async function fetchQueue() {
     if (lastGoodData) { dataSource = 'CACHED'; updateBadge('CACHED', true); }
     else { dataSource = 'SIMULATED'; updateBadge('SIM', false, true); }
   }
+  if (_firstLoad) { _firstLoad = false; initAgentPositions(); }
 }
 function updateBadge(text, offline, sim) {
   const el = document.getElementById('data-badge');
@@ -1632,38 +1634,40 @@ fetchQueue();
 setInterval(fetchQueue, 30000);
 window.addEventListener('focus', fetchQueue);
 
-// ==================== INIT STATES ====================
-const initStates = [
-  ['frontend','working','Building v13 dashboard...',72,null,null,'critical'],
-  ['trump','working','Coordinating all agents...',45,null,'frontend','high'],
-  ['pm','working','Writing sprint spec...',88,null,null,'normal'],
-  ['uiux','working','Designing new screens...',60,null,'frontend','normal'],
-  ['qa','blocked','Waiting for build...',30,'frontend',null,'normal'],
-  ['devops','working','Setting up CI pipeline...',55,null,null,'normal'],
-  ['jacques','working','Reviewing product direction...',80,null,null,'normal'],
-  ['backend','working','API endpoint optimization...',40,null,null,'normal'],
-  ['designer','working','Design system update...',65,null,null,'normal'],
-];
-initStates.forEach(([id,status,task,prog,blocked,collab,priority]) => {
-  const st = agentState[id];
-  if (st) { st.status=status; st.task=task; st.progress=prog; st.blocked_by=blocked; st.collaborating_with=collab; st.priority=priority; }
-});
-
-setTimeout(() => {
-  agentState['ops'].status = 'coffee_break';
-  walkTo('ops', COFFEE_TILE);
-  agentState['marketing'].status = 'coffee_break';
-  walkTo('marketing', COFFEE_TILE);
-}, 2000);
-
-setTimeout(() => {
-  agentState['trump'].status = 'in_meeting';
-  agentState['trump'].collaborating_with = 'frontend';
-  agentState['frontend'].status = 'in_meeting';
-  agentState['frontend'].collaborating_with = 'trump';
-  walkTo('trump', {col:14,row:7});
-  walkTo('frontend', {col:15,row:7});
-}, 5000);
+// ==================== INIT: position agents from real state ====================
+// Called after first fetchQueue() resolves — place each agent at correct tile
+// based on their actual status, not hardcoded desk spawn.
+function initAgentPositions() {
+  AGENT_LIST.forEach((agent, idx) => {
+    const st = agentState[agent.id];
+    if (!st) return;
+    // Determine starting tile from status
+    let startTile;
+    if (st.status === 'coffee_break') {
+      // Scatter around coffee area so they don't stack
+      const offsets = [{dc:0,dr:0},{dc:1,dr:0},{dc:-1,dr:0},{dc:0,dr:1},{dc:1,dr:1},{dc:-1,dr:1},{dc:2,dr:0},{dc:-2,dr:0}];
+      const o = offsets[idx % offsets.length];
+      startTile = {col: COFFEE_TILE.col + o.dc, row: COFFEE_TILE.row + o.dr};
+    } else if (st.status === 'in_meeting') {
+      // Place in meeting seats — assign evenly between room A and B
+      const seats = [...MEET_A_SEATS, ...MEET_B_SEATS];
+      startTile = seats[idx % seats.length];
+    } else {
+      // working / idle / blocked / thinking / etc — start at desk
+      startTile = {...agent.desk};
+    }
+    // Validate tile is walkable, fallback to desk
+    const key = `${startTile.col},${startTile.row}`;
+    if (!WALKABLE.has(key) || BLOCKED.has(key) || WALL_BLOCKED.has(key)) {
+      startTile = {...agent.desk};
+    }
+    st.currentTile = startTile;
+    st.targetTile = startTile;
+    st.path = [];
+    st.atHome = (startTile.col === agent.desk.col && startTile.row === agent.desk.row);
+    st.facing = st.status === 'coffee_break' ? 'south' : 'south';
+  });
+}
 
 // Start render
 animFrame = requestAnimationFrame(render);
