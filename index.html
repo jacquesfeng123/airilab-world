@@ -872,45 +872,31 @@ function drawDoors(ctx2) {
 
 // ==================== MEETING TABLE ====================
 function drawMeetingTable(ctx2, tx, ty) {
-  // Simple flat rectangular conference table — no 3D highlights to avoid oval illusion
-  const tw = 3*T, th = Math.round(1.5*T);
-  tx = Math.round(tx); ty = Math.round(ty);
+  // Completely flat rectangular table for Meeting Room A
+  const tw = 3*T, th = 2*T; // Width: three tiles; Height: two tiles
+  tx = Math.floor(tx);
+  ty = Math.floor(ty);
 
-  // Strong outer black border
-  ctx2.fillStyle = '#000000';
-  ctx2.fillRect(tx-2, ty-2, tw+4, th+4);
+  // Table outer border (4px thick, clearly rectangular)
+  ctx2.fillStyle = '#2E1E1C'; // Deep brown
+  ctx2.fillRect(tx - 4, ty - 4, tw + 8, th + 8);
 
-  // Main table surface — solid, flat, clearly rectangular
-  ctx2.fillStyle = '#8B6020';
+  // Table inner surface (solid fill)
+  ctx2.fillStyle = '#A87840'; // Warm wood-tone
   ctx2.fillRect(tx, ty, tw, th);
 
-  // Light edge highlight (top edge only, straight line)
-  ctx2.fillStyle = '#D4A050';
-  ctx2.fillRect(tx, ty, tw, 3);
+  // Explicit corner anchors for visual clarity
+  ctx2.fillStyle = '#E8D080'; // Light yellow markers
+  ctx2.fillRect(tx, ty, 6, 6);
+  ctx2.fillRect(tx + tw - 6, ty, 6, 6);
+  ctx2.fillRect(tx, ty + th - 6, 6, 6);
+  ctx2.fillRect(tx + tw - 6, ty + th - 6, 6, 6);
 
-  // Left edge
-  ctx2.fillStyle = '#6A4810';
-  ctx2.fillRect(tx, ty+3, 3, th-3);
+  // Table base shadow for depth (flat strip at the bottom edge)
+  ctx2.fillStyle = '#483928';
+  ctx2.fillRect(tx, ty + th, tw, 4);
 
-  // Right edge
-  ctx2.fillStyle = '#6A4810';
-  ctx2.fillRect(tx+tw-3, ty+3, 3, th-3);
-
-  // Bottom shadow
-  ctx2.fillStyle = '#402800';
-  ctx2.fillRect(tx+3, ty+th-3, tw-6, 3);
-
-  // Horizontal center stripe (table edge marker) — straight
-  ctx2.fillStyle = '#A07828';
-  ctx2.fillRect(tx+3, ty+Math.round(th/2), tw-6, 2);
-
-  // 4 chairs — top row
-  ctx2.fillStyle = '#C86020';
-  ctx2.fillRect(tx+Math.round(tw/4)-8, ty-12, 16, 12);
-  ctx2.fillRect(tx+Math.round(3*tw/4)-8, ty-12, 16, 12);
-  // bottom row
-  ctx2.fillRect(tx+Math.round(tw/4)-8, ty+th, 16, 12);
-  ctx2.fillRect(tx+Math.round(3*tw/4)-8, ty+th, 16, 12);
+  // Ensure rectangle proportions are sharp (no curved illusions)
 }
 
 // ==================== CANVAS RENDERING ====================
