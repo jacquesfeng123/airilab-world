@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v14</title>
+<title>Airi Lab World v14b</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -486,7 +486,7 @@ function applyQueueData(data) {
 }
 
 // ==================== SPRITE DRAWING ====================
-const S = 3; // 3x scale = 48x72px sprites in world
+const S = 5; // 5x scale = 80x120px sprites
 
 function px(ctx, x, y, w, h, color) {
   ctx.fillStyle = color;
@@ -826,24 +826,21 @@ function drawDoors(ctx2) {
 
 // ==================== MEETING TABLE ====================
 function drawMeetingTable(ctx2, tx, ty) {
-  const rowData = [
-    [1.2*T,0.4*T],[1.8*T,0.4*T],[2.1*T,0.4*T],[2.2*T,0.4*T],[2.2*T,0.4*T],
-    [2.2*T,0.4*T],[2.1*T,0.4*T],[1.8*T,0.4*T],[1.2*T,0.4*T],
-  ];
-  rowData.forEach(([w,h],i) => {
-    const cx = tx + (2.2*T - w)/2, ry = ty + i*h;
-    ctx2.fillStyle = '#A87840';
-    ctx2.fillRect(Math.round(cx),Math.round(ry),Math.round(w),Math.round(h)+2);
-  });
-  const innerData = [
-    [0.8*T,0.4*T],[1.4*T,0.4*T],[1.7*T,0.4*T],[1.8*T,0.4*T],[1.8*T,0.4*T],
-    [1.8*T,0.4*T],[1.7*T,0.4*T],[1.4*T,0.4*T],[0.8*T,0.4*T],
-  ];
-  innerData.forEach(([w,h],i) => {
-    const cx = tx + (2.2*T - w)/2, ry = ty + i*h + 4;
-    ctx2.fillStyle = '#C89858';
-    ctx2.fillRect(Math.round(cx+4),Math.round(ry),Math.round(w-8),Math.round(h));
-  });
+  // Clean rectangular conference table
+  const tw = 3*T, th = 2*T;
+  // Table surface
+  ctx2.fillStyle = '#A87840';
+  ctx2.fillRect(Math.round(tx), Math.round(ty), tw, th);
+  // Lighter top face (3/4 perspective highlight)
+  ctx2.fillStyle = '#C89858';
+  ctx2.fillRect(Math.round(tx+3), Math.round(ty+3), tw-6, th/2);
+  // Dark south shadow edge
+  ctx2.fillStyle = '#7A5820';
+  ctx2.fillRect(Math.round(tx), Math.round(ty+th-4), tw, 4);
+  // Table legs
+  ctx2.fillStyle = '#5C3D10';
+  ctx2.fillRect(Math.round(tx+4), Math.round(ty+th), 6, 8);
+  ctx2.fillRect(Math.round(tx+tw-10), Math.round(ty+th), 6, 8);
 }
 
 // ==================== CANVAS RENDERING ====================
@@ -994,11 +991,8 @@ function drawFurniture() {
   ctx.fillStyle='#2A4A7A'; ctx.fillRect(8*T+4,7*T+8,2*T-12,T+6);
   plant(7,12);
 
-  // Meeting Room A
+  // Meeting Room A — clean table only, no plants inside
   drawMeetingTable(ctx, 11.5*T, 8.2*T);
-  ctx.fillStyle='#282828'; ctx.fillRect(18*T,7*T,T,2*T);
-  ctx.fillStyle='#F8F8F8'; ctx.fillRect(18*T+4,7*T+4,T-8,2*T-8);
-  plant(11,11);
 
   // Meeting Room B
   drawMeetingTable(ctx, 11.5*T, 13.2*T);
@@ -1080,11 +1074,6 @@ function drawFurniture() {
     ctx.fillStyle=c; ctx.fillRect(2*T+6+i*10,15*T+8,8,14);
   });
   plant(0,14,true); plant(1,14); plant(29,15);
-
-  // Draw chairs at each agent's desk (furniture layer, below agents)
-  AGENT_LIST.forEach(agent => {
-    drawChair(ctx, agent.desk.col * T, agent.desk.row * T);
-  });
 }
 
 // ==================== CHAIR DRAWING ====================
@@ -1167,8 +1156,8 @@ function render(timestamp) {
     ctx.fillStyle = '#0A0A14';
     ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
     drawFloor();
-    drawFurniture();
-    drawAgentsFixed(timestamp);
+    drawAgentsFixed(timestamp);  // agents first (behind desks)
+    drawFurniture();             // desks/furniture on top (3/4 depth)
   } catch(e) {
     console.error('[render error]', e);
   }
@@ -1205,7 +1194,10 @@ function drawAgentsFixed(timestamp) {
       ctx.shadowBlur = 10;
     }
 
-    // Draw sprite (chairs drawn in drawFurniture layer)
+    // Draw chair behind agent
+    drawChair(ctx, agent.desk.col * T, agent.desk.row * T);
+
+    // Draw sprite
     const sp = getSprite(agent.id, frame);
     ctx.drawImage(sp, spriteX, spriteY + bob, spriteW, spriteH);
     ctx.shadowBlur = 0; ctx.shadowColor = 'transparent';
