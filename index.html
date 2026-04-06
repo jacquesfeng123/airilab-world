@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v14b</title>
+<title>Airi Lab World v14</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -473,15 +473,32 @@ function updateBadge(text, offline, sim) {
   el.className = offline ? 'offline' : (sim ? 'simulated' : '');
 }
 function applyQueueData(data) {
-  if (!Array.isArray(data)) return;
-  data.forEach(entry => {
-    const agent = AGENT_LIST.find(a => a.name === entry.agent || a.id === entry.agent);
-    if (!agent) return;
-    applyStatus(agent.id, entry.status||'idle', entry.task||'',
-      entry.progress||0, entry.blocked_by, entry.collaborating_with, entry.priority);
-    agentState[agent.id].last_updated = entry.last_updated || '';
+  // Support both array and {queue:[...]} format
+  const entries = Array.isArray(data) ? data : (data.queue || []);
+  // Reset all to idle first
+  AGENT_LIST.forEach(a => applyStatus(a.id, 'idle', '', 0, null, null, 'normal'));
+  // Apply latest entry per assignee (last wins)
+  const byAgent = {};
+  entries.forEach(entry => {
+    const id = entry.assignee || entry.agent;
+    if (!id) return;
+    byAgent[id] = entry;
   });
-  processMeetings(data);
+  Object.entries(byAgent).forEach(([id, entry]) => {
+    const agent = AGENT_LIST.find(a => a.id === id || a.name === id);
+    if (!agent) return;
+    // Map work-queue status to display status
+    let status = entry.status || 'idle';
+    if (status === 'done') status = 'done';
+    else if (status === 'in_progress') status = 'working';
+    else if (status === 'pending') status = 'pending';
+    else if (status === 'blocked') status = 'blocked';
+    const task = entry.payload?.title || entry.payload?.task || entry.payload?.project || entry.type || '';
+    applyStatus(agent.id, status, task, entry.progress||0,
+      entry.blocked_by, entry.collaborating_with, entry.priority||'normal');
+    agentState[agent.id].last_updated = entry.completed_at || entry.started_at || entry.created_at || '';
+  });
+  processMeetings(entries);
   if (currentTab === 'cards') updateCards();
 }
 
@@ -802,24 +819,48 @@ const DOOR_POSITIONS = [
 ];
 
 function drawDoors(ctx2) {
-  // For each door tile: draw darker floor + arch frame
-  const doorFloor = '#A8964A';
-  const doorFrame = '#5C3D1E';
+  const doorFloor = '#B8A050';   // bright golden door tile
+  const doorFrameOuter = '#4A2A0A';  // dark wood frame
+  const doorFrameInner = '#8B5A20';  // lighter wood
+  const doorGlow = 'rgba(255,220,100,0.25)';
+
   DOOR_POSITIONS.forEach(({c, r, axis}) => {
     const x = c * T, y = r * T;
-    // Darker floor tile
+    // Bright floor tile for door
     ctx2.fillStyle = doorFloor;
     ctx2.fillRect(x, y, T, T);
-    // Door frame lines (2px wide, 12px tall)
-    ctx2.fillStyle = doorFrame;
+    // Inner glow
+    ctx2.fillStyle = doorGlow;
+    ctx2.fillRect(x+2, y+2, T-4, T-4);
+
+    ctx2.fillStyle = doorFrameOuter;
+    ctx2.fillStyle = doorFrameInner;
     if (axis === 'h') {
-      // Horizontal door: vertical frame posts on left and right of tile
-      ctx2.fillRect(x, y + T - 14, 2, 14);
-      ctx2.fillRect(x + T - 2, y + T - 14, 2, 14);
+      // Top frame beam (visible in 3/4 view)
+      ctx2.fillStyle = doorFrameOuter;
+      ctx2.fillRect(x, y, T, 5);
+      ctx2.fillStyle = doorFrameInner;
+      ctx2.fillRect(x+1, y+1, T-2, 3);
+      // Side posts
+      ctx2.fillStyle = doorFrameOuter;
+      ctx2.fillRect(x, y, 4, T);
+      ctx2.fillRect(x+T-4, y, 4, T);
+      ctx2.fillStyle = doorFrameInner;
+      ctx2.fillRect(x+1, y+5, 2, T-5);
+      ctx2.fillRect(x+T-3, y+5, 2, T-5);
     } else {
-      // Vertical door: horizontal frame posts on top and bottom
-      ctx2.fillRect(x, y, T, 2);
-      ctx2.fillRect(x, y + T - 2, T, 2);
+      // Left/right frame posts
+      ctx2.fillStyle = doorFrameOuter;
+      ctx2.fillRect(x, y, 4, T);
+      ctx2.fillRect(x+T-4, y, 4, T);
+      ctx2.fillStyle = doorFrameInner;
+      ctx2.fillRect(x+1, y, 2, T);
+      ctx2.fillRect(x+T-3, y, 2, T);
+      // Top beam
+      ctx2.fillStyle = doorFrameOuter;
+      ctx2.fillRect(x, y, T, 4);
+      ctx2.fillStyle = doorFrameInner;
+      ctx2.fillRect(x+4, y+1, T-8, 2);
     }
   });
 }
