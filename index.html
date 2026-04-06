@@ -37,6 +37,12 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 .card-progress-wrap{background:#282830;height:5px;width:100%;margin-bottom:3px}
 .card-progress-bar{height:5px;background:#40C060;transition:width 0.3s}
 .card-ts{font-size:6px;color:#606070;font-family:'Press Start 2P','Courier New',monospace}
+.card-blocked{color:#E04040;font-size:10px;margin-top:3px}
+.card-collab{color:#4080E0;font-size:10px;margin-top:2px}
+.review-badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:9px;color:#fff;font-weight:bold;margin-left:4px;vertical-align:middle}
+.prio-badge{font-size:9px;padding:1px 4px;border-radius:3px;color:#fff;font-weight:bold}
+.prio-badge.crit{background:#E74C3C}
+.prio-badge.high{background:#E67E22}
 .status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 /* Desktop side panel */
 #side-panel{position:fixed;right:-400px;top:36px;width:380px;height:calc(100vh - 36px);background:#0E0E1A;border-left:2px solid #252535;z-index:200;overflow-y:auto;transition:right 0.2s ease-out}
@@ -203,7 +209,7 @@ const agentState = {};
 AGENT_LIST.forEach((a, idx) => {
   agentState[a.id] = {
     status: 'idle', task: '', progress: 0, blocked_by: null,
-    collaborating_with: null, priority: null, last_updated: '',
+    collaborating_with: null, priority: null, review_status: null, last_updated: '',
     currentTile: {...a.desk},
     targetTile: {...a.desk},
     path: [],
@@ -377,7 +383,7 @@ const AGENT_TASKS = {
   thinking: ['Planning sprint...','Analyzing metrics...','Researching solution...','Evaluating options...'],
   blocked: ['Waiting for unblock...','Dependency pending...','Blocked on review...'],
   in_meeting: ['Meeting in progress...','Sprint planning...','Design review...'],
-  coffee_break: [''],
+  coffee_break: ['☕ On break'],
   idle: [''],
 };
 const AGENT_TASK_IDX = {};
@@ -388,6 +394,7 @@ function applyStatus(agentId, status, task, progress, blockedBy, collabWith, pri
   const agent = AGENT_LIST.find(a => a.id === agentId);
   const prevStatus = st.status;
   st.status = status;
+  st.last_updated = Date.now();
   st.task = task || '';
   st.progress = progress || 0;
   st.blocked_by = blockedBy || null;
@@ -1464,6 +1471,14 @@ document.getElementById('side-close').addEventListener('click', () => {
 });
 
 // ==================== AGENT CARDS ====================
+function timeAgo(ts) {
+  if (!ts) return '';
+  const d = Date.now() - ts;
+  if (d < 60000) return 'just now';
+  if (d < 3600000) return Math.floor(d/60000) + 'm ago';
+  if (d < 86400000) return Math.floor(d/3600000) + 'h ago';
+  return new Date(ts).toLocaleDateString();
+}
 function buildCards() {
   const cardsView = document.getElementById('cards-view');
   cardsView.innerHTML = '<div id="cards-grid"></div>';
@@ -1481,13 +1496,18 @@ function buildCards() {
     const sColor=STATUS_COLORS[st.status]||'#909090';
     const progColor=(st.progress||0)<34?'#E04848':(st.progress||0)<67?'#E0B828':'#40C060';
     const info=document.createElement('div'); info.className='card-info';
+    const REVIEW_BADGE = {pending_review:{color:'#F5A623',text:'REVIEW'},approved:{color:'#27AE60',text:'OK'},needs_rework:{color:'#E74C3C',text:'REWORK'}};
+    const reviewBadge = st.review_status && REVIEW_BADGE[st.review_status] ? `<span class="review-badge" style="background:${REVIEW_BADGE[st.review_status].color}">${REVIEW_BADGE[st.review_status].text}</span>` : '';
+    const prioBadge = st.priority === 'critical' ? '<span class="prio-badge crit">🔴 CRIT</span>' : st.priority === 'high' ? '<span class="prio-badge high">🟠 HIGH</span>' : '';
     info.innerHTML=`
-      <div class="card-name">${escHtml(agent.name)}</div>
+      <div class="card-name">${escHtml(agent.name)}${reviewBadge}${prioBadge}</div>
       <div class="card-role">${escHtml(agent.role)}</div>
       <div class="card-status"><span class="status-dot" style="background:${sColor}"></span><span style="color:${sColor};font-size:7px">${escHtml(st.status||'idle')}</span></div>
       <div class="card-task">${escHtml(st.task||'No active task')}</div>
       <div class="card-progress-wrap"><div class="card-progress-bar" style="width:${st.progress||0}%;background:${progColor}"></div></div>
-      <div class="card-ts">${st.last_updated?new Date(st.last_updated).toLocaleString():'No data'}</div>
+      ${st.blocked_by ? `<div class="card-blocked">🚫 Blocked: ${escHtml(st.blocked_by)}</div>` : ''}
+      ${st.collaborating_with ? `<div class="card-collab">🤝 With: ${escHtml(st.collaborating_with)}</div>` : ''}
+      <div class="card-ts">${st.last_updated?timeAgo(st.last_updated):'No data'}</div>
     `;
     card.appendChild(ac); card.appendChild(info);
     card.addEventListener('click',()=>{
@@ -1514,7 +1534,18 @@ function updateCards() {
     if(stLabel){stLabel.style.color=sColor;stLabel.textContent=st.status||'idle';}
     if(task) task.textContent=st.task||'No active task';
     if(bar){bar.style.width=`${st.progress||0}%`;bar.style.background=progColor;}
-    if(ts) ts.textContent=st.last_updated?new Date(st.last_updated).toLocaleString():'No data';
+    if(ts) ts.textContent=st.last_updated?timeAgo(st.last_updated):'No data';
+    // update blocked/collab
+    let blocked = card.querySelector('.card-blocked');
+    if (st.blocked_by) {
+      if (!blocked) { blocked = document.createElement('div'); blocked.className='card-blocked'; ts.parentNode.insertBefore(blocked, ts); }
+      blocked.textContent = '🚫 Blocked: ' + (st.blocked_by);
+    } else if (blocked) blocked.remove();
+    let collab = card.querySelector('.card-collab');
+    if (st.collaborating_with) {
+      if (!collab) { collab = document.createElement('div'); collab.className='card-collab'; ts.parentNode.insertBefore(collab, ts); }
+      collab.textContent = '🤝 With: ' + (st.collaborating_with);
+    } else if (collab) collab.remove();
     const ac=card.querySelector('canvas');
     if(ac){
       const acc=ac.getContext('2d'); acc.clearRect(0,0,64,96); acc.imageSmoothingEnabled=false;
