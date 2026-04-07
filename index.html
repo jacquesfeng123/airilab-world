@@ -1525,7 +1525,7 @@ function openSidePanel(agentId) {
     ${prof.vibe ? `<div class="side-section"><h4>🎭 Vibe</h4><div style="font-size:10px;color:#ccc">${escHtml(prof.vibe)}</div></div>` : ''}
     ${prof.idleActs && prof.idleActs.length ? `<div class="side-section"><h4>💭 When idle</h4><ul>${prof.idleActs.map(a=>`<li>${escHtml(a)}</li>`).join('')}</ul></div>` : ''}
     ${prof.wishlist && prof.wishlist.length ? `<div class="side-section"><h4>🖥️ Desk wishlist</h4><ul>${prof.wishlist.map(w=>`<li>${escHtml(w)}</li>`).join('')}</ul></div>` : ''}
-    <div class="side-section"><h4>📄 Agent profile path</h4><input type="text" readonly value="/Users/feng/.openclaw/workspace/agents/${agent.id}/SOUL.md" style="width:100%;background:#1a1a2e;border:1px solid #333;color:#888;font-size:9px;padding:4px;border-radius:3px;box-sizing:border-box"></div>
+    <div class="side-section"><h4>📄 SOUL.md</h4><textarea id="soul-viewer" class="task-textarea" style="height:120px;font-size:9px;font-family:monospace;color:#aaa" readonly>Loading...</textarea></div>
     <div class="side-section"><h4>📨 Send task</h4><textarea id="task-input-panel" class="task-textarea" placeholder="Describe task to queue..."></textarea><button class="task-send-btn" onclick="queueTaskFromPanel('${agent.id}')">→ Queue</button></div>
     `; })()}
   `;
@@ -1536,6 +1536,24 @@ function openSidePanel(agentId) {
     avatarWrap.appendChild(avatarCanvas);
   }
   document.getElementById('side-panel').classList.add('open');
+  (async () => {
+    const soulEl = document.getElementById('soul-viewer');
+    if (!soulEl) return;
+    const agId = agent.id;
+    const paths = ['/agents/' + agId + '/SOUL.md'];
+    for (const p of paths) {
+      try {
+        const r = await fetch(p, {cache:'no-store'});
+        if (r.ok) { soulEl.value = await r.text(); return; }
+      } catch {}
+    }
+    soulEl.value = '# ' + agent.name + '
+
+SOUL.md not found.
+Create at:
+agents/' + agId + '/SOUL.md';
+  })();
+
 }
 
 document.getElementById('side-close').addEventListener('click', () => {
