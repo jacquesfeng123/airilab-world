@@ -48,8 +48,9 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 /* Desktop side panel */
 #side-panel{position:fixed;right:-400px;top:36px;width:380px;height:calc(100vh - 36px);background:#0E0E1A;border-left:2px solid #252535;z-index:200;overflow-y:auto;transition:right 0.2s ease-out}
 #side-panel.open{right:0}
-#side-panel-header{background:#1A1A2A;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #303048;position:sticky;top:0;z-index:10}
-#side-panel-header h2{font-size:10px;color:#F8F8F8}
+#side-panel-header{background:#1A1A2A;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #303048;position:sticky;top:0;z-index:10;transition:background 0.3s}
+#side-panel-header h2{font-size:14px;font-weight:700;color:#F8F8F8;margin:0}
+.side-status-pill{font-size:9px;padding:2px 8px;border-radius:10px;font-weight:600;background:rgba(255,255,255,0.12);color:#eee;white-space:nowrap}
 #side-close{background:none;border:none;color:#889090;cursor:pointer;font-size:18px;padding:4px 8px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
 #side-close:hover{color:#F8F8F8}
 #side-content{padding:12px}
@@ -328,9 +329,32 @@ function doWalkTick() {
       }
     } else {
       st.walkFrame = 0;
-      // Idle: stay at desk, just face south. No wandering.
+      // Idle: wander around room randomly every 5-15 seconds
       if (st.status === 'idle') {
-        st.facing = 'south';
+        st.idleTimer = (st.idleTimer || 0) + 1;
+        if (st.idleTimer > st._idleWanderAt) {
+          st.idleTimer = 0;
+          st._idleWanderAt = 300 + Math.floor(Math.random() * 600);
+          // 20% chance to walk to coffee tile
+          if (Math.random() < 0.2) {
+            walkTo(agent.id, COFFEE_TILE);
+          } else {
+            // Find room for this agent
+            const room = ROOMS.find(r => r.id === agent.room);
+            if (room) {
+              // Try up to 10 random tiles within room bounds
+              for (let attempt = 0; attempt < 10; attempt++) {
+                const tc = room.col + 1 + Math.floor(Math.random() * (room.w - 2));
+                const tr = room.row + 1 + Math.floor(Math.random() * (room.h - 2));
+                const tk = `${tc},${tr}`;
+                if (WALKABLE.has(tk) && !BLOCKED.has(tk)) {
+                  walkTo(agent.id, {col: tc, row: tr});
+                  break;
+                }
+              }
+            }
+          }
+        }
       }
       // Blocked agents: pace back and forth deterministically
       if (st.status === 'blocked' || st.status === 'error') {
@@ -1496,6 +1520,22 @@ function openSidePanel(agentId) {
   const sColor = STATUS_COLORS[st.status] || '#909090';
   const progColor = (st.progress||0)<34?'#E04848':(st.progress||0)<67?'#E0B828':'#40C060';
 
+  // Style header with dept color
+  const headerEl = document.getElementById('side-panel-header');
+  if (headerEl) {
+    headerEl.style.background = dColor + '33'; // 20% opacity hex
+    let pillEl = document.getElementById('side-status-pill');
+    if (!pillEl) {
+      pillEl = document.createElement('span');
+      pillEl.id = 'side-status-pill';
+      pillEl.className = 'side-status-pill';
+      const closeBtn = document.getElementById('side-close');
+      if (closeBtn) headerEl.insertBefore(pillEl, closeBtn);
+    }
+    pillEl.textContent = '● ' + (st.status || 'idle');
+    pillEl.style.color = sColor;
+  }
+
   document.getElementById('side-content').innerHTML = `
     <div class="side-avatar-wrap"></div>
     <div class="side-name">${escHtml(agent.name)}</div>
@@ -1526,7 +1566,7 @@ function openSidePanel(agentId) {
     ${prof.vibe ? `<div class="side-section"><h4>🎭 Vibe</h4><div style="font-size:10px;color:#ccc">${escHtml(prof.vibe)}</div></div>` : ''}
     ${prof.idleActs && prof.idleActs.length ? `<div class="side-section"><h4>💭 When idle</h4><ul>${prof.idleActs.map(a=>`<li>${escHtml(a)}</li>`).join('')}</ul></div>` : ''}
     ${prof.wishlist && prof.wishlist.length ? `<div class="side-section"><h4>🖥️ Desk wishlist</h4><ul>${prof.wishlist.map(w=>`<li>${escHtml(w)}</li>`).join('')}</ul></div>` : ''}
-    <div class="side-section"><h4>📄 SOUL.md</h4><textarea id="soul-viewer" class="task-textarea" style="height:120px;font-size:9px;font-family:monospace;color:#aaa" readonly>Loading...</textarea></div>
+    <div class="side-section" id="agent-docs-section"><h4>📄 SOUL.md</h4><textarea id="soul-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa" readonly>Loading...</textarea><h4>📋 AGENTS.md</h4><textarea id="agents-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa" readonly>Loading...</textarea></div>
     <div class="side-section"><h4>📨 Send task</h4><textarea id="task-input-panel" class="task-textarea" placeholder="Describe task to queue..."></textarea><button class="task-send-btn" onclick="queueTaskFromPanel('${agent.id}')">→ Queue</button></div>
     `; })()}
   `;
@@ -1539,16 +1579,58 @@ function openSidePanel(agentId) {
   document.getElementById('side-panel').classList.add('open');
   (async () => {
     const soulEl = document.getElementById('soul-viewer');
-    if (!soulEl) return;
+    const agentsEl = document.getElementById('agents-viewer');
+    const docsSection = document.getElementById('agent-docs-section');
+    if (!soulEl || !agentsEl || !docsSection) return;
+    const AGENT_DIR_MAP = {
+      'arch': 'technical-architect',
+      'designer': 'chief-designer',
+      'devops': 'devops',
+      'frontend': 'frontend',
+      'backend': 'backend',
+      'pm': 'pm',
+      'uiux': 'uiux',
+      'qa': 'qa',
+      'tester': 'tester',
+      'researcher': 'researcher',
+      'analytics': null,
+      'ops': null,
+      'growth': null,
+      'product': null,
+      'marketing': null,
+      'sales': null,
+      'content': null,
+      'cs': null,
+      'data': null,
+      'security': null,
+      'jacques': null,
+      'trump': null,
+    };
     const agId = agent.id;
-    const paths = ['/agents/' + agId + '/SOUL.md'];
-    for (const p of paths) {
-      try {
-        const r = await fetch(p, {cache:'no-store'});
-        if (r.ok) { soulEl.value = await r.text(); return; }
-      } catch {}
+    const dirName = AGENT_DIR_MAP.hasOwnProperty(agId) ? AGENT_DIR_MAP[agId] : agId;
+    if (!dirName) {
+      docsSection.innerHTML = '<p style="font-size:9px;color:#888">No agent profile directory found.</p>';
+      return;
     }
-    soulEl.value = '# ' + agent.name + '\nSOUL.md not found.\nCreate at:\nagents/' + agId + '/SOUL.md';
+    const [soulRes, agentsRes] = await Promise.allSettled([
+      fetch('/agents/' + dirName + '/SOUL.md', {cache:'no-store'}),
+      fetch('/agents/' + dirName + '/AGENTS.md', {cache:'no-store'}),
+    ]);
+    // Re-query elements after innerHTML was set
+    const soulEl2 = document.getElementById('soul-viewer');
+    const agentsEl2 = document.getElementById('agents-viewer');
+    if (soulEl2) {
+      try {
+        const r = soulRes.value;
+        soulEl2.value = r && r.ok ? await r.text() : '# ' + agent.name + '\nSOUL.md not found.\nCreate at: agents/' + dirName + '/SOUL.md';
+      } catch { soulEl2.value = 'Error loading SOUL.md'; }
+    }
+    if (agentsEl2) {
+      try {
+        const r = agentsRes.value;
+        agentsEl2.value = r && r.ok ? await r.text() : 'AGENTS.md not found.\nCreate at: agents/' + dirName + '/AGENTS.md';
+      } catch { agentsEl2.value = 'Error loading AGENTS.md'; }
+    }
   })();
 
 }
