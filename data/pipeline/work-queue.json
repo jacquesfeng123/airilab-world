@@ -1665,14 +1665,14 @@
       ],
       "createdAt": "2026-04-07T21:05:00+08:00",
       "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.231Z",
-      "failed_at": "2026-04-07T13:10:58.234Z",
+      "started_at": "2026-04-07T13:20:24.714Z",
+      "failed_at": "2026-04-07T13:20:24.716Z",
       "error": "Unknown type: bug_fix"
     },
     {
       "id": "wq-world-002",
       "title": "[P0] 状态气泡文字过小/低对比度，提升可读性",
-      "status": "failed",
+      "status": "pending_review",
       "priority": "high",
       "owner": "frontend",
       "type": "design_spec",
@@ -1683,9 +1683,9 @@
       ],
       "createdAt": "2026-04-07T21:05:00+08:00",
       "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.236Z",
-      "failed_at": "2026-04-07T13:10:58.237Z",
-      "error": "Unknown type: design_spec"
+      "started_at": "2026-04-07T13:20:24.717Z",
+      "completed_at": "2026-04-07T13:20:24.737Z",
+      "result_summary": "[dry run] spec-driven dispatch queued"
     },
     {
       "id": "wq-world-003",
@@ -1777,6 +1777,86 @@
       "started_at": "2026-04-07T13:10:58.249Z",
       "failed_at": "2026-04-07T13:10:58.251Z",
       "error": "Unknown type: design_spec"
+    },
+    {
+      "id": "wq-si-backend-mnon8e31",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-07T13:16:54.733Z",
+      "started_at": "2026-04-07T13:16:54.733Z",
+      "completed_at": "2026-04-07T13:16:54.733Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-devops-mnon8e31",
+      "type": "self_improve",
+      "assignee": "devops",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review CI/CD pipeline health"
+      },
+      "created_at": "2026-04-07T13:16:54.733Z",
+      "started_at": "2026-04-07T13:16:54.733Z",
+      "completed_at": "2026-04-07T13:16:54.733Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review CI/CD pipeline health"
+    },
+    {
+      "id": "wq-si-chief-designer-mnon8e31",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-07T13:16:54.733Z",
+      "started_at": "2026-04-07T13:16:54.733Z",
+      "completed_at": "2026-04-07T13:16:54.733Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-trump-mnon8e32",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-07T13:16:54.734Z",
+      "started_at": "2026-04-07T13:16:54.734Z",
+      "completed_at": "2026-04-07T13:16:54.734Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-world-008",
+      "title": "修复 agent 人物碰撞重叠问题",
+      "status": "pending_review",
+      "priority": "high",
+      "owner": "frontend",
+      "type": "design_spec",
+      "estimatedDays": 2,
+      "tags": [
+        "airilab-world",
+        "collision",
+        "uiux"
+      ],
+      "createdAt": "2026-04-07T21:17:00+08:00",
+      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
+      "description": "agent 行走时互相重叠，需要实现真正的碰撞检测：agent 之间保持最小距离，相遇时绕行或等待，不允许 sprite 重叠渲染",
+      "started_at": "2026-04-07T13:20:24.739Z",
+      "completed_at": "2026-04-07T13:20:24.741Z",
+      "result_summary": "[dry run] spec-driven dispatch queued"
     }
   ]
 }
