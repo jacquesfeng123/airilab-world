@@ -2499,7 +2499,7 @@
       "id": "wq-sys-004",
       "type": "system_upgrade",
       "title": "vet Colleague Skill + PM Agent POC",
-      "status": "pending",
+      "status": "failed",
       "priority": "medium",
       "assignee": "trump",
       "owner": "trump/qa",
@@ -2511,7 +2511,10 @@
         "system-upgrade",
         "skill-vet",
         "agent-distill"
-      ]
+      ],
+      "started_at": "2026-04-07T05:01:40.784Z",
+      "failed_at": "2026-04-07T05:01:40.786Z",
+      "error": "Unknown type: system_upgrade"
     },
     {
       "id": "wq-sys-005",
