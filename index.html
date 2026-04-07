@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="ngrok-skip-browser-warning" content="true">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v14</title>
+<title>Airi Lab World v17</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -103,10 +103,11 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 <body>
 <div id="header">
   <div id="tabs">
-    <button class="tab active" data-tab="office">🏢 Office View</button>
-    <button class="tab" data-tab="cards">👥 Agent Cards</button>
+    <button class="tab active" id="tab-office" data-tab="office">🏢 Office View</button>
+    <button class="tab" id="tab-cards" data-tab="cards">👥 Agent Cards</button>
   </div>
   <div id="header-right">
+    <span id="status-stats" style="font-size:8px;color:#A8A8B8;font-family:'Press Start 2P','Courier New',monospace;letter-spacing:0.05em">BUSY: 0 | IDLE: 0 | BLOCKED: 0</span>
     <span id="clock">00:00:00</span>
     <span id="data-badge">LOADING</span>
   </div>
@@ -116,7 +117,9 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
     <canvas id="canvas" width="1440" height="864"></canvas>
   </div>
 </div>
-<div id="cards-view"></div>
+<div id="cards-view">
+  <div id="filter-chips" style="display:flex;gap:8px;margin-bottom:12px;max-width:1400px;margin-left:auto;margin-right:auto;flex-wrap:wrap"></div>
+</div>
 <div id="side-panel">
   <div id="side-panel-header">
     <h2 id="side-panel-title">Agent Detail</h2>
@@ -1303,6 +1306,7 @@ function render(timestamp) {
 }
 
 function drawAgentsFixed(timestamp) {
+  const _labelPositions = [];
   const sorted = [...AGENT_LIST].sort((a,b) =>
     agentState[a.id].currentTile.row - agentState[b.id].currentTile.row
   );
@@ -1416,10 +1420,18 @@ function drawAgentsFixed(timestamp) {
     ctx.font = 'bold 8px "Courier New",monospace';
     ctx.textAlign = 'center';
     const nw = ctx.measureText(agent.name).width;
+    let labelY = spriteBottom + 2;
+    // Stagger overlapping labels
+    for (const prev of _labelPositions) {
+      if (Math.abs(spriteCX - prev.x) < (nw + prev.w) / 2 + 4 && Math.abs(labelY - prev.y) < 12) {
+        labelY = prev.y + 12;
+      }
+    }
+    _labelPositions.push({x: spriteCX, y: labelY, w: nw});
     ctx.fillStyle = 'rgba(0,0,0,0.75)';
-    ctx.fillRect(spriteCX - nw/2 - 3, spriteBottom + 2, nw + 6, 11);
+    ctx.fillRect(spriteCX - nw/2 - 3, labelY, nw + 6, 11);
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillText(agent.name, spriteCX, spriteBottom + 11);
+    ctx.fillText(agent.name, spriteCX, labelY + 9);
     ctx.textAlign = 'left';
 
     // Progress bar
@@ -1471,7 +1483,9 @@ canvas.addEventListener('click', e => {
   const tileCol = Math.floor(mx / T), tileRow = Math.floor(my / T);
   const clicked = AGENT_LIST.find(a => {
     const st = agentState[a.id];
-    return st.currentTile.col === tileCol && st.currentTile.row === tileRow;
+    const ax = st.currentTile.col * T + T/2;
+    const ay = st.currentTile.row * T + T/2;
+    return Math.abs(mx - ax) <= 24 && Math.abs(my - ay) <= 36;
   });
   if (clicked) {
     showTooltip(e.clientX, e.clientY, clicked);
@@ -1689,10 +1703,37 @@ function timeAgo(ts) {
 }
 function buildCards() {
   const cardsView = document.getElementById('cards-view');
-  cardsView.innerHTML = '<div id="cards-grid"></div>';
-  const grid = cardsView.querySelector('#cards-grid');
+  // Build filter chips
+  let filterChipsEl = document.getElementById('filter-chips');
+  if (!filterChipsEl) {
+    filterChipsEl = document.createElement('div');
+    filterChipsEl.id = 'filter-chips';
+    filterChipsEl.style.cssText = 'display:flex;gap:8px;margin-bottom:12px;max-width:1400px;margin-left:auto;margin-right:auto;flex-wrap:wrap';
+    cardsView.prepend(filterChipsEl);
+  }
+  filterChipsEl.innerHTML = '';
+  const filters = ['All','working','idle','blocked'];
+  const filterLabels = {All:'All',working:'Busy',idle:'Idle',blocked:'Blocked'};
+  const filterColors = {All:'#4A90D9',working:'#40C860',idle:'#909090',blocked:'#E04040'};
+  if (!window._cardFilter) window._cardFilter = 'All';
+  filters.forEach(f => {
+    const chip = document.createElement('button');
+    chip.textContent = filterLabels[f];
+    chip.style.cssText = `padding:4px 12px;border-radius:12px;border:1px solid ${filterColors[f]};background:${window._cardFilter===f?filterColors[f]:'transparent'};color:${window._cardFilter===f?'#fff':filterColors[f]};cursor:pointer;font-family:'Press Start 2P','Courier New',monospace;font-size:7px;transition:all 0.15s`;
+    chip.addEventListener('click', () => { window._cardFilter = f; buildCards(); });
+    filterChipsEl.appendChild(chip);
+  });
+  // Build grid
+  let grid = cardsView.querySelector('#cards-grid');
+  if (!grid) {
+    grid = document.createElement('div');
+    grid.id = 'cards-grid';
+    cardsView.appendChild(grid);
+  }
+  grid.innerHTML = '';
   AGENT_LIST.forEach(agent => {
     const st = agentState[agent.id];
+    if (window._cardFilter !== 'All' && st.status !== window._cardFilter) return;
     const card = document.createElement('div');
     card.className = 'card'; card.dataset.agentId = agent.id;
     const sp = getSprite(agent.id, 0);
@@ -1878,6 +1919,27 @@ function initAgentPositions() {
 // Start render
 animFrame = requestAnimationFrame(render);
 applyScale();
+
+// Update status stats in header
+function updateStatusStats() {
+  const counts = {working:0, idle:0, blocked:0};
+  AGENT_LIST.forEach(a => {
+    const s = agentState[a.id].status;
+    if (s === 'working' || s === 'reviewing' || s === 'in_meeting') counts.working++;
+    else if (s === 'blocked' || s === 'error') counts.blocked++;
+    else counts.idle++;
+  });
+  const el = document.getElementById('status-stats');
+  if (el) el.textContent = 'BUSY: ' + counts.working + ' | IDLE: ' + counts.idle + ' | BLOCKED: ' + counts.blocked;
+}
+setInterval(updateStatusStats, 1000);
+updateStatusStats();
+
+// Mobile: default to Cards tab
+if (window.innerWidth < 768) {
+  const cardsBtn = document.getElementById('tab-cards');
+  if (cardsBtn) cardsBtn.click();
+}
 </script>
 </body>
 </html>
