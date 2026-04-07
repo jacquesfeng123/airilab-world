@@ -335,25 +335,20 @@ function doWalkTick() {
         if (st.idleTimer > st._idleWanderAt) {
           st.idleTimer = 0;
           st._idleWanderAt = 300 + Math.floor(Math.random() * 600);
-          // 20% chance to walk to coffee tile
-          if (Math.random() < 0.2) {
-            walkTo(agent.id, COFFEE_TILE);
-          } else {
-            // Find room for this agent
-            const room = ROOMS.find(r => r.id === agent.room);
-            if (room) {
-              // Try up to 10 random tiles within room bounds
-              for (let attempt = 0; attempt < 10; attempt++) {
-                const tc = room.col + 1 + Math.floor(Math.random() * (room.w - 2));
-                const tr = room.row + 1 + Math.floor(Math.random() * (room.h - 2));
-                const tk = `${tc},${tr}`;
-                if (WALKABLE.has(tk) && !BLOCKED.has(tk)) {
-                  walkTo(agent.id, {col: tc, row: tr});
-                  break;
-                }
-              }
-            }
-          }
+          // Idle destination: always OUTSIDE the working area
+          // Options: break room (row 14-16), corridor row 6, corridor row 17, coffee tile
+          const IDLE_DESTINATIONS = [
+            COFFEE_TILE,                           // coffee machine
+            {col:3, row:15}, {col:7, row:15},      // break room left
+            {col:15, row:15}, {col:20, row:15},    // break room center
+            {col:25, row:15}, {col:27, row:15},    // break room right
+            {col:4, row:6}, {col:10, row:6},       // corridor top
+            {col:20, row:6}, {col:26, row:6},      // corridor top right
+            {col:5, row:17}, {col:15, row:17},     // corridor bottom
+          ];
+          const dest = IDLE_DESTINATIONS[Math.floor(Math.random() * IDLE_DESTINATIONS.length)];
+          const destKey = `${dest.col},${dest.row}`;
+          if (WALKABLE.has(destKey)) walkTo(agent.id, dest);
         }
       }
       // Blocked agents: pace back and forth deterministically
