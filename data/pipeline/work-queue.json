@@ -2437,7 +2437,7 @@
       "id": "wq-sys-001",
       "type": "system_upgrade",
       "title": "Karpathy+autoDream数据流图设计",
-      "status": "failed",
+      "status": "done",
       "priority": "high",
       "assignee": "trump",
       "owner": "trump/scribe",
@@ -2451,14 +2451,14 @@
         "data-pipeline"
       ],
       "started_at": "2026-04-07T04:45:22.029Z",
-      "failed_at": "2026-04-07T04:45:22.031Z",
-      "error": "Unknown type: system_upgrade"
+      "completed_at": "2026-04-07T04:58:11.722Z",
+      "result_summary": "数据流图+决策文档完成。选项B：保留scribe-dream.mjs作为路由层，与Dreaming插件协同。详见task-wq-sys-001/"
     },
     {
       "id": "wq-sys-002",
       "type": "system_upgrade",
       "title": "SOUL.md三层架构设计与试点",
-      "status": "failed",
+      "status": "done",
       "priority": "high",
       "assignee": "trump",
       "owner": "trump/pm",
@@ -2479,7 +2479,7 @@
       "id": "wq-sys-003",
       "type": "system_upgrade",
       "title": "Dispatcher升级（串并行混合调度）",
-      "status": "pending",
+      "status": "failed",
       "priority": "high",
       "assignee": "backend",
       "owner": "backend/dev",
@@ -2490,7 +2490,10 @@
       "tags": [
         "system-upgrade",
         "dispatcher"
-      ]
+      ],
+      "started_at": "2026-04-07T05:00:37.277Z",
+      "failed_at": "2026-04-07T05:00:37.281Z",
+      "error": "Unknown type: system_upgrade"
     },
     {
       "id": "wq-sys-004",
