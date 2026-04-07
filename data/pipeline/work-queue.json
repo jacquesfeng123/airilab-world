@@ -2458,7 +2458,7 @@
       "id": "wq-sys-002",
       "type": "system_upgrade",
       "title": "SOUL.md三层架构设计与试点",
-      "status": "pending",
+      "status": "failed",
       "priority": "high",
       "assignee": "trump",
       "owner": "trump/pm",
@@ -2470,7 +2470,10 @@
         "system-upgrade",
         "soul",
         "architecture"
-      ]
+      ],
+      "started_at": "2026-04-07T04:46:38.314Z",
+      "failed_at": "2026-04-07T04:46:38.316Z",
+      "error": "Unknown type: system_upgrade"
     },
     {
       "id": "wq-sys-003",
