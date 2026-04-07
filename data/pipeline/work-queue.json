@@ -2573,6 +2573,60 @@
       "assignee": "qa",
       "completed_at": "2026-04-07T16:47:00.550Z",
       "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "qa-wq-infra-001",
+      "title": "[QA] Dispatcher 真正自动执行：用 OpenClaw cron agentTurn 替换 dispatch-queue 文件队列",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "critical",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-infra-001",
+      "createdAt": "2026-04-07T16:48:02.656Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T16:48:02.658Z",
+      "completed_at": "2026-04-07T16:48:02.661Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "qa-wq-infra-002",
+      "title": "[QA] airilab-world 实时反映真实工作状态（work-queue running 状态联动）",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-infra-002",
+      "createdAt": "2026-04-07T16:48:02.656Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T16:48:02.658Z",
+      "completed_at": "2026-04-07T16:48:02.661Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "qa-wq-infra-003",
+      "title": "[QA] QA approve 自动化：browser-test 通过后自动 approve，不需要手动",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-infra-003",
+      "createdAt": "2026-04-07T16:48:02.656Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T16:48:02.658Z",
+      "completed_at": "2026-04-07T16:48:02.661Z",
+      "result_summary": "[dry run]"
     }
   ]
 }
