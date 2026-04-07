@@ -334,7 +334,7 @@ function doWalkTick() {
         st.idleTimer = (st.idleTimer || 0) + 1;
         if (st.idleTimer > st._idleWanderAt) {
           st.idleTimer = 0;
-          st._idleWanderAt = 300 + Math.floor(Math.random() * 600);
+          st._idleWanderAt = 25 + Math.floor(Math.random() * 50);
           // Idle destination: always OUTSIDE the working area
           // Options: break room (row 14-16), corridor row 6, corridor row 17, coffee tile
           const IDLE_DESTINATIONS = [
@@ -464,11 +464,14 @@ function applyStatus(agentId, status, task, progress, blockedBy, collabWith, pri
       st.path = [];
     }
   } else if (status === 'idle') {
-    // Idle agents stay at desk too — fidget handled in doWalkTick
-    const cur = st.currentTile;
-    if (cur.col !== agent.desk.col || cur.row !== agent.desk.row) {
+    // Idle: let doWalkTick handle wandering — don't force walkHome here
+    // Only return home if transitioning FROM a busy/blocked state
+    if (prevStatus === 'working' || prevStatus === 'blocked' || prevStatus === 'in_meeting') {
       walkHome(agentId);
     }
+    // Reset idleTimer so wandering starts fresh after becoming idle
+    st.idleTimer = 0;
+    st._idleWanderAt = 25 + Math.floor(Math.random() * 50);
   } else if (prevStatus === 'coffee_break' && status !== 'coffee_break') {
     walkHome(agentId);
   }
@@ -530,12 +533,18 @@ function applyQueueData(data) {
   const entries = Array.isArray(data) ? data : (data.queue || []);
   // Reset all to idle first
   AGENT_LIST.forEach(a => applyStatus(a.id, 'idle', '', 0, null, null, 'normal'));
-  // Apply latest entry per assignee (last wins)
+  // Apply latest ACTIVE (pending/running) entry per assignee
+  // Done/completed entries are ignored for task display — agent shows idle
   const byAgent = {};
   entries.forEach(entry => {
     const id = entry.assignee || entry.agent;
     if (!id) return;
-    byAgent[id] = entry;
+    const s = entry.status || '';
+    if (s === 'pending' || s === 'running' || s === 'in_progress') {
+      // Active task — always prefer over done
+      byAgent[id] = entry;
+    }
+    // done/completed entries: skip — don't overwrite active ones
   });
   Object.entries(byAgent).forEach(([id, entry]) => {
     const agent = AGENT_LIST.find(a => a.id === id || a.name === id);
