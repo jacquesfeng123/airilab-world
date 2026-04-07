@@ -2520,7 +2520,7 @@
       "id": "wq-sys-005",
       "type": "system_upgrade",
       "title": "建筑视觉Prompt模板库",
-      "status": "pending",
+      "status": "failed",
       "priority": "medium",
       "assignee": "chief-designer",
       "owner": "chief-designer/uiux",
@@ -2532,13 +2532,16 @@
         "system-upgrade",
         "vision",
         "architecture"
-      ]
+      ],
+      "started_at": "2026-04-07T05:02:00.173Z",
+      "failed_at": "2026-04-07T05:02:00.175Z",
+      "error": "Unknown type: system_upgrade"
     },
     {
       "id": "wq-sys-006",
       "type": "system_upgrade",
       "title": "airilab视觉模型API集成评估",
-      "status": "pending",
+      "status": "failed",
       "priority": "medium",
       "assignee": "backend",
       "owner": "backend/ai-engineer",
@@ -2550,13 +2553,16 @@
         "system-upgrade",
         "vision",
         "api"
-      ]
+      ],
+      "started_at": "2026-04-07T05:02:00.173Z",
+      "failed_at": "2026-04-07T05:02:00.175Z",
+      "error": "Unknown type: system_upgrade"
     },
     {
       "id": "wq-sys-007",
       "type": "system_upgrade",
       "title": "KAIROS与Karpathy实际整合测试",
-      "status": "pending",
+      "status": "failed",
       "priority": "medium",
       "assignee": "backend",
       "owner": "backend/qa",
@@ -2568,13 +2574,16 @@
         "system-upgrade",
         "kairos",
         "testing"
-      ]
+      ],
+      "started_at": "2026-04-07T05:02:00.173Z",
+      "failed_at": "2026-04-07T05:02:00.175Z",
+      "error": "Unknown type: system_upgrade"
     },
     {
       "id": "wq-sys-008",
       "type": "system_upgrade",
       "title": "SOUL.md Git版本控制+漂移监控",
-      "status": "pending",
+      "status": "failed",
       "priority": "low",
       "assignee": "devops",
       "owner": "devops/scribe",
@@ -2586,7 +2595,10 @@
         "system-upgrade",
         "soul",
         "monitoring"
-      ]
+      ],
+      "started_at": "2026-04-07T05:02:00.173Z",
+      "failed_at": "2026-04-07T05:02:00.178Z",
+      "error": "Unknown type: system_upgrade"
     }
   ]
 }
