@@ -1683,8 +1683,8 @@
       ],
       "createdAt": "2026-04-07T21:05:00+08:00",
       "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:20:37.766Z",
-      "completed_at": "2026-04-07T13:20:37.768Z",
+      "started_at": "2026-04-07T13:24:34.819Z",
+      "completed_at": "2026-04-07T13:24:34.824Z",
       "result_summary": "dispatched to frontend via dispatch-queue"
     },
     {
@@ -1857,6 +1857,84 @@
       "started_at": "2026-04-07T13:20:24.739Z",
       "completed_at": "2026-04-07T13:20:24.741Z",
       "result_summary": "[dry run] spec-driven dispatch queued"
+    },
+    {
+      "id": "wq-world-009",
+      "title": "定期自动化测试 airilab-world + system skills",
+      "status": "done",
+      "priority": "high",
+      "owner": "tester",
+      "type": "qa_review_needed",
+      "estimatedDays": 2,
+      "tags": [
+        "airilab-world",
+        "testing",
+        "automation"
+      ],
+      "createdAt": "2026-04-07T21:23:00+08:00",
+      "description": "tester 每天定时运行：1) airilab-world canvas/JS/tab/mobile 测试 2) dispatcher dry-run 3) soul-audit 4) 关键 skills smoke test。结果反馈给 PM。",
+      "started_at": "2026-04-07T13:24:34.370Z",
+      "completed_at": "2026-04-07T13:24:34.816Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "wq-world-010",
+      "title": "在 airilab-world 中添加 Scribe agent",
+      "status": "pending_review",
+      "priority": "medium",
+      "owner": "frontend",
+      "type": "design_spec",
+      "estimatedDays": 1,
+      "tags": [
+        "airilab-world",
+        "scribe",
+        "fe"
+      ],
+      "createdAt": "2026-04-07T21:23:00+08:00",
+      "description": "将 scribe agent 加入 world 地图，分配房间位置，配置 sprite、状态显示、漫游行为，与其他 agent 保持一致",
+      "started_at": "2026-04-07T13:24:34.865Z",
+      "completed_at": "2026-04-07T13:24:34.874Z",
+      "result_summary": "dispatched to frontend via dispatch-queue"
+    },
+    {
+      "id": "wq-world-011",
+      "title": "Agent Card 增加 Todo List（当前任务 + 即将任务）",
+      "status": "pending_review",
+      "priority": "high",
+      "owner": "frontend/uiux",
+      "type": "design_spec",
+      "estimatedDays": 3,
+      "tags": [
+        "airilab-world",
+        "agent-card",
+        "todo",
+        "fe"
+      ],
+      "createdAt": "2026-04-07T21:23:00+08:00",
+      "description": "点击 agent 展开的 side panel 中，增加 working tasks 和 upcoming tasks 两个区块，从 work-queue.json 实时读取该 agent 的任务数据",
+      "started_at": "2026-04-07T13:24:34.850Z",
+      "completed_at": "2026-04-07T13:24:34.853Z",
+      "result_summary": "dispatched to frontend via dispatch-queue"
+    },
+    {
+      "id": "wq-world-012",
+      "title": "修复 SOUL.md/AGENTS.md 显示 HTML 而非纯文字",
+      "status": "pending_review",
+      "priority": "high",
+      "owner": "frontend",
+      "type": "design_spec",
+      "estimatedDays": 1,
+      "tags": [
+        "airilab-world",
+        "bug",
+        "soul",
+        "agents-md"
+      ],
+      "createdAt": "2026-04-07T21:23:00+08:00",
+      "description": "agent card 中渲染 soul/agents.md 内容时返回了 HTML 标签而不是格式化文字，需要用 marked.js 或 innerText 正确解析 markdown 为可读文本",
+      "started_at": "2026-04-07T13:24:34.858Z",
+      "completed_at": "2026-04-07T13:24:34.860Z",
+      "result_summary": "dispatched to frontend via dispatch-queue"
     }
   ]
 }
