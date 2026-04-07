@@ -208,6 +208,7 @@ const AGENT_LIST = [
   {id:'cs', name:'Customer Success', role:'CS Lead', dept:'design', desk:{col:5,row:11}, room:'design', spriteKey:'cs'},
   {id:'qa', name:'QA', role:'QA Engineer', dept:'qa', desk:{col:22,row:9}, room:'qa', spriteKey:'qa'},
   {id:'tester', name:'Tester', role:'Test Engineer', dept:'qa', desk:{col:26,row:9}, room:'qa', spriteKey:'tester'},
+  {id:'scribe', name:'Scribe', role:'Scribe / Archivist', dept:'exec', desk:{col:7,row:4}, room:'exec', spriteKey:'scribe'},
 ];
 
 const AGENT_PROFILES = {
@@ -233,6 +234,7 @@ const AGENT_PROFILES = {
   cs: { vibe:'empathetic', idleActs:['📞 helping a user','☕ brief break','📝 updating FAQs','💬 checking tickets'], wishlist:['Dual monitor','Headset','Knowledge base','Ticket dashboard','Comfy chair'], desc:'Customer Success. Makes sure users actually succeed.' },
   qa: { vibe:'rigorous', idleActs:['☕ more coffee','🧪 writing edge cases','💭 boundary values','📝 test matrices'], wishlist:['Large whiteboard','Fast machine','Coffee mug','Test docs','Boundary cheat sheet'], desc:'QA Engineer. Finds what breaks before users do.' },
   tester: { vibe:'methodical', idleActs:['✅ reviewing checklist','🔴 marking failures','📋 organizing tests','🧹 cleaning desk'], wishlist:['Laminated checklists','Red & green pens','Test dashboards','Bug printouts','Hand sanitizer'], desc:'Tester. The last line of defense before ship.' },
+  scribe: { vibe:'meticulous', idleActs:['📝 recording minutes','📋 archiving docs','☕ ink-stained tea','💭 indexing thoughts'], wishlist:['Fountain pen','Leather journal','Filing cabinet','Wax seal','Quiet corner'], desc:'Scribe & Archivist. Records everything worth remembering.' },
 };
 
 const DEPT_COLORS = {exec:'#F0C060',tech:'#78B8F8',design:'#78D878',pm:'#50C8D8',qa:'#A878E8'};
@@ -726,6 +728,7 @@ function drawAgent(ctx, ox, oy, spriteKey, frame) {
     cs:      {hair:'#E8B828',shirt:'#3A8848',pants:'#2A3040'},
     qa:      {hair:'#1A1818',shirt:'#6848A8',pants:'#2A2A38'},
     tester:  {hair:'#4A2810',shirt:'#6848A8',pants:'#2A2A38'},
+    scribe:  {hair:'#4A3010',shirt:'#8B6914',pants:'#2A2838'},
   };
   const c = configs[spriteKey] || {hair:'#3A2010',shirt:'#505050',pants:'#303030'};
   drawBody(ctx, ox, oy, {hair:c.hair,skin:c.skin||'#E8C898',shirt:c.shirt,pants:c.pants||'#2A3848'});
@@ -1345,9 +1348,9 @@ function drawAgentsFixed(timestamp) {
     if (st.status && st.status !== 'idle') {
       const bubble = getStatusBubble(st.status);      if (bubble) {
         ctx.save();
-        ctx.font = 'bold 7px "Courier New",monospace';
+        ctx.font = 'bold 10px "Courier New",monospace';
         const tw = ctx.measureText(bubble.text).width;
-        const pw = tw + 10, ph = 13;
+        const pw = tw + 10, ph = 16;
         const bx = spriteCX - pw/2, by = spriteTop - ph - 8;
         // Shadow
         ctx.fillStyle = 'rgba(0,0,0,0.5)';
@@ -1382,9 +1385,9 @@ function drawAgentsFixed(timestamp) {
       if (acts && acts.length) {
         const actText = acts[Math.floor(simTick / 60) % acts.length];
         ctx.save();
-        ctx.font = '7px "Courier New",monospace';
+        ctx.font = '10px "Courier New",monospace';
         const tw = ctx.measureText(actText).width;
-        const pw = tw + 10, ph = 13;
+        const pw = tw + 10, ph = 16;
         const bx = spriteCX - pw/2, by = spriteTop - ph - 8;
         ctx.fillStyle = 'rgba(0,0,0,0.4)';
         ctx.fillRect(bx+2, by+2, pw, ph);
@@ -1400,7 +1403,7 @@ function drawAgentsFixed(timestamp) {
         ctx.lineTo(spriteCX, by + ph + 5);
         ctx.closePath();
         ctx.fill();
-        ctx.fillStyle = '#A8D8A8';
+        ctx.fillStyle = '#D0F0D0';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(actText, spriteCX, by + ph/2);
@@ -1570,7 +1573,8 @@ function openSidePanel(agentId) {
     ${prof.vibe ? `<div class="side-section"><h4>🎭 Vibe</h4><div style="font-size:10px;color:#ccc">${escHtml(prof.vibe)}</div></div>` : ''}
     ${prof.idleActs && prof.idleActs.length ? `<div class="side-section"><h4>💭 When idle</h4><ul>${prof.idleActs.map(a=>`<li>${escHtml(a)}</li>`).join('')}</ul></div>` : ''}
     ${prof.wishlist && prof.wishlist.length ? `<div class="side-section"><h4>🖥️ Desk wishlist</h4><ul>${prof.wishlist.map(w=>`<li>${escHtml(w)}</li>`).join('')}</ul></div>` : ''}
-    <div class="side-section" id="agent-docs-section"><h4>📄 SOUL.md</h4><textarea id="soul-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa" readonly>Loading...</textarea><h4>📋 AGENTS.md</h4><textarea id="agents-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa" readonly>Loading...</textarea></div>
+    <div class="side-section" id="agent-docs-section"><h4>📄 SOUL.md</h4><div id="soul-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa;overflow-y:auto">Loading...</div><h4>📋 AGENTS.md</h4><div id="agents-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa;overflow-y:auto">Loading...</div></div>
+    <div class="side-section" id="agent-todo-section"><h4>📋 Working Tasks</h4><div id="agent-working-tasks" style="font-size:9px;color:#A8A8B8">Loading...</div><h4>📝 Upcoming Tasks</h4><div id="agent-upcoming-tasks" style="font-size:9px;color:#A8A8B8">Loading...</div></div>
     <div class="side-section"><h4>📨 Send task</h4><textarea id="task-input-panel" class="task-textarea" placeholder="Describe task to queue..."></textarea><button class="task-send-btn" onclick="queueTaskFromPanel('${agent.id}')">→ Queue</button></div>
     `; })()}
   `;
@@ -1609,6 +1613,7 @@ function openSidePanel(agentId) {
       'security': null,
       'jacques': null,
       'trump': null,
+      'scribe': null,
     };
     const agId = agent.id;
     const dirName = AGENT_DIR_MAP.hasOwnProperty(agId) ? AGENT_DIR_MAP[agId] : agId;
@@ -1623,18 +1628,42 @@ function openSidePanel(agentId) {
     // Re-query elements after innerHTML was set
     const soulEl2 = document.getElementById('soul-viewer');
     const agentsEl2 = document.getElementById('agents-viewer');
+    function simpleMarkdown(text) {
+      return text
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/^## (.+)$/gm,'<h3 style="color:#4A90D9;font-size:10px;margin:6px 0 3px">$1</h3>')
+        .replace(/^# (.+)$/gm,'<h3 style="color:#F8F8F8;font-size:11px;margin:6px 0 3px">$1</h3>')
+        .replace(/\*\*(.+?)\*\*/g,'<strong style="color:#eee">$1</strong>')
+        .replace(/\n/g,'<br>');
+    }
     if (soulEl2) {
       try {
         const r = soulRes.value;
-        soulEl2.value = r && r.ok ? await r.text() : '# ' + agent.name + '\nSOUL.md not found.\nCreate at: agents/' + dirName + '/SOUL.md';
-      } catch { soulEl2.value = 'Error loading SOUL.md'; }
+        soulEl2.innerHTML = r && r.ok ? simpleMarkdown(await r.text()) : simpleMarkdown('# ' + agent.name + '\nSOUL.md not found.\nCreate at: agents/' + dirName + '/SOUL.md');
+      } catch { soulEl2.innerHTML = 'Error loading SOUL.md'; }
     }
     if (agentsEl2) {
       try {
         const r = agentsRes.value;
-        agentsEl2.value = r && r.ok ? await r.text() : 'AGENTS.md not found.\nCreate at: agents/' + dirName + '/AGENTS.md';
-      } catch { agentsEl2.value = 'Error loading AGENTS.md'; }
+        agentsEl2.innerHTML = r && r.ok ? simpleMarkdown(await r.text()) : simpleMarkdown('AGENTS.md not found.\nCreate at: agents/' + dirName + '/AGENTS.md');
+      } catch { agentsEl2.innerHTML = 'Error loading AGENTS.md'; }
     }
+    }
+    // Load work-queue tasks for this agent
+    try {
+      const wqRes = await fetch('/data/work-queue.json', {cache:'no-store'});
+      if (wqRes.ok) {
+        const wq = await wqRes.json();
+        const agName = agent.name.toLowerCase();
+        const agId = agent.id.toLowerCase();
+        const running = wq.filter(t => t.status === 'running' && t.owner && (t.owner.toLowerCase() === agName || t.owner.toLowerCase() === agId));
+        const pending = wq.filter(t => t.status === 'pending' && t.owner && (t.owner.toLowerCase() === agName || t.owner.toLowerCase() === agId)).slice(0, 3);
+        const workingEl = document.getElementById('agent-working-tasks');
+        const upcomingEl = document.getElementById('agent-upcoming-tasks');
+        if (workingEl) workingEl.innerHTML = running.length ? running.map(t => `<div style="margin-bottom:4px">▶ <strong>${escHtml(t.id||'')}</strong> ${escHtml(t.title||t.task||'')}</div>`).join('') : '<div style="color:#606070">No active tasks</div>';
+        if (upcomingEl) upcomingEl.innerHTML = pending.length ? pending.map(t => `<div style="margin-bottom:4px">◻ <strong>${escHtml(t.id||'')}</strong> ${escHtml(t.title||t.task||'')}</div>`).join('') : '<div style="color:#606070">No upcoming tasks</div>';
+      }
+    } catch(e) { console.warn('work-queue load error', e); }
   })();
 
 }
