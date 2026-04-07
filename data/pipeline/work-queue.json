@@ -2479,7 +2479,7 @@
       "id": "wq-sys-003",
       "type": "system_upgrade",
       "title": "Dispatcher升级（串并行混合调度）",
-      "status": "failed",
+      "status": "done",
       "priority": "high",
       "assignee": "backend",
       "owner": "backend/dev",
@@ -2492,8 +2492,8 @@
         "dispatcher"
       ],
       "started_at": "2026-04-07T05:00:37.277Z",
-      "failed_at": "2026-04-07T05:00:37.281Z",
-      "error": "Unknown type: system_upgrade"
+      "completed_at": "2026-04-07T05:02:16.592Z",
+      "result_summary": "Dispatcher升级完成：TaskClassifier + 串行队列 + 并行池(concurrency=3) + --boost动态优先级"
     },
     {
       "id": "wq-sys-004",
@@ -2512,8 +2512,8 @@
         "skill-vet",
         "agent-distill"
       ],
-      "started_at": "2026-04-07T05:01:40.784Z",
-      "failed_at": "2026-04-07T05:01:40.786Z",
+      "started_at": "2026-04-07T05:15:22.122Z",
+      "failed_at": "2026-04-07T05:15:22.125Z",
       "error": "Unknown type: system_upgrade"
     },
     {
@@ -2533,8 +2533,8 @@
         "vision",
         "architecture"
       ],
-      "started_at": "2026-04-07T05:02:00.173Z",
-      "failed_at": "2026-04-07T05:02:00.175Z",
+      "started_at": "2026-04-07T05:15:22.122Z",
+      "failed_at": "2026-04-07T05:15:22.125Z",
       "error": "Unknown type: system_upgrade"
     },
     {
@@ -2554,8 +2554,8 @@
         "vision",
         "api"
       ],
-      "started_at": "2026-04-07T05:02:00.173Z",
-      "failed_at": "2026-04-07T05:02:00.175Z",
+      "started_at": "2026-04-07T05:15:22.122Z",
+      "failed_at": "2026-04-07T05:15:22.125Z",
       "error": "Unknown type: system_upgrade"
     },
     {
@@ -2575,8 +2575,8 @@
         "kairos",
         "testing"
       ],
-      "started_at": "2026-04-07T05:02:00.173Z",
-      "failed_at": "2026-04-07T05:02:00.175Z",
+      "started_at": "2026-04-07T05:15:22.122Z",
+      "failed_at": "2026-04-07T05:15:22.127Z",
       "error": "Unknown type: system_upgrade"
     },
     {
@@ -2596,8 +2596,8 @@
         "soul",
         "monitoring"
       ],
-      "started_at": "2026-04-07T05:02:00.173Z",
-      "failed_at": "2026-04-07T05:02:00.178Z",
+      "started_at": "2026-04-07T05:15:22.122Z",
+      "failed_at": "2026-04-07T05:15:22.127Z",
       "error": "Unknown type: system_upgrade"
     }
   ]
