@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="ngrok-skip-browser-warning" content="true">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Airi Lab World v14</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -1547,11 +1548,7 @@ function openSidePanel(agentId) {
         if (r.ok) { soulEl.value = await r.text(); return; }
       } catch {}
     }
-    soulEl.value = '# ' + agent.name + '
-
-SOUL.md not found.
-Create at:
-agents/' + agId + '/SOUL.md';
+    soulEl.value = '# ' + agent.name + '\nSOUL.md not found.\nCreate at:\nagents/' + agId + '/SOUL.md';
   })();
 
 }
