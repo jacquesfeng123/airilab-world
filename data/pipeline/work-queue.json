@@ -3872,6 +3872,701 @@
       "started_at": "2026-04-07T19:12:07.678Z",
       "failed_at": "2026-04-07T19:12:07.679Z",
       "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-si-devops-mnp03nih",
+      "type": "self_improve",
+      "assignee": "devops",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review CI/CD pipeline health"
+      },
+      "created_at": "2026-04-07T19:17:08.681Z",
+      "started_at": "2026-04-07T19:17:08.681Z",
+      "completed_at": "2026-04-07T19:17:08.681Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review CI/CD pipeline health"
+    },
+    {
+      "id": "wq-si-chief-designer-mnp03nii",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-07T19:17:08.682Z",
+      "started_at": "2026-04-07T19:17:08.682Z",
+      "completed_at": "2026-04-07T19:17:08.682Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-trump-mnp03nij",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-07T19:17:08.683Z",
+      "started_at": "2026-04-07T19:17:08.683Z",
+      "completed_at": "2026-04-07T19:17:08.683Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-si-tester-mnp0ztv9",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-07T19:42:09.909Z",
+      "started_at": "2026-04-07T19:42:09.909Z",
+      "completed_at": "2026-04-07T19:42:09.909Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-dev-mnp0ztva",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-07T19:42:09.910Z",
+      "started_at": "2026-04-07T19:42:09.910Z",
+      "completed_at": "2026-04-07T19:42:09.910Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnp0ztva",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-07T19:42:09.910Z",
+      "started_at": "2026-04-07T19:42:09.910Z",
+      "completed_at": "2026-04-07T19:42:09.910Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnp0ztva",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-07T19:42:09.910Z",
+      "started_at": "2026-04-07T19:42:09.910Z",
+      "completed_at": "2026-04-07T19:42:09.910Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-scribe-mnp0ztva",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-07T19:42:09.910Z",
+      "started_at": "2026-04-07T19:42:09.910Z",
+      "completed_at": "2026-04-07T19:42:09.910Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-researcher-mnp0ztvb",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-07T19:42:09.911Z",
+      "started_at": "2026-04-07T19:42:09.911Z",
+      "completed_at": "2026-04-07T19:42:09.911Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-uiux-mnp0ztvb",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-07T19:42:09.911Z",
+      "started_at": "2026-04-07T19:42:09.911Z",
+      "completed_at": "2026-04-07T19:42:09.911Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "wq-si-tech-arch-mnp0ztvb",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-07T19:42:09.911Z",
+      "started_at": "2026-04-07T19:42:09.911Z",
+      "completed_at": "2026-04-07T19:42:09.911Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnp0ztvc",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-07T19:42:09.912Z",
+      "started_at": "2026-04-07T19:42:09.912Z",
+      "completed_at": "2026-04-07T19:42:09.912Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnp0ztvc",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-07T19:42:09.912Z",
+      "started_at": "2026-04-07T19:42:09.912Z",
+      "completed_at": "2026-04-07T19:42:09.912Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnp0ztvc",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-07T19:42:09.912Z",
+      "started_at": "2026-04-07T19:42:09.912Z",
+      "completed_at": "2026-04-07T19:42:09.912Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnp0ztvc",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-07T19:42:09.912Z",
+      "started_at": "2026-04-07T19:42:09.912Z",
+      "completed_at": "2026-04-07T19:42:09.912Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnp0ztvd",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-07T19:42:09.913Z",
+      "started_at": "2026-04-07T19:42:09.913Z",
+      "completed_at": "2026-04-07T19:42:09.913Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnp0ztvd",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-07T19:42:09.913Z",
+      "started_at": "2026-04-07T19:42:09.913Z",
+      "completed_at": "2026-04-07T19:42:09.913Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-review-ai-engineer-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] ai-engineer hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "ai-engineer",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.663Z",
+      "failed_at": "2026-04-07T20:12:10.666Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-backend-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] backend hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "backend",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.670Z",
+      "failed_at": "2026-04-07T20:12:10.674Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-bd-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] bd hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "bd",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.676Z",
+      "failed_at": "2026-04-07T20:12:10.678Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-chief-designer-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] chief-designer hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "chief-designer",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.682Z",
+      "failed_at": "2026-04-07T20:12:10.684Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-dev-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] dev hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "dev",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.688Z",
+      "failed_at": "2026-04-07T20:12:10.692Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-devops-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] devops hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "devops",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.694Z",
+      "failed_at": "2026-04-07T20:12:10.713Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-downstream-liaison-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] downstream-liaison hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "downstream-liaison",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.715Z",
+      "failed_at": "2026-04-07T20:12:10.717Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-estimator-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] estimator hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "estimator",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.720Z",
+      "failed_at": "2026-04-07T20:12:10.723Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-frontend-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] frontend hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "frontend",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.725Z",
+      "failed_at": "2026-04-07T20:12:10.726Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-material-manager-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] material-manager hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "material-manager",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.729Z",
+      "failed_at": "2026-04-07T20:12:10.731Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-pm-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] pm hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "pm",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.734Z",
+      "failed_at": "2026-04-07T20:12:10.738Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-project-pm-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] project-pm hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "project-pm",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.742Z",
+      "failed_at": "2026-04-07T20:12:10.744Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-qa-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] qa hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "qa",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.763Z",
+      "failed_at": "2026-04-07T20:12:10.765Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-renderer-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] renderer hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "renderer",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.767Z",
+      "failed_at": "2026-04-07T20:12:10.771Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-researcher-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] researcher hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "researcher",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.773Z",
+      "failed_at": "2026-04-07T20:12:10.776Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-reviewer-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] reviewer hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "reviewer",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.778Z",
+      "failed_at": "2026-04-07T20:12:10.780Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-scribe-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] scribe hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "scribe",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.782Z",
+      "failed_at": "2026-04-07T20:12:10.784Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-technical-architect-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] technical-architect hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "technical-architect",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.788Z",
+      "failed_at": "2026-04-07T20:12:10.791Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-tester-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] tester hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "tester",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.794Z",
+      "failed_at": "2026-04-07T20:12:10.813Z",
+      "error": "Unknown type: agent_review"
+    },
+    {
+      "id": "wq-review-uiux-2026-04-07-20",
+      "type": "agent_review",
+      "title": "[Review] uiux hourly review — 2026-04-07 20:00",
+      "status": "failed",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "payload": {
+        "agent": "uiux",
+        "reviewFile": "/Users/feng/.openclaw/workspace/data/audit/agent-reviews/2026-04-07-20.md"
+      },
+      "created_at": "2026-04-07T20:00:00.332Z",
+      "created_by": "hourly-agent-review",
+      "tags": [
+        "agent_review",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-07T20:12:10.815Z",
+      "failed_at": "2026-04-07T20:12:10.818Z",
+      "error": "Unknown type: agent_review"
     }
   ]
 }
