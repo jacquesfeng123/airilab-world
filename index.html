@@ -1648,7 +1648,6 @@ function openSidePanel(agentId) {
         agentsEl2.innerHTML = r && r.ok ? simpleMarkdown(await r.text()) : simpleMarkdown('AGENTS.md not found.\nCreate at: agents/' + dirName + '/AGENTS.md');
       } catch { agentsEl2.innerHTML = 'Error loading AGENTS.md'; }
     }
-    }
     // Load work-queue tasks for this agent
     try {
       const wqRes = await fetch('/data/work-queue.json', {cache:'no-store'});
