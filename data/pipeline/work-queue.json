@@ -3,7 +3,7 @@
     {
       "id": "wq-bd-brief-v18-mnppev66",
       "type": "bd_brief_needed",
-      "status": "pending",
+      "status": "done",
       "owner": "bd",
       "assignee": "bd",
       "priority": "low",
@@ -18,9 +18,11 @@
         "commercial",
         "bd-brief"
       ],
-      "started_at": "2026-04-08T07:43:54.750Z",
+      "started_at": "2026-04-08T07:45:43.581Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/bd-brief-generator.mjs \"general\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/bd-brief-generator.mjs \"general\"\n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T07:45:43.972Z",
+      "result_summary": "[BD Brief Generator] Topic: \"general\"\n[bd-brief-generator] LLM unavailable, generating template...\n[BD Brief Generator] ✅ Written to: /Users/feng/.openclaw/workspace/data/pipeline/tasks/TASK-20260408-001/bd-brief.md\n[BD Brief Generator] Task ID: TASK-20260408-001"
     },
     {
       "id": "wq-si-pm-mnpqs03d",
