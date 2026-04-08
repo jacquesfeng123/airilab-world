@@ -24,7 +24,7 @@
       "id": "wq-debt-003",
       "title": "把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "soul_migration",
-      "status": "pending_review",
+      "status": "pending_cto",
       "priority": "high",
       "owner": "devops",
       "tags": [
@@ -36,7 +36,7 @@
       "description": "FE 改代码必须先跑 browser-test 的规则目前只是口头约定，需要写进 agents/frontend/role-soul.md 的 DO NOT 章节。",
       "started_at": "2026-04-08T01:57:57.097Z",
       "assignee": "devops",
-      "completed_at": "2026-04-08T02:02:18.397Z",
+      "completed_at": "2026-04-08T05:30:52.187Z",
       "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
       "qa_approved_by": "qa-wq-debt-003",
       "cto_approved_by": "cto-wq-debt-003",
@@ -46,7 +46,7 @@
       "id": "wq-debt-004",
       "title": "v18 UX 改进 Sprint1 实际执行（非规划）",
       "type": "design_spec",
-      "status": "pending_review",
+      "status": "pending_cto",
       "priority": "medium",
       "owner": "frontend/uiux",
       "tags": [
@@ -58,7 +58,7 @@
       "description": "v18 UX 规划写了，Sprint1(~5h)：气泡可读性进一步提升、点击热区容差优化、Header 状态统计改进",
       "started_at": "2026-04-08T01:57:57.125Z",
       "assignee": "frontend",
-      "completed_at": "2026-04-08T02:02:18.413Z",
+      "completed_at": "2026-04-08T05:30:52.190Z",
       "result_summary": "dispatched to frontend via agent-inbox (cron fallback)",
       "qa_approved_by": "qa-wq-debt-004",
       "cto_approved_by": "cto-wq-debt-004"
@@ -421,7 +421,7 @@
       "id": "qa-wq-debt-003",
       "title": "[QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "qa",
       "assignee": "qa",
@@ -431,15 +431,17 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T05:28:44.165Z",
+      "started_at": "2026-04-08T05:30:51.538Z",
       "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T05:30:52.186Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "qa-wq-debt-004",
       "title": "[QA] v18 UX 改进 Sprint1 实际执行（非规划）",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -449,9 +451,41 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T05:28:44.165Z",
+      "started_at": "2026-04-08T05:30:51.538Z",
       "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T05:30:52.186Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-debt-003",
+      "title": "[CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-debt-003",
+      "createdAt": "2026-04-08T05:30:52.189Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-debt-004",
+      "title": "[CTO Review] v18 UX 改进 Sprint1 实际执行（非规划）",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-debt-004",
+      "createdAt": "2026-04-08T05:30:52.191Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
