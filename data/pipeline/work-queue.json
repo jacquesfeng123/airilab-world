@@ -73,64 +73,72 @@
       "type": "audit",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "审计并清理 work-queue 中的虚假完成项（[virtual] 标记），重置为 pending 并补充具体 assignee"
       },
       "created_at": "2026-04-08T16:08:54.036Z",
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-23-scribe",
-      "started_at": "2026-04-08T21:19:20.174Z",
+      "started_at": "2026-04-08T21:30:56.537Z",
       "retryCount": 3,
-      "lastError": "Unknown type: audit"
+      "lastError": "Unknown type: audit",
+      "failed_at": "2026-04-08T21:30:56.539Z",
+      "error": "Unknown type: audit"
     },
     {
       "id": "wq-be-api-contract-5rfzydfp",
       "type": "backend_task",
       "assignee": "backend",
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "建立 API contract 输出规范，每个接口完成后写入 /data/pipeline/tasks/{id}/api-contract.md"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-08T21:19:20.207Z",
+      "started_at": "2026-04-08T21:30:56.571Z",
       "retryCount": 3,
-      "lastError": "Unknown type: backend_task"
+      "lastError": "Unknown type: backend_task",
+      "failed_at": "2026-04-08T21:30:56.572Z",
+      "error": "Unknown type: backend_task"
     },
     {
       "id": "wq-be-llm-client-7yxas3h7",
       "type": "backend_task",
       "assignee": "backend",
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "封装统一 LLM 调用 client 模块（retry + exponential backoff），替代散落在各脚本中的直接调用"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-08T21:19:20.211Z",
+      "started_at": "2026-04-08T21:30:56.573Z",
       "retryCount": 3,
-      "lastError": "Unknown type: backend_task"
+      "lastError": "Unknown type: backend_task",
+      "failed_at": "2026-04-08T21:30:56.574Z",
+      "error": "Unknown type: backend_task"
     },
     {
       "id": "wq-fe-browser-test-v18-z9pi2kn1",
       "type": "frontend_task",
       "assignee": "frontend",
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "补充 v18 Sprint1 相关页面 browser-test 用例（当前仅覆盖 v17）"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-frontend",
-      "started_at": "2026-04-08T21:19:20.212Z",
+      "started_at": "2026-04-08T21:30:56.575Z",
       "retryCount": 3,
-      "lastError": "Unknown type: frontend_task"
+      "lastError": "Unknown type: frontend_task",
+      "failed_at": "2026-04-08T21:30:56.576Z",
+      "error": "Unknown type: frontend_task"
     },
     {
       "id": "wq-ar-04h-chief-designer-tech-arch",
@@ -151,7 +159,10 @@
       "started_at": "2026-04-08T21:15:44.668Z",
       "assignee": "pm",
       "completed_at": "2026-04-08T21:15:44.669Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "processed_at": "2026-04-09T05:18:00.000Z",
+      "pm_action": "acknowledge",
+      "pm_note": "04时 review 摘要，已在上一轮处理，acknowledge 完成"
     },
     {
       "id": "wq-ar-cd-design-log-v18",
@@ -168,15 +179,18 @@
         "v18",
         "design-log"
       ],
-      "started_at": "2026-04-08T21:15:44.660Z",
+      "started_at": "2026-04-08T21:30:56.579Z",
       "assignee": "pm",
-      "completed_at": "2026-04-08T21:15:44.663Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "completed_at": "2026-04-08T21:30:56.580Z",
+      "result_summary": "dispatched to pm via agent-inbox",
+      "processed_at": "2026-04-09T05:18:00.000Z",
+      "pm_action": "defer",
+      "pm_note": "design-log 需 chief-designer 执行，PM defer 放入待办"
     },
     {
       "id": "wq-ar-ta-tech-review-gate",
       "type": "agent_review",
-      "status": "done",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "medium",
       "title": "在 pipeline 中增加 Technical Review 门控（pending_tech_review 状态）",
@@ -191,7 +205,10 @@
       "started_at": "2026-04-08T21:15:44.665Z",
       "assignee": "pm",
       "completed_at": "2026-04-08T21:15:44.666Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "processed_at": "2026-04-09T05:18:00.000Z",
+      "pm_action": "escalate",
+      "pm_note": "pipeline 核心架构变更，涉及状态机修改，需 CTO 决策"
     },
     {
       "id": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
@@ -227,7 +244,10 @@
       "started_at": "2026-04-08T21:15:49.203Z",
       "assignee": "pm",
       "completed_at": "2026-04-08T21:15:49.204Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "processed_at": "2026-04-09T05:18:00.000Z",
+      "pm_action": "acknowledge",
+      "pm_note": "05时 review 摘要刚完成，acknowledge done"
     },
     {
       "id": "wq-ar-bd-v18-brief-05h",
@@ -244,10 +264,13 @@
         "v18",
         "bd-brief"
       ],
-      "started_at": "2026-04-08T21:15:38.869Z",
+      "started_at": "2026-04-08T21:30:56.545Z",
       "assignee": "pm",
-      "completed_at": "2026-04-08T21:15:38.887Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "completed_at": "2026-04-08T21:30:56.548Z",
+      "result_summary": "dispatched to pm via agent-inbox",
+      "processed_at": "2026-04-09T05:18:00.000Z",
+      "pm_action": "defer",
+      "pm_note": "BD brief 需 BD agent 执行，PM defer 放入待办"
     },
     {
       "id": "wq-ar-researcher-init-05h",
@@ -265,10 +288,13 @@
         "arch-ai",
         "competitive"
       ],
-      "started_at": "2026-04-08T21:15:38.889Z",
+      "started_at": "2026-04-08T21:30:56.568Z",
       "assignee": "pm",
-      "completed_at": "2026-04-08T21:15:38.891Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "completed_at": "2026-04-08T21:30:56.570Z",
+      "result_summary": "dispatched to pm via agent-inbox",
+      "processed_at": "2026-04-09T05:18:00.000Z",
+      "pm_action": "defer",
+      "pm_note": "竞品研究需 researcher agent 执行，PM defer 放入待办"
     },
     {
       "id": "wq-si-qa-mnqjrn7g",
@@ -855,7 +881,7 @@
     {
       "id": "wq-ar-04h-chief-designer-tech-arch",
       "type": "agent_review",
-      "status": "pending",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "title": "[Review摘要] 04时 chief-designer+technical-architect review 建议",
@@ -867,12 +893,15 @@
         "technical-architect",
         "review",
         "04h"
-      ]
+      ],
+      "pm_action": "acknowledge",
+      "pm_note": "04时review摘要，acknowledge完成",
+      "processed_at": "2026-04-09T05:20:00.000Z"
     },
     {
       "id": "wq-ar-cd-design-log-v18",
       "type": "agent_review",
-      "status": "pending",
+      "status": "deferred",
       "owner": "pm",
       "priority": "medium",
       "title": "为 v18 UX Sprint 创建 design-log.md，记录设计原则与概念",
@@ -883,12 +912,15 @@
         "chief-designer",
         "v18",
         "design-log"
-      ]
+      ],
+      "pm_action": "defer",
+      "pm_note": "design-log需chief-designer执行，PM defer放入待办",
+      "processed_at": "2026-04-09T05:20:00.000Z"
     },
     {
       "id": "wq-ar-ta-tech-review-gate",
       "type": "agent_review",
-      "status": "pending",
+      "status": "pending_review",
       "owner": "pm",
       "priority": "medium",
       "title": "在 pipeline 中增加 Technical Review 门控（pending_tech_review 状态）",
@@ -899,7 +931,10 @@
         "technical-architect",
         "pipeline",
         "quality-gate"
-      ]
+      ],
+      "pm_action": "escalate",
+      "pm_note": "pipeline核心架构变更，涉及状态机修改，需CTO决策",
+      "processed_at": "2026-04-09T05:20:00.000Z"
     },
     {
       "id": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
@@ -915,7 +950,7 @@
       "id": "wq-ar-05h-bd-researcher",
       "title": "[Review摘要] 05时 bd+researcher review 建议",
       "type": "agent_review",
-      "status": "pending",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-08T21:04:35.463Z",
@@ -926,12 +961,15 @@
         "researcher",
         "review",
         "05h"
-      ]
+      ],
+      "pm_action": "acknowledge",
+      "pm_note": "05时review摘要，acknowledge完成",
+      "processed_at": "2026-04-09T05:20:00.000Z"
     },
     {
       "id": "wq-ar-bd-v18-brief-05h",
       "type": "agent_review",
-      "status": "pending",
+      "status": "deferred",
       "owner": "pm",
       "priority": "high",
       "title": "为 v18 Sprint 输出 BD brief：商业目标 / 目标用户 / KPI",
@@ -942,12 +980,15 @@
         "bd",
         "v18",
         "bd-brief"
-      ]
+      ],
+      "pm_action": "defer",
+      "pm_note": "BD brief需BD agent执行，PM defer放入待办",
+      "processed_at": "2026-04-09T05:20:00.000Z"
     },
     {
       "id": "wq-ar-researcher-init-05h",
       "type": "agent_review",
-      "status": "pending",
+      "status": "deferred",
       "owner": "pm",
       "priority": "high",
       "title": "执行 arch-AI 竞品全景研究报告 + 初始化 data/research/ 目录",
@@ -959,7 +1000,10 @@
         "research",
         "arch-ai",
         "competitive"
-      ]
+      ],
+      "pm_action": "defer",
+      "pm_note": "竞品研究需researcher agent执行，PM defer放入待办",
+      "processed_at": "2026-04-09T05:20:00.000Z"
     }
   ]
 }
