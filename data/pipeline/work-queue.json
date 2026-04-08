@@ -4222,7 +4222,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending_review",
+      "status": "pending_cto",
       "created_by": "agent-review-rotation",
       "created_at": "2026-04-08T03:04:32.622Z",
       "payload": {
@@ -4232,23 +4232,26 @@
       "started_at": "2026-04-08T03:15:27.536Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 11时 qa+tester review 建议\" \"\"\n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T03:15:32.326Z",
-      "result_summary": "[PM] ✅ Task created: task-mnph6rww\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww/spec.md"
+      "completed_at": "2026-04-08T03:30:59.430Z",
+      "result_summary": "[PM] ✅ Task created: task-mnph6rww\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww/spec.md",
+      "qa_approved_by": "qa-wq-review-1108-qa-tester"
     },
     {
       "id": "wq-mnph6vdy",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 11时 qa+tester review 建议"
       },
       "created_at": "2026-04-08T03:15:32.326Z",
       "created_by": "dispatcher-auto",
-      "started_at": "2026-04-08T03:28:32.618Z",
+      "started_at": "2026-04-08T03:30:58.634Z",
       "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T03:30:59.422Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-si-chief-designer-mnph993a",
@@ -4269,7 +4272,7 @@
       "id": "qa-wq-review-1108-qa-tester",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "qa",
       "assignee": "qa",
@@ -4279,9 +4282,26 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T03:28:32.618Z",
+      "started_at": "2026-04-08T03:30:58.634Z",
       "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T03:30:59.423Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-review-1108-qa-tester",
+      "title": "[CTO Review] wq-review-1108-qa-tester",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-review-1108-qa-tester",
+      "createdAt": "2026-04-08T03:30:59.431Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
