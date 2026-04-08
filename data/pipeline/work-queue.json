@@ -323,6 +323,49 @@
       "completed_at": "2026-04-08T07:43:54.748Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-ar-aie-mnprijco",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 16时 ai-engineer+reviewer review 建议",
+      "description": "ai-engineer: 建立v18 AI eval流程 + 修复node PATH。reviewer: Pipeline强制pending_review门控 + v18补充Code Review。",
+      "created_at": "2026-04-08T08:04:32.759Z",
+      "created_by": "agent-review-rotation",
+      "started_at": "2026-04-08T08:13:57.586Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T08:13:57.587Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-spec1-mnprijcp",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "low",
+      "title": "建立 v18 AI 功能结构化 eval 流程",
+      "description": "为 v18 AI 功能建立 FID/CLIP/human preference eval 流程，补 prompt 版本管理。来源: ai-engineer review 2026-04-08-16。",
+      "created_at": "2026-04-08T08:04:32.759Z",
+      "created_by": "ai-engineer-review",
+      "started_at": "2026-04-08T08:13:57.588Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-ar-spec2-mnprijcq",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "high",
+      "title": "在 Pipeline 中强制启用 pending_review 门控",
+      "description": "Review 流程未激活，dev 产出无代码 review 门控。需 PM 纳入 pipeline 规范。来源: reviewer review 2026-04-08-16。",
+      "created_at": "2026-04-08T08:04:32.759Z",
+      "created_by": "reviewer-review",
+      "started_at": "2026-04-08T08:13:57.569Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
