@@ -342,7 +342,7 @@
     {
       "id": "wq-ar-spec1-mnprijcp",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "low",
       "title": "建立 v18 AI 功能结构化 eval 流程",
@@ -352,13 +352,14 @@
       "started_at": "2026-04-08T08:17:40.749Z",
       "retryCount": 2,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T08:20:28.626155Z",
-      "result": "task-mnps2p66"
+      "completed_at": "2026-04-08T08:30:53.222Z",
+      "result": "task-mnps2p66",
+      "qa_approved_by": "qa-wq-ar-spec1-mnprijcp"
     },
     {
       "id": "wq-ar-spec2-mnprijcq",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "high",
       "title": "在 Pipeline 中强制启用 pending_review 门控",
@@ -368,13 +369,14 @@
       "started_at": "2026-04-08T08:15:48.814Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T08:15:53.104Z"
+      "completed_at": "2026-04-08T08:30:53.219Z",
+      "qa_approved_by": "qa-wq-ar-spec2-mnprijcq"
     },
     {
       "id": "qa-wq-ar-spec1-mnprijcp",
       "title": "[QA] 建立 v18 AI 功能结构化 eval 流程",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "qa",
       "assignee": "qa",
@@ -384,15 +386,17 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T08:29:27.974Z",
+      "started_at": "2026-04-08T08:30:52.618Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T08:30:53.218Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "qa-wq-ar-spec2-mnprijcq",
       "title": "[QA] 在 Pipeline 中强制启用 pending_review 门控",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "qa",
       "assignee": "qa",
@@ -402,9 +406,41 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T08:29:27.974Z",
+      "started_at": "2026-04-08T08:30:52.618Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T08:30:53.218Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-ar-spec2-mnprijcq",
+      "title": "[CTO Review] 在 Pipeline 中强制启用 pending_review 门控",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-spec2-mnprijcq",
+      "createdAt": "2026-04-08T08:30:53.221Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-spec1-mnprijcp",
+      "title": "[CTO Review] 建立 v18 AI 功能结构化 eval 流程",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-spec1-mnprijcp",
+      "createdAt": "2026-04-08T08:30:53.223Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
