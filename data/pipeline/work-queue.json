@@ -492,6 +492,62 @@
       "started_at": "2026-04-08T05:32:35.341Z",
       "completed_at": "2026-04-08T05:32:35.342Z",
       "result_summary": "dispatched to trump via agent-inbox"
+    },
+    {
+      "id": "wq-review-2026040814-chief-designer",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review建议] 14时 chief-designer: 建立设计语言规范文档",
+      "description": "Chief Designer review: 建立 Airi Lab 设计语言规范文档，作为跨 sprint 质量基线。详见 data/audit/agent-reviews/2026-04-08-14-chief-designer.md",
+      "created_at": "2026-04-08T06:04:35.109Z",
+      "tags": [
+        "agent_review",
+        "design",
+        "chief-designer"
+      ],
+      "started_at": "2026-04-08T06:13:46.876Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T06:13:46.878Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-review-2026040814-technical-architect",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review建议] 14时 technical-architect: v18 UX 技术验收报告",
+      "description": "Technical Architect review: 补充 v18 改进的技术验收文档，确认无障碍合规和 browser-test 通过状态。详见 data/audit/agent-reviews/2026-04-08-14-technical-architect.md",
+      "created_at": "2026-04-08T06:04:35.109Z",
+      "tags": [
+        "agent_review",
+        "technical",
+        "technical-architect"
+      ],
+      "started_at": "2026-04-08T06:13:46.880Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T06:13:46.881Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-pm-spec-2026040814",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 14时 chief-designer+technical-architect review 建议",
+      "description": "1) Chief Designer: 建立设计语言规范文档（design system）作为跨sprint质量基线。2) Technical Architect: 补充v18改进技术验收文档，确认无障碍合规和browser-test通过状态。",
+      "created_at": "2026-04-08T06:04:35.109Z",
+      "tags": [
+        "agent_review",
+        "summary",
+        "pm_spec"
+      ],
+      "started_at": "2026-04-08T06:13:46.881Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
