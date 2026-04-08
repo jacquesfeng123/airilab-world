@@ -1565,7 +1565,7 @@
     {
       "id": "wq-ar-15-res-mnppev66",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "researcher",
       "assignee": "researcher",
       "priority": "medium",
@@ -1578,12 +1578,14 @@
         "dispatcher",
         "researcher"
       ],
-      "started_at": "2026-04-08T14:00:43.857Z"
+      "started_at": "2026-04-08T14:00:43.857Z",
+      "completed_at": "2026-04-08T15:01:03.750Z",
+      "result_summary": "[watchdog] reset stale running task"
     },
     {
       "id": "wq-review-2026040814-chief-designer",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "chief-designer",
       "assignee": "chief-designer",
       "priority": "medium",
@@ -1596,12 +1598,14 @@
         "documentation",
         "chief-designer"
       ],
-      "started_at": "2026-04-08T14:00:51.140Z"
+      "started_at": "2026-04-08T14:00:51.140Z",
+      "completed_at": "2026-04-08T15:01:03.750Z",
+      "result_summary": "[watchdog] reset stale running task"
     },
     {
       "id": "wq-review-2026040814-technical-architect",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "technical-architect",
       "assignee": "technical-architect",
       "priority": "medium",
@@ -1615,7 +1619,9 @@
         "technical-review",
         "technical-architect"
       ],
-      "started_at": "2026-04-08T14:03:14.062Z"
+      "started_at": "2026-04-08T14:03:14.062Z",
+      "completed_at": "2026-04-08T15:03:53.711Z",
+      "result_summary": "[watchdog] reset stale running task"
     },
     {
       "id": "wq-ar-uiux-pm-22-mnq4dxre",
@@ -1641,7 +1647,7 @@
     {
       "id": "wq-pmspec-ux-required-field-mnq4dxre",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "pm",
       "assignee": "pm",
       "priority": "high",
@@ -1655,12 +1661,14 @@
         "pipeline",
         "spec"
       ],
-      "started_at": "2026-04-08T14:15:38.320Z"
+      "started_at": "2026-04-08T14:15:38.320Z",
+      "completed_at": "2026-04-08T15:15:56.006Z",
+      "result_summary": "[watchdog] reset stale running task"
     },
     {
       "id": "wq-pmspec-pm-sla-mnq4dxre",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "pm",
       "assignee": "pm",
       "priority": "medium",
@@ -1673,7 +1681,60 @@
         "sla",
         "pipeline"
       ],
-      "started_at": "2026-04-08T14:15:53.193Z"
+      "started_at": "2026-04-08T14:15:53.193Z",
+      "completed_at": "2026-04-08T15:15:56.006Z",
+      "result_summary": "[watchdog] reset stale running task"
+    },
+    {
+      "id": "wq-si-qa-mnq5f6jr",
+      "type": "self_improve",
+      "assignee": "qa",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Run regression test suite"
+      },
+      "created_at": "2026-04-08T14:33:50.823Z",
+      "started_at": "2026-04-08T14:33:50.823Z",
+      "completed_at": "2026-04-08T14:33:50.823Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Run regression test suite"
+    },
+    {
+      "id": "wq-si-trump-mnq5f6js",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-08T14:33:50.824Z",
+      "started_at": "2026-04-08T14:33:50.824Z",
+      "completed_at": "2026-04-08T14:33:50.824Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-review-scribe-devops-23h-mnq6j540",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "assignee": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 23时 scribe+devops review 建议",
+      "description": "Scribe建议：审计work-queue虚假完成项，建立任务真实性验证机制。DevOps建议：修复cron/subagent脚本执行环境node PATH问题（高优先级）。",
+      "created_at": "2026-04-08T15:04:55.196Z",
+      "created_by": "airilab-agent-review-rotation",
+      "tags": [
+        "agent_review",
+        "scribe",
+        "devops",
+        "2026-04-08-23"
+      ],
+      "started_at": "2026-04-08T15:15:56.014Z",
+      "completed_at": "2026-04-08T15:15:56.023Z",
+      "result_summary": "dispatched to pm via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
