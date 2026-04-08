@@ -4674,6 +4674,56 @@
       "started_at": "2026-04-08T03:58:35.070Z",
       "completed_at": "2026-04-08T03:58:35.073Z",
       "result_summary": "dispatched to trump via agent-inbox"
+    },
+    {
+      "id": "wq-si-frontend-mnpiv7uv",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-08T04:02:27.847Z",
+      "started_at": "2026-04-08T04:02:27.847Z",
+      "completed_at": "2026-04-08T04:02:27.847Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-devops-mnpiv7uv",
+      "type": "self_improve",
+      "assignee": "devops",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review CI/CD pipeline health"
+      },
+      "created_at": "2026-04-08T04:02:27.847Z",
+      "started_at": "2026-04-08T04:02:27.847Z",
+      "completed_at": "2026-04-08T04:02:27.847Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review CI/CD pipeline health"
+    },
+    {
+      "id": "wq-review-mnpixy4s",
+      "type": "pm_spec_needed",
+      "assignee": "pm",
+      "priority": "low",
+      "status": "pending",
+      "created_by": "agent-review-rotation",
+      "payload": {
+        "title": "[Review摘要] 12时 uiux+pm review 建议",
+        "description": "uiux: v18 Sprint 1 前端任务缺乏 UX 审核记录，需立即补做设计 review；pm: 已创建的高优 spec 缺乏后续跟进，需主动盘点 dev 跟进状态。",
+        "review_files": [
+          "data/audit/agent-reviews/2026-04-08-12-uiux.md",
+          "data/audit/agent-reviews/2026-04-08-12-pm.md"
+        ]
+      },
+      "created_at": "2026-04-08T04:04:35.212Z",
+      "started_at": "2026-04-08T04:13:36.943Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 12时 uiux+pm review 建议\" \"uiux: v18 Sprint 1 前端任务缺乏 UX 审核记录，需立即补做设计 review；pm: 已创建的高优 spec 缺乏后续跟进，需主动盘点 dev 跟"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
