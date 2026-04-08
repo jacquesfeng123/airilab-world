@@ -534,7 +534,7 @@
     {
       "id": "wq-pm-spec-2026040814",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "running",
       "owner": "pm",
       "priority": "low",
       "title": "[Review摘要] 14时 chief-designer+technical-architect review 建议",
@@ -545,7 +545,51 @@
         "summary",
         "pm_spec"
       ],
-      "started_at": "2026-04-08T06:13:46.881Z",
+      "started_at": "2026-04-08T06:15:44.232Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-ar-15-bd-mnppev66",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "v18 功能商业化评估 (bd-brief)",
+      "created_at": "2026-04-08T07:05:42.221Z",
+      "created_by": "agent-review-rotation",
+      "source_review": "2026-04-08-15-bd",
+      "started_at": "2026-04-08T07:13:52.426Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T07:13:52.428Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-15-res-mnppev66",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "dispatcher type 白名单文档更新（Researcher建议）",
+      "created_at": "2026-04-08T07:05:42.221Z",
+      "created_by": "agent-review-rotation",
+      "source_review": "2026-04-08-15-researcher",
+      "started_at": "2026-04-08T07:13:52.431Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T07:13:52.432Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-15-summary-mnppev66",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 15时 bd+researcher review 建议",
+      "created_at": "2026-04-08T07:05:42.221Z",
+      "created_by": "agent-review-rotation",
+      "content": "BD建议：补 v18 bd-brief 商业化评估，当前队列无商业化工作项。Researcher建议：修复 dispatcher type 白名单（backend unknown type），补竞品情报研究。",
+      "started_at": "2026-04-08T07:13:52.433Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
