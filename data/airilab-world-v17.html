@@ -140,6 +140,7 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
     <div id="qv-running"></div>
     <div id="qv-pending"></div>
     <div id="qv-review"></div>
+    <div id="qv-active" style="margin-top:16px"></div>
     <div id="qv-done" style="margin-top:16px"></div>
   </div>
 </div>
@@ -738,14 +739,14 @@ function drawJacques(ctx, ox, oy, frame) {
 
 // TRUMP — FEMALE sprite: long gold-tipped hair, feminine face, dark blazer
 function drawTrump(ctx, ox, oy, frame) {
-  const hairRoot = '#6B3A2A';   // dark roots
-  const hairGold = '#D4A017';   // gold/blonde tips
-  const hairMid  = '#B87820';   // mid-shaft blend
-  const skin     = '#F0C898';   // fair skin
-  const blazer   = '#1A1A2E';   // dark blazer body
-  const blazerH  = '#2E2E4A';   // blazer highlight
-  const lapel    = '#3A3A5E';   // lapel/collar
-  const pants    = '#28283A';
+  const hairRoot = '#FFD700';   // full gold hair
+  const hairGold = '#FFE850';   // bright gold tips
+  const hairMid  = '#F0C030';   // mid-shaft gold
+  const skin     = '#F5D0A8';   // fair warm skin
+  const blazer   = '#F0F0F8';   // white suit body
+  const blazerH  = '#FFFFFF';   // white highlight
+  const lapel    = '#E0E0F0';   // soft white lapel
+  const pants    = '#E8E8F0';   // white pants/skirt
 
   // Long hair — dark roots at top, gold at bottom/tips
   // Hair top (rows 0-2): dark roots, wider for feminine silhouette
@@ -775,8 +776,8 @@ function drawTrump(ctx, ox, oy, frame) {
   px(ctx,ox+3*S,oy+5*S,2,1,'#E8A0A0');
   px(ctx,ox+11*S,oy+5*S,2,1,'#E8A0A0');
   // Feminine lips (slightly fuller)
-  px(ctx,ox+5*S,oy+7*S,6,1,'#C05858');
-  px(ctx,ox+6*S,oy+7*S,4,1,'#D06868');
+  px(ctx,ox+5*S,oy+7*S,6,1,'#E02040');
+  px(ctx,ox+6*S,oy+7*S,4,1,'#F03050');
   // Neck (slimmer)
   px(ctx,ox+6*S,oy+8*S,4,2,skin);
 
@@ -813,25 +814,25 @@ function drawAgent(ctx, ox, oy, spriteKey, frame) {
   const configs = {
     ops:    {hair:'#2A1808',shirt:'#E8C040',pants:'#303848'},
     growth: {hair:'#6A3A18',shirt:'#E8C040',pants:'#303848'},
-    frontend:{hair:'#303030',shirt:'#3A6AB0',pants:'#1A2838'},
-    backend: {hair:'#1A1A1A',shirt:'#3A6AB0',pants:'#1A2838'},
-    devops:  {hair:'#4A2810',shirt:'#3A6AB0',pants:'#1A2838'},
+    frontend:{hair:'#4A3060',shirt:'#7B52AB',pants:'#1A2838'},
+    backend: {hair:'#1A1A1A',shirt:'#1A1A1A',pants:'#2A2A2A'},
+    devops:  {hair:'#4A2810',shirt:'#E87020',pants:'#3A3020'},
     data:    {hair:'#1A1A1A',shirt:'#3A6AB0',pants:'#1A2838'},
     security:{hair:'#2A1808',shirt:'#1A2A4A',pants:'#1A2838'},
-    arch:    {hair:'#888880',shirt:'#3A6AB0',pants:'#1A2838'},
-    research:{hair:'#5A3010',shirt:'#3A6AB0',pants:'#1A2838'},
+    arch:    {hair:'#6878A0',shirt:'#5A7A98',pants:'#3A4858'},
+    research:{hair:'#6A4020',shirt:'#2A8848',pants:'#2A3838'},
     analytics:{hair:'#1A1818',shirt:'#3A6AB0',pants:'#1A2838'},
-    pm:      {hair:'#5A3010',shirt:'#308898',pants:'#2A3848'},
+    pm:      {hair:'#3A2818',shirt:'#1A2858',pants:'#1A1A2A'},
     product: {hair:'#2A1808',shirt:'#308898',pants:'#2A3848'},
     marketing:{hair:'#8A3010',shirt:'#308898',pants:'#2A3848'},
-    sales:   {hair:'#3A1E08',shirt:'#308898',pants:'#2A3848'},
-    designer:{hair:'#1A1010',shirt:'#3A8848',pants:'#2A3040'},
-    uiux:    {hair:'#281838',shirt:'#3A8848',pants:'#2A3040'},
-    content: {hair:'#A07040',shirt:'#3A8848',pants:'#2A3040'},
+    sales:   {hair:'#3A1E08',shirt:'#1A2858',pants:'#1A1A2A'},
+    designer:{hair:'#E0E0E8',shirt:'#1A1A1A',pants:'#2A2A2A'},
+    uiux:    {hair:'#E868A0',shirt:'#F0A0C0',pants:'#2A2030'},
+    content: {hair:'#A07040',shirt:'#D8C8A0',pants:'#2A3040'},
     cs:      {hair:'#E8B828',shirt:'#3A8848',pants:'#2A3040'},
-    qa:      {hair:'#1A1818',shirt:'#6848A8',pants:'#2A2A38'},
+    qa:      {hair:'#1A1818',shirt:'#C83030',pants:'#2A2A38'},
     tester:  {hair:'#4A2810',shirt:'#6848A8',pants:'#2A2A38'},
-    scribe:  {hair:'#4A3010',shirt:'#8B6914',pants:'#2A2838'},
+    scribe:  {hair:'#8A7050',shirt:'#D8C8A0',pants:'#2A2838'}
   };
   const c = configs[spriteKey] || {hair:'#3A2010',shirt:'#505050',pants:'#303030'};
   drawBody(ctx, ox, oy, {hair:c.hair,skin:c.skin||'#E8C898',shirt:c.shirt,pants:c.pants||'#2A3848'});
@@ -851,16 +852,22 @@ function drawAgent(ctx, ox, oy, spriteKey, frame) {
     px(ctx,ox+9*S,oy+0*S,2,4,'#E8E8E8');
   }
   if (spriteKey==='designer') {
-    px(ctx,ox+1*S,oy+0*S,14,3,'#B02820');
-    px(ctx,ox+3*S,oy+2*S,10,2,'#B02820');
+    // White/silver hair beret
+    px(ctx,ox+1*S,oy+0*S,14,3,'#E0E0E8');
+    px(ctx,ox+3*S,oy+2*S,10,2,'#D0D0D8');
+    // Face
     px(ctx,ox+2*S,oy+4*S,12,5,'#E8C898');
     px(ctx,ox+4*S,oy+5*S,2,2,'#282828');
     px(ctx,ox+10*S,oy+5*S,2,2,'#282828');
+    // Scarf accent (red)
+    px(ctx,ox+5*S,oy+9*S,6,2,'#C02020');
   }
   if (spriteKey==='uiux') {
-    px(ctx,ox+2*S,oy+0*S,12,4,'#281838');
-    px(ctx,ox+1*S,oy+2*S,2,3,'#281838');
-    px(ctx,ox+13*S,oy+2*S,2,3,'#281838');
+    // Creative pink/magenta hair
+    px(ctx,ox+2*S,oy+0*S,12,4,'#E868A0');
+    px(ctx,ox+1*S,oy+2*S,2,3,'#E868A0');
+    px(ctx,ox+13*S,oy+2*S,2,3,'#E868A0');
+    // Stylus
     px(ctx,ox+15*S,oy+13*S,1,4,'#A0A0A8');
   }
   if (spriteKey==='ops') {
@@ -874,9 +881,10 @@ function drawAgent(ctx, ox, oy, spriteKey, frame) {
     px(ctx,ox+7*S,oy+13*S,2,2,'#D8E040');
   }
   if (spriteKey==='qa') {
-    px(ctx,ox+6*S,oy+11*S,4,2,'#E04040');
-    px(ctx,ox+5*S,oy+13*S,2,1,'#E04040');
-    px(ctx,ox+9*S,oy+13*S,2,1,'#E04040');
+    // Red badge/clipboard
+    px(ctx,ox+6*S,oy+11*S,4,2,'#F04040');
+    px(ctx,ox+5*S,oy+13*S,2,1,'#F04040');
+    px(ctx,ox+9*S,oy+13*S,2,1,'#F04040');
   }
   if (frame===1||frame===3) {
     const dy = frame===1?1:-1;
@@ -1397,7 +1405,7 @@ function getStatusBubble(status) {
 }
 
 function drawStatusBubble(ctx2, cx, cy, status) {
-  const bubble = getStatusBubble(status);
+  const bubble = AGENT_BUBBLES[agent?.id];
   if (!bubble) return;
   ctx2.save();
   ctx2.font = 'bold 11px "Press Start 2P","Courier New",monospace';
