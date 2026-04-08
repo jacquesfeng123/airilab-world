@@ -3645,7 +3645,7 @@
       "id": "wq-fix-004",
       "title": "airilab-world v18 UX 改进规划",
       "type": "design_spec",
-      "status": "pending_review",
+      "status": "pending_cto",
       "priority": "low",
       "owner": "uiux",
       "tags": [
@@ -3655,15 +3655,16 @@
       "createdAt": "2026-04-08T09:35:00+08:00",
       "started_at": "2026-04-08T01:37:19.752Z",
       "assignee": "uiux",
-      "completed_at": "2026-04-08T01:37:45.212Z",
+      "completed_at": "2026-04-08T01:42:55.901Z",
       "result_summary": "dispatched to uiux via agent-inbox (cron fallback)",
-      "updated_at": "2026-04-08T01:41:36.652Z"
+      "updated_at": "2026-04-08T01:41:36.652Z",
+      "qa_approved_by": "qa-wq-fix-004"
     },
     {
       "id": "wq-fix-005",
       "title": "work-queue.json 历史条目归档压缩",
       "type": "system_upgrade",
-      "status": "pending_review",
+      "status": "pending_cto",
       "priority": "low",
       "owner": "devops",
       "tags": [
@@ -3673,9 +3674,10 @@
       "createdAt": "2026-04-08T09:35:00+08:00",
       "started_at": "2026-04-08T01:36:51.051Z",
       "assignee": "devops",
-      "completed_at": "2026-04-08T01:37:19.739Z",
+      "completed_at": "2026-04-08T01:42:55.904Z",
       "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
-      "updated_at": "2026-04-08T01:41:05.794Z"
+      "updated_at": "2026-04-08T01:41:05.794Z",
+      "qa_approved_by": "qa-wq-fix-005"
     },
     {
       "id": "wq-si-tester-mnpdvr36",
@@ -3876,7 +3878,7 @@
       "id": "qa-wq-fix-004",
       "title": "[QA] airilab-world v18 UX 改进规划",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "qa",
       "assignee": "qa",
@@ -3886,15 +3888,17 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T01:42:54.698Z",
+      "started_at": "2026-04-08T01:42:55.893Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T01:42:55.899Z",
+      "result_summary": "[dry run]"
     },
     {
       "id": "qa-wq-fix-005",
       "title": "[QA] work-queue.json 历史条目归档压缩",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "qa",
       "assignee": "qa",
@@ -3904,9 +3908,41 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T01:42:54.698Z",
+      "started_at": "2026-04-08T01:42:55.893Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T01:42:55.899Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "cto-wq-fix-004",
+      "title": "[CTO Review] airilab-world v18 UX 改进规划",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-fix-004",
+      "createdAt": "2026-04-08T01:42:55.902Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-fix-005",
+      "title": "[CTO Review] work-queue.json 历史条目归档压缩",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-fix-005",
+      "createdAt": "2026-04-08T01:42:55.905Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
