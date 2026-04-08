@@ -1178,7 +1178,7 @@
     {
       "id": "wq-pmspec-node-path-mnq03kqv",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "failed",
       "owner": "pm",
       "priority": "high",
       "title": "修复所有 scripts/*.mjs shebang 使用绝对 node 路径",
@@ -1191,9 +1191,11 @@
         "node-path",
         "scripts"
       ],
-      "started_at": "2026-04-08T12:17:50.451Z",
+      "started_at": "2026-04-08T12:30:37.850Z",
       "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
+      "failed_at": "2026-04-08T12:30:37.891Z",
+      "error": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
