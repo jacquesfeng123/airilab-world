@@ -4710,7 +4710,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending",
+      "status": "pending_review",
       "created_by": "agent-review-rotation",
       "payload": {
         "title": "[Review摘要] 12时 uiux+pm review 建议",
@@ -4721,9 +4721,23 @@
         ]
       },
       "created_at": "2026-04-08T04:04:35.212Z",
-      "started_at": "2026-04-08T04:13:36.943Z",
+      "started_at": "2026-04-08T04:15:23.926Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 12时 uiux+pm review 建议\" \"uiux: v18 Sprint 1 前端任务缺乏 UX 审核记录，需立即补做设计 review；pm: 已创建的高优 spec 缺乏后续跟进，需主动盘点 dev 跟"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 12时 uiux+pm review 建议\" \"uiux: v18 Sprint 1 前端任务缺乏 UX 审核记录，需立即补做设计 review；pm: 已创建的高优 spec 缺乏后续跟进，需主动盘点 dev 跟",
+      "completed_at": "2026-04-08T04:15:28.702Z",
+      "result_summary": "[PM] ✅ Task created: task-mnpjbuyi\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnpjbuyi\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnpjbuyi/spec.md"
+    },
+    {
+      "id": "wq-mnpjbyda",
+      "type": "qa_review_needed",
+      "assignee": "qa",
+      "priority": "medium",
+      "status": "pending",
+      "payload": {
+        "task": "[Review摘要] 12时 uiux+pm review 建议"
+      },
+      "created_at": "2026-04-08T04:15:28.702Z",
+      "created_by": "dispatcher-auto"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
