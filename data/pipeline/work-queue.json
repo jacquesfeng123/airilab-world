@@ -1,109 +1,29 @@
 {
   "queue": [
     {
-      "id": "wq-fix-005",
-      "title": "work-queue.json 历史条目归档压缩",
-      "type": "system_upgrade",
-      "status": "done",
+      "id": "wq-bd-brief-v18-mnppev66",
+      "type": "bd_brief_needed",
+      "status": "pending",
+      "owner": "bd",
+      "assignee": "bd",
       "priority": "low",
-      "owner": "devops",
+      "title": "v18 功能商业化评估 (bd-brief)",
+      "description": "为 v18 UX Sprint1 补产出 bd-brief.md，量化改动对用户留存和付费转化的影响。来源：BD agent review 2026-04-08-15。",
+      "created_at": "2026-04-08T07:30:00.000Z",
+      "created_by": "pm-agent",
+      "source_review": "2026-04-08-15-bd",
       "tags": [
-        "maintenance",
-        "queue"
-      ],
-      "createdAt": "2026-04-08T09:35:00+08:00",
-      "started_at": "2026-04-08T01:36:51.051Z",
-      "assignee": "devops",
-      "completed_at": "2026-04-08T01:42:55.904Z",
-      "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
-      "updated_at": "2026-04-08T01:41:05.794Z",
-      "qa_approved_by": "qa-wq-fix-005",
-      "completedAt": "2026-04-08T05:15:52.885Z"
-    },
-    {
-      "id": "wq-debt-003",
-      "title": "把 FE browser-test 强制规则写进 FE agent role-soul.md",
-      "type": "soul_migration",
-      "status": "done",
-      "priority": "high",
-      "owner": "devops",
-      "tags": [
-        "fe",
-        "soul",
-        "debt"
-      ],
-      "createdAt": "2026-04-08T09:55:00+08:00",
-      "description": "FE 改代码必须先跑 browser-test 的规则目前只是口头约定，需要写进 agents/frontend/role-soul.md 的 DO NOT 章节。",
-      "started_at": "2026-04-08T01:57:57.097Z",
-      "assignee": "devops",
-      "completed_at": "2026-04-08T05:32:35.337Z",
-      "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
-      "qa_approved_by": "qa-wq-debt-003",
-      "cto_approved_by": "cto-wq-debt-003",
-      "updated": "2026-04-08T03:48:01.860Z"
-    },
-    {
-      "id": "wq-debt-004",
-      "title": "v18 UX 改进 Sprint1 实际执行（非规划）",
-      "type": "design_spec",
-      "status": "done",
-      "priority": "medium",
-      "owner": "frontend/uiux",
-      "tags": [
-        "airilab-world",
+        "bd",
         "v18",
-        "debt"
+        "commercial",
+        "bd-brief"
       ],
-      "createdAt": "2026-04-08T09:55:00+08:00",
-      "description": "v18 UX 规划写了，Sprint1(~5h)：气泡可读性进一步提升、点击热区容差优化、Header 状态统计改进",
-      "started_at": "2026-04-08T01:57:57.125Z",
-      "assignee": "frontend",
-      "completed_at": "2026-04-08T05:32:35.342Z",
-      "result_summary": "dispatched to frontend via agent-inbox (cron fallback)",
-      "qa_approved_by": "qa-wq-debt-004",
-      "cto_approved_by": "cto-wq-debt-004"
+      "started_at": "2026-04-08T07:43:54.750Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/bd-brief-generator.mjs \"general\"\n/bin/sh: node: command not found\n"
     },
     {
-      "id": "wq-debt-005",
-      "title": "确认 Dreaming 插件实际状态并修复",
-      "type": "system_upgrade",
-      "status": "done",
-      "priority": "medium",
-      "owner": "devops",
-      "tags": [
-        "dreaming",
-        "memory",
-        "debt"
-      ],
-      "createdAt": "2026-04-08T09:55:00+08:00",
-      "description": "memory-core 配置修了，但 Dreaming 插件本身是否在正常运行？openclaw 是否真的有 Dreaming 插件？需要查清楚。",
-      "started_at": "2026-04-08T01:57:57.084Z",
-      "assignee": "devops",
-      "completed_at": "2026-04-08T02:02:18.443Z",
-      "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
-      "qa_approved_by": "qa-wq-debt-005",
-      "cto_approved_by": "cto-wq-debt-005",
-      "updated": "2026-04-08T03:48:01.890Z",
-      "completedAt": "2026-04-08T05:15:52.885Z",
-      "note": "Dreaming插件不存在，memory-core+supermemory已覆盖，无需处理"
-    },
-    {
-      "id": "wq-review-2026040810-be-failed",
-      "type": "backend",
-      "status": "failed",
-      "owner": "backend",
-      "assignee": "backend",
-      "priority": "high",
-      "title": "调查 failed 任务根因并修复",
-      "created_at": "2026-04-08T02:07:48.306783Z",
-      "started_at": "2026-04-08T02:17:20.491Z",
-      "retryCount": 2,
-      "lastError": "Unknown type: backend",
-      "failed_at": "2026-04-08T02:17:20.523Z",
-      "error": "Unknown type: backend"
-    },
-    {
-      "id": "wq-si-pm-mnpljsfp",
+      "id": "wq-si-pm-mnpqs03d",
       "type": "self_improve",
       "assignee": "pm",
       "priority": "low",
@@ -111,14 +31,14 @@
       "payload": {
         "title": "Review and improve PM spec templates"
       },
-      "created_at": "2026-04-08T05:17:33.493Z",
-      "started_at": "2026-04-08T05:17:33.493Z",
-      "completed_at": "2026-04-08T05:17:33.493Z",
+      "created_at": "2026-04-08T07:43:54.745Z",
+      "started_at": "2026-04-08T07:43:54.745Z",
+      "completed_at": "2026-04-08T07:43:54.745Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review and improve PM spec templates"
     },
     {
-      "id": "wq-si-qa-mnpljsfq",
+      "id": "wq-si-qa-mnpqs03d",
       "type": "self_improve",
       "assignee": "qa",
       "priority": "low",
@@ -126,14 +46,14 @@
       "payload": {
         "title": "Run regression test suite"
       },
-      "created_at": "2026-04-08T05:17:33.494Z",
-      "started_at": "2026-04-08T05:17:33.494Z",
-      "completed_at": "2026-04-08T05:17:33.494Z",
+      "created_at": "2026-04-08T07:43:54.745Z",
+      "started_at": "2026-04-08T07:43:54.745Z",
+      "completed_at": "2026-04-08T07:43:54.745Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Run regression test suite"
     },
     {
-      "id": "wq-si-tester-mnpljsfq",
+      "id": "wq-si-tester-mnpqs03d",
       "type": "self_improve",
       "assignee": "tester",
       "priority": "low",
@@ -141,14 +61,14 @@
       "payload": {
         "title": "Add edge case tests for recent features"
       },
-      "created_at": "2026-04-08T05:17:33.494Z",
-      "started_at": "2026-04-08T05:17:33.494Z",
-      "completed_at": "2026-04-08T05:17:33.494Z",
+      "created_at": "2026-04-08T07:43:54.745Z",
+      "started_at": "2026-04-08T07:43:54.745Z",
+      "completed_at": "2026-04-08T07:43:54.745Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Add edge case tests for recent features"
     },
     {
-      "id": "wq-si-frontend-mnpljsfq",
+      "id": "wq-si-frontend-mnpqs03e",
       "type": "self_improve",
       "assignee": "frontend",
       "priority": "low",
@@ -156,14 +76,14 @@
       "payload": {
         "title": "Audit UI components for consistency"
       },
-      "created_at": "2026-04-08T05:17:33.494Z",
-      "started_at": "2026-04-08T05:17:33.494Z",
-      "completed_at": "2026-04-08T05:17:33.494Z",
+      "created_at": "2026-04-08T07:43:54.746Z",
+      "started_at": "2026-04-08T07:43:54.746Z",
+      "completed_at": "2026-04-08T07:43:54.746Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Audit UI components for consistency"
     },
     {
-      "id": "wq-si-backend-mnpljsfq",
+      "id": "wq-si-backend-mnpqs03e",
       "type": "self_improve",
       "assignee": "backend",
       "priority": "low",
@@ -171,14 +91,14 @@
       "payload": {
         "title": "Review API error handling"
       },
-      "created_at": "2026-04-08T05:17:33.494Z",
-      "started_at": "2026-04-08T05:17:33.494Z",
-      "completed_at": "2026-04-08T05:17:33.494Z",
+      "created_at": "2026-04-08T07:43:54.746Z",
+      "started_at": "2026-04-08T07:43:54.746Z",
+      "completed_at": "2026-04-08T07:43:54.746Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review API error handling"
     },
     {
-      "id": "wq-si-dev-mnpljsfr",
+      "id": "wq-si-dev-mnpqs03e",
       "type": "self_improve",
       "assignee": "dev",
       "priority": "low",
@@ -186,14 +106,14 @@
       "payload": {
         "title": "Refactor lowest-quality code file"
       },
-      "created_at": "2026-04-08T05:17:33.495Z",
-      "started_at": "2026-04-08T05:17:33.495Z",
-      "completed_at": "2026-04-08T05:17:33.495Z",
+      "created_at": "2026-04-08T07:43:54.746Z",
+      "started_at": "2026-04-08T07:43:54.746Z",
+      "completed_at": "2026-04-08T07:43:54.746Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Refactor lowest-quality code file"
     },
     {
-      "id": "wq-si-ai-engineer-mnpljsfr",
+      "id": "wq-si-ai-engineer-mnpqs03e",
       "type": "self_improve",
       "assignee": "ai-engineer",
       "priority": "low",
@@ -201,14 +121,14 @@
       "payload": {
         "title": "Benchmark embedding model performance"
       },
-      "created_at": "2026-04-08T05:17:33.495Z",
-      "started_at": "2026-04-08T05:17:33.495Z",
-      "completed_at": "2026-04-08T05:17:33.495Z",
+      "created_at": "2026-04-08T07:43:54.746Z",
+      "started_at": "2026-04-08T07:43:54.746Z",
+      "completed_at": "2026-04-08T07:43:54.746Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Benchmark embedding model performance"
     },
     {
-      "id": "wq-si-devops-mnpljsfr",
+      "id": "wq-si-devops-mnpqs03e",
       "type": "self_improve",
       "assignee": "devops",
       "priority": "low",
@@ -216,14 +136,14 @@
       "payload": {
         "title": "Review CI/CD pipeline health"
       },
-      "created_at": "2026-04-08T05:17:33.495Z",
-      "started_at": "2026-04-08T05:17:33.495Z",
-      "completed_at": "2026-04-08T05:17:33.495Z",
+      "created_at": "2026-04-08T07:43:54.746Z",
+      "started_at": "2026-04-08T07:43:54.746Z",
+      "completed_at": "2026-04-08T07:43:54.746Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review CI/CD pipeline health"
     },
     {
-      "id": "wq-si-reviewer-mnpljsfr",
+      "id": "wq-si-reviewer-mnpqs03f",
       "type": "self_improve",
       "assignee": "reviewer",
       "priority": "low",
@@ -231,14 +151,14 @@
       "payload": {
         "title": "Review open PRs and pending specs"
       },
-      "created_at": "2026-04-08T05:17:33.495Z",
-      "started_at": "2026-04-08T05:17:33.495Z",
-      "completed_at": "2026-04-08T05:17:33.495Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review open PRs and pending specs"
     },
     {
-      "id": "wq-si-scribe-mnpljsfs",
+      "id": "wq-si-scribe-mnpqs03f",
       "type": "self_improve",
       "assignee": "scribe",
       "priority": "low",
@@ -246,14 +166,14 @@
       "payload": {
         "title": "Archive and route memory backlog"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Archive and route memory backlog"
     },
     {
-      "id": "wq-si-researcher-mnpljsfs",
+      "id": "wq-si-researcher-mnpqs03f",
       "type": "self_improve",
       "assignee": "researcher",
       "priority": "low",
@@ -261,14 +181,14 @@
       "payload": {
         "title": "Scan for new relevant research papers"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Scan for new relevant research papers"
     },
     {
-      "id": "wq-si-uiux-mnpljsfs",
+      "id": "wq-si-uiux-mnpqs03f",
       "type": "self_improve",
       "assignee": "uiux",
       "priority": "low",
@@ -276,14 +196,14 @@
       "payload": {
         "title": "Audit airilab-world dashboard UX"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Audit airilab-world dashboard UX"
     },
     {
-      "id": "wq-si-chief-designer-mnpljsfs",
+      "id": "wq-si-chief-designer-mnpqs03f",
       "type": "self_improve",
       "assignee": "chief-designer",
       "priority": "low",
@@ -291,14 +211,14 @@
       "payload": {
         "title": "Update design standards documentation"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Update design standards documentation"
     },
     {
-      "id": "wq-si-tech-arch-mnpljsfs",
+      "id": "wq-si-tech-arch-mnpqs03f",
       "type": "self_improve",
       "assignee": "tech-arch",
       "priority": "low",
@@ -306,14 +226,14 @@
       "payload": {
         "title": "Review system architecture diagrams"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review system architecture diagrams"
     },
     {
-      "id": "wq-si-project-pm-mnpljsfs",
+      "id": "wq-si-project-pm-mnpqs03f",
       "type": "self_improve",
       "assignee": "project-pm",
       "priority": "low",
@@ -321,14 +241,14 @@
       "payload": {
         "title": "Update project tracking and milestones"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.747Z",
+      "started_at": "2026-04-08T07:43:54.747Z",
+      "completed_at": "2026-04-08T07:43:54.747Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Update project tracking and milestones"
     },
     {
-      "id": "wq-si-estimator-mnpljsfs",
+      "id": "wq-si-estimator-mnpqs03g",
       "type": "self_improve",
       "assignee": "estimator",
       "priority": "low",
@@ -336,14 +256,14 @@
       "payload": {
         "title": "Calibrate cost estimation models"
       },
-      "created_at": "2026-04-08T05:17:33.496Z",
-      "started_at": "2026-04-08T05:17:33.496Z",
-      "completed_at": "2026-04-08T05:17:33.496Z",
+      "created_at": "2026-04-08T07:43:54.748Z",
+      "started_at": "2026-04-08T07:43:54.748Z",
+      "completed_at": "2026-04-08T07:43:54.748Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Calibrate cost estimation models"
     },
     {
-      "id": "wq-si-material-mgr-mnpljsft",
+      "id": "wq-si-material-mgr-mnpqs03g",
       "type": "self_improve",
       "assignee": "material-mgr",
       "priority": "low",
@@ -351,14 +271,14 @@
       "payload": {
         "title": "Update material library catalog"
       },
-      "created_at": "2026-04-08T05:17:33.497Z",
-      "started_at": "2026-04-08T05:17:33.497Z",
-      "completed_at": "2026-04-08T05:17:33.497Z",
+      "created_at": "2026-04-08T07:43:54.748Z",
+      "started_at": "2026-04-08T07:43:54.748Z",
+      "completed_at": "2026-04-08T07:43:54.748Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Update material library catalog"
     },
     {
-      "id": "wq-si-renderer-mnpljsft",
+      "id": "wq-si-renderer-mnpqs03g",
       "type": "self_improve",
       "assignee": "renderer",
       "priority": "low",
@@ -366,14 +286,14 @@
       "payload": {
         "title": "Optimize render pipeline settings"
       },
-      "created_at": "2026-04-08T05:17:33.497Z",
-      "started_at": "2026-04-08T05:17:33.497Z",
-      "completed_at": "2026-04-08T05:17:33.497Z",
+      "created_at": "2026-04-08T07:43:54.748Z",
+      "started_at": "2026-04-08T07:43:54.748Z",
+      "completed_at": "2026-04-08T07:43:54.748Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Optimize render pipeline settings"
     },
     {
-      "id": "wq-si-downstream-mnpljsft",
+      "id": "wq-si-downstream-mnpqs03g",
       "type": "self_improve",
       "assignee": "downstream",
       "priority": "low",
@@ -381,29 +301,14 @@
       "payload": {
         "title": "Review vendor communication templates"
       },
-      "created_at": "2026-04-08T05:17:33.497Z",
-      "started_at": "2026-04-08T05:17:33.497Z",
-      "completed_at": "2026-04-08T05:17:33.497Z",
+      "created_at": "2026-04-08T07:43:54.748Z",
+      "started_at": "2026-04-08T07:43:54.748Z",
+      "completed_at": "2026-04-08T07:43:54.748Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review vendor communication templates"
     },
     {
-      "id": "wq-si-bd-mnpljsft",
-      "type": "self_improve",
-      "assignee": "bd",
-      "priority": "low",
-      "status": "done",
-      "payload": {
-        "title": "Research new opportunity pipeline"
-      },
-      "created_at": "2026-04-08T05:17:33.497Z",
-      "started_at": "2026-04-08T05:17:33.497Z",
-      "completed_at": "2026-04-08T05:17:33.497Z",
-      "created_by": "idle-task-generator",
-      "result_summary": "[virtual] Research new opportunity pipeline"
-    },
-    {
-      "id": "wq-si-trump-mnpljsft",
+      "id": "wq-si-trump-mnpqs03g",
       "type": "self_improve",
       "assignee": "trump",
       "priority": "low",
@@ -411,187 +316,11 @@
       "payload": {
         "title": "Monitor system health and routing"
       },
-      "created_at": "2026-04-08T05:17:33.497Z",
-      "started_at": "2026-04-08T05:17:33.497Z",
-      "completed_at": "2026-04-08T05:17:33.497Z",
+      "created_at": "2026-04-08T07:43:54.748Z",
+      "started_at": "2026-04-08T07:43:54.748Z",
+      "completed_at": "2026-04-08T07:43:54.748Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Monitor system health and routing"
-    },
-    {
-      "id": "qa-wq-debt-003",
-      "title": "[QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
-      "type": "qa_review_needed",
-      "status": "done",
-      "priority": "high",
-      "owner": "qa",
-      "assignee": "qa",
-      "refTask": "wq-debt-003",
-      "createdAt": "2026-04-08T05:17:33.498Z",
-      "tags": [
-        "qa",
-        "auto-generated"
-      ],
-      "started_at": "2026-04-08T05:30:51.538Z",
-      "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T05:30:52.186Z",
-      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
-    },
-    {
-      "id": "qa-wq-debt-004",
-      "title": "[QA] v18 UX 改进 Sprint1 实际执行（非规划）",
-      "type": "qa_review_needed",
-      "status": "done",
-      "priority": "medium",
-      "owner": "qa",
-      "assignee": "qa",
-      "refTask": "wq-debt-004",
-      "createdAt": "2026-04-08T05:17:33.498Z",
-      "tags": [
-        "qa",
-        "auto-generated"
-      ],
-      "started_at": "2026-04-08T05:30:51.538Z",
-      "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T05:30:52.186Z",
-      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
-    },
-    {
-      "id": "cto-wq-debt-003",
-      "title": "[CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
-      "type": "cto_review",
-      "status": "done",
-      "priority": "high",
-      "owner": "trump",
-      "assignee": "trump",
-      "refTask": "wq-debt-003",
-      "createdAt": "2026-04-08T05:30:52.189Z",
-      "tags": [
-        "cto_review",
-        "auto-generated"
-      ],
-      "started_at": "2026-04-08T05:32:35.336Z",
-      "completed_at": "2026-04-08T05:32:35.337Z",
-      "result_summary": "dispatched to trump via agent-inbox"
-    },
-    {
-      "id": "cto-wq-debt-004",
-      "title": "[CTO Review] v18 UX 改进 Sprint1 实际执行（非规划）",
-      "type": "cto_review",
-      "status": "done",
-      "priority": "medium",
-      "owner": "trump",
-      "assignee": "trump",
-      "refTask": "wq-debt-004",
-      "createdAt": "2026-04-08T05:30:52.191Z",
-      "tags": [
-        "cto_review",
-        "auto-generated"
-      ],
-      "started_at": "2026-04-08T05:32:35.341Z",
-      "completed_at": "2026-04-08T05:32:35.342Z",
-      "result_summary": "dispatched to trump via agent-inbox"
-    },
-    {
-      "id": "wq-review-2026040814-chief-designer",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "priority": "low",
-      "title": "[Review建议] 14时 chief-designer: 建立设计语言规范文档",
-      "description": "Chief Designer review: 建立 Airi Lab 设计语言规范文档，作为跨 sprint 质量基线。详见 data/audit/agent-reviews/2026-04-08-14-chief-designer.md",
-      "created_at": "2026-04-08T06:04:35.109Z",
-      "tags": [
-        "agent_review",
-        "design",
-        "chief-designer"
-      ],
-      "started_at": "2026-04-08T06:13:46.876Z",
-      "assignee": "pm",
-      "completed_at": "2026-04-08T06:13:46.878Z",
-      "result_summary": "dispatched to pm via agent-inbox"
-    },
-    {
-      "id": "wq-review-2026040814-technical-architect",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "priority": "low",
-      "title": "[Review建议] 14时 technical-architect: v18 UX 技术验收报告",
-      "description": "Technical Architect review: 补充 v18 改进的技术验收文档，确认无障碍合规和 browser-test 通过状态。详见 data/audit/agent-reviews/2026-04-08-14-technical-architect.md",
-      "created_at": "2026-04-08T06:04:35.109Z",
-      "tags": [
-        "agent_review",
-        "technical",
-        "technical-architect"
-      ],
-      "started_at": "2026-04-08T06:13:46.880Z",
-      "assignee": "pm",
-      "completed_at": "2026-04-08T06:13:46.881Z",
-      "result_summary": "dispatched to pm via agent-inbox"
-    },
-    {
-      "id": "wq-pm-spec-2026040814",
-      "type": "pm_spec_needed",
-      "status": "running",
-      "owner": "pm",
-      "priority": "low",
-      "title": "[Review摘要] 14时 chief-designer+technical-architect review 建议",
-      "description": "1) Chief Designer: 建立设计语言规范文档（design system）作为跨sprint质量基线。2) Technical Architect: 补充v18改进技术验收文档，确认无障碍合规和browser-test通过状态。",
-      "created_at": "2026-04-08T06:04:35.109Z",
-      "tags": [
-        "agent_review",
-        "summary",
-        "pm_spec"
-      ],
-      "started_at": "2026-04-08T06:15:44.232Z",
-      "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
-    },
-    {
-      "id": "wq-ar-15-bd-mnppev66",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "priority": "low",
-      "title": "v18 功能商业化评估 (bd-brief)",
-      "created_at": "2026-04-08T07:05:42.221Z",
-      "created_by": "agent-review-rotation",
-      "source_review": "2026-04-08-15-bd",
-      "started_at": "2026-04-08T07:13:52.426Z",
-      "assignee": "pm",
-      "completed_at": "2026-04-08T07:13:52.428Z",
-      "result_summary": "dispatched to pm via agent-inbox"
-    },
-    {
-      "id": "wq-ar-15-res-mnppev66",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "priority": "low",
-      "title": "dispatcher type 白名单文档更新（Researcher建议）",
-      "created_at": "2026-04-08T07:05:42.221Z",
-      "created_by": "agent-review-rotation",
-      "source_review": "2026-04-08-15-researcher",
-      "started_at": "2026-04-08T07:13:52.431Z",
-      "assignee": "pm",
-      "completed_at": "2026-04-08T07:13:52.432Z",
-      "result_summary": "dispatched to pm via agent-inbox"
-    },
-    {
-      "id": "wq-ar-15-summary-mnppev66",
-      "type": "pm_spec_needed",
-      "status": "pending",
-      "owner": "pm",
-      "priority": "low",
-      "title": "[Review摘要] 15时 bd+researcher review 建议",
-      "created_at": "2026-04-08T07:05:42.221Z",
-      "created_by": "agent-review-rotation",
-      "content": "BD建议：补 v18 bd-brief 商业化评估，当前队列无商业化工作项。Researcher建议：修复 dispatcher type 白名单（backend unknown type），补竞品情报研究。",
-      "started_at": "2026-04-08T07:13:52.433Z",
-      "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
