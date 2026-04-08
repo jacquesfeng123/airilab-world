@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="ngrok-skip-browser-warning" content="true">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Airi Lab World v17</title>
+<title>Airi Lab World v19</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,11 +20,15 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 #data-badge{font-size:8px;padding:2px 6px;background:#202838;color:#78D8A8;border:1px solid #304848;font-family:'Press Start 2P','Courier New',monospace;letter-spacing:0.05em}
 #data-badge.offline{background:#383020;color:#D8A828;border-color:#485030}
 #data-badge.simulated{background:#282030;color:#A878E8;border-color:#483868}
+@keyframes agentPulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
+.celebrate-sparkle{position:absolute;pointer-events:none;font-size:16px;animation:sparkleFade 1.5s ease-out forwards;z-index:999}
+@keyframes sparkleFade{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-20px) scale(1.5)}}
+#god-bar{height:24px;background:#12121E;display:flex;align-items:center;justify-content:center;gap:24px;padding:0 12px;border-bottom:1px solid #252535;font-family:'Press Start 2P','Courier New',monospace;font-size:8px;color:#A8A8B8;letter-spacing:0.05em}
 /* Mobile-first: office-wrap fills full viewport minus header */
-#office-wrap{position:relative;width:100%;height:calc(100vh - 36px);overflow:hidden;background:#0A0A14;display:block}
+#office-wrap{position:relative;width:100%;height:calc(100vh - 60px);overflow:hidden;background:#0A0A14;display:block}
 #office-scale{transform-origin:top left;position:absolute;top:0;left:0}
 #canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;cursor:crosshair}
-#cards-view{display:none;width:100%;height:calc(100vh - 36px);overflow-y:auto;background:#0A0A14;padding:16px}
+#cards-view{display:none;width:100%;height:calc(100vh - 60px);overflow-y:auto;background:#0A0A14;padding:16px}
 #cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:1400px;margin:0 auto}
 .card{background:#1A1A28;border:1px solid #303048;padding:10px;cursor:pointer;display:flex;gap:10px;align-items:flex-start;transition:background 0.1s,border-color 0.1s;min-height:120px}
 .card:hover{background:#1E2030;border-color:#4A5870}
@@ -50,7 +54,7 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 .prio-badge.high{background:#E67E22}
 .status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 /* Desktop side panel */
-#side-panel{position:fixed;right:-400px;top:36px;width:380px;height:calc(100vh - 36px);background:#0E0E1A;border-left:2px solid #252535;z-index:200;overflow-y:auto;transition:right 0.2s ease-out}
+#side-panel{position:fixed;right:-400px;top:60px;width:380px;height:calc(100vh - 60px);background:#0E0E1A;border-left:2px solid #252535;z-index:200;overflow-y:auto;transition:right 0.2s ease-out}
 #side-panel.open{right:0}
 #side-panel-header{background:#1A1A2A;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #303048;position:sticky;top:0;z-index:10;transition:background 0.3s}
 #side-panel-header h2{font-size:14px;font-weight:700;color:#F8F8F8;margin:0}
@@ -105,6 +109,12 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 </style>
 </head>
 <body>
+<div id="god-bar">
+  <span>🔴 BLOCKED: <span id="gb-blocked">0</span></span>
+  <span>⏰ STALE &gt;90min: <span id="gb-stale">0</span></span>
+  <span>💤 IDLE: <span id="gb-idle">0</span></span>
+  <span>⚡ ACTIVE: <span id="gb-active">0</span></span>
+</div>
 <div id="header">
   <div id="tabs">
     <button class="tab active" id="tab-office" data-tab="office">🏢 Office View</button>
@@ -125,7 +135,7 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 <div id="cards-view">
   <div id="filter-chips" style="display:flex;gap:8px;margin-bottom:12px;max-width:1400px;margin-left:auto;margin-right:auto;flex-wrap:wrap"></div>
 </div>
-<div id="queue-view" style="display:none;width:100%;height:calc(100vh - 36px);overflow-y:auto;background:#0A0A14;padding:16px;box-sizing:border-box">
+<div id="queue-view" style="display:none;width:100%;height:calc(100vh - 60px);overflow-y:auto;background:#0A0A14;padding:16px;box-sizing:border-box">
   <div style="max-width:900px;margin:0 auto">
     <div id="qv-running"></div>
     <div id="qv-pending"></div>
@@ -470,6 +480,17 @@ function applyStatus(agentId, status, task, progress, blockedBy, collabWith, pri
   st.collaborating_with = collabWith || null;
   st.priority = priority || null;
 
+  // Track when agent started running for stale detection
+  if (status === 'working' && prevStatus !== 'working') {
+    st._runningStartedAt = Date.now();
+  } else if (status !== 'working') {
+    st._runningStartedAt = null;
+  }
+  // Celebration sparkle when task completes
+  if ((status === 'idle' || status === 'done') && prevStatus === 'working') {
+    st._celebrateUntil = performance.now() + 1500;
+  }
+
   if (status === 'coffee_break') {
     walkTo(agentId, COFFEE_TILE);
   } else if (status === 'working') {
@@ -482,12 +503,14 @@ function applyStatus(agentId, status, task, progress, blockedBy, collabWith, pri
       st.path = [];
     }
   } else if (status === 'idle') {
-    // Idle: let doWalkTick handle wandering — don't force walkHome here
-    // Only return home if transitioning FROM a busy/blocked state
-    if (prevStatus === 'working' || prevStatus === 'blocked' || prevStatus === 'in_meeting') {
-      walkHome(agentId);
-    }
-    // Reset idleTimer so wandering starts fresh after becoming idle
+    // Idle: immediately walk to break room area
+    const BREAK_TILES = [
+      {col:10,row:12},{col:11,row:13},{col:12,row:14},{col:13,row:12},
+      {col:14,row:13},{col:10,row:14},{col:11,row:12},{col:12,row:13},
+    ];
+    const dest = BREAK_TILES[Math.floor(Math.random() * BREAK_TILES.length)];
+    const dk = `${dest.col},${dest.row}`;
+    if (WALKABLE.has(dk) && !BLOCKED.has(dk)) walkTo(agentId, dest);
     st.idleTimer = 0;
     st._idleWanderAt = 25 + Math.floor(Math.random() * 50);
   } else if (prevStatus === 'coffee_break' && status !== 'coffee_break') {
@@ -501,6 +524,24 @@ function processMeetings(queueData) {
   if (!queueData) return;
   const meetAOccupied = [];
   const meetBOccupied = [];
+
+  // v19: blocked_by meeting activation — if agent A is blocked_by agent B, send both to Meeting Room A
+  AGENT_LIST.forEach(agent => {
+    const st = agentState[agent.id];
+    if (st.blocked_by && !meetingState[agent.id]) {
+      const blockerId = st.blocked_by;
+      const blockerSt = agentState[blockerId];
+      if (blockerSt && !meetingState[blockerId] && meetAOccupied.length + 2 <= MEET_A_SEATS.length) {
+        const seat1 = MEET_A_SEATS[meetAOccupied.length];
+        const seat2 = MEET_A_SEATS[meetAOccupied.length + 1];
+        meetAOccupied.push(agent.id, blockerId);
+        meetingState[agent.id] = { roomId: 'A' };
+        meetingState[blockerId] = { roomId: 'A' };
+        walkTo(agent.id, seat1);
+        walkTo(blockerId, seat2);
+      }
+    }
+  });
   MEETING_PAIRS.forEach(([a1, a2, room]) => {
     const s1 = agentState[a1]; const s2 = agentState[a2];
     if (!s1 || !s2) return;
@@ -1021,11 +1062,31 @@ function drawFloor() {
   ctx.fillRect(0, 7*T, 10*T, 7*T);
   ctx.globalAlpha = 1.0;
 
-  // v19: Zone labels
+  // v19: Zone labels with agent counts
+  const deptCounts = {};
+  AGENT_LIST.forEach(a => { deptCounts[a.dept] = (deptCounts[a.dept] || 0) + 1; });
   ctx.font = '12px sans-serif';
   ctx.fillStyle = '#888888';
-  ctx.fillText('Tech Lab', 9*T+4, 6*T-4);
-  ctx.fillText('Design Studio', 0*T+4, 13*T+12);
+  ctx.fillText(`Tech Lab (${deptCounts.tech||0})`, 9*T+4, 6*T-4);
+  ctx.fillText(`Design Studio (${deptCounts.design||0})`, 0*T+4, 13*T+12);
+
+  // v19: Department zone borders
+  ctx.lineWidth = 1;
+  // Tech zone (col 9-20, row 0-5)
+  ctx.strokeStyle = 'rgba(74,144,217,0.3)';
+  ctx.strokeRect(9*T, 0, 12*T, 6*T);
+  // Design zone (col 0-9, row 7-13)
+  ctx.strokeStyle = 'rgba(155,89,182,0.3)';
+  ctx.strokeRect(0, 7*T, 10*T, 7*T);
+  // QA zone (col 20-29, row 7-13)
+  ctx.strokeStyle = 'rgba(168,120,232,0.3)';
+  ctx.strokeRect(20*T, 7*T, 10*T, 7*T);
+  // Exec zone (col 0-7, row 0-5)
+  ctx.strokeStyle = 'rgba(240,192,96,0.3)';
+  ctx.strokeRect(0, 0, 8*T, 6*T);
+  // PM/Strategy zone (col 22-29, row 0-5)
+  ctx.strokeStyle = 'rgba(80,200,216,0.3)';
+  ctx.strokeRect(22*T, 0, 8*T, 6*T);
 
   // ── WALLS: 5px black lines, with gaps where doors are ──
   ctx.strokeStyle = '#111111';
@@ -1400,9 +1461,25 @@ function drawAgentsFixed(timestamp) {
     } else if (st.status === 'working') {
       frame = Math.floor(timestamp / 600) % 2;
     }
-    const bob = (st.status === 'idle') ? Math.round(Math.sin(timestamp/1500 + st.animPhase)) : 0;
+    // Breathing bob: working agents pulse 1px, idle agents drift
+    let bob = 0;
+    if (st.status === 'working') {
+      bob = Math.round(Math.sin(timestamp / 400 + st.animPhase));
+    } else if (st.status === 'idle') {
+      bob = Math.round(Math.sin(timestamp / 1500 + st.animPhase));
+    }
 
-    if (st.priority === 'critical') {
+    // Stale check: running >90min → red glow
+    let isStale = false;
+    if (st.status === 'working' && st._runningStartedAt) {
+      const elapsed = Date.now() - st._runningStartedAt;
+      if (elapsed > 90 * 60 * 1000) isStale = true;
+    }
+    if (isStale) {
+      const pulse = 0.5 + 0.5*Math.sin(timestamp/250);
+      ctx.shadowColor = `rgba(255,0,0,${pulse})`;
+      ctx.shadowBlur = 20;
+    } else if (st.priority === 'critical') {
       const pulse = 0.5 + 0.5*Math.sin(timestamp/300);
       ctx.shadowColor = `rgba(255,32,32,${pulse})`;
       ctx.shadowBlur = 16;
@@ -1532,18 +1609,28 @@ function drawAgentsFixed(timestamp) {
         ctx.stroke(); ctx.restore();
       }
     }
-    // Blocked line
+    // Blocked line — orange dashed
     if (st.blocked_by) {
       const other = AGENT_LIST.find(a => a.id === st.blocked_by || a.name === st.blocked_by);
       if (other) {
         const ost = agentState[other.id];
-        ctx.save(); ctx.setLineDash([3,4]);
-        ctx.strokeStyle = 'rgba(224,64,64,0.65)'; ctx.lineWidth = 2;
+        ctx.save(); ctx.setLineDash([4,4]);
+        ctx.strokeStyle = 'rgba(255,165,0,0.7)'; ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(tileX+T/2, tileY+T/2);
         ctx.lineTo(ost.currentTile.col*T+T/2, ost.currentTile.row*T+T/2);
         ctx.stroke(); ctx.restore();
       }
+    }
+    // Celebration sparkle
+    if (st._celebrateUntil && timestamp < st._celebrateUntil) {
+      ctx.save();
+      ctx.font = '16px serif';
+      ctx.textAlign = 'center';
+      const sparkY = spriteTop - 12 - (timestamp - (st._celebrateUntil - 1500)) * 0.015;
+      ctx.globalAlpha = Math.max(0, 1 - (timestamp - (st._celebrateUntil - 1500)) / 1500);
+      ctx.fillText('✨', spriteCX, sparkY);
+      ctx.restore();
     }
   });
 }
@@ -1863,7 +1950,7 @@ function buildCards() {
       <div class="card-status"><span class="status-dot" style="background:${sColor}"></span><span style="color:${sColor};font-size:7px">${escHtml(st.status||'idle')}</span></div>
       <div class="card-task-name">${escHtml(taskLabel)}</div>
       <div class="card-progress-wrap"><div class="card-progress-bar" style="width:${st.progress||0}%;background:${progColor}"></div></div>
-      ${st.blocked_by ? `<div class="card-blocked">🚫 Blocked: ${escHtml(st.blocked_by)}</div>` : ''}
+      ${st.blocked_by ? `<div class="card-blocked">🔗 Waiting: ${escHtml(st.blocked_by)}</div>` : ''}
       ${st.collaborating_with ? `<div class="card-collab">🤝 With: ${escHtml(st.collaborating_with)}</div>` : ''}
       <div class="card-ts">${st.last_updated?timeAgo(st.last_updated):'No data'}</div>
     `;
@@ -2093,6 +2180,25 @@ function updateStatusStats() {
 }
 setInterval(updateStatusStats, 1000);
 updateStatusStats();
+
+// God View bar updater
+function updateGodBar() {
+  let blocked=0, stale=0, idle=0, active=0;
+  AGENT_LIST.forEach(a => {
+    const s = agentState[a.id];
+    if (s.status === 'blocked' || s.status === 'error') blocked++;
+    else if (s.status === 'idle' || s.status === 'coffee_break') idle++;
+    else active++;
+    if (s.status === 'working' && s._runningStartedAt && (Date.now() - s._runningStartedAt > 90*60*1000)) stale++;
+  });
+  const e = id => document.getElementById(id);
+  const gb = e('gb-blocked'); if(gb) gb.textContent=blocked;
+  const gs = e('gb-stale'); if(gs) { gs.textContent=stale; gs.style.color=stale>0?'#FF4444':'#A8A8B8'; }
+  const gi = e('gb-idle'); if(gi) gi.textContent=idle;
+  const ga = e('gb-active'); if(ga) ga.textContent=active;
+}
+setInterval(updateGodBar, 5000);
+updateGodBar();
 
 // Mobile: default to Cards tab
 if (window.innerWidth < 768) {
