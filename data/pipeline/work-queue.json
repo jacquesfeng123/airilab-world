@@ -831,7 +831,7 @@
     {
       "id": "wq-pmspec-ar-19h-mnpxy1cv",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "title": "[Review摘要] 19时 renderer+material-manager review 建议",
@@ -846,7 +846,9 @@
       ],
       "started_at": "2026-04-08T11:15:27.244Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T12:15:44.157Z",
+      "result_summary": "[watchdog] reset stale running task"
     },
     {
       "id": "wq-si-pm-mnpybjsj",
@@ -1157,7 +1159,7 @@
     {
       "id": "wq-pmspec-fe-browsertest-mnq03kqv",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "running",
       "owner": "pm",
       "priority": "high",
       "title": "强制 Frontend browser-test 门控：pending_test→done 需截图证明",
@@ -1169,7 +1171,7 @@
         "browser-test",
         "quality-gate"
       ],
-      "started_at": "2026-04-08T12:15:07.249Z",
+      "started_at": "2026-04-08T12:15:44.176Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     },
@@ -1189,8 +1191,8 @@
         "node-path",
         "scripts"
       ],
-      "started_at": "2026-04-08T12:15:07.283Z",
-      "retryCount": 1,
+      "started_at": "2026-04-08T12:17:50.451Z",
+      "retryCount": 2,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
   ],
