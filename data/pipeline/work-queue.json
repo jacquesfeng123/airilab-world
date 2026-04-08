@@ -449,6 +449,40 @@
       "started_at": "2026-04-08T08:32:42.536Z",
       "completed_at": "2026-04-08T08:32:42.537Z",
       "result_summary": "dispatched to trump via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-dev-17-mnpto5fw",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 17时 project-pm+dev review 建议",
+      "description": "project-pm: 巡查设计项目state.json里程碑追踪 + 确认spec.md真实产出。dev: 修复scripts/*.mjs shebang/PATH兼容性问题，消除虚拟完成掩盖真实失败。",
+      "created_at": "2026-04-08T09:04:53.899Z",
+      "created_by": "agent-review-rotation",
+      "tags": [
+        "project-pm",
+        "dev",
+        "review"
+      ],
+      "started_at": "2026-04-08T09:14:59.069Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-dev-fix-shebang-mnpto5fw",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "修复所有 scripts/*.mjs shebang 和 PATH 兼容性",
+      "description": "来源: dev review 2026-04-08-17。node PATH 在非交互 shell 下失败，需修复 shebang 或使用绝对路径。",
+      "created_at": "2026-04-08T09:04:53.899Z",
+      "created_by": "dev-review",
+      "started_at": "2026-04-08T09:14:59.106Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T09:14:59.109Z",
+      "result_summary": "dispatched to pm via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
