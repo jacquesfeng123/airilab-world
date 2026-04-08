@@ -431,8 +431,8 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T05:17:33.499Z",
-      "retryCount": 1,
+      "started_at": "2026-04-08T05:28:44.165Z",
+      "retryCount": 2,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
     },
     {
@@ -449,8 +449,8 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-08T05:17:33.499Z",
-      "retryCount": 1,
+      "started_at": "2026-04-08T05:28:44.165Z",
+      "retryCount": 2,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
     }
   ],
