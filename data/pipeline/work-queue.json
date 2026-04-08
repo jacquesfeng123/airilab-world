@@ -4710,7 +4710,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending_cto",
+      "status": "done",
       "created_by": "agent-review-rotation",
       "payload": {
         "title": "[Review摘要] 12时 uiux+pm review 建议",
@@ -4724,9 +4724,10 @@
       "started_at": "2026-04-08T04:15:23.926Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 12时 uiux+pm review 建议\" \"uiux: v18 Sprint 1 前端任务缺乏 UX 审核记录，需立即补做设计 review；pm: 已创建的高优 spec 缺乏后续跟进，需主动盘点 dev 跟",
-      "completed_at": "2026-04-08T04:30:48.735Z",
+      "completed_at": "2026-04-08T04:32:30.935Z",
       "result_summary": "[PM] ✅ Task created: task-mnpjbuyi\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnpjbuyi\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnpjbuyi/spec.md",
-      "qa_approved_by": "qa-wq-review-mnpixy4s"
+      "qa_approved_by": "qa-wq-review-mnpixy4s",
+      "cto_approved_by": "cto-wq-review-mnpixy4s"
     },
     {
       "id": "wq-mnpjbyda",
@@ -4769,7 +4770,7 @@
       "id": "cto-wq-review-mnpixy4s",
       "title": "[CTO Review] wq-review-mnpixy4s",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -4778,7 +4779,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T04:32:30.928Z",
+      "completed_at": "2026-04-08T04:32:30.932Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
