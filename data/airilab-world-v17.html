@@ -812,27 +812,47 @@ function drawTrump(ctx, ox, oy, frame) {
 
 function drawAgent(ctx, ox, oy, spriteKey, frame) {
   const configs = {
-    ops:    {hair:'#2A1808',shirt:'#E8C040',pants:'#303848'},
-    growth: {hair:'#6A3A18',shirt:'#E8C040',pants:'#303848'},
-    frontend:{hair:'#4A3060',shirt:'#7B52AB',pants:'#1A2838'},
-    backend: {hair:'#1A1A1A',shirt:'#1A1A1A',pants:'#2A2A2A'},
-    devops:  {hair:'#4A2810',shirt:'#E87020',pants:'#3A3020'},
-    data:    {hair:'#1A1A1A',shirt:'#3A6AB0',pants:'#1A2838'},
+    // Trump — 性感金发助理，最漂亮 ✨
+    trump:   {hair:'#FFD700',shirt:'#FFFFFF',pants:'#F0E0FF',skin:'#FFE0D0'},
+    // Jacques — CEO，深色西装，权威感
+    jacques: {hair:'#1A1A1A',shirt:'#1A2858',pants:'#0A0A18',skin:'#E8C898'},
+    // PM — 深蓝西装，专业沉稳
+    pm:      {hair:'#2A1A10',shirt:'#1A3070',pants:'#0A1030',skin:'#E8C898'},
+    // QA — 红色检查员
+    qa:      {hair:'#1A1A1A',shirt:'#C02020',pants:'#1A1A2A',skin:'#E8C898'},
+    // Frontend — 紫色hoodie，年轻创意
+    frontend:{hair:'#9060D0',shirt:'#7B52AB',pants:'#1A0A30',skin:'#F0D0B8'},
+    // Backend — 全黑技术宅
+    backend: {hair:'#1A1A1A',shirt:'#1A1A1A',pants:'#0A0A0A',skin:'#D8B898'},
+    // DevOps — 橙色工装
+    devops:  {hair:'#4A2810',shirt:'#E87020',pants:'#3A2A10',skin:'#D8A878'},
+    // Scribe — 米色文艺
+    scribe:  {hair:'#8A6840',shirt:'#D8C898',pants:'#4A4030',skin:'#E8C898'},
+    // Reviewer — 深灰严肃
+    reviewer:{hair:'#303030',shirt:'#404048',pants:'#202028',skin:'#D8B898'},
+    // Researcher — 绿色学者
+    research:{hair:'#6A4830',shirt:'#2A8840',pants:'#1A3020',skin:'#E0B888'},
+    // UIUX — 粉色时尚
+    uiux:    {hair:'#E868A0',shirt:'#F080C0',pants:'#1A0820',skin:'#F0C8D8'},
+    // AI Engineer — 深紫未来感
+    data:    {hair:'#3010A0',shirt:'#6020C0',pants:'#180830',skin:'#D0C0F0'},
+    // BD — 深蓝商务
+    sales:   {hair:'#1A1808',shirt:'#102060',pants:'#081030',skin:'#E8C898'},
+    // Chief Designer — 黑色艺术家，白发
+    designer:{hair:'#E8E8F0',shirt:'#101010',pants:'#181818',skin:'#D8C0B0'},
+    // Technical Architect — 蓝灰蓝图
+    arch:    {hair:'#687080',shirt:'#4A6A90',pants:'#2A3850',skin:'#D8C8B8'},
+    // Project PM — 绿色管理
+    product: {hair:'#2A3010',shirt:'#306830',pants:'#1A3818',skin:'#E0C8A0'},
+    // 其余保持原有
+    ops:     {hair:'#2A1808',shirt:'#E8C040',pants:'#303848'},
+    growth:  {hair:'#6A3A18',shirt:'#E8C040',pants:'#303848'},
     security:{hair:'#2A1808',shirt:'#1A2A4A',pants:'#1A2838'},
-    arch:    {hair:'#6878A0',shirt:'#5A7A98',pants:'#3A4858'},
-    research:{hair:'#6A4020',shirt:'#2A8848',pants:'#2A3838'},
     analytics:{hair:'#1A1818',shirt:'#3A6AB0',pants:'#1A2838'},
-    pm:      {hair:'#3A2818',shirt:'#1A2858',pants:'#1A1A2A'},
-    product: {hair:'#2A1808',shirt:'#308898',pants:'#2A3848'},
     marketing:{hair:'#8A3010',shirt:'#308898',pants:'#2A3848'},
-    sales:   {hair:'#3A1E08',shirt:'#1A2858',pants:'#1A1A2A'},
-    designer:{hair:'#E0E0E8',shirt:'#1A1A1A',pants:'#2A2A2A'},
-    uiux:    {hair:'#E868A0',shirt:'#F0A0C0',pants:'#2A2030'},
     content: {hair:'#A07040',shirt:'#D8C8A0',pants:'#2A3040'},
     cs:      {hair:'#E8B828',shirt:'#3A8848',pants:'#2A3040'},
-    qa:      {hair:'#1A1818',shirt:'#C83030',pants:'#2A2A38'},
     tester:  {hair:'#4A2810',shirt:'#6848A8',pants:'#2A2A38'},
-    scribe:  {hair:'#8A7050',shirt:'#D8C8A0',pants:'#2A2838'}
   };
   const c = configs[spriteKey] || {hair:'#3A2010',shirt:'#505050',pants:'#303030'};
   drawBody(ctx, ox, oy, {hair:c.hair,skin:c.skin||'#E8C898',shirt:c.shirt,pants:c.pants||'#2A3848'});
@@ -851,15 +871,28 @@ function drawAgent(ctx, ox, oy, spriteKey, frame) {
     px(ctx,ox+5*S,oy+0*S,2,4,'#E8E8E8');
     px(ctx,ox+9*S,oy+0*S,2,4,'#E8E8E8');
   }
+  if (spriteKey==='trump') {
+    // 金色长发，垂肩
+    px(ctx,ox+1*S,oy+0*S,14,4,'#FFD700');
+    px(ctx,ox+0*S,oy+3*S,2,8,'#FFD700');
+    px(ctx,ox+14*S,oy+3*S,2,8,'#FFD700');
+    px(ctx,ox+1*S,oy+10*S,2,4,'#E8C000');
+    px(ctx,ox+13*S,oy+10*S,2,4,'#E8C000');
+    // 红唇
+    px(ctx,ox+5*S,oy+9*S,6,2,'#E02040');
+    // 白色西装亮边
+    px(ctx,ox+2*S,oy+11*S,1,8,'#F8F8F8');
+    px(ctx,ox+13*S,oy+11*S,1,8,'#F8F8F8');
+    // 蓝色眼睛
+    px(ctx,ox+4*S,oy+5*S,2,2,'#4090E8');
+    px(ctx,ox+10*S,oy+5*S,2,2,'#4090E8');
+  }
   if (spriteKey==='designer') {
-    // White/silver hair beret
     px(ctx,ox+1*S,oy+0*S,14,3,'#E0E0E8');
     px(ctx,ox+3*S,oy+2*S,10,2,'#D0D0D8');
-    // Face
     px(ctx,ox+2*S,oy+4*S,12,5,'#E8C898');
     px(ctx,ox+4*S,oy+5*S,2,2,'#282828');
     px(ctx,ox+10*S,oy+5*S,2,2,'#282828');
-    // Scarf accent (red)
     px(ctx,ox+5*S,oy+9*S,6,2,'#C02020');
   }
   if (spriteKey==='uiux') {
