@@ -342,7 +342,7 @@
     {
       "id": "wq-ar-spec1-mnprijcp",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "pending_review",
       "owner": "pm",
       "priority": "low",
       "title": "建立 v18 AI 功能结构化 eval 流程",
@@ -351,12 +351,14 @@
       "created_by": "ai-engineer-review",
       "started_at": "2026-04-08T08:17:40.749Z",
       "retryCount": 2,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T08:20:28.626155Z",
+      "result": "task-mnps2p66"
     },
     {
       "id": "wq-ar-spec2-mnprijcq",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "pending_review",
       "owner": "pm",
       "priority": "high",
       "title": "在 Pipeline 中强制启用 pending_review 门控",
@@ -365,7 +367,44 @@
       "created_by": "reviewer-review",
       "started_at": "2026-04-08T08:15:48.814Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T08:15:53.104Z"
+    },
+    {
+      "id": "qa-wq-ar-spec1-mnprijcp",
+      "title": "[QA] 建立 v18 AI 功能结构化 eval 流程",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-spec1-mnprijcp",
+      "createdAt": "2026-04-08T08:29:27.973Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T08:29:27.974Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "qa-wq-ar-spec2-mnprijcq",
+      "title": "[QA] 在 Pipeline 中强制启用 pending_review 门控",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-spec2-mnprijcq",
+      "createdAt": "2026-04-08T08:29:27.973Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T08:29:27.974Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
