@@ -831,7 +831,7 @@
     {
       "id": "wq-pmspec-ar-19h-mnpxy1cv",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "running",
       "owner": "pm",
       "priority": "low",
       "title": "[Review摘要] 19时 renderer+material-manager review 建议",
@@ -844,7 +844,7 @@
         "renderer",
         "material-manager"
       ],
-      "started_at": "2026-04-08T11:15:04.068Z",
+      "started_at": "2026-04-08T11:15:27.244Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     },
@@ -862,6 +862,336 @@
       "completed_at": "2026-04-08T11:15:04.051Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review and improve PM spec templates"
+    },
+    {
+      "id": "wq-si-tester-mnpze6ia",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-08T11:45:06.418Z",
+      "started_at": "2026-04-08T11:45:06.418Z",
+      "completed_at": "2026-04-08T11:45:06.418Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-frontend-mnpze6ia",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-08T11:45:06.418Z",
+      "started_at": "2026-04-08T11:45:06.418Z",
+      "completed_at": "2026-04-08T11:45:06.418Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-backend-mnpze6ib",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-08T11:45:06.419Z",
+      "started_at": "2026-04-08T11:45:06.419Z",
+      "completed_at": "2026-04-08T11:45:06.419Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-dev-mnpze6id",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-08T11:45:06.421Z",
+      "started_at": "2026-04-08T11:45:06.421Z",
+      "completed_at": "2026-04-08T11:45:06.421Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnpze6id",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-08T11:45:06.421Z",
+      "started_at": "2026-04-08T11:45:06.421Z",
+      "completed_at": "2026-04-08T11:45:06.421Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-devops-mnpze6id",
+      "type": "self_improve",
+      "assignee": "devops",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review CI/CD pipeline health"
+      },
+      "created_at": "2026-04-08T11:45:06.421Z",
+      "started_at": "2026-04-08T11:45:06.421Z",
+      "completed_at": "2026-04-08T11:45:06.421Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review CI/CD pipeline health"
+    },
+    {
+      "id": "wq-si-reviewer-mnpze6id",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-08T11:45:06.421Z",
+      "started_at": "2026-04-08T11:45:06.421Z",
+      "completed_at": "2026-04-08T11:45:06.421Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-scribe-mnpze6ie",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-08T11:45:06.422Z",
+      "started_at": "2026-04-08T11:45:06.422Z",
+      "completed_at": "2026-04-08T11:45:06.422Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-researcher-mnpze6ie",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-08T11:45:06.422Z",
+      "started_at": "2026-04-08T11:45:06.422Z",
+      "completed_at": "2026-04-08T11:45:06.422Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-uiux-mnpze6ie",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-08T11:45:06.422Z",
+      "started_at": "2026-04-08T11:45:06.422Z",
+      "completed_at": "2026-04-08T11:45:06.422Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "wq-si-chief-designer-mnpze6ie",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-08T11:45:06.422Z",
+      "started_at": "2026-04-08T11:45:06.422Z",
+      "completed_at": "2026-04-08T11:45:06.422Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-tech-arch-mnpze6if",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-08T11:45:06.423Z",
+      "started_at": "2026-04-08T11:45:06.423Z",
+      "completed_at": "2026-04-08T11:45:06.423Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnpze6if",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-08T11:45:06.423Z",
+      "started_at": "2026-04-08T11:45:06.423Z",
+      "completed_at": "2026-04-08T11:45:06.423Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnpze6if",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-08T11:45:06.423Z",
+      "started_at": "2026-04-08T11:45:06.423Z",
+      "completed_at": "2026-04-08T11:45:06.423Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnpze6if",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-08T11:45:06.423Z",
+      "started_at": "2026-04-08T11:45:06.423Z",
+      "completed_at": "2026-04-08T11:45:06.423Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnpze6if",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-08T11:45:06.423Z",
+      "started_at": "2026-04-08T11:45:06.423Z",
+      "completed_at": "2026-04-08T11:45:06.423Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnpze6if",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-08T11:45:06.423Z",
+      "started_at": "2026-04-08T11:45:06.423Z",
+      "completed_at": "2026-04-08T11:45:06.423Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnpzhojq",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-08T11:47:49.766Z",
+      "started_at": "2026-04-08T11:47:49.766Z",
+      "completed_at": "2026-04-08T11:47:49.766Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-ar-fe-be-20-mnq03kqv",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 20时 frontend+backend review 建议",
+      "description": "frontend: 强制 browser-test 门控，pending_test→done 需截图证明。backend: 修复 scripts/*.mjs node PATH，清理 running 卡死任务。",
+      "created_at": "2026-04-08T12:04:51.270Z",
+      "created_by": "agent-review-rotation",
+      "tags": [
+        "frontend",
+        "backend",
+        "review",
+        "20h"
+      ],
+      "started_at": "2026-04-08T12:15:07.300Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-08T12:15:07.301Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-pmspec-fe-browsertest-mnq03kqv",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "high",
+      "title": "强制 Frontend browser-test 门控：pending_test→done 需截图证明",
+      "description": "来源: frontend review 2026-04-08-20。所有 frontend 任务状态流转需经 browser-test 验证。",
+      "created_at": "2026-04-08T12:04:51.270Z",
+      "created_by": "frontend-review",
+      "tags": [
+        "frontend",
+        "browser-test",
+        "quality-gate"
+      ],
+      "started_at": "2026-04-08T12:15:07.249Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-pmspec-node-path-mnq03kqv",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "high",
+      "title": "修复所有 scripts/*.mjs shebang 使用绝对 node 路径",
+      "description": "来源: backend review 2026-04-08-20。node PATH 在非交互 shell 下持续失败，需修复所有脚本 shebang 或使用绝对路径。",
+      "created_at": "2026-04-08T12:04:51.270Z",
+      "created_by": "backend-review",
+      "tags": [
+        "backend",
+        "devops",
+        "node-path",
+        "scripts"
+      ],
+      "started_at": "2026-04-08T12:15:07.283Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
