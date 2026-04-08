@@ -4737,7 +4737,28 @@
         "task": "[Review摘要] 12时 uiux+pm review 建议"
       },
       "created_at": "2026-04-08T04:15:28.702Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-08T04:17:28.660Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "qa-wq-review-mnpixy4s",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-review-mnpixy4s",
+      "createdAt": "2026-04-08T04:17:28.656Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T04:17:28.660Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
