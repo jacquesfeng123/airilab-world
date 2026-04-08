@@ -4190,7 +4190,7 @@
     {
       "id": "wq-review-2026040810-fe-spec",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "done",
       "owner": "pm",
       "assignee": "pm",
       "priority": "medium",
@@ -4198,7 +4198,9 @@
       "created_at": "2026-04-08T02:07:48.306783Z",
       "started_at": "2026-04-08T02:15:21.580Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T03:15:27.529Z",
+      "result_summary": "[watchdog] reset stale running task"
     },
     {
       "id": "wq-review-2026040810-be-failed",
@@ -4220,16 +4222,30 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending",
+      "status": "pending_review",
       "created_by": "agent-review-rotation",
       "created_at": "2026-04-08T03:04:32.622Z",
       "payload": {
         "title": "[Review摘要] 11时 qa+tester review 建议",
         "content": "QA核心建议：建立所有任务强制QA门控规范（pending_test阶段）。Tester核心建议：搭建项目基础测试框架（Jest/Vitest），为dispatcher编写集成测试。"
       },
-      "started_at": "2026-04-08T03:13:30.620Z",
+      "started_at": "2026-04-08T03:15:27.536Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 11时 qa+tester review 建议\" \"\"\n/bin/sh: node: command not found\n"
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 11时 qa+tester review 建议\" \"\"\n/bin/sh: node: command not found\n",
+      "completed_at": "2026-04-08T03:15:32.326Z",
+      "result_summary": "[PM] ✅ Task created: task-mnph6rww\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww/spec.md"
+    },
+    {
+      "id": "wq-mnph6vdy",
+      "type": "qa_review_needed",
+      "assignee": "qa",
+      "priority": "medium",
+      "status": "pending",
+      "payload": {
+        "task": "[Review摘要] 11时 qa+tester review 建议"
+      },
+      "created_at": "2026-04-08T03:15:32.326Z",
+      "created_by": "dispatcher-auto"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
