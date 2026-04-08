@@ -287,27 +287,6 @@
       "result_summary": "数据流图+决策文档完成。选项B：保留scribe-dream.mjs作为路由层，与Dreaming插件协同。详见task-wq-sys-001/"
     },
     {
-      "id": "wq-sys-002",
-      "type": "system_upgrade",
-      "title": "SOUL.md三层架构设计与试点",
-      "status": "done",
-      "priority": "high",
-      "assignee": "trump",
-      "owner": "trump/pm",
-      "estimatedDays": 5,
-      "specPath": "data/pipeline/tech/tasks/task-wq-sys-002/spec.md",
-      "createdAt": "2026-04-07T12:31:00+08:00",
-      "created_by": "pm-agent",
-      "tags": [
-        "system-upgrade",
-        "soul",
-        "architecture"
-      ],
-      "started_at": "2026-04-07T04:46:38.314Z",
-      "failed_at": "2026-04-07T04:46:38.316Z",
-      "error": "Unknown type: system_upgrade"
-    },
-    {
       "id": "wq-sys-003",
       "type": "system_upgrade",
       "title": "Dispatcher升级（串并行混合调度）",
@@ -326,115 +305,6 @@
       "started_at": "2026-04-07T05:00:37.277Z",
       "completed_at": "2026-04-07T05:02:16.592Z",
       "result_summary": "Dispatcher升级完成：TaskClassifier + 串行队列 + 并行池(concurrency=3) + --boost动态优先级"
-    },
-    {
-      "id": "wq-sys-004",
-      "type": "system_upgrade",
-      "title": "vet Colleague Skill + PM Agent POC",
-      "status": "done",
-      "priority": "medium",
-      "assignee": "trump",
-      "owner": "trump/qa",
-      "estimatedDays": 5,
-      "specPath": "data/pipeline/tech/tasks/task-wq-sys-004/spec.md",
-      "createdAt": "2026-04-07T12:31:00+08:00",
-      "created_by": "pm-agent",
-      "tags": [
-        "system-upgrade",
-        "skill-vet",
-        "agent-distill"
-      ],
-      "started_at": "2026-04-07T05:15:22.122Z",
-      "failed_at": "2026-04-07T05:15:22.125Z",
-      "error": "Unknown type: system_upgrade"
-    },
-    {
-      "id": "wq-sys-005",
-      "type": "system_upgrade",
-      "title": "建筑视觉Prompt模板库",
-      "status": "done",
-      "priority": "medium",
-      "assignee": "chief-designer",
-      "owner": "chief-designer/uiux",
-      "estimatedDays": 4,
-      "specPath": "data/pipeline/tech/tasks/task-wq-sys-005/spec.md",
-      "createdAt": "2026-04-07T12:31:00+08:00",
-      "created_by": "pm-agent",
-      "tags": [
-        "system-upgrade",
-        "vision",
-        "architecture"
-      ],
-      "started_at": "2026-04-07T05:15:22.122Z",
-      "failed_at": "2026-04-07T05:15:22.125Z",
-      "error": "Unknown type: system_upgrade",
-      "completedAt": "2026-04-07T13:15:00+08:00"
-    },
-    {
-      "id": "wq-sys-006",
-      "type": "system_upgrade",
-      "title": "airilab视觉模型API集成评估",
-      "status": "done",
-      "priority": "medium",
-      "assignee": "backend",
-      "owner": "backend/ai-engineer",
-      "estimatedDays": 6,
-      "specPath": "data/pipeline/tech/tasks/task-wq-sys-006/spec.md",
-      "createdAt": "2026-04-07T12:31:00+08:00",
-      "created_by": "pm-agent",
-      "tags": [
-        "system-upgrade",
-        "vision",
-        "api"
-      ],
-      "started_at": "2026-04-07T05:15:22.122Z",
-      "failed_at": "2026-04-07T05:15:22.125Z",
-      "error": "Unknown type: system_upgrade",
-      "completedAt": "2026-04-07T05:21:46.917Z"
-    },
-    {
-      "id": "wq-sys-007",
-      "type": "system_upgrade",
-      "title": "KAIROS与Karpathy实际整合测试",
-      "status": "done",
-      "priority": "medium",
-      "assignee": "backend",
-      "owner": "backend/qa",
-      "estimatedDays": 4,
-      "specPath": "data/pipeline/tech/tasks/task-wq-sys-007/spec.md",
-      "createdAt": "2026-04-07T12:31:00+08:00",
-      "created_by": "pm-agent",
-      "tags": [
-        "system-upgrade",
-        "kairos",
-        "testing"
-      ],
-      "started_at": "2026-04-07T05:15:22.122Z",
-      "failed_at": "2026-04-07T05:15:22.127Z",
-      "error": "Unknown type: system_upgrade",
-      "completedAt": "2026-04-07T13:18:00+08:00"
-    },
-    {
-      "id": "wq-sys-008",
-      "type": "system_upgrade",
-      "title": "SOUL.md Git版本控制+漂移监控",
-      "status": "done",
-      "priority": "low",
-      "assignee": "devops",
-      "owner": "devops/scribe",
-      "estimatedDays": 3,
-      "specPath": "data/pipeline/tech/tasks/task-wq-sys-008/spec.md",
-      "createdAt": "2026-04-07T12:31:00+08:00",
-      "created_by": "pm-agent",
-      "tags": [
-        "system-upgrade",
-        "soul",
-        "monitoring"
-      ],
-      "started_at": "2026-04-07T05:15:22.122Z",
-      "failed_at": "2026-04-07T05:15:22.127Z",
-      "error": "Unknown type: system_upgrade",
-      "completed": "2026-04-07"
     },
     {
       "id": "wq-si-pm-mno6mmqd",
@@ -1322,21 +1192,6 @@
       "result_summary": "[virtual] Research new opportunity pipeline"
     },
     {
-      "id": "wq-sys-009",
-      "title": "airilab MCP wrapper 集成测试与 mcporter 注册",
-      "status": "done",
-      "priority": "medium",
-      "owner": "backend/devops",
-      "estimatedDays": 1,
-      "tags": [
-        "airilab",
-        "mcp",
-        "integration"
-      ],
-      "createdAt": "2026-04-07T13:25:00+08:00",
-      "completedAt": "2026-04-07T11:13:22.812Z"
-    },
-    {
       "id": "wq-si-backend-mnoiwgua",
       "type": "self_improve",
       "assignee": "backend",
@@ -1652,24 +1507,6 @@
       "result_summary": "[virtual] Research new opportunity pipeline"
     },
     {
-      "id": "wq-world-001",
-      "title": "[P0] Fix title version v14→v17",
-      "status": "done",
-      "priority": "high",
-      "owner": "frontend",
-      "type": "bug_fix",
-      "estimatedDays": 0.01,
-      "tags": [
-        "airilab-world",
-        "uiux"
-      ],
-      "createdAt": "2026-04-07T21:05:00+08:00",
-      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:20:24.714Z",
-      "failed_at": "2026-04-07T13:20:24.716Z",
-      "error": "Unknown type: bug_fix"
-    },
-    {
       "id": "wq-world-002",
       "title": "[P0] 状态气泡文字过小/低对比度，提升可读性",
       "status": "done",
@@ -1688,97 +1525,6 @@
       "result_summary": "dispatched to frontend via dispatch-queue",
       "assignee": "frontend",
       "updated": "2026-04-07T13:55:05.165Z"
-    },
-    {
-      "id": "wq-world-003",
-      "title": "[P0] Agent 点击命中热区过小，扩大到 sprite 范围",
-      "status": "done",
-      "priority": "high",
-      "owner": "frontend",
-      "type": "design_spec",
-      "estimatedDays": 0.125,
-      "tags": [
-        "airilab-world",
-        "uiux"
-      ],
-      "createdAt": "2026-04-07T21:05:00+08:00",
-      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.238Z",
-      "failed_at": "2026-04-07T13:10:58.240Z",
-      "error": "Unknown type: design_spec"
-    },
-    {
-      "id": "wq-world-004",
-      "title": "[P1] Agent 名字标签重叠检测与 stagger",
-      "status": "done",
-      "priority": "medium",
-      "owner": "frontend",
-      "type": "design_spec",
-      "estimatedDays": 0.375,
-      "tags": [
-        "airilab-world",
-        "uiux"
-      ],
-      "createdAt": "2026-04-07T21:05:00+08:00",
-      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.241Z",
-      "failed_at": "2026-04-07T13:10:58.242Z",
-      "error": "Unknown type: design_spec"
-    },
-    {
-      "id": "wq-world-005",
-      "title": "[P1] Cards 视图增加状态筛选和部门分组",
-      "status": "done",
-      "priority": "medium",
-      "owner": "frontend",
-      "type": "design_spec",
-      "estimatedDays": 0.5,
-      "tags": [
-        "airilab-world",
-        "uiux"
-      ],
-      "createdAt": "2026-04-07T21:05:00+08:00",
-      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.243Z",
-      "failed_at": "2026-04-07T13:10:58.244Z",
-      "error": "Unknown type: design_spec"
-    },
-    {
-      "id": "wq-world-006",
-      "title": "[P1] 移动端默认 Cards + Office View pinch-to-zoom",
-      "status": "done",
-      "priority": "medium",
-      "owner": "frontend",
-      "type": "design_spec",
-      "estimatedDays": 0.5,
-      "tags": [
-        "airilab-world",
-        "uiux",
-        "mobile"
-      ],
-      "createdAt": "2026-04-07T21:05:00+08:00",
-      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.245Z",
-      "failed_at": "2026-04-07T13:10:58.246Z",
-      "error": "Unknown type: design_spec"
-    },
-    {
-      "id": "wq-world-007",
-      "title": "[P1] Header 增加状态概览统计条",
-      "status": "done",
-      "priority": "medium",
-      "owner": "frontend",
-      "type": "design_spec",
-      "estimatedDays": 0.25,
-      "tags": [
-        "airilab-world",
-        "uiux"
-      ],
-      "createdAt": "2026-04-07T21:05:00+08:00",
-      "specRef": "data/pipeline/tech/tasks/task-uiux-world-review/uiux-review.md",
-      "started_at": "2026-04-07T13:10:58.249Z",
-      "failed_at": "2026-04-07T13:10:58.251Z",
-      "error": "Unknown type: design_spec"
     },
     {
       "id": "wq-si-backend-mnon8e31",
@@ -3864,20 +3610,6 @@
       "result_summary": "[virtual] Review and improve PM spec templates"
     },
     {
-      "id": "wq-fix-001",
-      "title": "Dispatcher 注册 agent_review 类型处理器",
-      "type": "system_upgrade",
-      "status": "done",
-      "priority": "high",
-      "owner": "backend",
-      "tags": [
-        "dispatcher",
-        "bugfix"
-      ],
-      "createdAt": "2026-04-08T09:35:00+08:00",
-      "note": "已修复：agent_review 加入 SPEC_DRIVEN_TYPES"
-    },
-    {
       "id": "wq-fix-002",
       "title": "regression-test.mjs 修复与依赖检查",
       "type": "qa_review_needed",
@@ -3924,7 +3656,8 @@
       "started_at": "2026-04-08T01:37:19.752Z",
       "assignee": "uiux",
       "completed_at": "2026-04-08T01:37:45.212Z",
-      "result_summary": "dispatched to uiux via agent-inbox (cron fallback)"
+      "result_summary": "dispatched to uiux via agent-inbox (cron fallback)",
+      "updated_at": "2026-04-08T01:41:36.652Z"
     },
     {
       "id": "wq-fix-005",
@@ -3941,7 +3674,240 @@
       "started_at": "2026-04-08T01:36:51.051Z",
       "assignee": "devops",
       "completed_at": "2026-04-08T01:37:19.739Z",
-      "result_summary": "dispatched to devops via agent-inbox (cron fallback)"
+      "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
+      "updated_at": "2026-04-08T01:41:05.794Z"
+    },
+    {
+      "id": "wq-si-tester-mnpdvr36",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-08T01:42:54.690Z",
+      "started_at": "2026-04-08T01:42:54.690Z",
+      "completed_at": "2026-04-08T01:42:54.690Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-dev-mnpdvr36",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-08T01:42:54.690Z",
+      "started_at": "2026-04-08T01:42:54.690Z",
+      "completed_at": "2026-04-08T01:42:54.690Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnpdvr37",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-08T01:42:54.691Z",
+      "started_at": "2026-04-08T01:42:54.691Z",
+      "completed_at": "2026-04-08T01:42:54.691Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnpdvr37",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-08T01:42:54.691Z",
+      "started_at": "2026-04-08T01:42:54.691Z",
+      "completed_at": "2026-04-08T01:42:54.691Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-scribe-mnpdvr37",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-08T01:42:54.691Z",
+      "started_at": "2026-04-08T01:42:54.691Z",
+      "completed_at": "2026-04-08T01:42:54.691Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-researcher-mnpdvr38",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-08T01:42:54.692Z",
+      "started_at": "2026-04-08T01:42:54.692Z",
+      "completed_at": "2026-04-08T01:42:54.692Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-tech-arch-mnpdvr38",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-08T01:42:54.692Z",
+      "started_at": "2026-04-08T01:42:54.692Z",
+      "completed_at": "2026-04-08T01:42:54.692Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnpdvr38",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-08T01:42:54.692Z",
+      "started_at": "2026-04-08T01:42:54.692Z",
+      "completed_at": "2026-04-08T01:42:54.692Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnpdvr39",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-08T01:42:54.693Z",
+      "started_at": "2026-04-08T01:42:54.693Z",
+      "completed_at": "2026-04-08T01:42:54.693Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnpdvr39",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-08T01:42:54.693Z",
+      "started_at": "2026-04-08T01:42:54.693Z",
+      "completed_at": "2026-04-08T01:42:54.693Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnpdvr39",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-08T01:42:54.693Z",
+      "started_at": "2026-04-08T01:42:54.693Z",
+      "completed_at": "2026-04-08T01:42:54.693Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnpdvr39",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-08T01:42:54.693Z",
+      "started_at": "2026-04-08T01:42:54.693Z",
+      "completed_at": "2026-04-08T01:42:54.693Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnpdvr39",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-08T01:42:54.693Z",
+      "started_at": "2026-04-08T01:42:54.693Z",
+      "completed_at": "2026-04-08T01:42:54.693Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "qa-wq-fix-004",
+      "title": "[QA] airilab-world v18 UX 改进规划",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-fix-004",
+      "createdAt": "2026-04-08T01:42:54.697Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T01:42:54.698Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "qa-wq-fix-005",
+      "title": "[QA] work-queue.json 历史条目归档压缩",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-fix-005",
+      "createdAt": "2026-04-08T01:42:54.698Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T01:42:54.698Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
     }
-  ]
+  ],
+  "last_archived_at": "2026-04-08T01:40:47.017Z"
 }
