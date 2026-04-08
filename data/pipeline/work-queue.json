@@ -4190,28 +4190,30 @@
     {
       "id": "wq-review-2026040810-fe-spec",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "running",
       "owner": "pm",
       "assignee": "pm",
       "priority": "medium",
       "title": "确认前端任务录入规范（type: ui_implementation）",
       "created_at": "2026-04-08T02:07:48.306783Z",
-      "started_at": "2026-04-08T02:13:27.465Z",
+      "started_at": "2026-04-08T02:15:21.580Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     },
     {
       "id": "wq-review-2026040810-be-failed",
       "type": "backend",
-      "status": "pending",
+      "status": "failed",
       "owner": "backend",
       "assignee": "backend",
       "priority": "high",
       "title": "调查 failed 任务根因并修复",
       "created_at": "2026-04-08T02:07:48.306783Z",
-      "started_at": "2026-04-08T02:13:27.435Z",
-      "retryCount": 1,
-      "lastError": "Unknown type: backend"
+      "started_at": "2026-04-08T02:17:20.491Z",
+      "retryCount": 2,
+      "lastError": "Unknown type: backend",
+      "failed_at": "2026-04-08T02:17:20.523Z",
+      "error": "Unknown type: backend"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
