@@ -232,8 +232,8 @@ const AGENT_LIST = [
   {id:'uiux', name:'UIUX', role:'UI/UX Designer', dept:'design', desk:{col:5,row:8}, room:'design', spriteKey:'uiux'},
   {id:'content', name:'Content', role:'Content Writer', dept:'design', desk:{col:2,row:11}, room:'design', spriteKey:'content'},
   {id:'cs', name:'Customer Success', role:'CS Lead', dept:'design', desk:{col:5,row:11}, room:'design', spriteKey:'cs'},
-  {id:'qa', name:'QA', role:'QA Engineer', dept:'qa', desk:{col:22,row:9}, room:'qa', spriteKey:'qa'},
-  {id:'tester', name:'Tester', role:'Test Engineer', dept:'qa', desk:{col:26,row:9}, room:'qa', spriteKey:'tester'},
+  {id:'qa', name:'QA', role:'QA Engineer', dept:'qa', desk:{col:20,row:9}, room:'qa', spriteKey:'qa'},
+  {id:'tester', name:'Tester', role:'Test Engineer', dept:'qa', desk:{col:23,row:9}, room:'qa', spriteKey:'tester'},
   {id:'scribe', name:'Scribe', role:'Scribe / Archivist', dept:'exec', desk:{col:7,row:4}, room:'exec', spriteKey:'scribe'},
 ];
 
@@ -1073,10 +1073,10 @@ function drawFloor() {
   // v19: Department zone borders
   ctx.lineWidth = 1;
   // Tech zone (col 9-20, row 0-5)
-  ctx.strokeStyle = 'rgba(74,144,217,0.3)';
+  ctx.strokeStyle = 'rgba(74,144,217,0.4)';
   ctx.strokeRect(9*T, 0, 12*T, 6*T);
   // Design zone (col 0-9, row 7-13)
-  ctx.strokeStyle = 'rgba(155,89,182,0.3)';
+  ctx.strokeStyle = 'rgba(155,89,182,0.4)';
   ctx.strokeRect(0, 7*T, 10*T, 7*T);
   // QA zone (col 20-29, row 7-13)
   ctx.strokeStyle = 'rgba(168,120,232,0.3)';
