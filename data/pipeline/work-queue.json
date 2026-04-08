@@ -3994,7 +3994,7 @@
       "id": "wq-debt-003",
       "title": "把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "soul_migration",
-      "status": "done",
+      "status": "pending_review",
       "priority": "high",
       "owner": "devops",
       "tags": [
@@ -4009,13 +4009,14 @@
       "completed_at": "2026-04-08T02:02:18.397Z",
       "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
       "qa_approved_by": "qa-wq-debt-003",
-      "cto_approved_by": "cto-wq-debt-003"
+      "cto_approved_by": "cto-wq-debt-003",
+      "updated": "2026-04-08T03:48:01.860Z"
     },
     {
       "id": "wq-debt-004",
       "title": "v18 UX 改进 Sprint1 实际执行（非规划）",
       "type": "design_spec",
-      "status": "done",
+      "status": "pending_review",
       "priority": "medium",
       "owner": "frontend/uiux",
       "tags": [
@@ -4036,7 +4037,7 @@
       "id": "wq-debt-005",
       "title": "确认 Dreaming 插件实际状态并修复",
       "type": "system_upgrade",
-      "status": "done",
+      "status": "pending_review",
       "priority": "medium",
       "owner": "devops",
       "tags": [
@@ -4051,13 +4052,14 @@
       "completed_at": "2026-04-08T02:02:18.443Z",
       "result_summary": "dispatched to devops via agent-inbox (cron fallback)",
       "qa_approved_by": "qa-wq-debt-005",
-      "cto_approved_by": "cto-wq-debt-005"
+      "cto_approved_by": "cto-wq-debt-005",
+      "updated": "2026-04-08T03:48:01.890Z"
     },
     {
       "id": "qa-wq-debt-003",
       "title": "[QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "qa_review_needed",
-      "status": "done",
+      "status": "pending_cto",
       "priority": "high",
       "owner": "qa",
       "assignee": "qa",
@@ -4068,8 +4070,10 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:01:00.709Z",
-      "completed_at": "2026-04-08T02:01:01.606Z",
-      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+      "completed_at": "2026-04-08T03:48:40.940Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera",
+      "updated": "2026-04-08T03:48:01.890Z",
+      "qa_approved_by": "qa-qa-wq-debt-003"
     },
     {
       "id": "qa-wq-debt-004",
@@ -4093,7 +4097,7 @@
       "id": "qa-wq-debt-005",
       "title": "[QA] 确认 Dreaming 插件实际状态并修复",
       "type": "qa_review_needed",
-      "status": "done",
+      "status": "pending_cto",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -4104,14 +4108,16 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:01:00.709Z",
-      "completed_at": "2026-04-08T02:01:02.165Z",
-      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+      "completed_at": "2026-04-08T03:48:40.948Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera",
+      "updated": "2026-04-08T03:48:01.890Z",
+      "qa_approved_by": "qa-qa-wq-debt-005"
     },
     {
       "id": "cto-wq-debt-003",
       "title": "[CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "cto_review",
-      "status": "done",
+      "status": "pending_cto",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -4122,8 +4128,10 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:02:18.386Z",
-      "completed_at": "2026-04-08T02:02:18.391Z",
-      "result_summary": "dispatched to trump via agent-inbox (cron fallback)"
+      "completed_at": "2026-04-08T03:48:40.943Z",
+      "result_summary": "dispatched to trump via agent-inbox (cron fallback)",
+      "updated": "2026-04-08T03:48:01.890Z",
+      "qa_approved_by": "qa-cto-wq-debt-003"
     },
     {
       "id": "cto-wq-debt-004",
@@ -4147,7 +4155,7 @@
       "id": "cto-wq-debt-005",
       "title": "[CTO Review] 确认 Dreaming 插件实际状态并修复",
       "type": "cto_review",
-      "status": "done",
+      "status": "pending_cto",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -4158,8 +4166,10 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:02:18.437Z",
-      "completed_at": "2026-04-08T02:02:18.440Z",
-      "result_summary": "dispatched to trump via agent-inbox (cron fallback)"
+      "completed_at": "2026-04-08T03:48:40.953Z",
+      "result_summary": "dispatched to trump via agent-inbox (cron fallback)",
+      "updated": "2026-04-08T03:48:01.890Z",
+      "qa_approved_by": "qa-cto-wq-debt-005"
     },
     {
       "id": "wq-review-2026040810-frontend",
@@ -4306,6 +4316,348 @@
       "started_at": "2026-04-08T03:32:25.369Z",
       "completed_at": "2026-04-08T03:32:25.376Z",
       "result_summary": "dispatched to trump via agent-inbox (cron fallback)"
+    },
+    {
+      "id": "wq-si-tester-mnpi6xeu",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-08T03:43:34.566Z",
+      "started_at": "2026-04-08T03:43:34.566Z",
+      "completed_at": "2026-04-08T03:43:34.566Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-dev-mnpi6xew",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-08T03:43:34.568Z",
+      "started_at": "2026-04-08T03:43:34.568Z",
+      "completed_at": "2026-04-08T03:43:34.568Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnpi6xex",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-08T03:43:34.569Z",
+      "started_at": "2026-04-08T03:43:34.569Z",
+      "completed_at": "2026-04-08T03:43:34.569Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnpi6xex",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-08T03:43:34.569Z",
+      "started_at": "2026-04-08T03:43:34.569Z",
+      "completed_at": "2026-04-08T03:43:34.569Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-scribe-mnpi6xex",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-08T03:43:34.570Z",
+      "started_at": "2026-04-08T03:43:34.570Z",
+      "completed_at": "2026-04-08T03:43:34.570Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-researcher-mnpi6xff",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-08T03:43:34.587Z",
+      "started_at": "2026-04-08T03:43:34.587Z",
+      "completed_at": "2026-04-08T03:43:34.587Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-tech-arch-mnpi6xff",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-08T03:43:34.587Z",
+      "started_at": "2026-04-08T03:43:34.587Z",
+      "completed_at": "2026-04-08T03:43:34.587Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnpi6xff",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-08T03:43:34.587Z",
+      "started_at": "2026-04-08T03:43:34.587Z",
+      "completed_at": "2026-04-08T03:43:34.587Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnpi6xfg",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-08T03:43:34.588Z",
+      "started_at": "2026-04-08T03:43:34.588Z",
+      "completed_at": "2026-04-08T03:43:34.588Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnpi6xfg",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-08T03:43:34.588Z",
+      "started_at": "2026-04-08T03:43:34.588Z",
+      "completed_at": "2026-04-08T03:43:34.588Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnpi6xfg",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-08T03:43:34.588Z",
+      "started_at": "2026-04-08T03:43:34.588Z",
+      "completed_at": "2026-04-08T03:43:34.588Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnpi6xfh",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-08T03:43:34.589Z",
+      "started_at": "2026-04-08T03:43:34.589Z",
+      "completed_at": "2026-04-08T03:43:34.589Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnpi6xfh",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-08T03:43:34.589Z",
+      "started_at": "2026-04-08T03:43:34.589Z",
+      "completed_at": "2026-04-08T03:43:34.589Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-uiux-mnpibx47",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-08T03:47:27.463Z",
+      "started_at": "2026-04-08T03:47:27.463Z",
+      "completed_at": "2026-04-08T03:47:27.463Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "qa-qa-wq-debt-003",
+      "title": "[QA] [QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "qa-wq-debt-003",
+      "createdAt": "2026-04-08T03:48:40.904Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T03:48:40.906Z",
+      "completed_at": "2026-04-08T03:48:40.914Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "qa-qa-wq-debt-005",
+      "title": "[QA] [QA] 确认 Dreaming 插件实际状态并修复",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "qa-wq-debt-005",
+      "createdAt": "2026-04-08T03:48:40.905Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T03:48:40.906Z",
+      "completed_at": "2026-04-08T03:48:40.914Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "qa-cto-wq-debt-003",
+      "title": "[QA] [CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "cto-wq-debt-003",
+      "createdAt": "2026-04-08T03:48:40.905Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T03:48:40.906Z",
+      "completed_at": "2026-04-08T03:48:40.914Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "qa-cto-wq-debt-005",
+      "title": "[QA] [CTO Review] 确认 Dreaming 插件实际状态并修复",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "cto-wq-debt-005",
+      "createdAt": "2026-04-08T03:48:40.905Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T03:48:40.906Z",
+      "completed_at": "2026-04-08T03:48:40.936Z",
+      "result_summary": "[dry run]"
+    },
+    {
+      "id": "cto-qa-wq-debt-003",
+      "title": "[CTO Review] [QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "qa-wq-debt-003",
+      "createdAt": "2026-04-08T03:48:40.941Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-cto-wq-debt-003",
+      "title": "[CTO Review] [CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "cto-wq-debt-003",
+      "createdAt": "2026-04-08T03:48:40.946Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-qa-wq-debt-005",
+      "title": "[CTO Review] [QA] 确认 Dreaming 插件实际状态并修复",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "qa-wq-debt-005",
+      "createdAt": "2026-04-08T03:48:40.948Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-cto-wq-debt-005",
+      "title": "[CTO Review] [CTO Review] 确认 Dreaming 插件实际状态并修复",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "cto-wq-debt-005",
+      "createdAt": "2026-04-08T03:48:40.954Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
