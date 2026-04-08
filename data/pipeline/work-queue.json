@@ -2463,41 +2463,44 @@
     {
       "id": "wq-ar-ux-token-1775671487787",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "medium",
       "title": "建立 Airi Lab 设计 Token 文档",
       "created_at": "2026-04-08T18:04:47.770Z",
       "created_by": "uiux-agent-review",
       "started_at": "2026-04-08T18:17:32.315Z",
-      "completed_at": "2026-04-08T18:17:37.920Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqdeuv2\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeuv2\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeuv2/spec.md"
+      "completed_at": "2026-04-08T18:19:09.775Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqdeuv2\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeuv2\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeuv2/spec.md",
+      "qa_approved_by": "qa-wq-ar-ux-token-1775671487787"
     },
     {
       "id": "wq-ar-wq-archive-1775671487788",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "medium",
       "title": "Work-queue 归档机制设计与实现",
       "created_at": "2026-04-08T18:04:47.770Z",
       "created_by": "pm-agent-review",
       "started_at": "2026-04-08T18:17:37.922Z",
-      "completed_at": "2026-04-08T18:17:43.355Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqdez6j\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdez6j\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdez6j/spec.md"
+      "completed_at": "2026-04-08T18:19:09.799Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqdez6j\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdez6j\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdez6j/spec.md",
+      "qa_approved_by": "qa-wq-ar-wq-archive-1775671487788"
     },
     {
       "id": "wq-ar-node-fix-1775671487789",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "devops",
       "priority": "high",
       "title": "修复 node 环境问题（影响 bd-brief-generator 等脚本执行）",
       "created_at": "2026-04-08T18:04:47.770Z",
       "created_by": "pm-agent-review",
       "started_at": "2026-04-08T18:17:26.993Z",
-      "completed_at": "2026-04-08T18:17:32.311Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqdeqq3\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeqq3\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeqq3/spec.md"
+      "completed_at": "2026-04-08T18:19:09.772Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqdeqq3\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeqq3\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeqq3/spec.md",
+      "qa_approved_by": "qa-wq-ar-node-fix-1775671487789"
     },
     {
       "id": "wq-si-pm-mnqddifp",
@@ -2519,36 +2522,144 @@
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "修复 node 环境问题（影响 bd-brief-generator 等脚本执行）"
       },
       "created_at": "2026-04-08T18:17:32.311Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-08T18:19:07.857Z",
+      "completed_at": "2026-04-08T18:19:08.858Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqdeyyo",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "建立 Airi Lab 设计 Token 文档"
       },
       "created_at": "2026-04-08T18:17:37.920Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-08T18:19:07.857Z",
+      "completed_at": "2026-04-08T18:19:08.858Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqdf35n",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "Work-queue 归档机制设计与实现"
       },
       "created_at": "2026-04-08T18:17:43.355Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-08T18:19:07.857Z",
+      "completed_at": "2026-04-08T18:19:09.769Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-ux-token-1775671487787",
+      "title": "[QA] 建立 Airi Lab 设计 Token 文档",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-ux-token-1775671487787",
+      "createdAt": "2026-04-08T18:19:07.854Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T18:19:07.857Z",
+      "completed_at": "2026-04-08T18:19:09.769Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-wq-archive-1775671487788",
+      "title": "[QA] Work-queue 归档机制设计与实现",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-wq-archive-1775671487788",
+      "createdAt": "2026-04-08T18:19:07.854Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T18:19:07.857Z",
+      "completed_at": "2026-04-08T18:19:09.769Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-node-fix-1775671487789",
+      "title": "[QA] 修复 node 环境问题（影响 bd-brief-generator 等脚本执行）",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-node-fix-1775671487789",
+      "createdAt": "2026-04-08T18:19:07.854Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T18:19:07.857Z",
+      "completed_at": "2026-04-08T18:19:08.858Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-ar-node-fix-1775671487789",
+      "title": "[CTO Review] 修复 node 环境问题（影响 bd-brief-generator 等脚本执行）",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-node-fix-1775671487789",
+      "createdAt": "2026-04-08T18:19:09.773Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-ux-token-1775671487787",
+      "title": "[CTO Review] 建立 Airi Lab 设计 Token 文档",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-ux-token-1775671487787",
+      "createdAt": "2026-04-08T18:19:09.792Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-wq-archive-1775671487788",
+      "title": "[CTO Review] Work-queue 归档机制设计与实现",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-wq-archive-1775671487788",
+      "createdAt": "2026-04-08T18:19:09.800Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
