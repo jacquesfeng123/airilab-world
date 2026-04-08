@@ -2094,64 +2094,108 @@
     },
     {
       "id": "wq-ar-01h-qa-mnqat43b",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "assignee": "pm",
-      "priority": "low",
       "title": "[Review摘要] 01时 qa+tester review 建议",
-      "description": "QA: 修复 node 环境缺失 + 建立数据完整性测试套件；Tester: 制定系统整体测试策略文档为最高优先。",
-      "created_at": "2026-04-08T17:04:38.901Z",
-      "created_by": "review-coordinator",
-      "tags": [
-        "agent_review",
-        "qa",
-        "tester",
-        "01h"
-      ],
-      "started_at": "2026-04-08T17:15:24.642Z",
-      "completed_at": "2026-04-08T17:15:24.646Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "agentRole": "pm",
+      "status": "done",
+      "type": "agent_review",
+      "priority": "low",
+      "dispatched_at": "2026-04-08T17:15:24.644Z",
+      "resolved_at": "2026-04-08T17:21:32.000Z",
+      "pm_decision": "acknowledge",
+      "pm_note": "凌晨系统自动Review摘要，已知悉，无需进一步操作"
     },
     {
       "id": "wq-ar-qa-env-mnqat43b",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "assignee": "pm",
-      "priority": "low",
       "title": "修复 node 命令环境缺失导致真实任务无法执行",
-      "description": "来源：QA review 2026-04-09-01。当前 node: command not found 错误导致任务虚拟执行，质量门控失效。",
-      "created_at": "2026-04-08T17:04:38.901Z",
-      "created_by": "review-coordinator",
-      "tags": [
-        "bug",
-        "devops",
-        "node-env"
-      ],
-      "started_at": "2026-04-08T17:15:24.654Z",
-      "completed_at": "2026-04-08T17:15:24.656Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "agentRole": "pm",
+      "status": "pending_cto",
+      "type": "agent_review",
+      "priority": "high",
+      "dispatched_at": "2026-04-08T17:15:24.655Z",
+      "pm_decision": "escalate",
+      "pm_note": "关键基础设施问题：node PATH/shebang 配置错误导致整个15-agent系统无法执行真实任务，已上报CTO",
+      "escalated": true,
+      "completed_at": "2026-04-08T17:31:25.668Z",
+      "qa_approved_by": "qa-wq-ar-qa-env-mnqat43b"
     },
     {
       "id": "wq-ar-tester-strategy-mnqat43b",
-      "type": "agent_review",
-      "status": "done",
-      "owner": "pm",
-      "assignee": "pm",
-      "priority": "low",
       "title": "制定 Airi agent 系统整体测试策略文档",
-      "description": "来源：Tester review 2026-04-09-01。当前系统缺乏测试策略，dispatcher/work-queue/agent-stats 均无覆盖。",
-      "created_at": "2026-04-08T17:04:38.901Z",
-      "created_by": "review-coordinator",
+      "agentRole": "pm",
+      "status": "pending_cto",
+      "type": "agent_review",
+      "priority": "low",
+      "dispatched_at": "2026-04-08T17:15:24.661Z",
+      "pm_decision": "defer",
+      "pm_note": "文档类任务，加入backlog，待系统基础设施修复后优先处理",
+      "completed_at": "2026-04-08T17:31:25.673Z",
+      "qa_approved_by": "qa-wq-ar-tester-strategy-mnqat43b"
+    },
+    {
+      "id": "qa-wq-ar-qa-env-mnqat43b",
+      "title": "[QA] 修复 node 命令环境缺失导致真实任务无法执行",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-qa-env-mnqat43b",
+      "createdAt": "2026-04-08T17:31:24.756Z",
       "tags": [
-        "spec_needed",
-        "tester",
-        "test-strategy"
+        "qa",
+        "auto-generated"
       ],
-      "started_at": "2026-04-08T17:15:24.660Z",
-      "completed_at": "2026-04-08T17:15:24.662Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "started_at": "2026-04-08T17:31:24.758Z",
+      "completed_at": "2026-04-08T17:31:25.665Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-tester-strategy-mnqat43b",
+      "title": "[QA] 制定 Airi agent 系统整体测试策略文档",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-tester-strategy-mnqat43b",
+      "createdAt": "2026-04-08T17:31:24.756Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T17:31:24.758Z",
+      "completed_at": "2026-04-08T17:31:25.665Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-ar-qa-env-mnqat43b",
+      "title": "[CTO Review] 修复 node 命令环境缺失导致真实任务无法执行",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-qa-env-mnqat43b",
+      "createdAt": "2026-04-08T17:31:25.669Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-tester-strategy-mnqat43b",
+      "title": "[CTO Review] 制定 Airi agent 系统整体测试策略文档",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-tester-strategy-mnqat43b",
+      "createdAt": "2026-04-08T17:31:25.673Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
