@@ -789,7 +789,7 @@
     {
       "id": "wq-ai-eval-gate-f7ab0h",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "assignee": "pm",
       "priority": "medium",
       "created_at": "2026-04-08T22:04:25.805Z",
@@ -798,8 +798,9 @@
         "title": "建立 AI eval 门控：eval 通过才能进入 pending_review 状态"
       },
       "started_at": "2026-04-08T22:15:29.098Z",
-      "completed_at": "2026-04-08T22:15:34.881Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqlwuw3\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqlwuw3\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqlwuw3/spec.md"
+      "completed_at": "2026-04-08T22:16:51.336Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqlwuw3\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqlwuw3\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqlwuw3/spec.md",
+      "qa_approved_by": "qa-wq-ai-eval-gate-f7ab0h"
     },
     {
       "id": "wq-dispatcher-audit-handler-90n4t5",
@@ -812,8 +813,8 @@
       "payload": {
         "title": "修复 dispatcher：为 audit/backend_task/frontend_task 添加路由 handler"
       },
-      "started_at": "2026-04-08T22:15:29.093Z",
-      "retryCount": 1,
+      "started_at": "2026-04-08T22:16:51.343Z",
+      "retryCount": 2,
       "lastError": "Unknown type: infra"
     },
     {
@@ -821,12 +822,48 @@
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "建立 AI eval 门控：eval 通过才能进入 pending_review 状态"
       },
       "created_at": "2026-04-08T22:15:34.882Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-08T22:16:50.660Z",
+      "completed_at": "2026-04-08T22:16:51.334Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ai-eval-gate-f7ab0h",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ai-eval-gate-f7ab0h",
+      "createdAt": "2026-04-08T22:16:50.659Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T22:16:50.660Z",
+      "completed_at": "2026-04-08T22:16:51.334Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-ai-eval-gate-f7ab0h",
+      "title": "[CTO Review] wq-ai-eval-gate-f7ab0h",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ai-eval-gate-f7ab0h",
+      "createdAt": "2026-04-08T22:16:51.339Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
