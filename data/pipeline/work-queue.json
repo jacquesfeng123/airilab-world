@@ -2463,44 +2463,47 @@
     {
       "id": "wq-ar-ux-token-1775671487787",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "medium",
       "title": "建立 Airi Lab 设计 Token 文档",
       "created_at": "2026-04-08T18:04:47.770Z",
       "created_by": "uiux-agent-review",
       "started_at": "2026-04-08T18:17:32.315Z",
-      "completed_at": "2026-04-08T18:19:09.775Z",
+      "completed_at": "2026-04-08T18:30:48.521Z",
       "result_summary": "[PM] ✅ Task created: task-mnqdeuv2\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeuv2\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeuv2/spec.md",
-      "qa_approved_by": "qa-wq-ar-ux-token-1775671487787"
+      "qa_approved_by": "qa-wq-ar-ux-token-1775671487787",
+      "cto_approved_by": "cto-wq-ar-ux-token-1775671487787"
     },
     {
       "id": "wq-ar-wq-archive-1775671487788",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "medium",
       "title": "Work-queue 归档机制设计与实现",
       "created_at": "2026-04-08T18:04:47.770Z",
       "created_by": "pm-agent-review",
       "started_at": "2026-04-08T18:17:37.922Z",
-      "completed_at": "2026-04-08T18:19:09.799Z",
+      "completed_at": "2026-04-08T18:30:48.532Z",
       "result_summary": "[PM] ✅ Task created: task-mnqdez6j\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdez6j\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdez6j/spec.md",
-      "qa_approved_by": "qa-wq-ar-wq-archive-1775671487788"
+      "qa_approved_by": "qa-wq-ar-wq-archive-1775671487788",
+      "cto_approved_by": "cto-wq-ar-wq-archive-1775671487788"
     },
     {
       "id": "wq-ar-node-fix-1775671487789",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "devops",
       "priority": "high",
       "title": "修复 node 环境问题（影响 bd-brief-generator 等脚本执行）",
       "created_at": "2026-04-08T18:04:47.770Z",
       "created_by": "pm-agent-review",
       "started_at": "2026-04-08T18:17:26.993Z",
-      "completed_at": "2026-04-08T18:19:09.772Z",
+      "completed_at": "2026-04-08T18:30:48.510Z",
       "result_summary": "[PM] ✅ Task created: task-mnqdeqq3\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeqq3\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqdeqq3/spec.md",
-      "qa_approved_by": "qa-wq-ar-node-fix-1775671487789"
+      "qa_approved_by": "qa-wq-ar-node-fix-1775671487789",
+      "cto_approved_by": "cto-wq-ar-node-fix-1775671487789"
     },
     {
       "id": "wq-si-pm-mnqddifp",
@@ -2620,7 +2623,7 @@
       "id": "cto-wq-ar-node-fix-1775671487789",
       "title": "[CTO Review] 修复 node 环境问题（影响 bd-brief-generator 等脚本执行）",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -2629,13 +2632,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T18:30:48.504Z",
+      "completed_at": "2026-04-08T18:30:48.507Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-ux-token-1775671487787",
       "title": "[CTO Review] 建立 Airi Lab 设计 Token 文档",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -2644,13 +2650,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T18:30:48.518Z",
+      "completed_at": "2026-04-08T18:30:48.520Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-wq-archive-1775671487788",
       "title": "[CTO Review] Work-queue 归档机制设计与实现",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -2659,7 +2668,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T18:30:48.526Z",
+      "completed_at": "2026-04-08T18:30:48.530Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
