@@ -4245,7 +4245,43 @@
         "task": "[Review摘要] 11时 qa+tester review 建议"
       },
       "created_at": "2026-04-08T03:15:32.326Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-08T03:17:23.420Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-si-chief-designer-mnph993a",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-08T03:17:23.398Z",
+      "started_at": "2026-04-08T03:17:23.398Z",
+      "completed_at": "2026-04-08T03:17:23.398Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "qa-wq-review-1108-qa-tester",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-review-1108-qa-tester",
+      "createdAt": "2026-04-08T03:17:23.419Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-08T03:17:23.420Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
