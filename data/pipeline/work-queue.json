@@ -2108,28 +2108,30 @@
       "id": "wq-ar-qa-env-mnqat43b",
       "title": "修复 node 命令环境缺失导致真实任务无法执行",
       "agentRole": "pm",
-      "status": "pending_cto",
+      "status": "done",
       "type": "agent_review",
       "priority": "high",
       "dispatched_at": "2026-04-08T17:15:24.655Z",
       "pm_decision": "escalate",
       "pm_note": "关键基础设施问题：node PATH/shebang 配置错误导致整个15-agent系统无法执行真实任务，已上报CTO",
       "escalated": true,
-      "completed_at": "2026-04-08T17:31:25.668Z",
-      "qa_approved_by": "qa-wq-ar-qa-env-mnqat43b"
+      "completed_at": "2026-04-08T17:31:34.415Z",
+      "qa_approved_by": "qa-wq-ar-qa-env-mnqat43b",
+      "cto_approved_by": "cto-wq-ar-qa-env-mnqat43b"
     },
     {
       "id": "wq-ar-tester-strategy-mnqat43b",
       "title": "制定 Airi agent 系统整体测试策略文档",
       "agentRole": "pm",
-      "status": "pending_cto",
+      "status": "done",
       "type": "agent_review",
       "priority": "low",
       "dispatched_at": "2026-04-08T17:15:24.661Z",
       "pm_decision": "defer",
       "pm_note": "文档类任务，加入backlog，待系统基础设施修复后优先处理",
-      "completed_at": "2026-04-08T17:31:25.673Z",
-      "qa_approved_by": "qa-wq-ar-tester-strategy-mnqat43b"
+      "completed_at": "2026-04-08T17:31:34.426Z",
+      "qa_approved_by": "qa-wq-ar-tester-strategy-mnqat43b",
+      "cto_approved_by": "cto-wq-ar-tester-strategy-mnqat43b"
     },
     {
       "id": "qa-wq-ar-qa-env-mnqat43b",
@@ -2171,7 +2173,7 @@
       "id": "cto-wq-ar-qa-env-mnqat43b",
       "title": "[CTO Review] 修复 node 命令环境缺失导致真实任务无法执行",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -2180,13 +2182,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T17:31:34.409Z",
+      "completed_at": "2026-04-08T17:31:34.414Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-tester-strategy-mnqat43b",
       "title": "[CTO Review] 制定 Airi agent 系统整体测试策略文档",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -2195,7 +2200,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T17:31:34.419Z",
+      "completed_at": "2026-04-08T17:31:34.423Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
