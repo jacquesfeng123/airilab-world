@@ -342,7 +342,7 @@
     {
       "id": "wq-ar-spec1-mnprijcp",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "title": "建立 v18 AI 功能结构化 eval 流程",
@@ -352,14 +352,15 @@
       "started_at": "2026-04-08T08:17:40.749Z",
       "retryCount": 2,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T08:30:53.222Z",
+      "completed_at": "2026-04-08T08:32:42.538Z",
       "result": "task-mnps2p66",
-      "qa_approved_by": "qa-wq-ar-spec1-mnprijcp"
+      "qa_approved_by": "qa-wq-ar-spec1-mnprijcp",
+      "cto_approved_by": "cto-wq-ar-spec1-mnprijcp"
     },
     {
       "id": "wq-ar-spec2-mnprijcq",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "high",
       "title": "在 Pipeline 中强制启用 pending_review 门控",
@@ -369,8 +370,9 @@
       "started_at": "2026-04-08T08:15:48.814Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T08:30:53.219Z",
-      "qa_approved_by": "qa-wq-ar-spec2-mnprijcq"
+      "completed_at": "2026-04-08T08:32:42.527Z",
+      "qa_approved_by": "qa-wq-ar-spec2-mnprijcq",
+      "cto_approved_by": "cto-wq-ar-spec2-mnprijcq"
     },
     {
       "id": "qa-wq-ar-spec1-mnprijcp",
@@ -416,7 +418,7 @@
       "id": "cto-wq-ar-spec2-mnprijcq",
       "title": "[CTO Review] 在 Pipeline 中强制启用 pending_review 门控",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -425,13 +427,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T08:32:42.525Z",
+      "completed_at": "2026-04-08T08:32:42.526Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-spec1-mnprijcp",
       "title": "[CTO Review] 建立 v18 AI 功能结构化 eval 流程",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -440,7 +445,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T08:32:42.536Z",
+      "completed_at": "2026-04-08T08:32:42.537Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
