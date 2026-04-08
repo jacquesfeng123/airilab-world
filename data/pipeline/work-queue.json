@@ -4160,6 +4160,58 @@
       "started_at": "2026-04-08T02:02:18.437Z",
       "completed_at": "2026-04-08T02:02:18.440Z",
       "result_summary": "dispatched to trump via agent-inbox (cron fallback)"
+    },
+    {
+      "id": "wq-review-2026040810-frontend",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "assignee": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 10时 frontend+backend review 建议",
+      "payload": {
+        "hour": "10",
+        "agents": [
+          "frontend",
+          "backend"
+        ],
+        "frontend_top": "Work Queue 中几乎没有前端任务，需要 PM 确认产品功能实现状态并补录前端待办工作项",
+        "backend_top": "立即调查 failed 任务根因并修复，确保 3-strike 告警已触发且无静默失败",
+        "review_files": [
+          "data/audit/agent-reviews/2026-04-08-10-frontend.md",
+          "data/audit/agent-reviews/2026-04-08-10-backend.md"
+        ]
+      },
+      "created_at": "2026-04-08T02:07:48.306783Z",
+      "started_at": "2026-04-08T02:13:27.509Z",
+      "completed_at": "2026-04-08T02:13:27.513Z",
+      "result_summary": "dispatched to pm via agent-inbox (cron fallback)"
+    },
+    {
+      "id": "wq-review-2026040810-fe-spec",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "owner": "pm",
+      "assignee": "pm",
+      "priority": "medium",
+      "title": "确认前端任务录入规范（type: ui_implementation）",
+      "created_at": "2026-04-08T02:07:48.306783Z",
+      "started_at": "2026-04-08T02:13:27.465Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-review-2026040810-be-failed",
+      "type": "backend",
+      "status": "pending",
+      "owner": "backend",
+      "assignee": "backend",
+      "priority": "high",
+      "title": "调查 failed 任务根因并修复",
+      "created_at": "2026-04-08T02:07:48.306783Z",
+      "started_at": "2026-04-08T02:13:27.435Z",
+      "retryCount": 1,
+      "lastError": "Unknown type: backend"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
