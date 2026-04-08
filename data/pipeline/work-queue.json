@@ -349,21 +349,21 @@
       "description": "为 v18 AI 功能建立 FID/CLIP/human preference eval 流程，补 prompt 版本管理。来源: ai-engineer review 2026-04-08-16。",
       "created_at": "2026-04-08T08:04:32.759Z",
       "created_by": "ai-engineer-review",
-      "started_at": "2026-04-08T08:13:57.588Z",
-      "retryCount": 1,
+      "started_at": "2026-04-08T08:17:40.749Z",
+      "retryCount": 2,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     },
     {
       "id": "wq-ar-spec2-mnprijcq",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "running",
       "owner": "pm",
       "priority": "high",
       "title": "在 Pipeline 中强制启用 pending_review 门控",
       "description": "Review 流程未激活，dev 产出无代码 review 门控。需 PM 纳入 pipeline 规范。来源: reviewer review 2026-04-08-16。",
       "created_at": "2026-04-08T08:04:32.759Z",
       "created_by": "reviewer-review",
-      "started_at": "2026-04-08T08:13:57.569Z",
+      "started_at": "2026-04-08T08:15:48.814Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"Untitled\" \"\"\n/bin/sh: node: command not found\n"
     }
