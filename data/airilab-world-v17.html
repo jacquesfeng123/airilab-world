@@ -48,6 +48,12 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 .card-task-name{font-size:7px;color:#C8D8E8;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'Press Start 2P','Courier New',monospace}
 .card-blocked{color:#E04040;font-size:10px;margin-top:3px}
 .card-collab{color:#4080E0;font-size:10px;margin-top:2px}
+.side-section h4{font-size:8px;color:#A8C0D8;font-family:'Press Start 2P','Courier New',monospace;margin:8px 0 4px;letter-spacing:0.05em}
+.side-section li{font-size:7px;font-family:'Press Start 2P','Courier New',monospace;color:#A8A8B8;margin-bottom:2px}
+.side-section p,.side-desc{font-size:7px;font-family:'Press Start 2P','Courier New',monospace;color:#A8A8C0;line-height:1.6}
+.side-section-title{font-size:7px;color:#607080;font-family:'Press Start 2P','Courier New',monospace;letter-spacing:0.05em;margin-bottom:4px}
+.side-label{font-size:7px;color:#607080;font-family:'Press Start 2P','Courier New',monospace}
+.side-value{font-size:7px;color:#C8D8E8;font-family:'Press Start 2P','Courier New',monospace}
 .review-badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:9px;color:#fff;font-weight:bold;margin-left:4px;vertical-align:middle}
 .prio-badge{font-size:9px;padding:1px 4px;border-radius:3px;color:#fff;font-weight:bold}
 .prio-badge.crit{background:#E74C3C}
@@ -277,7 +283,7 @@ AGENT_LIST.forEach((a, idx) => {
     path: [],
     facing: 'south',
     walkFrame: 0,
-    idleTimer: 0,
+    idleTimer: Math.floor(Math.random() * 40),
     animPhase: (idx * 1.618033) % (Math.PI * 2),
     atHome: true,
     fidgetTimer: 0,
@@ -417,12 +423,39 @@ function buildWallBlockedSet() {
 }
 buildWallBlockedSet();
 
+function getOccupiedTiles(excludeId) {
+  const tiles = new Set();
+  AGENT_LIST.forEach(a => {
+    if (a.id === excludeId) return;
+    const s = agentState[a.id];
+    if (s) {
+      tiles.add(`${s.currentTile.col},${s.currentTile.row}`);
+      if (s.targetTile) tiles.add(`${s.targetTile.col},${s.targetTile.row}`);
+    }
+  });
+  return tiles;
+}
 function walkTo(agentId, targetTile) {
   const st = agentState[agentId];
   const tKey = `${targetTile.col},${targetTile.row}`;
   const cKey = `${st.currentTile.col},${st.currentTile.row}`;
   if (tKey === cKey) return;
   if (WALL_BLOCKED.has(tKey)) return;
+  // Collision: if target occupied, find nearest free neighbor
+  const occupied = getOccupiedTiles(agentId);
+  if (occupied.has(tKey)) {
+    const dirs = [{dc:1,dr:0},{dc:-1,dr:0},{dc:0,dr:1},{dc:0,dr:-1},{dc:1,dr:1},{dc:-1,dr:1},{dc:1,dr:-1},{dc:-1,dr:-1}];
+    let found = null;
+    for (const {dc,dr} of dirs) {
+      const alt = {col: targetTile.col+dc, row: targetTile.row+dr};
+      const altKey = `${alt.col},${alt.row}`;
+      if (WALKABLE.has(altKey) && !WALL_BLOCKED.has(altKey) && !occupied.has(altKey)) {
+        found = alt; break;
+      }
+    }
+    if (!found) return; // no free spot nearby, stay
+    targetTile = found;
+  }
   st.targetTile = {...targetTile};
   st.path = findPath(st.currentTile, targetTile);
 }
@@ -1816,7 +1849,7 @@ function openSidePanel(agentId) {
     </div>
     ${(()=>{ const prof = AGENT_PROFILES[agent.id] || {}; return `
     ${prof.desc ? `<p class="side-desc">${escHtml(prof.desc)}</p>` : ''}
-    ${prof.vibe ? `<div class="side-section"><h4>🎭 Vibe</h4><div style="font-size:10px;color:#ccc">${escHtml(prof.vibe)}</div></div>` : ''}
+    ${prof.vibe ? `<div class="side-section"><h4>🎭 Vibe</h4><div style="font-size:8px;color:#ccc;font-family:'Press Start 2P','Courier New',monospace">${escHtml(prof.vibe)}</div></div>` : ''}
     ${prof.idleActs && prof.idleActs.length ? `<div class="side-section"><h4>💭 When idle</h4><ul>${prof.idleActs.map(a=>`<li>${escHtml(a)}</li>`).join('')}</ul></div>` : ''}
     ${prof.wishlist && prof.wishlist.length ? `<div class="side-section"><h4>🖥️ Desk wishlist</h4><ul>${prof.wishlist.map(w=>`<li>${escHtml(w)}</li>`).join('')}</ul></div>` : ''}
     <div class="side-section" id="agent-docs-section"><h4>📄 SOUL.md</h4><div id="soul-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa;overflow-y:auto">Loading...</div><h4>📋 AGENTS.md</h4><div id="agents-viewer" class="task-textarea" style="height:100px;font-size:9px;font-family:monospace;color:#aaa;overflow-y:auto">Loading...</div></div>
@@ -1900,11 +1933,13 @@ function openSidePanel(agentId) {
       if (wqRes.ok) {
         const wqData = await wqRes.json();
         const wq = wqData.queue || wqData;
-        const agName = agent.name.toLowerCase();
-        const agId = agent.id.toLowerCase();
-        const matchOwner = t => t.owner && (t.owner.toLowerCase().includes(agName) || t.owner.toLowerCase().includes(agId) || agName.includes(t.owner.toLowerCase().split('/')[0]));
-        const running = wq.filter(t => ['running','pending_review','pending_cto'].includes(t.status) && matchOwner(t));
-        const pending = wq.filter(t => t.status === 'pending' && matchOwner(t)).slice(0, 3);
+        const _agId = agent.id.toLowerCase();
+        const matchOwner = t => {
+          const o = (t.owner || t.assignee || t.assignedTo || '').toLowerCase();
+          return o === _agId || o === agent.name.toLowerCase();
+        };
+        const running = wq.filter(t => ['running','pending_review','pending_cto','in_progress'].includes(t.status) && matchOwner(t));
+        const pending = wq.filter(t => ['pending','upnext'].includes(t.status) && matchOwner(t)).slice(0, 3);
         const workingEl = document.getElementById('agent-working-tasks');
         const upcomingEl = document.getElementById('agent-upcoming-tasks');
         const statusIcon = s => s==='running'?'▶':s==='pending_review'?'⏳':s==='pending_cto'?'⏳':'▶';
