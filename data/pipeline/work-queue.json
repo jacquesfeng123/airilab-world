@@ -769,6 +769,64 @@
       "started_at": "2026-04-08T21:19:20.246Z",
       "completed_at": "2026-04-08T21:19:20.247Z",
       "result_summary": "dispatched to trump via agent-inbox"
+    },
+    {
+      "id": "wq-review-2026040906-ai-engineer-gl5ggr",
+      "type": "agent_review",
+      "status": "done",
+      "assignee": "pm",
+      "priority": "low",
+      "created_at": "2026-04-08T22:04:25.805Z",
+      "created_by": "agent-review-rotation",
+      "payload": {
+        "title": "[Review摘要] 06时 ai-engineer+reviewer review 建议",
+        "body": "ai-engineer: 建立 AI eval 门控，eval 通过才能进入 pending_review。reviewer: 修复 dispatcher 对 audit 类型的 handler（已有失败案例）。"
+      },
+      "started_at": "2026-04-08T22:15:34.888Z",
+      "completed_at": "2026-04-08T22:15:34.892Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ai-eval-gate-f7ab0h",
+      "type": "pm_spec_needed",
+      "status": "pending_review",
+      "assignee": "pm",
+      "priority": "medium",
+      "created_at": "2026-04-08T22:04:25.805Z",
+      "created_by": "agent-review-rotation",
+      "payload": {
+        "title": "建立 AI eval 门控：eval 通过才能进入 pending_review 状态"
+      },
+      "started_at": "2026-04-08T22:15:29.098Z",
+      "completed_at": "2026-04-08T22:15:34.881Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqlwuw3\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqlwuw3\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqlwuw3/spec.md"
+    },
+    {
+      "id": "wq-dispatcher-audit-handler-90n4t5",
+      "type": "infra",
+      "status": "pending",
+      "assignee": "devops",
+      "priority": "high",
+      "created_at": "2026-04-08T22:04:25.805Z",
+      "created_by": "agent-review-rotation",
+      "payload": {
+        "title": "修复 dispatcher：为 audit/backend_task/frontend_task 添加路由 handler"
+      },
+      "started_at": "2026-04-08T22:15:29.093Z",
+      "retryCount": 1,
+      "lastError": "Unknown type: infra"
+    },
+    {
+      "id": "wq-mnqlwz4y",
+      "type": "qa_review_needed",
+      "assignee": "qa",
+      "priority": "medium",
+      "status": "pending",
+      "payload": {
+        "task": "建立 AI eval 门控：eval 通过才能进入 pending_review 状态"
+      },
+      "created_at": "2026-04-08T22:15:34.882Z",
+      "created_by": "dispatcher-auto"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
@@ -914,8 +972,8 @@
         "design-log"
       ],
       "pm_action": "defer",
-      "pm_note": "design-log需chief-designer执行，PM defer放入待办",
-      "processed_at": "2026-04-09T05:20:00.000Z"
+      "pm_note": "仍然defer。前置条件：bd-brief.md需有实质内容（当前全为TBD）。BD brief已升级CTO，待CTO决策后重新评估。",
+      "processed_at": "2026-04-09T05:50:00+08:00"
     },
     {
       "id": "wq-ar-ta-tech-review-gate",
@@ -981,14 +1039,14 @@
         "v18",
         "bd-brief"
       ],
-      "pm_action": "defer",
-      "pm_note": "BD brief需BD agent执行，PM defer放入待办",
-      "processed_at": "2026-04-09T05:20:00.000Z"
+      "pm_action": "escalate",
+      "pm_note": "已升级至CTO。bd-brief.md存在但内容全为TBD，BD agent未实际执行，已defer两轮。创建CTO escalation文件，等待CTO裁决执行路径。",
+      "processed_at": "2026-04-09T05:50:00+08:00"
     },
     {
       "id": "wq-ar-researcher-init-05h",
       "type": "agent_review",
-      "status": "deferred",
+      "status": "pending_review",
       "owner": "pm",
       "priority": "high",
       "title": "执行 arch-AI 竞品全景研究报告 + 初始化 data/research/ 目录",
@@ -1001,9 +1059,9 @@
         "arch-ai",
         "competitive"
       ],
-      "pm_action": "defer",
-      "pm_note": "竞品研究需researcher agent执行，PM defer放入待办",
-      "processed_at": "2026-04-09T05:20:00.000Z"
+      "pm_action": "acknowledge",
+      "pm_note": "data/research/目录已存在，前置条件满足。已创建spec，分配researcher agent执行竞品研究报告。",
+      "processed_at": "2026-04-09T05:50:00+08:00"
     }
   ]
 }
