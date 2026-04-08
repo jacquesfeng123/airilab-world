@@ -4222,7 +4222,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending_cto",
+      "status": "done",
       "created_by": "agent-review-rotation",
       "created_at": "2026-04-08T03:04:32.622Z",
       "payload": {
@@ -4232,9 +4232,10 @@
       "started_at": "2026-04-08T03:15:27.536Z",
       "retryCount": 1,
       "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/pm-task.mjs \"[Review摘要] 11时 qa+tester review 建议\" \"\"\n/bin/sh: node: command not found\n",
-      "completed_at": "2026-04-08T03:30:59.430Z",
+      "completed_at": "2026-04-08T03:32:25.378Z",
       "result_summary": "[PM] ✅ Task created: task-mnph6rww\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnph6rww/spec.md",
-      "qa_approved_by": "qa-wq-review-1108-qa-tester"
+      "qa_approved_by": "qa-wq-review-1108-qa-tester",
+      "cto_approved_by": "cto-wq-review-1108-qa-tester"
     },
     {
       "id": "wq-mnph6vdy",
@@ -4292,7 +4293,7 @@
       "id": "cto-wq-review-1108-qa-tester",
       "title": "[CTO Review] wq-review-1108-qa-tester",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -4301,7 +4302,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T03:32:25.369Z",
+      "completed_at": "2026-04-08T03:32:25.376Z",
+      "result_summary": "dispatched to trump via agent-inbox (cron fallback)"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
