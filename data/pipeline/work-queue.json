@@ -3645,7 +3645,7 @@
       "id": "wq-fix-004",
       "title": "airilab-world v18 UX 改进规划",
       "type": "design_spec",
-      "status": "pending_cto",
+      "status": "done",
       "priority": "low",
       "owner": "uiux",
       "tags": [
@@ -3655,10 +3655,11 @@
       "createdAt": "2026-04-08T09:35:00+08:00",
       "started_at": "2026-04-08T01:37:19.752Z",
       "assignee": "uiux",
-      "completed_at": "2026-04-08T01:42:55.901Z",
+      "completed_at": "2026-04-08T01:45:57.516Z",
       "result_summary": "dispatched to uiux via agent-inbox (cron fallback)",
       "updated_at": "2026-04-08T01:41:36.652Z",
-      "qa_approved_by": "qa-wq-fix-004"
+      "qa_approved_by": "qa-wq-fix-004",
+      "cto_approved_by": "cto-wq-fix-004"
     },
     {
       "id": "wq-fix-005",
@@ -3918,7 +3919,7 @@
       "id": "cto-wq-fix-004",
       "title": "[CTO Review] airilab-world v18 UX 改进规划",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -3927,13 +3928,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T01:45:26.514Z",
+      "completed_at": "2026-04-08T01:45:57.507Z",
+      "result_summary": "dispatched to trump via agent-inbox (cron fallback)"
     },
     {
       "id": "cto-wq-fix-005",
       "title": "[CTO Review] work-queue.json 历史条目归档压缩",
       "type": "cto_review",
-      "status": "pending",
+      "status": "failed",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -3942,7 +3946,102 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T01:45:57.546Z",
+      "error": "subagent SIGKILL at 01:45:57 UTC",
+      "failed_at": "2026-04-08T01:48:04.524Z"
+    },
+    {
+      "id": "wq-debt-001",
+      "title": "验证 dispatcher openclaw cron add 参数格式是否正确",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "critical",
+      "owner": "qa",
+      "tags": [
+        "dispatcher",
+        "debt"
+      ],
+      "createdAt": "2026-04-08T09:55:00+08:00",
+      "description": "hourly-review 全部 skipped，根因是 cron add 参数格式错误。需要实际跑一次验证成功后才算完成。",
+      "started_at": "2026-04-08T01:57:57.031Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-debt-002",
+      "title": "验证 CTO 验收流水线端到端跑通",
+      "type": "qa_review_needed",
+      "status": "pending",
+      "priority": "high",
+      "owner": "qa/cto",
+      "tags": [
+        "cto",
+        "pipeline",
+        "debt"
+      ],
+      "createdAt": "2026-04-08T09:55:00+08:00",
+      "description": "pending_cto 状态和 cto_review 任务是否真正被创建和处理过？需要一次完整走通测试。",
+      "started_at": "2026-04-08T01:57:57.031Z",
+      "retryCount": 1,
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && node scripts/regression-test.mjs \n/bin/sh: node: command not found\n"
+    },
+    {
+      "id": "wq-debt-003",
+      "title": "把 FE browser-test 强制规则写进 FE agent role-soul.md",
+      "type": "soul_migration",
+      "status": "pending_review",
+      "priority": "high",
+      "owner": "devops",
+      "tags": [
+        "fe",
+        "soul",
+        "debt"
+      ],
+      "createdAt": "2026-04-08T09:55:00+08:00",
+      "description": "FE 改代码必须先跑 browser-test 的规则目前只是口头约定，需要写进 agents/frontend/role-soul.md 的 DO NOT 章节。",
+      "started_at": "2026-04-08T01:57:57.097Z",
+      "assignee": "devops",
+      "completed_at": "2026-04-08T01:57:57.117Z",
+      "result_summary": "dispatched to devops via agent-inbox (cron fallback)"
+    },
+    {
+      "id": "wq-debt-004",
+      "title": "v18 UX 改进 Sprint1 实际执行（非规划）",
+      "type": "design_spec",
+      "status": "pending_review",
+      "priority": "medium",
+      "owner": "frontend/uiux",
+      "tags": [
+        "airilab-world",
+        "v18",
+        "debt"
+      ],
+      "createdAt": "2026-04-08T09:55:00+08:00",
+      "description": "v18 UX 规划写了，Sprint1(~5h)：气泡可读性进一步提升、点击热区容差优化、Header 状态统计改进",
+      "started_at": "2026-04-08T01:57:57.125Z",
+      "assignee": "frontend",
+      "completed_at": "2026-04-08T01:57:57.130Z",
+      "result_summary": "dispatched to frontend via agent-inbox (cron fallback)"
+    },
+    {
+      "id": "wq-debt-005",
+      "title": "确认 Dreaming 插件实际状态并修复",
+      "type": "system_upgrade",
+      "status": "pending_review",
+      "priority": "medium",
+      "owner": "devops",
+      "tags": [
+        "dreaming",
+        "memory",
+        "debt"
+      ],
+      "createdAt": "2026-04-08T09:55:00+08:00",
+      "description": "memory-core 配置修了，但 Dreaming 插件本身是否在正常运行？openclaw 是否真的有 Dreaming 插件？需要查清楚。",
+      "started_at": "2026-04-08T01:57:57.084Z",
+      "assignee": "devops",
+      "completed_at": "2026-04-08T01:57:57.090Z",
+      "result_summary": "dispatched to devops via agent-inbox (cron fallback)"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
