@@ -2277,7 +2277,7 @@
       "description": "当前 dispatcher 遇到 spec-driven 任务只写文件，等 heartbeat 处理，不是真正自动。需要改为调用 openclaw cron API 创建 one-shot isolated agentTurn job，真正无人值守自动执行。这是系统自主转起来的核心缺口。",
       "started_at": "2026-04-07T16:47:00.543Z",
       "assignee": "backend",
-      "completed_at": "2026-04-07T16:48:18.577Z",
+      "completed_at": "2026-04-08T03:49:00.948Z",
       "result_summary": "dispatcher spec-driven tasks now use openclaw cron isolated one-shot jobs instead of file queue. Fallback to agent-inbox on cron failure."
     },
     {
@@ -4059,7 +4059,7 @@
       "id": "qa-wq-debt-003",
       "title": "[QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "qa_review_needed",
-      "status": "pending_cto",
+      "status": "done",
       "priority": "high",
       "owner": "qa",
       "assignee": "qa",
@@ -4070,10 +4070,11 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:01:00.709Z",
-      "completed_at": "2026-04-08T03:48:40.940Z",
+      "completed_at": "2026-04-08T03:58:35.018Z",
       "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera",
       "updated": "2026-04-08T03:48:01.890Z",
-      "qa_approved_by": "qa-qa-wq-debt-003"
+      "qa_approved_by": "qa-qa-wq-debt-003",
+      "cto_approved_by": "cto-qa-wq-debt-003"
     },
     {
       "id": "qa-wq-debt-004",
@@ -4097,7 +4098,7 @@
       "id": "qa-wq-debt-005",
       "title": "[QA] 确认 Dreaming 插件实际状态并修复",
       "type": "qa_review_needed",
-      "status": "pending_cto",
+      "status": "done",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -4108,16 +4109,17 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:01:00.709Z",
-      "completed_at": "2026-04-08T03:48:40.948Z",
+      "completed_at": "2026-04-08T03:58:35.062Z",
       "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera",
       "updated": "2026-04-08T03:48:01.890Z",
-      "qa_approved_by": "qa-qa-wq-debt-005"
+      "qa_approved_by": "qa-qa-wq-debt-005",
+      "cto_approved_by": "cto-qa-wq-debt-005"
     },
     {
       "id": "cto-wq-debt-003",
       "title": "[CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "cto_review",
-      "status": "pending_cto",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -4128,10 +4130,11 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:02:18.386Z",
-      "completed_at": "2026-04-08T03:48:40.943Z",
+      "completed_at": "2026-04-08T03:58:35.032Z",
       "result_summary": "dispatched to trump via agent-inbox (cron fallback)",
       "updated": "2026-04-08T03:48:01.890Z",
-      "qa_approved_by": "qa-cto-wq-debt-003"
+      "qa_approved_by": "qa-cto-wq-debt-003",
+      "cto_approved_by": "cto-cto-wq-debt-003"
     },
     {
       "id": "cto-wq-debt-004",
@@ -4155,7 +4158,7 @@
       "id": "cto-wq-debt-005",
       "title": "[CTO Review] 确认 Dreaming 插件实际状态并修复",
       "type": "cto_review",
-      "status": "pending_cto",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -4166,10 +4169,11 @@
         "auto-generated"
       ],
       "started_at": "2026-04-08T02:02:18.437Z",
-      "completed_at": "2026-04-08T03:48:40.953Z",
+      "completed_at": "2026-04-08T03:58:35.075Z",
       "result_summary": "dispatched to trump via agent-inbox (cron fallback)",
       "updated": "2026-04-08T03:48:01.890Z",
-      "qa_approved_by": "qa-cto-wq-debt-005"
+      "qa_approved_by": "qa-cto-wq-debt-005",
+      "cto_approved_by": "cto-cto-wq-debt-005"
     },
     {
       "id": "wq-review-2026040810-frontend",
@@ -4603,7 +4607,7 @@
       "id": "cto-qa-wq-debt-003",
       "title": "[CTO Review] [QA] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -4612,13 +4616,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T03:58:35.006Z",
+      "completed_at": "2026-04-08T03:58:35.009Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-cto-wq-debt-003",
       "title": "[CTO Review] [CTO Review] 把 FE browser-test 强制规则写进 FE agent role-soul.md",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -4627,13 +4634,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T03:58:35.024Z",
+      "completed_at": "2026-04-08T03:58:35.029Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-qa-wq-debt-005",
       "title": "[CTO Review] [QA] 确认 Dreaming 插件实际状态并修复",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -4642,13 +4652,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T03:58:35.056Z",
+      "completed_at": "2026-04-08T03:58:35.058Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-cto-wq-debt-005",
       "title": "[CTO Review] [CTO Review] 确认 Dreaming 插件实际状态并修复",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -4657,7 +4670,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-08T03:58:35.070Z",
+      "completed_at": "2026-04-08T03:58:35.073Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z"
