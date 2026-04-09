@@ -2965,7 +2965,7 @@
     {
       "id": "wq-ar-fe-retest-mnrfjkgh",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "pending_review",
       "assignee": "pm",
       "priority": "low",
       "payload": {
@@ -2974,7 +2974,8 @@
       "created_at": "2026-04-09T12:04:57.808Z",
       "created_by": "agent-review-frontend-2026-04-09-20",
       "started_at": "2026-04-09T12:08:14.417Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "pm_decision": "dispatched_to_frontend"
     },
     {
       "id": "wq-ar-be-audit-type-mnrfjkgh",
@@ -3003,6 +3004,23 @@
       "created_by": "agent-review-backend-2026-04-09-20",
       "started_at": "2026-04-09T12:08:14.405Z",
       "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "qa-wq-ar-fe-retest-mnrfjkgh",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "running",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-fe-retest-mnrfjkgh",
+      "createdAt": "2026-04-09T12:31:30.317Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T12:31:30.325Z",
+      "result_summary": "dispatched to qa via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
