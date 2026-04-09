@@ -1791,7 +1791,7 @@
     {
       "id": "wq-pm-design-review-gate-mnr2nzgn",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "medium",
       "title": "在 pipeline spec.md 模板中加入 Design Review Required 字段",
@@ -1799,14 +1799,15 @@
       "created_at": "2026-04-09T06:04:28.871Z",
       "created_by": "chief-designer-review",
       "started_at": "2026-04-09T06:06:41.598Z",
-      "completed_at": "2026-04-09T06:15:17.045Z",
+      "completed_at": "2026-04-09T06:17:28.747Z",
       "result_summary": "[PM] ✅ Task created: task-mnr2qu5c\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qu5c\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qu5c/spec.md",
-      "qa_approved_by": "qa-wq-pm-design-review-gate-mnr2nzgn"
+      "qa_approved_by": "qa-wq-pm-design-review-gate-mnr2nzgn",
+      "cto_approved_by": "cto-wq-pm-design-review-gate-mnr2nzgn"
     },
     {
       "id": "wq-devops-dispatcher-types-mnr2nzgn",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "devops",
       "priority": "high",
       "title": "紧急：dispatcher 注册 backend_task/frontend_task/audit/feature handler，修复 Unknown type 积压",
@@ -1814,9 +1815,10 @@
       "created_at": "2026-04-09T06:04:28.871Z",
       "created_by": "technical-architect-review",
       "started_at": "2026-04-09T06:06:36.028Z",
-      "completed_at": "2026-04-09T06:15:17.042Z",
+      "completed_at": "2026-04-09T06:17:28.733Z",
       "result_summary": "[PM] ✅ Task created: task-mnr2qpxc\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qpxc\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qpxc/spec.md",
-      "qa_approved_by": "qa-wq-devops-dispatcher-types-mnr2nzgn"
+      "qa_approved_by": "qa-wq-devops-dispatcher-types-mnr2nzgn",
+      "cto_approved_by": "cto-wq-devops-dispatcher-types-mnr2nzgn"
     },
     {
       "id": "wq-mnr2qttb",
@@ -1888,7 +1890,7 @@
       "id": "cto-wq-devops-dispatcher-types-mnr2nzgn",
       "title": "[CTO Review] 紧急：dispatcher 注册 backend_task/frontend_task/audit/feature handler，修复 Unknown type 积压",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -1897,13 +1899,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T06:17:28.711Z",
+      "completed_at": "2026-04-09T06:17:28.731Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-pm-design-review-gate-mnr2nzgn",
       "title": "[CTO Review] 在 pipeline spec.md 模板中加入 Design Review Required 字段",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -1912,7 +1917,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T06:17:28.741Z",
+      "completed_at": "2026-04-09T06:17:28.745Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
