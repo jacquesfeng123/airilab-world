@@ -59,91 +59,87 @@
       "type": "infra",
       "assignee": "devops",
       "priority": "high",
-      "status": "done",
+      "status": "running",
       "payload": {
         "title": "修复 cron/subagent 脚本执行环境 node PATH 问题（/bin/sh: node: command not found）"
       },
       "created_at": "2026-04-08T16:08:54.036Z",
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-23-devops",
-      "completedAt": "2026-04-08T16:31:48.585577Z"
+      "completedAt": "2026-04-08T16:31:48.585577Z",
+      "started_at": "2026-04-09T08:47:38.869Z"
     },
     {
       "id": "wq-pm-audit-virtual-mnq8tf6f",
       "type": "audit",
       "assignee": "pm",
       "priority": "high",
-      "status": "failed",
+      "status": "running",
       "payload": {
         "title": "审计并清理 work-queue 中的虚假完成项（[virtual] 标记），重置为 pending 并补充具体 assignee"
       },
       "created_at": "2026-04-08T16:08:54.036Z",
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-23-scribe",
-      "started_at": "2026-04-09T03:21:03.818Z",
-      "retryCount": 3,
-      "lastError": "Unknown type: audit",
-      "failed_at": "2026-04-09T03:21:03.837Z",
-      "error": "Unknown type: audit"
+      "started_at": "2026-04-09T09:02:08.886Z",
+      "retryCount": 0,
+      "lastError": "Unknown type: audit"
     },
     {
       "id": "wq-be-api-contract-5rfzydfp",
       "type": "backend_task",
       "assignee": "backend",
       "priority": "medium",
-      "status": "failed",
+      "status": "running",
       "payload": {
         "title": "建立 API contract 输出规范，每个接口完成后写入 /data/pipeline/tasks/{id}/api-contract.md"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:21:03.840Z",
-      "retryCount": 3,
+      "started_at": "2026-04-09T09:02:26.614Z",
+      "retryCount": 0,
       "lastError": "Unknown type: backend_task",
-      "failed_at": "2026-04-09T03:21:03.844Z",
-      "error": "Unknown type: backend_task"
+      "result_summary": "dispatched to backend via agent-inbox"
     },
     {
       "id": "wq-be-llm-client-7yxas3h7",
       "type": "backend_task",
       "assignee": "backend",
       "priority": "medium",
-      "status": "failed",
+      "status": "running",
       "payload": {
         "title": "封装统一 LLM 调用 client 模块（retry + exponential backoff），替代散落在各脚本中的直接调用"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:21:03.845Z",
-      "retryCount": 3,
+      "started_at": "2026-04-09T09:02:26.623Z",
+      "retryCount": 0,
       "lastError": "Unknown type: backend_task",
-      "failed_at": "2026-04-09T03:21:03.847Z",
-      "error": "Unknown type: backend_task"
+      "result_summary": "dispatched to backend via agent-inbox"
     },
     {
       "id": "wq-fe-browser-test-v18-z9pi2kn1",
       "type": "frontend_task",
       "assignee": "frontend",
       "priority": "medium",
-      "status": "failed",
+      "status": "running",
       "payload": {
         "title": "补充 v18 Sprint1 相关页面 browser-test 用例（当前仅覆盖 v17）"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-frontend",
-      "started_at": "2026-04-09T03:21:03.848Z",
-      "retryCount": 3,
+      "started_at": "2026-04-09T09:02:26.630Z",
+      "retryCount": 0,
       "lastError": "Unknown type: frontend_task",
-      "failed_at": "2026-04-09T03:21:03.850Z",
-      "error": "Unknown type: frontend_task"
+      "result_summary": "dispatched to frontend via agent-inbox"
     },
     {
       "id": "wq-ar-04h-chief-designer-tech-arch",
       "type": "agent_review",
-      "status": "done",
+      "status": "running",
       "owner": "pm",
       "priority": "low",
       "title": "[Review摘要] 04时 chief-designer+technical-architect review 建议",
@@ -158,7 +154,8 @@
       ],
       "pm_action": "acknowledge",
       "pm_note": "04时review摘要，acknowledge完成",
-      "processed_at": "2026-04-09T05:20:00.000Z"
+      "processed_at": "2026-04-09T05:20:00.000Z",
+      "started_at": "2026-04-09T08:47:38.887Z"
     },
     {
       "id": "wq-ar-cd-design-log-v18",
@@ -182,7 +179,7 @@
     {
       "id": "wq-ar-ta-tech-review-gate",
       "type": "agent_review",
-      "status": "done",
+      "status": "running",
       "owner": "pm",
       "priority": "medium",
       "title": "在 pipeline 中增加 Technical Review 门控（pending_tech_review 状态）",
@@ -198,7 +195,8 @@
       "pm_note": "pipeline核心架构变更，涉及状态机修改，需CTO决策",
       "processed_at": "2026-04-09T05:20:00.000Z",
       "approved_at": "2026-04-09T03:05:11.788Z",
-      "auto_approved": true
+      "auto_approved": true,
+      "started_at": "2026-04-09T08:47:38.888Z"
     },
     {
       "id": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
@@ -219,7 +217,7 @@
       "id": "wq-ar-05h-bd-researcher",
       "title": "[Review摘要] 05时 bd+researcher review 建议",
       "type": "agent_review",
-      "status": "done",
+      "status": "running",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-08T21:04:35.463Z",
@@ -233,7 +231,8 @@
       ],
       "pm_action": "acknowledge",
       "pm_note": "05时review摘要，acknowledge完成",
-      "processed_at": "2026-04-09T05:20:00.000Z"
+      "processed_at": "2026-04-09T05:20:00.000Z",
+      "started_at": "2026-04-09T08:47:38.888Z"
     },
     {
       "id": "wq-ar-bd-v18-brief-05h",
@@ -257,7 +256,7 @@
     {
       "id": "wq-ar-researcher-init-05h",
       "type": "agent_review",
-      "status": "done",
+      "status": "running",
       "owner": "pm",
       "priority": "high",
       "title": "执行 arch-AI 竞品全景研究报告 + 初始化 data/research/ 目录",
@@ -274,7 +273,8 @@
       "pm_note": "data/research/目录已存在，前置条件满足。已创建spec，分配researcher agent执行竞品研究报告。",
       "processed_at": "2026-04-09T05:50:00+08:00",
       "approved_at": "2026-04-09T03:05:11.788Z",
-      "auto_approved": true
+      "auto_approved": true,
+      "started_at": "2026-04-09T08:47:38.888Z"
     },
     {
       "id": "wq-review-2026040906-ai-engineer-gl5ggr",
@@ -1713,128 +1713,61 @@
     },
     {
       "id": "wq-be-radar-schema-nzebz3",
-      "type": "design_spec",
+      "type": "feature",
       "priority": "high",
       "agentRole": "backend",
       "title": "[Radar BE] DB schema + API server for arch-ai-radar v2",
-      "status": "done",
-      "notes": "BE subagent completed: (1) db.js migration加3列starred/sent/important; (2) 新建api-server.mjs Express server端口7432，路由GET /api/items/today, POST /api/important, GET /api/health, GET /report/:date; (3) 新建LaunchAgents plist开机自启; (4) run-daily.js加filterCodingNoise/filterTodayOnly/scoreItem函数，pipeline调用过滤+评分，pushWecom后批量更新sent=1。完成时间2026-04-09。",
+      "status": "running",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T08:11:50.140Z",
+      "updated_at": "2026-04-09T05:47:25.434Z",
       "spec": "## 目标\n为 arch-ai-radar 的每日报告系统升级 BE 基础设施。\n\n## DB 改动 (skills/arch-ai-radar/scripts/db.js)\n在现有 items 表里加3列：\n- `starred` INTEGER DEFAULT 0  — 系统自动评分加星（0/1）\n- `sent` INTEGER DEFAULT 0  — 是否已推送（0/1），推送后置1\n- `important` INTEGER  — 用户手动标记（NULL=未标，1=重要），NULL default\n\n加 migration 逻辑：若列不存在则 ALTER TABLE 补加（向后兼容）。\n\n## 打星规则（starred 评分逻辑，写在 run-daily.js 的 scoreItem 函数）\n规则组合打分，满足任一高权重信号置1：\n- Airi Lab 直接提及 → 自动 ⭐\n- 来源为 ArchDaily / Dezeen / 官方账号 + 今日内容 → ⭐\n- 事件倒计时 ≤ 30 天 → ⭐\n- Twitter 点赞 > 500 或 XHS 收藏 > 100 → ⭐\n- Track1 内容默认加星\n\n## coding architecture 噪音过滤（filterCodingNoise 函数）\n判断逻辑：包含以下词 AND 不含建筑上下文词 → 过滤掉\n- 噪音词：DevOps, CI/CD, microservices, kubernetes, backend, frontend, SRE, codebase, ship code, production app, #DevOps, #SRE\n- 建筑上下文：建筑, architecture design, architectural, 设计, 空间, building, urban, parametric, generative design, AEC\n\n## only-today 过滤（filterTodayOnly 函数）\ngenerateReport 只处理 published_at = today 的条目，历史条目记录进DB但不出现在报告里。\n\n## API Server (scripts/api-server.mjs)\n轻量 Express server，端口 7432：\n- GET  /api/items/today  → 返回今天所有 items（含 starred/sent/important）\n- POST /api/important    → body: {id, important: true|false|null} → 更新 DB\n- GET  /api/health       → 200 OK\n\n启动方式：node scripts/api-server.mjs\nlaunchd plist 路径：~/Library/LaunchAgents/com.airilab.radar-api.plist（开机自启，端口7432）\n\n## sent 字段更新\npushWecom() 推送成功后，对所有推出去的 item 执行 UPDATE items SET sent=1 WHERE id IN (...)\n\n## 输出文件\n- skills/arch-ai-radar/scripts/api-server.mjs（新建）\n- skills/arch-ai-radar/scripts/db.js（修改，加migration+scored列）\n- skills/arch-ai-radar/scripts/run-daily.js（修改，加filterCodingNoise/filterTodayOnly/scoreItem/sent更新）\n- ~/Library/LaunchAgents/com.airilab.radar-api.plist（新建）",
-      "started_at": "2026-04-09T08:15:51.080Z",
-      "retryCount": 3,
+      "started_at": "2026-04-09T09:02:26.579Z",
+      "retryCount": 0,
       "lastError": "Unknown type: feature",
-      "failed_at": "2026-04-09T06:06:36.020Z",
-      "assignee": "backend",
-      "completed_at": "2026-04-09T08:15:51.083Z",
-      "result_summary": "dispatched to pm via agent-inbox",
-      "approved_at": "2026-04-09T08:37:32.657Z",
-      "auto_approved": true,
-      "specContent": {
-        "goal": "为 arch-ai-radar v2 构建 SQLite 持久化存储层 + 轻量 Express API 服务，支持每日扫描结果的存储、去重、查询和推送状态追踪。",
-        "requirements": [
-          "SQLite 存储：字段 platform, track, title, url, summary, score, timestamp, starred, sent, important",
-          "Migration 逻辑：若 starred/sent/important 列不存在则 ALTER TABLE 自动补加（向后兼容）",
-          "去重逻辑：按 url 字段去重，INSERT OR IGNORE",
-          "filterTodayOnly：generateReport 只处理 published_at = today 的条目",
-          "filterCodingNoise：过滤 DevOps/CI-CD/kubernetes 等非建筑噪音词，不误杀含建筑上下文的条目",
-          "scoreItem：Airi Lab 提及/来源权威/事件倒计时≤30天/互动量高 → starred=1",
-          "GET /radar/latest → 返回今日所有 items（含 starred/sent/important）",
-          "GET /radar/history?days=7 → 返回最近 N 天记录",
-          "POST /api/important → body: {id, important: true|false|null} → 更新 DB",
-          "GET /api/health → 200 OK",
-          "API Server 端口 7432，launchd plist 开机自启",
-          "pushWecom 推送成功后将已推送 item 的 sent 字段置 1"
-        ],
-        "acceptance_criteria": [
-          "DB migration 向后兼容：旧数据库无需手动操作即可加入新字段",
-          "GET /radar/latest 返回结构包含所有必要字段，响应时间 < 200ms",
-          "filterCodingNoise 正确过滤 DevOps 内容，不误杀 'architectural coding' 等建筑语境词",
-          "scoreItem 对 Airi Lab 直接提及内容自动置 starred=1，验证通过",
-          "URL 去重：同一 URL 二次写入不产生重复记录",
-          "API Server 在 launchd 下开机自启动，端口 7432 可访问",
-          "sent 字段在 WeCom 推送完成后正确更新"
-        ],
-        "estimated_hours": 6
-      }
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
     },
     {
       "id": "wq-ux-radar-html-bdejb4",
-      "type": "ux_review",
+      "type": "feature",
       "priority": "high",
       "agentRole": "uiux",
       "title": "[Radar UX] Daily HTML report design spec for arch-ai-radar v2",
-      "status": "done",
+      "status": "running",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T08:11:50.171Z",
+      "updated_at": "2026-04-09T05:47:25.434Z",
       "spec": "## 目标\n为 arch-ai-radar 设计每日 HTML 报告的 UX spec，供 FE 实现。\n\n## 报告结构（信息层级）\n\n### Header\n- 标题：ARCH + AI RADAR Daily Brief\n- 日期时间（Asia/Shanghai）\n- 一句话 summary（今日抓取数量、starred 数量）\n\n### Section 1: ⭐ Starred Items（全部三个 track 中加星的，默认展开）\n- 每条：track badge（T1/T2/T3）+ 平台 icon + 标题 + 摘要（2行截断）+ 链接\n- 右侧：important 标记按钮（❤️/空心心）\n- 点击 ❤️ → 调用 POST /api/important，状态实时更新，无需刷新页面\n\n### Section 2: 📋 Track Summaries（三个 track 各一段叙述，默认展开）\n- Track 1: Airi Lab Brand\n- Track 2: Events（含倒计时）\n- Track 3: Tech（含竞品信号）\n\n### Section 3: 📁 Track Details（默认折叠，点击展开）\n- Track 1 明细 accordion\n- Track 2 明细 accordion  \n- Track 3 明细 accordion\n- 每条明细同样有 important ❤️ 按钮\n\n## 视觉风格\n- 暗色主题（#0f0f0f 背景，#1a1a2e card）\n- Track 色彩：T1=#4f8cff（蓝）, T2=#ff6b6b（红/紧急感）, T3=#43e97b（绿/科技感）\n- 字体：Inter / system-ui，中英文混排友好\n- 移动端友好（max-width 600px 单列）\n- 加星条目卡片有微发光边框效果\n\n## 交互规范\n- important ❤️ 按钮：点击立即 optimistic update（先变色），然后 fetch POST，失败时回滚\n- 折叠 accordion：smooth transition 200ms\n- API 离线时（localhost:7432 不通）：important 按钮 disabled + tooltip 服务未启动\n\n## 输出\n- 输出一份 UX spec markdown 文件：skills/arch-ai-radar/references/html-report-ux-spec.md\n- 包含：组件结构图（ASCII）、颜色/字体 token、交互状态说明、API 调用规范",
-      "started_at": "2026-04-09T08:15:51.088Z",
-      "retryCount": 3,
+      "started_at": "2026-04-09T09:02:26.588Z",
+      "retryCount": 0,
       "lastError": "Unknown type: feature",
-      "failed_at": "2026-04-09T06:06:36.026Z",
-      "assignee": "uiux",
-      "completed_at": "2026-04-09T08:35:15.062Z",
-      "result_summary": "dispatched to pm via agent-inbox",
-      "qa_approved_by": "qa-wq-ux-radar-html-bdejb4",
-      "cto_approved_by": "cto-wq-ux-radar-html-bdejb4",
-      "specContent": {
-        "goal": "为 arch-ai-radar v2 设计每日 HTML 报告的 UX spec，支持三栏布局、深色主题、移动端响应式、important 标记交互，供 FE 实现参考。",
-        "requirements": [
-          "每日生成一个独立 HTML 文件：data/arch-ai-radar/reports/YYYY-MM-DD.html",
-          "Header：标题 ARCH+AI RADAR Daily Brief、日期时间、今日抓取数量和 starred 数量 summary",
-          "Section 1: ⭐ Starred Items（默认展开）—含 track badge + 平台 icon + 标题 + 摘要 + 链接 + important 按钮",
-          "Section 2: 三个 track 叙述段落（Track1/2/3 各一段，默认展开）",
-          "Section 3: Track 明细 accordion（默认折叠），每条同样有 important 按钮",
-          "深色主题：#0f0f0f 背景、#1a1a2e card",
-          "Track 色彩：T1=#4f8cff、T2=#ff6b6b、T3=#43e97b",
-          "字体：Inter / system-ui，中英文混排友好",
-          "移动端响应式：max-width 600px 单列",
-          "important 按钮：optimistic update + fetch POST /api/important + 失败回滚",
-          "accordion smooth transition 200ms",
-          "API 离线降级：important 按钮 disabled + tooltip 提示服务未启动",
-          "输出 UX spec markdown 文件：skills/arch-ai-radar/references/html-report-ux-spec.md"
-        ],
-        "acceptance_criteria": [
-          "html-report-ux-spec.md 包含：ASCII 组件结构图、颜色/字体 token、交互状态说明、API 调用规范，共至少4部分",
-          "三栏布局在 Desktop 正确展示，单列在 ≤600px 起效",
-          "Starred section 默认展开，Track Details accordion 默认折叠",
-          "important 按钮 optimistic update 逻辑清晰：API 成功 → 保留状态，API 失败 → 回滚",
-          "API 离线时 important 按钮 disabled 且有 tooltip 提示",
-          "深色主题在主流浏览器渲染正确，加星卡片有微发光边框效果"
-        ],
-        "estimated_hours": 4
-      },
-      "notes": "UX spec 已完成：输出 skills/arch-ai-radar/references/html-report-ux-spec.md，包含完整 ASCII 结构图、颜色/字体 token、交互状态规范（optimistic update + rollback + API 离线降级）、API 调用规范、accordion 动效规范、空状态设计，共 8 节。"
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
     },
     {
       "id": "wq-fe-radar-html-hwq8is",
-      "type": "frontend_task",
+      "type": "feature",
       "priority": "high",
       "agentRole": "frontend",
       "title": "[Radar FE] Implement daily HTML report for arch-ai-radar v2",
-      "status": "pending",
+      "status": "done",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T08:37:09.415Z",
+      "updated_at": "2026-04-09T08:48:23.049Z",
+      "blockedBy": "wq-ux-radar-html + wq-be-radar-schema",
       "spec": "## 目标\n按照 UX spec（skills/arch-ai-radar/references/html-report-ux-spec.md）实现每日 HTML 报告。\n\n## 技术要求\n- 单文件 HTML（内嵌 CSS + JS，无外部依赖）\n- 数据来源：fetch GET http://localhost:7432/api/items/today\n- important 交互：fetch POST http://localhost:7432/api/important\n- API 离线降级：展示静态内容，important 按钮 disabled\n- 模板引擎：纯 vanilla JS DOM 构建，不用框架\n\n## 生成方式\nHTML 模板文件：skills/arch-ai-radar/templates/daily-report.html（含 {{PLACEHOLDER}} 变量）\nrun-daily.js 在推送完成后，用今日数据填充模板，输出到：\ndata/arch-ai-radar/reports/YYYY-MM-DD.html\n\n## WeCom 推送集成\nrun-daily.js 推送时第三段改为：\n「📄 [查看完整报告](http://localhost:7432/report/2026-04-09)」\n（api-server.mjs 同时 serve /report/:date 路由）\n\n## 输出文件\n- skills/arch-ai-radar/templates/daily-report.html\n- skills/arch-ai-radar/scripts/run-daily.js（修改推送第三段）",
-      "started_at": "2026-04-09T08:37:32.662Z",
-      "retryCount": 1,
-      "lastError": "Unknown type: frontend_task"
+      "notes": "HTML template 完整实现（11.6KB，含 starred/accordion/important/offline降级）+ run-daily.js 加 HTML 生成逻辑"
     },
     {
       "id": "wq-qa-radar-v2-uzt3lk",
-      "type": "design_spec",
+      "type": "qa",
       "priority": "medium",
       "agentRole": "qa",
       "title": "[Radar QA] Test suite for arch-ai-radar v2 BE + FE",
-      "status": "pending_review",
+      "status": "done",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T08:37:09.415Z",
+      "updated_at": "2026-04-09T08:53:56.482Z",
+      "blockedBy": "wq-fe-radar-html + wq-be-radar-schema",
       "spec": "## 目标\n为 arch-ai-radar v2 的 BE API 和 FE HTML 报告写测试套件。\n\n## 测试项\n\n### BE API 测试（scripts/test-api.mjs）\n1. DB migration：starring/sent/important 列是否存在\n2. GET /api/items/today：返回今日 items，格式正确\n3. POST /api/important：更新成功，DB 值变更验证\n4. filterCodingNoise：DevOps/CI/CD 内容被过滤，建筑内容不被误杀\n5. filterTodayOnly：只返回今日 published_at 的条目\n6. scoreItem：Airi Lab 提及 → starred=1，普通条目验证\n\n### FE HTML 测试（用 agent-browser 或 playwright）\n1. 页面加载，三个 section 存在\n2. Starred section 正确展示加星条目\n3. accordion 折叠展开交互正常\n4. important ❤️ 按钮点击后，optimistic update 正确\n5. API 离线时，按钮 disabled 且有 tooltip\n6. A/B 测试：对比旧版 WeCom 纯文本报告 vs 新版 HTML，记录阅读体验差异\n\n## 输出\n- skills/arch-ai-radar/scripts/test-api.mjs\n- skills/arch-ai-radar/scripts/test-html.mjs（browser test）\n- data/arch-ai-radar/qa-report-v2.md（测试结果报告）",
-      "started_at": "2026-04-09T08:37:32.673Z",
-      "assignee": "pm",
-      "completed_at": "2026-04-09T08:37:32.678Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "notes": "PASS：10项测试全过。修复：express补装 + DB migration手动触发。"
     },
     {
       "id": "wq-ar-14h-chief-designer-tech-arch-mnr2nzgl",
@@ -2332,42 +2265,6 @@
       "completed_at": "2026-04-09T07:21:59.462Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review API error handling"
-    },
-    {
-      "id": "qa-wq-ux-radar-html-bdejb4",
-      "title": "[QA] [Radar UX] Daily HTML report design spec for arch-ai-radar v2",
-      "type": "qa_review_needed",
-      "status": "done",
-      "priority": "high",
-      "owner": "qa",
-      "assignee": "qa",
-      "refTask": "wq-ux-radar-html-bdejb4",
-      "createdAt": "2026-04-09T08:17:37.590Z",
-      "tags": [
-        "qa",
-        "auto-generated"
-      ],
-      "started_at": "2026-04-09T08:17:37.591Z",
-      "completed_at": "2026-04-09T08:17:37.906Z",
-      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
-    },
-    {
-      "id": "cto-wq-ux-radar-html-bdejb4",
-      "title": "[CTO Review] [Radar UX] Daily HTML report design spec for arch-ai-radar v2",
-      "type": "cto_review",
-      "status": "done",
-      "priority": "high",
-      "owner": "trump",
-      "assignee": "trump",
-      "refTask": "wq-ux-radar-html-bdejb4",
-      "createdAt": "2026-04-09T08:17:37.925Z",
-      "tags": [
-        "cto_review",
-        "auto-generated"
-      ],
-      "started_at": "2026-04-09T08:22:02.297Z",
-      "completed_at": "2026-04-09T08:22:02.305Z",
-      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
@@ -2781,45 +2678,43 @@
         "dispatcher",
         "bug"
       ]
-    },
+    }
+  ],
+  "tasks": [
     {
-      "id": "wq-ar-16h-ai-engineer-reviewer-summary",
-      "type": "agent_review",
-      "status": "pending",
-      "owner": "pm",
-      "priority": "low",
-      "title": "[Review摘要] 16时 ai-engineer+reviewer review 建议",
-      "description": "AI Engineer: 建立 AI Eval 门控，v18 AI feature 进入 pending_review 前必须有 ai-eval.md（当前 feature 任务因 dispatcher Unknown type 全部阻塞）。Reviewer: 批量扫描并输出所有 pending_review 任务的 review.md，修复 Reviewer 未被触达的流程断层。",
-      "created_at": "2026-04-09T08:07:42.089Z",
-      "created_by": "agent-review-rotation",
-      "tags": [
-        "ai-engineer",
-        "reviewer",
-        "review",
-        "16h"
-      ]
-    },
-    {
-      "id": "wq-ar-16h-ai-eval-gate",
-      "type": "agent_review",
-      "status": "pending",
-      "owner": "pm",
+      "id": "wq-devops-node-path-mnq8tf6f",
+      "title": "修复 cron/subagent 脚本执行环境 node PATH 问题",
+      "type": "infra",
       "priority": "high",
-      "title": "建立 AI Eval 门控：v18 AI feature 进入 pending_review 前必须有 ai-eval.md",
-      "description": "来源: ai-engineer review 2026-04-09-16。当前 pipeline 无 AI eval 强制节点，AI 输出质量无保障。",
-      "created_at": "2026-04-09T08:07:42.089Z",
-      "created_by": "ai-engineer-review"
+      "agentRole": "devops",
+      "status": "pending_review"
     },
     {
-      "id": "wq-ar-16h-reviewer-batch-scan",
+      "id": "wq-ar-researcher-init-05h",
+      "title": "执行 arch-AI 竞品全景研究报告 + 初始化 data/research/ 目录",
       "type": "agent_review",
-      "status": "pending",
-      "owner": "reviewer",
       "priority": "high",
-      "title": "Reviewer 主动扫描：输出所有 pending_review 任务的 review.md（批量补欠）",
-      "description": "来源: reviewer review 2026-04-09-16。大量任务处于 pending_review 但 Reviewer 从未被通知，需主动扫描并补充 review.md。",
-      "created_at": "2026-04-09T08:07:42.089Z",
-      "created_by": "reviewer-review"
+      "status": "pending",
+      "specContent": null,
+      "createdAt": "2026-04-09T08:53:46.878363Z"
+    },
+    {
+      "id": "wq-ar-ta-tech-review-gate",
+      "title": "在 pipeline 中增加 Technical Review 门控（pending_tech_review 状态）",
+      "type": "agent_review",
+      "priority": "medium",
+      "status": "pending",
+      "specContent": null,
+      "createdAt": "2026-04-09T08:53:46.878363Z"
+    },
+    {
+      "id": "wq-qa-radar-v2-uzt3lk",
+      "title": "[Radar QA] Test suite for arch-ai-radar v2 BE + FE",
+      "type": "design_spec",
+      "priority": "medium",
+      "status": "pending",
+      "specContent": null,
+      "createdAt": "2026-04-09T08:53:46.878363Z"
     }
   ]
 }
