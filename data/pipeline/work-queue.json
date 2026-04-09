@@ -397,11 +397,13 @@
   "queue": [
     {
       "id": "qa-wq-ar-fe-retest-mnrfjkgh",
-      "status": "pending_review"
+      "status": "pending_review",
+      "completed_at": "2026-04-09T15:57:56.719Z"
     },
     {
       "id": "wq-ai-eval-gate-f7ab0h",
-      "status": "pending_review"
+      "status": "pending_review",
+      "completed_at": "2026-04-09T15:57:56.719Z"
     },
     {
       "id": "wq-si-pm-mnrj3wd0",
@@ -761,12 +763,12 @@
       "type": "agent_review",
       "title": "[UX] 建立 design-tokens.md + ux_reviewed 字段",
       "owner": "pm",
-      "status": "failed",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T14:05:23.154Z",
       "started_at": "2026-04-09T14:08:21.618Z",
       "assignee": "pm",
-      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "result_summary": "完成：(1) 创建 data/company-knowledge/wiki/design-tokens.md，包含颜色/字体/间距完整规范，Press Start 2P 字体用途说明；(2) 在 data/pipeline/state.json 末尾加入 ux_reviewed 字段 schema 注释说明。",
       "completed_at": "2026-04-09T15:09:23.788Z",
       "retryCount": 99
     },
@@ -775,12 +777,12 @@
       "type": "agent_review",
       "title": "[PM] spec confirmed_by 字段 + CTO代理审批 audit trail",
       "owner": "pm",
-      "status": "failed",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T14:05:23.154Z",
       "started_at": "2026-04-09T14:08:21.626Z",
       "assignee": "pm",
-      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "result_summary": "完成：(1) 创建 data/pipeline/tech/tasks/_template/spec.md，frontmatter 加入 confirmed_by 字段；(2) 创建 data/audit/pm-approvals.md，包含 CTO 代理批准记录格式及首条记录。",
       "completed_at": "2026-04-09T15:09:23.788Z",
       "retryCount": 99
     },
@@ -788,7 +790,7 @@
       "id": "pm-design-tokens-ux-reviewed-1775743523155",
       "title": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "pm",
       "assignee": "pm",
@@ -802,13 +804,15 @@
       "createdAt": "2026-04-09T14:52:18.000Z",
       "sourceInbox": "wq-ar-1775743523155-uiux-pm",
       "started_at": "2026-04-09T14:53:53.422Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "completed_at": "2026-04-09T15:54:28.875Z",
+      "retryCount": 99
     },
     {
       "id": "pm-confirmed-by-audit-trail-1775743523156",
       "title": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail",
       "type": "pm_spec_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "pm",
       "assignee": "pm",
@@ -822,29 +826,342 @@
       "createdAt": "2026-04-09T14:52:18.000Z",
       "sourceInbox": "wq-ar-1775743523156-pm-pm",
       "started_at": "2026-04-09T14:53:53.445Z",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "completed_at": "2026-04-09T15:54:28.875Z",
+      "retryCount": 99
     },
     {
       "id": "wq-ar-1775747094503-scribe",
       "type": "agent_review",
       "title": "Scribe: 补充 autoDream 去重校验与路由 fallback 日志",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T15:04:54.503Z",
       "started_at": "2026-04-09T15:09:23.810Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "completed_at": "2026-04-09T15:57:56.719Z"
     },
     {
       "id": "wq-ar-1775747094504-devops",
       "type": "agent_review",
       "title": "DevOps: 标准化 rollback runbook 并在 CI 增加 Friday 拦截",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T15:04:54.505Z",
       "started_at": "2026-04-09T15:09:23.819Z",
+      "assignee": "pm",
+      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "completed_at": "2026-04-09T15:57:56.719Z"
+    },
+    {
+      "id": "wq-si-tester-mnrnf245",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-09T15:45:24.341Z",
+      "started_at": "2026-04-09T15:45:24.341Z",
+      "completed_at": "2026-04-09T15:45:24.341Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-frontend-mnrnf246",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-09T15:45:24.342Z",
+      "started_at": "2026-04-09T15:45:24.342Z",
+      "completed_at": "2026-04-09T15:45:24.342Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-backend-mnrnf248",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-09T15:45:24.344Z",
+      "started_at": "2026-04-09T15:45:24.344Z",
+      "completed_at": "2026-04-09T15:45:24.344Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-dev-mnrnf249",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-09T15:45:24.345Z",
+      "started_at": "2026-04-09T15:45:24.345Z",
+      "completed_at": "2026-04-09T15:45:24.345Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnrnf249",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-09T15:45:24.345Z",
+      "started_at": "2026-04-09T15:45:24.345Z",
+      "completed_at": "2026-04-09T15:45:24.345Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-devops-mnrnf249",
+      "type": "self_improve",
+      "assignee": "devops",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review CI/CD pipeline health"
+      },
+      "created_at": "2026-04-09T15:45:24.345Z",
+      "started_at": "2026-04-09T15:45:24.345Z",
+      "completed_at": "2026-04-09T15:45:24.345Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review CI/CD pipeline health"
+    },
+    {
+      "id": "wq-si-reviewer-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-scribe-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-researcher-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-uiux-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "wq-si-chief-designer-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-tech-arch-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnrnf24a",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-09T15:45:24.346Z",
+      "started_at": "2026-04-09T15:45:24.346Z",
+      "completed_at": "2026-04-09T15:45:24.346Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnrnf24b",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-09T15:45:24.347Z",
+      "started_at": "2026-04-09T15:45:24.347Z",
+      "completed_at": "2026-04-09T15:45:24.347Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnrnf24b",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-09T15:45:24.347Z",
+      "started_at": "2026-04-09T15:45:24.347Z",
+      "completed_at": "2026-04-09T15:45:24.347Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnrnf24b",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-09T15:45:24.347Z",
+      "started_at": "2026-04-09T15:45:24.347Z",
+      "completed_at": "2026-04-09T15:45:24.347Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnrnf24b",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-09T15:45:24.347Z",
+      "started_at": "2026-04-09T15:45:24.347Z",
+      "completed_at": "2026-04-09T15:45:24.347Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnrnf24b",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-09T15:45:24.347Z",
+      "started_at": "2026-04-09T15:45:24.347Z",
+      "completed_at": "2026-04-09T15:45:24.347Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-trump-mnrnf24b",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-09T15:45:24.347Z",
+      "started_at": "2026-04-09T15:45:24.347Z",
+      "completed_at": "2026-04-09T15:45:24.347Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-ar-1775750696012-frontend",
+      "type": "agent_review",
+      "title": "Frontend: 增加browser-test CI门控 + design spec前置检查",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:04:56.011Z",
+      "started_at": "2026-04-09T16:09:29.544Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-1775750696013-backend",
+      "type": "agent_review",
+      "title": "Backend: 统一API contract文档化 + DB migration回滚脚本",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:04:56.011Z",
+      "started_at": "2026-04-09T16:09:29.568Z",
       "assignee": "pm",
       "result_summary": "dispatched to pm via agent-inbox"
     }
