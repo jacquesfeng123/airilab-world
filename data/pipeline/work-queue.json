@@ -453,8 +453,10 @@
       "created_at": "2026-04-09T03:04:33.135Z",
       "started_at": "2026-04-09T03:05:41.624Z",
       "assignee": "qa",
-      "completed_at": "2026-04-09T03:05:41.625Z",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "completed_at": "2026-04-09T03:40:01.000Z",
+      "result_summary": "QA spec and golden-set created by qa-agent",
+      "approved_at": "2026-04-09T03:47:12.667Z",
+      "auto_approved": true
     },
     {
       "id": "wq-si-qa-mnqw9f8u",
@@ -1184,6 +1186,27 @@
       "started_at": "2026-04-09T03:17:09.157Z",
       "completed_at": "2026-04-09T03:17:09.158Z",
       "result_summary": "dispatched to trump via agent-inbox"
+    },
+    {
+      "id": "wq-ar-12h-uiux-pm-summary",
+      "title": "[Review摘要] 12时 uiux+pm review 建议",
+      "type": "agent_review",
+      "status": "done",
+      "owner": "pm",
+      "priority": "low",
+      "created_at": "2026-04-09T04:04:45.523Z",
+      "created_by": "agent-review-rotation",
+      "description": "UX: v17页面缺少design-review.md，UX门控未落地，需DevOps增加dispatcher拦截逻辑。PM: dispatcher存在Unknown type错误导致backend_task/frontend_task/audit类型任务失败，work-queue双轨混乱需清理，BD brief需设24h deadline。",
+      "tags": [
+        "uiux",
+        "pm",
+        "review",
+        "12h"
+      ],
+      "started_at": "2026-04-09T04:06:07.954Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-09T04:06:07.956Z",
+      "result_summary": "dispatched to pm via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
@@ -1477,7 +1500,7 @@
     {
       "id": "wq-ar-09h-material-manager-init",
       "type": "agent_review",
-      "status": "pending",
+      "status": "pending_review",
       "owner": "pm",
       "priority": "medium",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -1524,7 +1547,7 @@
       "id": "review-11-qa-gate-script",
       "title": "Pipeline 增加 QA 门控强制检查脚本",
       "type": "agent_review",
-      "status": "pending",
+      "status": "pending_review",
       "owner": "devops",
       "priority": "high",
       "created_at": "2026-04-09T03:04:33.135Z"
@@ -1542,10 +1565,61 @@
       "id": "review-11-qa-ai-spec",
       "title": "建立 AI feature QA 规范（eval + golden-set 模板）",
       "type": "agent_review",
-      "status": "pending",
+      "status": "pending_review",
       "owner": "qa",
       "priority": "medium",
-      "created_at": "2026-04-09T03:04:33.135Z"
+      "created_at": "2026-04-09T03:04:33.135Z",
+      "completed_at": "2026-04-09T03:40:01.000Z",
+      "result_summary": "QA spec and golden-set created by qa-agent"
+    },
+    {
+      "id": "wq-ar-12h-uiux-pm-summary",
+      "title": "[Review摘要] 12时 uiux+pm review 建议",
+      "type": "agent_review",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "low",
+      "created_at": "2026-04-09T04:04:45.523Z",
+      "created_by": "agent-review-rotation",
+      "description": "UX: v17页面缺少design-review.md，UX门控未落地，需DevOps增加dispatcher拦截逻辑。PM: dispatcher存在Unknown type错误导致backend_task/frontend_task/audit类型任务失败，work-queue双轨混乱需清理，BD brief需设24h deadline。",
+      "tags": [
+        "uiux",
+        "pm",
+        "review",
+        "12h"
+      ]
+    },
+    {
+      "id": "wq-ar-uiux-dispatcher-gate",
+      "title": "DevOps 在 dispatcher 增加 UX 门控拦截逻辑（UX Required: yes 时无 design.md 则拒绝流转）",
+      "type": "agent_review",
+      "status": "pending",
+      "owner": "devops",
+      "priority": "high",
+      "created_at": "2026-04-09T04:04:45.523Z",
+      "created_by": "uiux-review-12h",
+      "tags": [
+        "uiux",
+        "devops",
+        "dispatcher",
+        "gate"
+      ]
+    },
+    {
+      "id": "wq-ar-pm-fix-dispatcher-types",
+      "title": "修复 dispatcher Unknown type 错误（audit/backend_task/frontend_task 3类任务持续失败）",
+      "type": "agent_review",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "high",
+      "created_at": "2026-04-09T04:04:45.523Z",
+      "created_by": "pm-review-12h",
+      "tags": [
+        "pm",
+        "devops",
+        "dispatcher",
+        "bug"
+      ]
     }
   ]
 }
