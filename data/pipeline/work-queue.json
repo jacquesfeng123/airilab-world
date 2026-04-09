@@ -356,6 +356,42 @@
       ],
       "started_at": "2026-04-09T13:44:45.218Z",
       "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "pm-design-tokens-ux-reviewed-1775743523155",
+      "title": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "建立 design-tokens.md UI/UX标准文档，在 state.json 中添加 ux_reviewed 字段，实现 UX 门控机制。Source: agent_review inbox wq-ar-1775743523155-uiux-pm",
+      "tags": [
+        "pm",
+        "design-tokens",
+        "ux_reviewed",
+        "UX门控"
+      ],
+      "createdAt": "2026-04-09T14:52:18.000Z",
+      "sourceInbox": "wq-ar-1775743523155-uiux-pm"
+    },
+    {
+      "id": "pm-confirmed-by-audit-trail-1775743523156",
+      "title": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "在项目 spec 中添加 confirmed_by 字段，将 CTO 审批记录写入 data/audit/pm-approvals.md，完善 audit trail 机制。Source: agent_review inbox wq-ar-1775743523156-pm-pm",
+      "tags": [
+        "pm",
+        "confirmed_by",
+        "audit-trail",
+        "CTO审批"
+      ],
+      "createdAt": "2026-04-09T14:52:18.000Z",
+      "sourceInbox": "wq-ar-1775743523156-pm-pm"
     }
   ],
   "queue": [
@@ -686,7 +722,7 @@
       "id": "qa-qa-wq-ar-fe-retest-mnrfjkgh",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -697,13 +733,15 @@
         "auto-generated"
       ],
       "started_at": "2026-04-09T13:44:45.215Z",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "completed_at": "2026-04-09T14:45:31.924Z",
+      "retryCount": 99
     },
     {
       "id": "qa-wq-ai-eval-gate-f7ab0h",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -714,7 +752,9 @@
         "auto-generated"
       ],
       "started_at": "2026-04-09T13:44:45.218Z",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed — requires review",
+      "completed_at": "2026-04-09T14:45:31.924Z",
+      "retryCount": 99
     },
     {
       "id": "wq-ar-1775743523155-uiux",
@@ -738,6 +778,46 @@
       "created_at": "2026-04-09T14:05:23.154Z",
       "started_at": "2026-04-09T14:08:21.626Z",
       "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "pm-design-tokens-ux-reviewed-1775743523155",
+      "title": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate",
+      "type": "pm_spec_needed",
+      "status": "running",
+      "priority": "medium",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "建立 design-tokens.md UI/UX标准文档，在 state.json 中添加 ux_reviewed 字段，实现 UX 门控机制。Source: agent_review inbox wq-ar-1775743523155-uiux-pm",
+      "tags": [
+        "pm",
+        "design-tokens",
+        "ux_reviewed",
+        "UX门控"
+      ],
+      "createdAt": "2026-04-09T14:52:18.000Z",
+      "sourceInbox": "wq-ar-1775743523155-uiux-pm",
+      "started_at": "2026-04-09T14:53:53.422Z",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "pm-confirmed-by-audit-trail-1775743523156",
+      "title": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail",
+      "type": "pm_spec_needed",
+      "status": "running",
+      "priority": "medium",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "在项目 spec 中添加 confirmed_by 字段，将 CTO 审批记录写入 data/audit/pm-approvals.md，完善 audit trail 机制。Source: agent_review inbox wq-ar-1775743523156-pm-pm",
+      "tags": [
+        "pm",
+        "confirmed_by",
+        "audit-trail",
+        "CTO审批"
+      ],
+      "createdAt": "2026-04-09T14:52:18.000Z",
+      "sourceInbox": "wq-ar-1775743523156-pm-pm",
+      "started_at": "2026-04-09T14:53:53.445Z",
       "result_summary": "dispatched to pm via agent-inbox"
     }
   ]
