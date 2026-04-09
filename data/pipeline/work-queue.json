@@ -2593,7 +2593,7 @@
       "id": "cto-wq-be-radar-schema-nzebz3",
       "title": "[CTO Review] [Radar BE] DB schema + API server for arch-ai-radar v2",
       "type": "cto_review",
-      "status": "pending",
+      "status": "running",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -2602,13 +2602,15 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T09:32:43.513Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ux-radar-html-bdejb4",
       "title": "[CTO Review] [Radar UX] Daily HTML report design spec for arch-ai-radar v2",
       "type": "cto_review",
-      "status": "pending",
+      "status": "running",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -2617,7 +2619,9 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T09:32:43.539Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
