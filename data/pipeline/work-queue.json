@@ -1929,7 +1929,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending_cto",
+      "status": "done",
       "payload": {
         "title": "[Review摘要] 15时 bd+researcher review 建议",
         "content": "BD核心建议：建立enterprise CRM数据追踪+为v18功能批量生成BD commercial brief。Researcher核心建议：注册research_needed工作项类型至dispatcher，打通研究产出→下游agent消费链路。"
@@ -1938,9 +1938,10 @@
       "created_by": "agent-review-rotation",
       "source_review": "2026-04-09-15",
       "started_at": "2026-04-09T07:06:51.424Z",
-      "completed_at": "2026-04-09T07:15:30.378Z",
+      "completed_at": "2026-04-09T07:17:33.390Z",
       "result_summary": "[PM] ✅ Task created: task-mnr4w7fv\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr4w7fv\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr4w7fv/spec.md",
-      "qa_approved_by": "qa-wq-ar-bd-researcher-mnr4tn4f"
+      "qa_approved_by": "qa-wq-ar-bd-researcher-mnr4tn4f",
+      "cto_approved_by": "cto-wq-ar-bd-researcher-mnr4tn4f"
     },
     {
       "id": "wq-si-tester-mnr4w77t",
@@ -2219,7 +2220,7 @@
       "id": "cto-wq-ar-bd-researcher-mnr4tn4f",
       "title": "[CTO Review] wq-ar-bd-researcher-mnr4tn4f",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -2228,7 +2229,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T07:17:33.383Z",
+      "completed_at": "2026-04-09T07:17:33.387Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
