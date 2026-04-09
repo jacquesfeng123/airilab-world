@@ -1173,9 +1173,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.794Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "dispatched to devops via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.862Z"
     },
     {
       "id": "wq-ar-scribe-routing-1775752535827",
@@ -1185,9 +1185,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.813Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.885Z"
     },
     {
       "id": "wq-ar-devops-rollback-1775752535827",
@@ -1197,9 +1197,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.839Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "dispatched to devops via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.888Z"
     },
     {
       "id": "wq-ar-be-api-contract-1775752535827",
@@ -1209,9 +1209,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.843Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "dispatched to backend via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.892Z"
     },
     {
       "id": "wq-ar-be-error-handler-1775752535827",
@@ -1221,9 +1221,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.850Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "dispatched to backend via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.895Z"
     },
     {
       "id": "wq-ar-fe-browser-test-ci-1775752535827",
@@ -1233,9 +1233,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.859Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "dispatched to devops via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.905Z"
     },
     {
       "id": "wq-ar-fe-design-spec-gate-1775752535827",
@@ -1245,9 +1245,9 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
-      "started_at": "2026-04-09T16:40:00.864Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "started_at": "2026-04-09T16:45:17.909Z"
     }
   ]
 }
