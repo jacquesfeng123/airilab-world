@@ -1164,6 +1164,90 @@
       "started_at": "2026-04-09T16:09:29.568Z",
       "assignee": "pm",
       "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe-dedup-1775752535827",
+      "type": "agent_review",
+      "title": "[Scribe] autoDream 追加前检查 MEMORY.md 去重",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.794Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe-routing-1775752535827",
+      "type": "agent_review",
+      "title": "[Scribe] input routing 不匹配时写 warn 日志",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.813Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops-rollback-1775752535827",
+      "type": "agent_review",
+      "title": "[DevOps] 标准化 rollback runbook + CI Friday 拦截",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.839Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-be-api-contract-1775752535827",
+      "type": "agent_review",
+      "title": "[BE] endpoint完成后强制写入 api-contracts/ 目录",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.843Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-be-error-handler-1775752535827",
+      "type": "agent_review",
+      "title": "[BE] 建立 centralized error handler + 统一重试策略",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.850Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-fe-browser-test-ci-1775752535827",
+      "type": "agent_review",
+      "title": "[FE] browser-test 作为 CI 门控，明确强制执行",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.859Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-fe-design-spec-gate-1775752535827",
+      "type": "agent_review",
+      "title": "[FE] design spec ready 前置检查，未到位时 auto-pending",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:35:35.826Z",
+      "started_at": "2026-04-09T16:40:00.864Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
     }
   ]
 }
