@@ -1791,7 +1791,7 @@
     {
       "id": "wq-pm-design-review-gate-mnr2nzgn",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "medium",
       "title": "在 pipeline spec.md 模板中加入 Design Review Required 字段",
@@ -1799,13 +1799,14 @@
       "created_at": "2026-04-09T06:04:28.871Z",
       "created_by": "chief-designer-review",
       "started_at": "2026-04-09T06:06:41.598Z",
-      "completed_at": "2026-04-09T06:06:46.870Z",
-      "result_summary": "[PM] ✅ Task created: task-mnr2qu5c\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qu5c\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qu5c/spec.md"
+      "completed_at": "2026-04-09T06:15:17.045Z",
+      "result_summary": "[PM] ✅ Task created: task-mnr2qu5c\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qu5c\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qu5c/spec.md",
+      "qa_approved_by": "qa-wq-pm-design-review-gate-mnr2nzgn"
     },
     {
       "id": "wq-devops-dispatcher-types-mnr2nzgn",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "devops",
       "priority": "high",
       "title": "紧急：dispatcher 注册 backend_task/frontend_task/audit/feature handler，修复 Unknown type 积压",
@@ -1813,32 +1814,105 @@
       "created_at": "2026-04-09T06:04:28.871Z",
       "created_by": "technical-architect-review",
       "started_at": "2026-04-09T06:06:36.028Z",
-      "completed_at": "2026-04-09T06:06:41.480Z",
-      "result_summary": "[PM] ✅ Task created: task-mnr2qpxc\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qpxc\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qpxc/spec.md"
+      "completed_at": "2026-04-09T06:15:17.042Z",
+      "result_summary": "[PM] ✅ Task created: task-mnr2qpxc\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qpxc\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr2qpxc/spec.md",
+      "qa_approved_by": "qa-wq-devops-dispatcher-types-mnr2nzgn"
     },
     {
       "id": "wq-mnr2qttb",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "紧急：dispatcher 注册 backend_task/frontend_task/audit/feature handler，修复 Unknown type 积压"
       },
       "created_at": "2026-04-09T06:06:41.519Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T06:15:15.402Z",
+      "completed_at": "2026-04-09T06:15:16.452Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnr2qxxy",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "在 pipeline spec.md 模板中加入 Design Review Required 字段"
       },
       "created_at": "2026-04-09T06:06:46.870Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T06:15:15.402Z",
+      "completed_at": "2026-04-09T06:15:16.452Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-pm-design-review-gate-mnr2nzgn",
+      "title": "[QA] 在 pipeline spec.md 模板中加入 Design Review Required 字段",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-pm-design-review-gate-mnr2nzgn",
+      "createdAt": "2026-04-09T06:15:15.400Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T06:15:15.402Z",
+      "completed_at": "2026-04-09T06:15:17.041Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-devops-dispatcher-types-mnr2nzgn",
+      "title": "[QA] 紧急：dispatcher 注册 backend_task/frontend_task/audit/feature handler，修复 Unknown type 积压",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-devops-dispatcher-types-mnr2nzgn",
+      "createdAt": "2026-04-09T06:15:15.400Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T06:15:15.402Z",
+      "completed_at": "2026-04-09T06:15:16.452Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-devops-dispatcher-types-mnr2nzgn",
+      "title": "[CTO Review] 紧急：dispatcher 注册 backend_task/frontend_task/audit/feature handler，修复 Unknown type 积压",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-devops-dispatcher-types-mnr2nzgn",
+      "createdAt": "2026-04-09T06:15:17.043Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-pm-design-review-gate-mnr2nzgn",
+      "title": "[CTO Review] 在 pipeline spec.md 模板中加入 Design Review Required 字段",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-pm-design-review-gate-mnr2nzgn",
+      "createdAt": "2026-04-09T06:15:17.045Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
