@@ -1718,6 +1718,7 @@
       "agentRole": "backend",
       "title": "[Radar BE] DB schema + API server for arch-ai-radar v2",
       "status": "done",
+      "notes": "BE subagent completed: (1) db.js migration加3列starred/sent/important; (2) 新建api-server.mjs Express server端口7432，路由GET /api/items/today, POST /api/important, GET /api/health, GET /report/:date; (3) 新建LaunchAgents plist开机自启; (4) run-daily.js加filterCodingNoise/filterTodayOnly/scoreItem函数，pipeline调用过滤+评分，pushWecom后批量更新sent=1。完成时间2026-04-09。",
       "created_at": "2026-04-09T05:47:25.434Z",
       "updated_at": "2026-04-09T08:11:50.140Z",
       "spec": "## 目标\n为 arch-ai-radar 的每日报告系统升级 BE 基础设施。\n\n## DB 改动 (skills/arch-ai-radar/scripts/db.js)\n在现有 items 表里加3列：\n- `starred` INTEGER DEFAULT 0  — 系统自动评分加星（0/1）\n- `sent` INTEGER DEFAULT 0  — 是否已推送（0/1），推送后置1\n- `important` INTEGER  — 用户手动标记（NULL=未标，1=重要），NULL default\n\n加 migration 逻辑：若列不存在则 ALTER TABLE 补加（向后兼容）。\n\n## 打星规则（starred 评分逻辑，写在 run-daily.js 的 scoreItem 函数）\n规则组合打分，满足任一高权重信号置1：\n- Airi Lab 直接提及 → 自动 ⭐\n- 来源为 ArchDaily / Dezeen / 官方账号 + 今日内容 → ⭐\n- 事件倒计时 ≤ 30 天 → ⭐\n- Twitter 点赞 > 500 或 XHS 收藏 > 100 → ⭐\n- Track1 内容默认加星\n\n## coding architecture 噪音过滤（filterCodingNoise 函数）\n判断逻辑：包含以下词 AND 不含建筑上下文词 → 过滤掉\n- 噪音词：DevOps, CI/CD, microservices, kubernetes, backend, frontend, SRE, codebase, ship code, production app, #DevOps, #SRE\n- 建筑上下文：建筑, architecture design, architectural, 设计, 空间, building, urban, parametric, generative design, AEC\n\n## only-today 过滤（filterTodayOnly 函数）\ngenerateReport 只处理 published_at = today 的条目，历史条目记录进DB但不出现在报告里。\n\n## API Server (scripts/api-server.mjs)\n轻量 Express server，端口 7432：\n- GET  /api/items/today  → 返回今天所有 items（含 starred/sent/important）\n- POST /api/important    → body: {id, important: true|false|null} → 更新 DB\n- GET  /api/health       → 200 OK\n\n启动方式：node scripts/api-server.mjs\nlaunchd plist 路径：~/Library/LaunchAgents/com.airilab.radar-api.plist（开机自启，端口7432）\n\n## sent 字段更新\npushWecom() 推送成功后，对所有推出去的 item 执行 UPDATE items SET sent=1 WHERE id IN (...)\n\n## 输出文件\n- skills/arch-ai-radar/scripts/api-server.mjs（新建）\n- skills/arch-ai-radar/scripts/db.js（修改，加migration+scored列）\n- skills/arch-ai-radar/scripts/run-daily.js（修改，加filterCodingNoise/filterTodayOnly/scoreItem/sent更新）\n- ~/Library/LaunchAgents/com.airilab.radar-api.plist（新建）",
@@ -1725,11 +1726,38 @@
       "retryCount": 3,
       "lastError": "Unknown type: feature",
       "failed_at": "2026-04-09T06:06:36.020Z",
-      "assignee": "pm",
+      "assignee": "backend",
       "completed_at": "2026-04-09T08:15:51.083Z",
       "result_summary": "dispatched to pm via agent-inbox",
-      "approved_at": "2026-04-09T08:17:37.587Z",
-      "auto_approved": true
+      "approved_at": "2026-04-09T08:37:32.657Z",
+      "auto_approved": true,
+      "specContent": {
+        "goal": "为 arch-ai-radar v2 构建 SQLite 持久化存储层 + 轻量 Express API 服务，支持每日扫描结果的存储、去重、查询和推送状态追踪。",
+        "requirements": [
+          "SQLite 存储：字段 platform, track, title, url, summary, score, timestamp, starred, sent, important",
+          "Migration 逻辑：若 starred/sent/important 列不存在则 ALTER TABLE 自动补加（向后兼容）",
+          "去重逻辑：按 url 字段去重，INSERT OR IGNORE",
+          "filterTodayOnly：generateReport 只处理 published_at = today 的条目",
+          "filterCodingNoise：过滤 DevOps/CI-CD/kubernetes 等非建筑噪音词，不误杀含建筑上下文的条目",
+          "scoreItem：Airi Lab 提及/来源权威/事件倒计时≤30天/互动量高 → starred=1",
+          "GET /radar/latest → 返回今日所有 items（含 starred/sent/important）",
+          "GET /radar/history?days=7 → 返回最近 N 天记录",
+          "POST /api/important → body: {id, important: true|false|null} → 更新 DB",
+          "GET /api/health → 200 OK",
+          "API Server 端口 7432，launchd plist 开机自启",
+          "pushWecom 推送成功后将已推送 item 的 sent 字段置 1"
+        ],
+        "acceptance_criteria": [
+          "DB migration 向后兼容：旧数据库无需手动操作即可加入新字段",
+          "GET /radar/latest 返回结构包含所有必要字段，响应时间 < 200ms",
+          "filterCodingNoise 正确过滤 DevOps 内容，不误杀 'architectural coding' 等建筑语境词",
+          "scoreItem 对 Airi Lab 直接提及内容自动置 starred=1，验证通过",
+          "URL 去重：同一 URL 二次写入不产生重复记录",
+          "API Server 在 launchd 下开机自启动，端口 7432 可访问",
+          "sent 字段在 WeCom 推送完成后正确更新"
+        ],
+        "estimated_hours": 6
+      }
     },
     {
       "id": "wq-ux-radar-html-bdejb4",
@@ -1745,11 +1773,39 @@
       "retryCount": 3,
       "lastError": "Unknown type: feature",
       "failed_at": "2026-04-09T06:06:36.026Z",
-      "assignee": "pm",
-      "completed_at": "2026-04-09T08:22:02.312Z",
+      "assignee": "uiux",
+      "completed_at": "2026-04-09T08:35:15.062Z",
       "result_summary": "dispatched to pm via agent-inbox",
       "qa_approved_by": "qa-wq-ux-radar-html-bdejb4",
-      "cto_approved_by": "cto-wq-ux-radar-html-bdejb4"
+      "cto_approved_by": "cto-wq-ux-radar-html-bdejb4",
+      "specContent": {
+        "goal": "为 arch-ai-radar v2 设计每日 HTML 报告的 UX spec，支持三栏布局、深色主题、移动端响应式、important 标记交互，供 FE 实现参考。",
+        "requirements": [
+          "每日生成一个独立 HTML 文件：data/arch-ai-radar/reports/YYYY-MM-DD.html",
+          "Header：标题 ARCH+AI RADAR Daily Brief、日期时间、今日抓取数量和 starred 数量 summary",
+          "Section 1: ⭐ Starred Items（默认展开）—含 track badge + 平台 icon + 标题 + 摘要 + 链接 + important 按钮",
+          "Section 2: 三个 track 叙述段落（Track1/2/3 各一段，默认展开）",
+          "Section 3: Track 明细 accordion（默认折叠），每条同样有 important 按钮",
+          "深色主题：#0f0f0f 背景、#1a1a2e card",
+          "Track 色彩：T1=#4f8cff、T2=#ff6b6b、T3=#43e97b",
+          "字体：Inter / system-ui，中英文混排友好",
+          "移动端响应式：max-width 600px 单列",
+          "important 按钮：optimistic update + fetch POST /api/important + 失败回滚",
+          "accordion smooth transition 200ms",
+          "API 离线降级：important 按钮 disabled + tooltip 提示服务未启动",
+          "输出 UX spec markdown 文件：skills/arch-ai-radar/references/html-report-ux-spec.md"
+        ],
+        "acceptance_criteria": [
+          "html-report-ux-spec.md 包含：ASCII 组件结构图、颜色/字体 token、交互状态说明、API 调用规范，共至少4部分",
+          "三栏布局在 Desktop 正确展示，单列在 ≤600px 起效",
+          "Starred section 默认展开，Track Details accordion 默认折叠",
+          "important 按钮 optimistic update 逻辑清晰：API 成功 → 保留状态，API 失败 → 回滚",
+          "API 离线时 important 按钮 disabled 且有 tooltip 提示",
+          "深色主题在主流浏览器渲染正确，加星卡片有微发光边框效果"
+        ],
+        "estimated_hours": 4
+      },
+      "notes": "UX spec 已完成：输出 skills/arch-ai-radar/references/html-report-ux-spec.md，包含完整 ASCII 结构图、颜色/字体 token、交互状态规范（optimistic update + rollback + API 离线降级）、API 调用规范、accordion 动效规范、空状态设计，共 8 节。"
     },
     {
       "id": "wq-fe-radar-html-hwq8is",
@@ -1757,11 +1813,13 @@
       "priority": "high",
       "agentRole": "frontend",
       "title": "[Radar FE] Implement daily HTML report for arch-ai-radar v2",
-      "status": "blocked",
+      "status": "pending",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T08:11:50.171Z",
-      "blockedBy": "wq-ux-radar-html + wq-be-radar-schema",
-      "spec": "## 目标\n按照 UX spec（skills/arch-ai-radar/references/html-report-ux-spec.md）实现每日 HTML 报告。\n\n## 技术要求\n- 单文件 HTML（内嵌 CSS + JS，无外部依赖）\n- 数据来源：fetch GET http://localhost:7432/api/items/today\n- important 交互：fetch POST http://localhost:7432/api/important\n- API 离线降级：展示静态内容，important 按钮 disabled\n- 模板引擎：纯 vanilla JS DOM 构建，不用框架\n\n## 生成方式\nHTML 模板文件：skills/arch-ai-radar/templates/daily-report.html（含 {{PLACEHOLDER}} 变量）\nrun-daily.js 在推送完成后，用今日数据填充模板，输出到：\ndata/arch-ai-radar/reports/YYYY-MM-DD.html\n\n## WeCom 推送集成\nrun-daily.js 推送时第三段改为：\n「📄 [查看完整报告](http://localhost:7432/report/2026-04-09)」\n（api-server.mjs 同时 serve /report/:date 路由）\n\n## 输出文件\n- skills/arch-ai-radar/templates/daily-report.html\n- skills/arch-ai-radar/scripts/run-daily.js（修改推送第三段）"
+      "updated_at": "2026-04-09T08:37:09.415Z",
+      "spec": "## 目标\n按照 UX spec（skills/arch-ai-radar/references/html-report-ux-spec.md）实现每日 HTML 报告。\n\n## 技术要求\n- 单文件 HTML（内嵌 CSS + JS，无外部依赖）\n- 数据来源：fetch GET http://localhost:7432/api/items/today\n- important 交互：fetch POST http://localhost:7432/api/important\n- API 离线降级：展示静态内容，important 按钮 disabled\n- 模板引擎：纯 vanilla JS DOM 构建，不用框架\n\n## 生成方式\nHTML 模板文件：skills/arch-ai-radar/templates/daily-report.html（含 {{PLACEHOLDER}} 变量）\nrun-daily.js 在推送完成后，用今日数据填充模板，输出到：\ndata/arch-ai-radar/reports/YYYY-MM-DD.html\n\n## WeCom 推送集成\nrun-daily.js 推送时第三段改为：\n「📄 [查看完整报告](http://localhost:7432/report/2026-04-09)」\n（api-server.mjs 同时 serve /report/:date 路由）\n\n## 输出文件\n- skills/arch-ai-radar/templates/daily-report.html\n- skills/arch-ai-radar/scripts/run-daily.js（修改推送第三段）",
+      "started_at": "2026-04-09T08:37:32.662Z",
+      "retryCount": 1,
+      "lastError": "Unknown type: frontend_task"
     },
     {
       "id": "wq-qa-radar-v2-uzt3lk",
@@ -1769,11 +1827,14 @@
       "priority": "medium",
       "agentRole": "qa",
       "title": "[Radar QA] Test suite for arch-ai-radar v2 BE + FE",
-      "status": "blocked",
+      "status": "pending_review",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T08:11:50.171Z",
-      "blockedBy": "wq-fe-radar-html + wq-be-radar-schema",
-      "spec": "## 目标\n为 arch-ai-radar v2 的 BE API 和 FE HTML 报告写测试套件。\n\n## 测试项\n\n### BE API 测试（scripts/test-api.mjs）\n1. DB migration：starring/sent/important 列是否存在\n2. GET /api/items/today：返回今日 items，格式正确\n3. POST /api/important：更新成功，DB 值变更验证\n4. filterCodingNoise：DevOps/CI/CD 内容被过滤，建筑内容不被误杀\n5. filterTodayOnly：只返回今日 published_at 的条目\n6. scoreItem：Airi Lab 提及 → starred=1，普通条目验证\n\n### FE HTML 测试（用 agent-browser 或 playwright）\n1. 页面加载，三个 section 存在\n2. Starred section 正确展示加星条目\n3. accordion 折叠展开交互正常\n4. important ❤️ 按钮点击后，optimistic update 正确\n5. API 离线时，按钮 disabled 且有 tooltip\n6. A/B 测试：对比旧版 WeCom 纯文本报告 vs 新版 HTML，记录阅读体验差异\n\n## 输出\n- skills/arch-ai-radar/scripts/test-api.mjs\n- skills/arch-ai-radar/scripts/test-html.mjs（browser test）\n- data/arch-ai-radar/qa-report-v2.md（测试结果报告）"
+      "updated_at": "2026-04-09T08:37:09.415Z",
+      "spec": "## 目标\n为 arch-ai-radar v2 的 BE API 和 FE HTML 报告写测试套件。\n\n## 测试项\n\n### BE API 测试（scripts/test-api.mjs）\n1. DB migration：starring/sent/important 列是否存在\n2. GET /api/items/today：返回今日 items，格式正确\n3. POST /api/important：更新成功，DB 值变更验证\n4. filterCodingNoise：DevOps/CI/CD 内容被过滤，建筑内容不被误杀\n5. filterTodayOnly：只返回今日 published_at 的条目\n6. scoreItem：Airi Lab 提及 → starred=1，普通条目验证\n\n### FE HTML 测试（用 agent-browser 或 playwright）\n1. 页面加载，三个 section 存在\n2. Starred section 正确展示加星条目\n3. accordion 折叠展开交互正常\n4. important ❤️ 按钮点击后，optimistic update 正确\n5. API 离线时，按钮 disabled 且有 tooltip\n6. A/B 测试：对比旧版 WeCom 纯文本报告 vs 新版 HTML，记录阅读体验差异\n\n## 输出\n- skills/arch-ai-radar/scripts/test-api.mjs\n- skills/arch-ai-radar/scripts/test-html.mjs（browser test）\n- data/arch-ai-radar/qa-report-v2.md（测试结果报告）",
+      "started_at": "2026-04-09T08:37:32.673Z",
+      "assignee": "pm",
+      "completed_at": "2026-04-09T08:37:32.678Z",
+      "result_summary": "dispatched to pm via agent-inbox"
     },
     {
       "id": "wq-ar-14h-chief-designer-tech-arch-mnr2nzgl",
