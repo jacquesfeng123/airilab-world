@@ -1146,24 +1146,28 @@
       "type": "agent_review",
       "title": "Frontend: 增加browser-test CI门控 + design spec前置检查",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:04:56.011Z",
       "started_at": "2026-04-09T16:09:29.544Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "completed_at": "2026-04-09T16:55:05.419Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-1775750696013-backend",
       "type": "agent_review",
       "title": "Backend: 统一API contract文档化 + DB migration回滚脚本",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:04:56.011Z",
       "started_at": "2026-04-09T16:09:29.568Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "completed_at": "2026-04-09T16:55:05.421Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe-dedup-1775752535827",
@@ -1287,6 +1291,150 @@
       "completed_at": "2026-04-09T16:48:11.405Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Run regression test suite"
+    },
+    {
+      "id": "wq-ar-pm-1775754089117-0",
+      "type": "agent_review",
+      "title": "[PM] 增加 spec \"confirmed_by\" 字段，Jacques 或 main agent 显式确",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.117Z",
+      "started_at": "2026-04-09T17:01:29.130Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-1775754089117-1",
+      "type": "agent_review",
+      "title": "[PM] 每次批准的 cto- 文件追加批准日志至 `data/audit/pm-approvals.md`",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.117Z",
+      "started_at": "2026-04-09T17:01:29.156Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775754089117-0",
+      "type": "agent_review",
+      "title": "[UIUX] 建立 `design-tokens.md` 集中管理颜色/间距/字体基准",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.117Z",
+      "started_at": "2026-04-09T17:01:29.163Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775754089117-1",
+      "type": "agent_review",
+      "title": "[UIUX] 每次更新时追加 changelog 区块，便于 dev/qa 对齐",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.117Z",
+      "started_at": "2026-04-09T17:01:29.170Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops-1775754089117-0",
+      "type": "agent_review",
+      "title": "[DEVOPS] 建议在 role-soul 中明确 key metrics（P99 延迟、GPU 利用率、错误率）的",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.117Z",
+      "started_at": "2026-04-09T17:01:29.197Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops-1775754089117-1",
+      "type": "agent_review",
+      "title": "[DEVOPS] 建议在 data/runbooks/ 创建标准 rollback checklist",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.117Z",
+      "started_at": "2026-04-09T17:01:29.205Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775754089118-0",
+      "type": "agent_review",
+      "title": "[SCRIBE] 建议在追加前检查 MEMORY.md 现有条目哈希，防止重复写入",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.118Z",
+      "started_at": "2026-04-09T17:01:29.210Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775754089118-1",
+      "type": "agent_review",
+      "title": "[SCRIBE] 对路由不匹配的输入，除写 inbox 外还应记录一条 warn 日志供 PM 复查",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.118Z",
+      "started_at": "2026-04-09T17:01:29.218Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775754089118-0",
+      "type": "agent_review",
+      "title": "[BACKEND] 仅说\"rollback DB migrations\"，建议补充具体回滚脚本规范和 smoke tes",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.118Z",
+      "started_at": "2026-04-09T17:01:29.225Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775754089118-1",
+      "type": "agent_review",
+      "title": "[BACKEND] API contract 写入位置未统一，建议指定固定路径（如 docs/api/）并纳入 CI 检",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.118Z",
+      "started_at": "2026-04-09T17:01:29.251Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775754089119-0",
+      "type": "agent_review",
+      "title": "[FRONTEND] 明确记录 browser-test 失败时的重试策略和超时上限，避免无限循环",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.119Z",
+      "started_at": "2026-04-09T17:01:29.259Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775754089119-1",
+      "type": "agent_review",
+      "title": "[FRONTEND] Checklist 中增加\"暗色模式截图对比\"步骤，防止浅色组件意外遗漏",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T17:01:29.119Z",
+      "started_at": "2026-04-09T17:01:29.268Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
     }
   ]
 }
