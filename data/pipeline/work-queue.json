@@ -1248,6 +1248,45 @@
       "assignee": "pm",
       "result_summary": "dispatched to pm via agent-inbox",
       "started_at": "2026-04-09T16:45:17.909Z"
+    },
+    {
+      "id": "wq-ar-frontend-1775753254303",
+      "type": "agent_review",
+      "title": "[Frontend] 补充 browser-test 失败重试策略与超时上限",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:47:34.303Z",
+      "started_at": "2026-04-09T16:48:11.414Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775753254303",
+      "type": "agent_review",
+      "title": "[Backend] 统一 API contract 文档路径并纳入 CI",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T16:47:34.303Z",
+      "started_at": "2026-04-09T16:48:11.438Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-si-qa-mnrpnsst",
+      "type": "self_improve",
+      "assignee": "qa",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Run regression test suite"
+      },
+      "created_at": "2026-04-09T16:48:11.405Z",
+      "started_at": "2026-04-09T16:48:11.405Z",
+      "completed_at": "2026-04-09T16:48:11.405Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Run regression test suite"
     }
   ]
 }
