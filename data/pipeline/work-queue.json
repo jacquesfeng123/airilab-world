@@ -1721,8 +1721,8 @@
       "created_at": "2026-04-09T05:47:25.434Z",
       "updated_at": "2026-04-09T05:47:25.434Z",
       "spec": "## 目标\n为 arch-ai-radar 的每日报告系统升级 BE 基础设施。\n\n## DB 改动 (skills/arch-ai-radar/scripts/db.js)\n在现有 items 表里加3列：\n- `starred` INTEGER DEFAULT 0  — 系统自动评分加星（0/1）\n- `sent` INTEGER DEFAULT 0  — 是否已推送（0/1），推送后置1\n- `important` INTEGER  — 用户手动标记（NULL=未标，1=重要），NULL default\n\n加 migration 逻辑：若列不存在则 ALTER TABLE 补加（向后兼容）。\n\n## 打星规则（starred 评分逻辑，写在 run-daily.js 的 scoreItem 函数）\n规则组合打分，满足任一高权重信号置1：\n- Airi Lab 直接提及 → 自动 ⭐\n- 来源为 ArchDaily / Dezeen / 官方账号 + 今日内容 → ⭐\n- 事件倒计时 ≤ 30 天 → ⭐\n- Twitter 点赞 > 500 或 XHS 收藏 > 100 → ⭐\n- Track1 内容默认加星\n\n## coding architecture 噪音过滤（filterCodingNoise 函数）\n判断逻辑：包含以下词 AND 不含建筑上下文词 → 过滤掉\n- 噪音词：DevOps, CI/CD, microservices, kubernetes, backend, frontend, SRE, codebase, ship code, production app, #DevOps, #SRE\n- 建筑上下文：建筑, architecture design, architectural, 设计, 空间, building, urban, parametric, generative design, AEC\n\n## only-today 过滤（filterTodayOnly 函数）\ngenerateReport 只处理 published_at = today 的条目，历史条目记录进DB但不出现在报告里。\n\n## API Server (scripts/api-server.mjs)\n轻量 Express server，端口 7432：\n- GET  /api/items/today  → 返回今天所有 items（含 starred/sent/important）\n- POST /api/important    → body: {id, important: true|false|null} → 更新 DB\n- GET  /api/health       → 200 OK\n\n启动方式：node scripts/api-server.mjs\nlaunchd plist 路径：~/Library/LaunchAgents/com.airilab.radar-api.plist（开机自启，端口7432）\n\n## sent 字段更新\npushWecom() 推送成功后，对所有推出去的 item 执行 UPDATE items SET sent=1 WHERE id IN (...)\n\n## 输出文件\n- skills/arch-ai-radar/scripts/api-server.mjs（新建）\n- skills/arch-ai-radar/scripts/db.js（修改，加migration+scored列）\n- skills/arch-ai-radar/scripts/run-daily.js（修改，加filterCodingNoise/filterTodayOnly/scoreItem/sent更新）\n- ~/Library/LaunchAgents/com.airilab.radar-api.plist（新建）",
-      "started_at": "2026-04-09T06:01:03.513Z",
-      "retryCount": 2,
+      "started_at": "2026-04-09T06:02:26.033Z",
+      "retryCount": 3,
       "lastError": "Unknown type: feature"
     },
     {
@@ -1735,8 +1735,8 @@
       "created_at": "2026-04-09T05:47:25.434Z",
       "updated_at": "2026-04-09T05:47:25.434Z",
       "spec": "## 目标\n为 arch-ai-radar 设计每日 HTML 报告的 UX spec，供 FE 实现。\n\n## 报告结构（信息层级）\n\n### Header\n- 标题：ARCH + AI RADAR Daily Brief\n- 日期时间（Asia/Shanghai）\n- 一句话 summary（今日抓取数量、starred 数量）\n\n### Section 1: ⭐ Starred Items（全部三个 track 中加星的，默认展开）\n- 每条：track badge（T1/T2/T3）+ 平台 icon + 标题 + 摘要（2行截断）+ 链接\n- 右侧：important 标记按钮（❤️/空心心）\n- 点击 ❤️ → 调用 POST /api/important，状态实时更新，无需刷新页面\n\n### Section 2: 📋 Track Summaries（三个 track 各一段叙述，默认展开）\n- Track 1: Airi Lab Brand\n- Track 2: Events（含倒计时）\n- Track 3: Tech（含竞品信号）\n\n### Section 3: 📁 Track Details（默认折叠，点击展开）\n- Track 1 明细 accordion\n- Track 2 明细 accordion  \n- Track 3 明细 accordion\n- 每条明细同样有 important ❤️ 按钮\n\n## 视觉风格\n- 暗色主题（#0f0f0f 背景，#1a1a2e card）\n- Track 色彩：T1=#4f8cff（蓝）, T2=#ff6b6b（红/紧急感）, T3=#43e97b（绿/科技感）\n- 字体：Inter / system-ui，中英文混排友好\n- 移动端友好（max-width 600px 单列）\n- 加星条目卡片有微发光边框效果\n\n## 交互规范\n- important ❤️ 按钮：点击立即 optimistic update（先变色），然后 fetch POST，失败时回滚\n- 折叠 accordion：smooth transition 200ms\n- API 离线时（localhost:7432 不通）：important 按钮 disabled + tooltip 服务未启动\n\n## 输出\n- 输出一份 UX spec markdown 文件：skills/arch-ai-radar/references/html-report-ux-spec.md\n- 包含：组件结构图（ASCII）、颜色/字体 token、交互状态说明、API 调用规范",
-      "started_at": "2026-04-09T06:01:03.519Z",
-      "retryCount": 2,
+      "started_at": "2026-04-09T06:02:26.063Z",
+      "retryCount": 3,
       "lastError": "Unknown type: feature"
     },
     {
