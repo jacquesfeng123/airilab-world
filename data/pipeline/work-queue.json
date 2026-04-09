@@ -1929,7 +1929,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "[Review摘要] 15时 bd+researcher review 建议",
         "content": "BD核心建议：建立enterprise CRM数据追踪+为v18功能批量生成BD commercial brief。Researcher核心建议：注册research_needed工作项类型至dispatcher，打通研究产出→下游agent消费链路。"
@@ -1938,8 +1938,9 @@
       "created_by": "agent-review-rotation",
       "source_review": "2026-04-09-15",
       "started_at": "2026-04-09T07:06:51.424Z",
-      "completed_at": "2026-04-09T07:06:56.541Z",
-      "result_summary": "[PM] ✅ Task created: task-mnr4w7fv\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr4w7fv\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr4w7fv/spec.md"
+      "completed_at": "2026-04-09T07:15:30.378Z",
+      "result_summary": "[PM] ✅ Task created: task-mnr4w7fv\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr4w7fv\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr4w7fv/spec.md",
+      "qa_approved_by": "qa-wq-ar-bd-researcher-mnr4tn4f"
     },
     {
       "id": "wq-si-tester-mnr4w77t",
@@ -2186,12 +2187,48 @@
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 15时 bd+researcher review 建议"
       },
       "created_at": "2026-04-09T07:06:56.542Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T07:15:29.833Z",
+      "completed_at": "2026-04-09T07:15:30.375Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-bd-researcher-mnr4tn4f",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-bd-researcher-mnr4tn4f",
+      "createdAt": "2026-04-09T07:15:29.832Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T07:15:29.833Z",
+      "completed_at": "2026-04-09T07:15:30.375Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-ar-bd-researcher-mnr4tn4f",
+      "title": "[CTO Review] wq-ar-bd-researcher-mnr4tn4f",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-bd-researcher-mnr4tn4f",
+      "createdAt": "2026-04-09T07:15:30.379Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
