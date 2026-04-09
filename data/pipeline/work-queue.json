@@ -1737,7 +1737,7 @@
       "priority": "high",
       "agentRole": "uiux",
       "title": "[Radar UX] Daily HTML report design spec for arch-ai-radar v2",
-      "status": "pending_cto",
+      "status": "done",
       "created_at": "2026-04-09T05:47:25.434Z",
       "updated_at": "2026-04-09T08:11:50.171Z",
       "spec": "## 目标\n为 arch-ai-radar 设计每日 HTML 报告的 UX spec，供 FE 实现。\n\n## 报告结构（信息层级）\n\n### Header\n- 标题：ARCH + AI RADAR Daily Brief\n- 日期时间（Asia/Shanghai）\n- 一句话 summary（今日抓取数量、starred 数量）\n\n### Section 1: ⭐ Starred Items（全部三个 track 中加星的，默认展开）\n- 每条：track badge（T1/T2/T3）+ 平台 icon + 标题 + 摘要（2行截断）+ 链接\n- 右侧：important 标记按钮（❤️/空心心）\n- 点击 ❤️ → 调用 POST /api/important，状态实时更新，无需刷新页面\n\n### Section 2: 📋 Track Summaries（三个 track 各一段叙述，默认展开）\n- Track 1: Airi Lab Brand\n- Track 2: Events（含倒计时）\n- Track 3: Tech（含竞品信号）\n\n### Section 3: 📁 Track Details（默认折叠，点击展开）\n- Track 1 明细 accordion\n- Track 2 明细 accordion  \n- Track 3 明细 accordion\n- 每条明细同样有 important ❤️ 按钮\n\n## 视觉风格\n- 暗色主题（#0f0f0f 背景，#1a1a2e card）\n- Track 色彩：T1=#4f8cff（蓝）, T2=#ff6b6b（红/紧急感）, T3=#43e97b（绿/科技感）\n- 字体：Inter / system-ui，中英文混排友好\n- 移动端友好（max-width 600px 单列）\n- 加星条目卡片有微发光边框效果\n\n## 交互规范\n- important ❤️ 按钮：点击立即 optimistic update（先变色），然后 fetch POST，失败时回滚\n- 折叠 accordion：smooth transition 200ms\n- API 离线时（localhost:7432 不通）：important 按钮 disabled + tooltip 服务未启动\n\n## 输出\n- 输出一份 UX spec markdown 文件：skills/arch-ai-radar/references/html-report-ux-spec.md\n- 包含：组件结构图（ASCII）、颜色/字体 token、交互状态说明、API 调用规范",
@@ -1746,9 +1746,10 @@
       "lastError": "Unknown type: feature",
       "failed_at": "2026-04-09T06:06:36.026Z",
       "assignee": "pm",
-      "completed_at": "2026-04-09T08:17:37.908Z",
+      "completed_at": "2026-04-09T08:22:02.312Z",
       "result_summary": "dispatched to pm via agent-inbox",
-      "qa_approved_by": "qa-wq-ux-radar-html-bdejb4"
+      "qa_approved_by": "qa-wq-ux-radar-html-bdejb4",
+      "cto_approved_by": "cto-wq-ux-radar-html-bdejb4"
     },
     {
       "id": "wq-fe-radar-html-hwq8is",
@@ -2293,7 +2294,7 @@
       "id": "cto-wq-ux-radar-html-bdejb4",
       "title": "[CTO Review] [Radar UX] Daily HTML report design spec for arch-ai-radar v2",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -2302,7 +2303,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T08:22:02.297Z",
+      "completed_at": "2026-04-09T08:22:02.305Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
