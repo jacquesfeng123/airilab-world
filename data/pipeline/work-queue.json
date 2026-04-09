@@ -1499,7 +1499,7 @@
     {
       "id": "wq-review-2026040910-summary",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T02:08:34.232Z",
@@ -1509,9 +1509,10 @@
         "content": "Frontend核心建议：修复dispatcher frontend_task路由缺失（wq-dispatcher-audit-handler-90n4t5 failed）+ 补全v18 browser-test用例。Backend核心建议：封装统一LLM client模块（retry+backoff），解决wq-be-llm-client-7yxas3h7 failed问题。两者共同阻塞：dispatcher路由不完整，建议DevOps优先修复。"
       },
       "started_at": "2026-04-09T02:15:31.201Z",
-      "completed_at": "2026-04-09T02:17:04.607Z",
+      "completed_at": "2026-04-09T02:20:07.855Z",
       "result_summary": "[PM] ✅ Task created: task-mnquhjm2\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnquhjm2\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnquhjm2/spec.md",
-      "qa_approved_by": "qa-wq-review-2026040910-summary"
+      "qa_approved_by": "qa-wq-review-2026040910-summary",
+      "cto_approved_by": "cto-wq-review-2026040910-summary"
     },
     {
       "id": "wq-mnquhoup",
@@ -1550,7 +1551,7 @@
       "id": "cto-wq-review-2026040910-summary",
       "title": "[CTO Review] wq-review-2026040910-summary",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -1559,7 +1560,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T02:20:07.849Z",
+      "completed_at": "2026-04-09T02:20:07.853Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
