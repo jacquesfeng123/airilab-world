@@ -392,6 +392,79 @@
       ],
       "createdAt": "2026-04-09T14:52:18.000Z",
       "sourceInbox": "wq-ar-1775743523156-pm-pm"
+    },
+    {
+      "id": "pm-scribe-routing-warn-1775755971006",
+      "title": "[PM] Spec: Scribe 路由不匹配时写 warn 日志",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "Scribe agent 在 input routing 不匹配时，除写 inbox 外还需记录 warn 日志供 PM 复查。Source: wq-ar-scribe-routing-1775752535827, wq-ar-scribe-1775754089118-1, wq-ar-scribe-1775754138756-1",
+      "tags": [
+        "pm",
+        "scribe",
+        "routing",
+        "warn-log"
+      ],
+      "createdAt": "2026-04-10T00:00:00.000Z",
+      "sourceInbox": "wq-ar-scribe-routing-1775752535827"
+    },
+    {
+      "id": "pm-fe-design-spec-gate-1775755971007",
+      "title": "[PM] Spec: FE design spec ready 前置检查，未到位时 auto-pending",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "FE 任务在 design spec 未 ready 时应 auto-pending，需在流程中增加前置检查 gate。Source: wq-ar-fe-design-spec-gate-1775752535827",
+      "tags": [
+        "pm",
+        "frontend",
+        "design-spec",
+        "gate"
+      ],
+      "createdAt": "2026-04-10T00:00:00.000Z",
+      "sourceInbox": "wq-ar-fe-design-spec-gate-1775752535827"
+    },
+    {
+      "id": "pm-be-api-contract-1775757719824",
+      "title": "[PM] Spec: 统一 API contract 文档路径至 docs/api/ 并纳入 CI 强制检查",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "所有 backend endpoint 完成后需强制写入 api-contracts/ 或 docs/api/ 目录，路径统一规范，并将该检查纳入 CI pipeline。合并自: wq-ar-backend-1775753254303-backend, wq-ar-backend-1775754089118-1-backend, wq-ar-backend-1775754138757-1-backend, wq-ar-be-api-contract-1775752535827-backend",
+      "tags": [
+        "pm",
+        "backend",
+        "api-contract",
+        "docs/api",
+        "ci"
+      ],
+      "createdAt": "2026-04-10T02:00:00.000Z",
+      "sourceInbox": "wq-ar-backend-1775753254303-backend,wq-ar-backend-1775754089118-1-backend,wq-ar-backend-1775754138757-1-backend,wq-ar-be-api-contract-1775752535827-backend"
+    },
+    {
+      "id": "pm-be-rollback-runbook-1775757719825",
+      "title": "[PM] Spec: 补充具体回滚脚本规范和 runbook",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "pm",
+      "assignee": "pm",
+      "description": "需补充具体回滚脚本规范和 runbook，包括触发条件、步骤、验证方式。合并自: wq-ar-backend-1775754089118-0-backend, wq-ar-backend-1775754138757-0-backend",
+      "tags": [
+        "pm",
+        "backend",
+        "rollback",
+        "runbook"
+      ],
+      "createdAt": "2026-04-10T02:00:00.000Z",
+      "sourceInbox": "wq-ar-backend-1775754089118-0-backend,wq-ar-backend-1775754138757-0-backend"
     }
   ],
   "queue": [
@@ -1174,108 +1247,126 @@
       "type": "agent_review",
       "title": "[Scribe] autoDream 追加前检查 MEMORY.md 去重",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.862Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.862Z",
+      "completed_at": "2026-04-09T17:30:52.142Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe-routing-1775752535827",
       "type": "agent_review",
       "title": "[Scribe] input routing 不匹配时写 warn 日志",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.885Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.885Z",
+      "completed_at": "2026-04-09T17:30:52.142Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops-rollback-1775752535827",
       "type": "agent_review",
       "title": "[DevOps] 标准化 rollback runbook + CI Friday 拦截",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.888Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.888Z",
+      "completed_at": "2026-04-09T17:30:52.143Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-be-api-contract-1775752535827",
       "type": "agent_review",
       "title": "[BE] endpoint完成后强制写入 api-contracts/ 目录",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.892Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.892Z",
+      "completed_at": "2026-04-09T17:30:52.143Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-be-error-handler-1775752535827",
       "type": "agent_review",
       "title": "[BE] 建立 centralized error handler + 统一重试策略",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.895Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.895Z",
+      "completed_at": "2026-04-09T17:30:52.143Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-fe-browser-test-ci-1775752535827",
       "type": "agent_review",
       "title": "[FE] browser-test 作为 CI 门控，明确强制执行",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.905Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.905Z",
+      "completed_at": "2026-04-09T17:30:52.143Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-fe-design-spec-gate-1775752535827",
       "type": "agent_review",
       "title": "[FE] design spec ready 前置检查，未到位时 auto-pending",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox",
-      "started_at": "2026-04-09T16:45:17.909Z"
+      "result_summary": "[watchdog] stale running task reset to failed after 46m",
+      "started_at": "2026-04-09T16:45:17.909Z",
+      "completed_at": "2026-04-09T17:30:52.143Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-frontend-1775753254303",
       "type": "agent_review",
       "title": "[Frontend] 补充 browser-test 失败重试策略与超时上限",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:47:34.303Z",
       "started_at": "2026-04-09T16:48:11.414Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:33:15.535Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-backend-1775753254303",
       "type": "agent_review",
       "title": "[Backend] 统一 API contract 文档路径并纳入 CI",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:47:34.303Z",
       "started_at": "2026-04-09T16:48:11.438Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:33:15.535Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-si-qa-mnrpnsst",
@@ -1297,240 +1388,562 @@
       "type": "agent_review",
       "title": "[PM] 增加 spec \"confirmed_by\" 字段，Jacques 或 main agent 显式确",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-09T17:01:29.130Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.262Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-pm-1775754089117-1",
       "type": "agent_review",
       "title": "[PM] 每次批准的 cto- 文件追加批准日志至 `data/audit/pm-approvals.md`",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-09T17:01:29.156Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.262Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-uiux-1775754089117-0",
       "type": "agent_review",
       "title": "[UIUX] 建立 `design-tokens.md` 集中管理颜色/间距/字体基准",
       "owner": "uiux",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-09T17:01:29.163Z",
       "assignee": "uiux",
-      "result_summary": "dispatched to uiux via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.262Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-uiux-1775754089117-1",
       "type": "agent_review",
       "title": "[UIUX] 每次更新时追加 changelog 区块，便于 dev/qa 对齐",
       "owner": "uiux",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-09T17:01:29.170Z",
       "assignee": "uiux",
-      "result_summary": "dispatched to uiux via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.263Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops-1775754089117-0",
       "type": "agent_review",
       "title": "[DEVOPS] 建议在 role-soul 中明确 key metrics（P99 延迟、GPU 利用率、错误率）的",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-09T17:01:29.197Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.263Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops-1775754089117-1",
       "type": "agent_review",
       "title": "[DEVOPS] 建议在 data/runbooks/ 创建标准 rollback checklist",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-09T17:01:29.205Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.263Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe-1775754089118-0",
       "type": "agent_review",
       "title": "[SCRIBE] 建议在追加前检查 MEMORY.md 现有条目哈希，防止重复写入",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
       "started_at": "2026-04-09T17:01:29.210Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.263Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe-1775754089118-1",
       "type": "agent_review",
       "title": "[SCRIBE] 对路由不匹配的输入，除写 inbox 外还应记录一条 warn 日志供 PM 复查",
       "owner": "pm",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
       "started_at": "2026-04-09T17:01:29.218Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.263Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-backend-1775754089118-0",
       "type": "agent_review",
       "title": "[BACKEND] 仅说\"rollback DB migrations\"，建议补充具体回滚脚本规范和 smoke tes",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
       "started_at": "2026-04-09T17:01:29.225Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.264Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-backend-1775754089118-1",
       "type": "agent_review",
       "title": "[BACKEND] API contract 写入位置未统一，建议指定固定路径（如 docs/api/）并纳入 CI 检",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
       "started_at": "2026-04-09T17:01:29.251Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.264Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-frontend-1775754089119-0",
       "type": "agent_review",
       "title": "[FRONTEND] 明确记录 browser-test 失败时的重试策略和超时上限，避免无限循环",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.119Z",
       "started_at": "2026-04-09T17:01:29.259Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.264Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-frontend-1775754089119-1",
       "type": "agent_review",
       "title": "[FRONTEND] Checklist 中增加\"暗色模式截图对比\"步骤，防止浅色组件意外遗漏",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.119Z",
       "started_at": "2026-04-09T17:01:29.268Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 47m",
+      "completed_at": "2026-04-09T17:48:16.264Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-qa-1775754250518",
       "type": "agent_review",
       "title": "[QA] 增加15分钟 state 监听超时 alert 机制",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
       "started_at": "2026-04-09T17:10:06.274Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.528Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-qa-1775754250519",
       "type": "agent_review",
       "title": "[QA] block 时同步推送单行失败摘要至 main",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
       "started_at": "2026-04-09T17:10:06.282Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.528Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-tester-1775754250520",
       "type": "agent_review",
       "title": "[Tester] 建立 golden-sets/ 标准目录并在 role-soul 中引用",
       "owner": "tester",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
       "started_at": "2026-04-09T17:10:06.291Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.529Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-tester-1775754250521",
       "type": "agent_review",
       "title": "[Tester] agent-browser preflight 检查，缺失时回退 puppeteer",
       "owner": "tester",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
       "started_at": "2026-04-09T17:10:06.312Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.529Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-qa-1775754606262-0",
       "type": "agent_review",
       "title": "[QA] 建议增加主动 timeout 检测（如15分钟无触发则 alert main）",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.262Z",
       "started_at": "2026-04-09T17:10:06.318Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.529Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-qa-1775754606262-1",
       "type": "agent_review",
       "title": "[QA] 建议 block 时同步发送单行失败摘要到 main，加快响应",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.262Z",
       "started_at": "2026-04-09T17:10:06.325Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.529Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-tester-1775754606263-0",
       "type": "agent_review",
       "title": "[TESTER] 建议在 base-soul 中增加明确的互斥规则文档",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.263Z",
       "started_at": "2026-04-09T17:10:06.329Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.529Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-tester-1775754606263-1",
       "type": "agent_review",
       "title": "[TESTER] 建议在 workspace/data/ 下建立 golden-sets/ 标准目录并在 role-s",
       "owner": "tester",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.263Z",
       "started_at": "2026-04-09T17:10:06.334Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T17:55:10.529Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
+    },
+    {
+      "id": "wq-si-dev-mnrrphmw",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-09T17:45:29.480Z",
+      "started_at": "2026-04-09T17:45:29.480Z",
+      "completed_at": "2026-04-09T17:45:29.480Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnrrphmw",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-09T17:45:29.480Z",
+      "started_at": "2026-04-09T17:45:29.480Z",
+      "completed_at": "2026-04-09T17:45:29.480Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnrrphmw",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-09T17:45:29.480Z",
+      "started_at": "2026-04-09T17:45:29.481Z",
+      "completed_at": "2026-04-09T17:45:29.481Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-scribe-mnrrphmx",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-09T17:45:29.481Z",
+      "started_at": "2026-04-09T17:45:29.497Z",
+      "completed_at": "2026-04-09T17:45:29.497Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-researcher-mnrrphne",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-09T17:45:29.498Z",
+      "started_at": "2026-04-09T17:45:29.498Z",
+      "completed_at": "2026-04-09T17:45:29.498Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-chief-designer-mnrrphne",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-09T17:45:29.498Z",
+      "started_at": "2026-04-09T17:45:29.498Z",
+      "completed_at": "2026-04-09T17:45:29.498Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-tech-arch-mnrrphne",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-09T17:45:29.498Z",
+      "started_at": "2026-04-09T17:45:29.498Z",
+      "completed_at": "2026-04-09T17:45:29.498Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnrrphne",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-09T17:45:29.498Z",
+      "started_at": "2026-04-09T17:45:29.498Z",
+      "completed_at": "2026-04-09T17:45:29.498Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnrrphnf",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-09T17:45:29.499Z",
+      "started_at": "2026-04-09T17:45:29.499Z",
+      "completed_at": "2026-04-09T17:45:29.499Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnrrphnf",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-09T17:45:29.499Z",
+      "started_at": "2026-04-09T17:45:29.499Z",
+      "completed_at": "2026-04-09T17:45:29.499Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnrrphnf",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-09T17:45:29.499Z",
+      "started_at": "2026-04-09T17:45:29.499Z",
+      "completed_at": "2026-04-09T17:45:29.499Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnrrphnf",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-09T17:45:29.499Z",
+      "started_at": "2026-04-09T17:45:29.499Z",
+      "completed_at": "2026-04-09T17:45:29.499Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnrrphnf",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-09T17:45:29.499Z",
+      "started_at": "2026-04-09T17:45:29.499Z",
+      "completed_at": "2026-04-09T17:45:29.499Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-trump-mnrrphnf",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-09T17:45:29.499Z",
+      "started_at": "2026-04-09T17:45:29.499Z",
+      "completed_at": "2026-04-09T17:45:29.499Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-ar-uiux-1775757847564",
+      "type": "agent_review",
+      "title": "[UIUX] 建立 components-catalog.md 定期维护设计令牌",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T18:04:07.564Z",
+      "started_at": "2026-04-09T18:10:11.188Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-17757578475641",
+      "type": "agent_review",
+      "title": "[PM] 增加明确触发关键词列表与澄清超时降级策略",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T18:04:07.564Z",
+      "started_at": "2026-04-09T18:10:11.216Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-1775758211174-0",
+      "type": "agent_review",
+      "title": "[PM] 建议 PM 在写 spec 前必须读取 devops/infra 约束文件，填充依赖信息",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T18:10:11.174Z",
+      "started_at": "2026-04-09T18:10:11.223Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-1775758211174-1",
+      "type": "agent_review",
+      "title": "[PM] 建议增加明确触发关键词列表（如\"排期\"、\"做\"、\"上线\"）",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T18:10:11.174Z",
+      "started_at": "2026-04-09T18:10:11.230Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775758211175-0",
+      "type": "agent_review",
+      "title": "[UIUX] 建议建立 components-catalog.md 定期更新设计令牌与组件状态",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T18:10:11.175Z",
+      "started_at": "2026-04-09T18:10:11.236Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775758211175-1",
+      "type": "agent_review",
+      "title": "[UIUX] 建议对 M 级任务保留轻量 UX checklist 检查",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T18:10:11.175Z",
+      "started_at": "2026-04-09T18:10:11.242Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
     }
   ]
 }
