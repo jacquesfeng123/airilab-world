@@ -1713,57 +1713,61 @@
     },
     {
       "id": "wq-be-radar-schema-nzebz3",
-      "type": "feature",
+      "type": "design_spec",
       "priority": "high",
       "agentRole": "backend",
       "title": "[Radar BE] DB schema + API server for arch-ai-radar v2",
-      "status": "failed",
+      "status": "pending_review",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T05:47:25.434Z",
+      "updated_at": "2026-04-09T08:11:50.140Z",
       "spec": "## 目标\n为 arch-ai-radar 的每日报告系统升级 BE 基础设施。\n\n## DB 改动 (skills/arch-ai-radar/scripts/db.js)\n在现有 items 表里加3列：\n- `starred` INTEGER DEFAULT 0  — 系统自动评分加星（0/1）\n- `sent` INTEGER DEFAULT 0  — 是否已推送（0/1），推送后置1\n- `important` INTEGER  — 用户手动标记（NULL=未标，1=重要），NULL default\n\n加 migration 逻辑：若列不存在则 ALTER TABLE 补加（向后兼容）。\n\n## 打星规则（starred 评分逻辑，写在 run-daily.js 的 scoreItem 函数）\n规则组合打分，满足任一高权重信号置1：\n- Airi Lab 直接提及 → 自动 ⭐\n- 来源为 ArchDaily / Dezeen / 官方账号 + 今日内容 → ⭐\n- 事件倒计时 ≤ 30 天 → ⭐\n- Twitter 点赞 > 500 或 XHS 收藏 > 100 → ⭐\n- Track1 内容默认加星\n\n## coding architecture 噪音过滤（filterCodingNoise 函数）\n判断逻辑：包含以下词 AND 不含建筑上下文词 → 过滤掉\n- 噪音词：DevOps, CI/CD, microservices, kubernetes, backend, frontend, SRE, codebase, ship code, production app, #DevOps, #SRE\n- 建筑上下文：建筑, architecture design, architectural, 设计, 空间, building, urban, parametric, generative design, AEC\n\n## only-today 过滤（filterTodayOnly 函数）\ngenerateReport 只处理 published_at = today 的条目，历史条目记录进DB但不出现在报告里。\n\n## API Server (scripts/api-server.mjs)\n轻量 Express server，端口 7432：\n- GET  /api/items/today  → 返回今天所有 items（含 starred/sent/important）\n- POST /api/important    → body: {id, important: true|false|null} → 更新 DB\n- GET  /api/health       → 200 OK\n\n启动方式：node scripts/api-server.mjs\nlaunchd plist 路径：~/Library/LaunchAgents/com.airilab.radar-api.plist（开机自启，端口7432）\n\n## sent 字段更新\npushWecom() 推送成功后，对所有推出去的 item 执行 UPDATE items SET sent=1 WHERE id IN (...)\n\n## 输出文件\n- skills/arch-ai-radar/scripts/api-server.mjs（新建）\n- skills/arch-ai-radar/scripts/db.js（修改，加migration+scored列）\n- skills/arch-ai-radar/scripts/run-daily.js（修改，加filterCodingNoise/filterTodayOnly/scoreItem/sent更新）\n- ~/Library/LaunchAgents/com.airilab.radar-api.plist（新建）",
-      "started_at": "2026-04-09T06:06:35.999Z",
+      "started_at": "2026-04-09T08:15:51.080Z",
       "retryCount": 3,
       "lastError": "Unknown type: feature",
       "failed_at": "2026-04-09T06:06:36.020Z",
-      "error": "Unknown type: feature"
+      "assignee": "pm",
+      "completed_at": "2026-04-09T08:15:51.083Z",
+      "result_summary": "dispatched to pm via agent-inbox"
     },
     {
       "id": "wq-ux-radar-html-bdejb4",
-      "type": "feature",
+      "type": "ux_review",
       "priority": "high",
       "agentRole": "uiux",
       "title": "[Radar UX] Daily HTML report design spec for arch-ai-radar v2",
-      "status": "failed",
+      "status": "pending_review",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T05:47:25.434Z",
+      "updated_at": "2026-04-09T08:11:50.171Z",
       "spec": "## 目标\n为 arch-ai-radar 设计每日 HTML 报告的 UX spec，供 FE 实现。\n\n## 报告结构（信息层级）\n\n### Header\n- 标题：ARCH + AI RADAR Daily Brief\n- 日期时间（Asia/Shanghai）\n- 一句话 summary（今日抓取数量、starred 数量）\n\n### Section 1: ⭐ Starred Items（全部三个 track 中加星的，默认展开）\n- 每条：track badge（T1/T2/T3）+ 平台 icon + 标题 + 摘要（2行截断）+ 链接\n- 右侧：important 标记按钮（❤️/空心心）\n- 点击 ❤️ → 调用 POST /api/important，状态实时更新，无需刷新页面\n\n### Section 2: 📋 Track Summaries（三个 track 各一段叙述，默认展开）\n- Track 1: Airi Lab Brand\n- Track 2: Events（含倒计时）\n- Track 3: Tech（含竞品信号）\n\n### Section 3: 📁 Track Details（默认折叠，点击展开）\n- Track 1 明细 accordion\n- Track 2 明细 accordion  \n- Track 3 明细 accordion\n- 每条明细同样有 important ❤️ 按钮\n\n## 视觉风格\n- 暗色主题（#0f0f0f 背景，#1a1a2e card）\n- Track 色彩：T1=#4f8cff（蓝）, T2=#ff6b6b（红/紧急感）, T3=#43e97b（绿/科技感）\n- 字体：Inter / system-ui，中英文混排友好\n- 移动端友好（max-width 600px 单列）\n- 加星条目卡片有微发光边框效果\n\n## 交互规范\n- important ❤️ 按钮：点击立即 optimistic update（先变色），然后 fetch POST，失败时回滚\n- 折叠 accordion：smooth transition 200ms\n- API 离线时（localhost:7432 不通）：important 按钮 disabled + tooltip 服务未启动\n\n## 输出\n- 输出一份 UX spec markdown 文件：skills/arch-ai-radar/references/html-report-ux-spec.md\n- 包含：组件结构图（ASCII）、颜色/字体 token、交互状态说明、API 调用规范",
-      "started_at": "2026-04-09T06:06:36.024Z",
+      "started_at": "2026-04-09T08:15:51.088Z",
       "retryCount": 3,
       "lastError": "Unknown type: feature",
       "failed_at": "2026-04-09T06:06:36.026Z",
-      "error": "Unknown type: feature"
+      "assignee": "pm",
+      "completed_at": "2026-04-09T08:15:51.093Z",
+      "result_summary": "dispatched to pm via agent-inbox"
     },
     {
       "id": "wq-fe-radar-html-hwq8is",
-      "type": "feature",
+      "type": "frontend_task",
       "priority": "high",
       "agentRole": "frontend",
       "title": "[Radar FE] Implement daily HTML report for arch-ai-radar v2",
       "status": "blocked",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T05:47:25.434Z",
+      "updated_at": "2026-04-09T08:11:50.171Z",
       "blockedBy": "wq-ux-radar-html + wq-be-radar-schema",
       "spec": "## 目标\n按照 UX spec（skills/arch-ai-radar/references/html-report-ux-spec.md）实现每日 HTML 报告。\n\n## 技术要求\n- 单文件 HTML（内嵌 CSS + JS，无外部依赖）\n- 数据来源：fetch GET http://localhost:7432/api/items/today\n- important 交互：fetch POST http://localhost:7432/api/important\n- API 离线降级：展示静态内容，important 按钮 disabled\n- 模板引擎：纯 vanilla JS DOM 构建，不用框架\n\n## 生成方式\nHTML 模板文件：skills/arch-ai-radar/templates/daily-report.html（含 {{PLACEHOLDER}} 变量）\nrun-daily.js 在推送完成后，用今日数据填充模板，输出到：\ndata/arch-ai-radar/reports/YYYY-MM-DD.html\n\n## WeCom 推送集成\nrun-daily.js 推送时第三段改为：\n「📄 [查看完整报告](http://localhost:7432/report/2026-04-09)」\n（api-server.mjs 同时 serve /report/:date 路由）\n\n## 输出文件\n- skills/arch-ai-radar/templates/daily-report.html\n- skills/arch-ai-radar/scripts/run-daily.js（修改推送第三段）"
     },
     {
       "id": "wq-qa-radar-v2-uzt3lk",
-      "type": "qa",
+      "type": "design_spec",
       "priority": "medium",
       "agentRole": "qa",
       "title": "[Radar QA] Test suite for arch-ai-radar v2 BE + FE",
       "status": "blocked",
       "created_at": "2026-04-09T05:47:25.434Z",
-      "updated_at": "2026-04-09T05:47:25.434Z",
+      "updated_at": "2026-04-09T08:11:50.171Z",
       "blockedBy": "wq-fe-radar-html + wq-be-radar-schema",
       "spec": "## 目标\n为 arch-ai-radar v2 的 BE API 和 FE HTML 报告写测试套件。\n\n## 测试项\n\n### BE API 测试（scripts/test-api.mjs）\n1. DB migration：starring/sent/important 列是否存在\n2. GET /api/items/today：返回今日 items，格式正确\n3. POST /api/important：更新成功，DB 值变更验证\n4. filterCodingNoise：DevOps/CI/CD 内容被过滤，建筑内容不被误杀\n5. filterTodayOnly：只返回今日 published_at 的条目\n6. scoreItem：Airi Lab 提及 → starred=1，普通条目验证\n\n### FE HTML 测试（用 agent-browser 或 playwright）\n1. 页面加载，三个 section 存在\n2. Starred section 正确展示加星条目\n3. accordion 折叠展开交互正常\n4. important ❤️ 按钮点击后，optimistic update 正确\n5. API 离线时，按钮 disabled 且有 tooltip\n6. A/B 测试：对比旧版 WeCom 纯文本报告 vs 新版 HTML，记录阅读体验差异\n\n## 输出\n- skills/arch-ai-radar/scripts/test-api.mjs\n- skills/arch-ai-radar/scripts/test-html.mjs（browser test）\n- data/arch-ai-radar/qa-report-v2.md（测试结果报告）"
     },
@@ -2233,6 +2237,36 @@
       "started_at": "2026-04-09T07:17:33.383Z",
       "completed_at": "2026-04-09T07:17:33.387Z",
       "result_summary": "dispatched to trump via agent-inbox"
+    },
+    {
+      "id": "wq-si-frontend-mnr5fnvq",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-09T07:21:59.462Z",
+      "started_at": "2026-04-09T07:21:59.462Z",
+      "completed_at": "2026-04-09T07:21:59.462Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-backend-mnr5fnvq",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-09T07:21:59.462Z",
+      "started_at": "2026-04-09T07:21:59.462Z",
+      "completed_at": "2026-04-09T07:21:59.462Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
@@ -2646,6 +2680,45 @@
         "dispatcher",
         "bug"
       ]
+    },
+    {
+      "id": "wq-ar-16h-ai-engineer-reviewer-summary",
+      "type": "agent_review",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "low",
+      "title": "[Review摘要] 16时 ai-engineer+reviewer review 建议",
+      "description": "AI Engineer: 建立 AI Eval 门控，v18 AI feature 进入 pending_review 前必须有 ai-eval.md（当前 feature 任务因 dispatcher Unknown type 全部阻塞）。Reviewer: 批量扫描并输出所有 pending_review 任务的 review.md，修复 Reviewer 未被触达的流程断层。",
+      "created_at": "2026-04-09T08:07:42.089Z",
+      "created_by": "agent-review-rotation",
+      "tags": [
+        "ai-engineer",
+        "reviewer",
+        "review",
+        "16h"
+      ]
+    },
+    {
+      "id": "wq-ar-16h-ai-eval-gate",
+      "type": "agent_review",
+      "status": "pending",
+      "owner": "pm",
+      "priority": "high",
+      "title": "建立 AI Eval 门控：v18 AI feature 进入 pending_review 前必须有 ai-eval.md",
+      "description": "来源: ai-engineer review 2026-04-09-16。当前 pipeline 无 AI eval 强制节点，AI 输出质量无保障。",
+      "created_at": "2026-04-09T08:07:42.089Z",
+      "created_by": "ai-engineer-review"
+    },
+    {
+      "id": "wq-ar-16h-reviewer-batch-scan",
+      "type": "agent_review",
+      "status": "pending",
+      "owner": "reviewer",
+      "priority": "high",
+      "title": "Reviewer 主动扫描：输出所有 pending_review 任务的 review.md（批量补欠）",
+      "description": "来源: reviewer review 2026-04-09-16。大量任务处于 pending_review 但 Reviewer 从未被通知，需主动扫描并补充 review.md。",
+      "created_at": "2026-04-09T08:07:42.089Z",
+      "created_by": "reviewer-review"
     }
   ]
 }
