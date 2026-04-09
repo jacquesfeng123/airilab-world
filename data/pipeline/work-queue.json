@@ -1499,7 +1499,7 @@
     {
       "id": "wq-review-2026040910-summary",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T02:08:34.232Z",
@@ -1509,20 +1509,57 @@
         "content": "Frontend核心建议：修复dispatcher frontend_task路由缺失（wq-dispatcher-audit-handler-90n4t5 failed）+ 补全v18 browser-test用例。Backend核心建议：封装统一LLM client模块（retry+backoff），解决wq-be-llm-client-7yxas3h7 failed问题。两者共同阻塞：dispatcher路由不完整，建议DevOps优先修复。"
       },
       "started_at": "2026-04-09T02:15:31.201Z",
-      "completed_at": "2026-04-09T02:15:38.257Z",
-      "result_summary": "[PM] ✅ Task created: task-mnquhjm2\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnquhjm2\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnquhjm2/spec.md"
+      "completed_at": "2026-04-09T02:17:04.607Z",
+      "result_summary": "[PM] ✅ Task created: task-mnquhjm2\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnquhjm2\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnquhjm2/spec.md",
+      "qa_approved_by": "qa-wq-review-2026040910-summary"
     },
     {
       "id": "wq-mnquhoup",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 10时 frontend+backend review 建议"
       },
       "created_at": "2026-04-09T02:15:38.258Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T02:17:03.997Z",
+      "completed_at": "2026-04-09T02:17:04.605Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-review-2026040910-summary",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-review-2026040910-summary",
+      "createdAt": "2026-04-09T02:17:03.996Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T02:17:03.997Z",
+      "completed_at": "2026-04-09T02:17:04.605Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-review-2026040910-summary",
+      "title": "[CTO Review] wq-review-2026040910-summary",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-review-2026040910-summary",
+      "createdAt": "2026-04-09T02:17:04.608Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
