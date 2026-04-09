@@ -5,7 +5,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending_cto",
+      "status": "done",
       "payload": {
         "title": "手动补写4个卡死 pm_spec_needed 任务的 spec.md（wq-ar-15-res, wq-review-2026040814-chief-designer, wq-review-2026040814-technical-architect, wq-ar-qa-tester-21-mnq28mz4）"
       },
@@ -13,16 +13,17 @@
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-22-pm",
       "started_at": "2026-04-09T03:05:11.821Z",
-      "completed_at": "2026-04-09T03:15:30.848Z",
+      "completed_at": "2026-04-09T03:17:09.097Z",
       "result_summary": "[PM] ✅ Task created: task-mnqw9fgu\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9fgu\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9fgu/spec.md",
-      "qa_approved_by": "qa-wq-pm-spec-backfill-mnq8tf6f"
+      "qa_approved_by": "qa-wq-pm-spec-backfill-mnq8tf6f",
+      "cto_approved_by": "cto-wq-pm-spec-backfill-mnq8tf6f"
     },
     {
       "id": "wq-pm-sla-spec-mnq8tf6f",
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "medium",
-      "status": "pending_cto",
+      "status": "done",
       "payload": {
         "title": "建立 PM 任务 SLA 规范：pm_spec_needed 24h 内必须有 spec.md，否则自动升级；制定 spec.md 模板标准版（Acceptance Criteria ≥ 3 条）"
       },
@@ -30,16 +31,17 @@
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-22-pm",
       "started_at": "2026-04-09T03:05:24.821Z",
-      "completed_at": "2026-04-09T03:15:30.854Z",
+      "completed_at": "2026-04-09T03:17:09.132Z",
       "result_summary": "[PM] ✅ Task created: task-mnqw9pkm\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9pkm\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9pkm/spec.md",
-      "qa_approved_by": "qa-wq-pm-sla-spec-mnq8tf6f"
+      "qa_approved_by": "qa-wq-pm-sla-spec-mnq8tf6f",
+      "cto_approved_by": "cto-wq-pm-sla-spec-mnq8tf6f"
     },
     {
       "id": "wq-pm-ux-gate-mnq8tf6f",
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending_cto",
+      "status": "done",
       "payload": {
         "title": "在 pipeline 规范中强制 spec.md 标注 UX Required: yes/no 字段，激活 UX 评审门控"
       },
@@ -47,9 +49,10 @@
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-22-uiux",
       "started_at": "2026-04-09T03:05:19.342Z",
-      "completed_at": "2026-04-09T03:15:30.850Z",
+      "completed_at": "2026-04-09T03:17:09.103Z",
       "result_summary": "[PM] ✅ Task created: task-mnqw9l9e\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9l9e\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9l9e/spec.md",
-      "qa_approved_by": "qa-wq-pm-ux-gate-mnq8tf6f"
+      "qa_approved_by": "qa-wq-pm-ux-gate-mnq8tf6f",
+      "cto_approved_by": "cto-wq-pm-ux-gate-mnq8tf6f"
     },
     {
       "id": "wq-devops-node-path-mnq8tf6f",
@@ -77,8 +80,8 @@
       "created_at": "2026-04-08T16:08:54.036Z",
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-23-scribe",
-      "started_at": "2026-04-09T03:15:30.882Z",
-      "retryCount": 2,
+      "started_at": "2026-04-09T03:17:09.087Z",
+      "retryCount": 3,
       "lastError": "Unknown type: audit"
     },
     {
@@ -93,8 +96,8 @@
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:15:30.885Z",
-      "retryCount": 2,
+      "started_at": "2026-04-09T03:17:09.104Z",
+      "retryCount": 3,
       "lastError": "Unknown type: backend_task"
     },
     {
@@ -109,8 +112,8 @@
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:15:30.887Z",
-      "retryCount": 2,
+      "started_at": "2026-04-09T03:17:09.106Z",
+      "retryCount": 3,
       "lastError": "Unknown type: backend_task"
     },
     {
@@ -125,8 +128,8 @@
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-frontend",
-      "started_at": "2026-04-09T03:15:30.889Z",
-      "retryCount": 2,
+      "started_at": "2026-04-09T03:17:09.108Z",
+      "retryCount": 3,
       "lastError": "Unknown type: frontend_task"
     },
     {
@@ -193,15 +196,16 @@
       "id": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
       "title": "[Review摘要] 03时 scribe+devops review 建议",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-08T19:04:52.557Z",
       "body": "Scribe: work-queue 中存在多个 title=null 条目，需 PM 补全 spec，同时验证 autoDream/learned-common 执行状态。DevOps: QA pipeline 持续 idle 告警缺失，node PATH CI 环境验证待确认，建议明确下次发版门控清单。",
       "started_at": "2026-04-09T03:05:41.626Z",
-      "completed_at": "2026-04-09T03:15:30.858Z",
+      "completed_at": "2026-04-09T03:17:09.147Z",
       "result_summary": "[PM] ✅ Task created: task-mnqwa2fy\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa2fy\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa2fy/spec.md",
-      "qa_approved_by": "qa-wq-pm-review-03h-scribe-devops-mnqf3q6l"
+      "qa_approved_by": "qa-wq-pm-review-03h-scribe-devops-mnqf3q6l",
+      "cto_approved_by": "cto-wq-pm-review-03h-scribe-devops-mnqf3q6l"
     },
     {
       "id": "wq-ar-05h-bd-researcher",
@@ -309,21 +313,22 @@
       "id": "wq-ar-08h-downstream-estimator",
       "title": "[Review摘要] 08时 downstream-liaison+estimator review 建议",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T00:15:33.577Z",
       "body": "downstream-liaison: 初始化顾问目录+联系人模板，建立 RFI SOP。estimator: 为 v18 pending 任务补充工时区间估算，建立估算字段标准。",
       "source": "agent-review-2026-04-09-08",
       "started_at": "2026-04-09T03:05:46.527Z",
-      "completed_at": "2026-04-09T03:15:30.860Z",
+      "completed_at": "2026-04-09T03:17:09.151Z",
       "result_summary": "[PM] ✅ Task created: task-mnqwa68m\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa68m\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa68m/spec.md",
-      "qa_approved_by": "qa-wq-ar-08h-downstream-estimator"
+      "qa_approved_by": "qa-wq-ar-08h-downstream-estimator",
+      "cto_approved_by": "cto-wq-ar-08h-downstream-estimator"
     },
     {
       "id": "wq-ar-09h-renderer-render-queue",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "medium",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -332,9 +337,10 @@
         "title": "建立渲染任务入队机制：项目进入出图阶段时自动创建 render_task"
       },
       "started_at": "2026-04-09T03:05:30.398Z",
-      "completed_at": "2026-04-09T03:15:30.855Z",
+      "completed_at": "2026-04-09T03:17:09.137Z",
       "result_summary": "[PM] ✅ Task created: task-mnqw9tsa\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9tsa\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9tsa/spec.md",
-      "qa_approved_by": "qa-wq-ar-09h-renderer-render-queue"
+      "qa_approved_by": "qa-wq-ar-09h-renderer-render-queue",
+      "cto_approved_by": "cto-wq-ar-09h-renderer-render-queue"
     },
     {
       "id": "wq-ar-09h-material-manager-init",
@@ -355,7 +361,7 @@
     {
       "id": "wq-ar-09h-estimator-material-api",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "medium",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -364,14 +370,15 @@
         "title": "建立 Estimator ↔ Material Manager 数据接口规范（材料单价查询 API）"
       },
       "started_at": "2026-04-09T03:05:35.943Z",
-      "completed_at": "2026-04-09T03:15:30.857Z",
+      "completed_at": "2026-04-09T03:17:09.141Z",
       "result_summary": "[PM] ✅ Task created: task-mnqw9y2y\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9y2y\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9y2y/spec.md",
-      "qa_approved_by": "qa-wq-ar-09h-estimator-material-api"
+      "qa_approved_by": "qa-wq-ar-09h-estimator-material-api",
+      "cto_approved_by": "cto-wq-ar-09h-estimator-material-api"
     },
     {
       "id": "wq-pm-review-09h-renderer-material",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -380,23 +387,25 @@
         "title": "[Review摘要] 09时 renderer+material-manager review 建议"
       },
       "started_at": "2026-04-09T03:05:50.883Z",
-      "completed_at": "2026-04-09T03:15:30.879Z",
+      "completed_at": "2026-04-09T03:17:09.155Z",
       "result_summary": "[PM] ✅ Task created: task-mnqwa9lv\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa9lv\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa9lv/spec.md",
-      "qa_approved_by": "qa-wq-pm-review-09h-renderer-material"
+      "qa_approved_by": "qa-wq-pm-review-09h-renderer-material",
+      "cto_approved_by": "cto-wq-pm-review-09h-renderer-material"
     },
     {
       "id": "review-11-qa-tester-summary",
       "title": "[Review摘要] 11时 qa+tester review 建议",
       "type": "pm_spec_needed",
-      "status": "pending_cto",
+      "status": "done",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T03:04:33.135Z",
       "content": "QA核心建议：Pipeline增加QA门控强制检查脚本（高优），防止pending_test阶段被跳过；建立AI feature eval+golden-set测试规范。Tester核心建议：建立AI pipeline eval框架选型方案（高优），v18 Sprint缺乏回归测试基线。两者均需DevOps配合CI集成。",
       "started_at": "2026-04-09T03:05:55.301Z",
-      "completed_at": "2026-04-09T03:15:30.881Z",
+      "completed_at": "2026-04-09T03:17:09.159Z",
       "result_summary": "[PM] ✅ Task created: task-mnqwad1m\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwad1m\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwad1m/spec.md",
-      "qa_approved_by": "qa-review-11-qa-tester-summary"
+      "qa_approved_by": "qa-review-11-qa-tester-summary",
+      "cto_approved_by": "cto-review-11-qa-tester-summary"
     },
     {
       "id": "review-11-qa-gate-script",
@@ -1010,7 +1019,7 @@
       "id": "cto-wq-pm-spec-backfill-mnq8tf6f",
       "title": "[CTO Review] wq-pm-spec-backfill-mnq8tf6f",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -1019,13 +1028,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.093Z",
+      "completed_at": "2026-04-09T03:17:09.096Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-pm-ux-gate-mnq8tf6f",
       "title": "[CTO Review] wq-pm-ux-gate-mnq8tf6f",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "trump",
       "assignee": "trump",
@@ -1034,13 +1046,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.100Z",
+      "completed_at": "2026-04-09T03:17:09.101Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-pm-sla-spec-mnq8tf6f",
       "title": "[CTO Review] wq-pm-sla-spec-mnq8tf6f",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -1049,13 +1064,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.113Z",
+      "completed_at": "2026-04-09T03:17:09.131Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-09h-renderer-render-queue",
       "title": "[CTO Review] wq-ar-09h-renderer-render-queue",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -1064,13 +1082,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.135Z",
+      "completed_at": "2026-04-09T03:17:09.137Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-09h-estimator-material-api",
       "title": "[CTO Review] wq-ar-09h-estimator-material-api",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -1079,13 +1100,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.140Z",
+      "completed_at": "2026-04-09T03:17:09.141Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-pm-review-03h-scribe-devops-mnqf3q6l",
       "title": "[CTO Review] [Review摘要] 03时 scribe+devops review 建议",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -1094,13 +1118,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.145Z",
+      "completed_at": "2026-04-09T03:17:09.146Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-ar-08h-downstream-estimator",
       "title": "[CTO Review] [Review摘要] 08时 downstream-liaison+estimator review 建议",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -1109,13 +1136,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.149Z",
+      "completed_at": "2026-04-09T03:17:09.150Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-wq-pm-review-09h-renderer-material",
       "title": "[CTO Review] wq-pm-review-09h-renderer-material",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -1124,13 +1154,16 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.153Z",
+      "completed_at": "2026-04-09T03:17:09.154Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     },
     {
       "id": "cto-review-11-qa-tester-summary",
       "title": "[CTO Review] [Review摘要] 11时 qa+tester review 建议",
       "type": "cto_review",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "trump",
       "assignee": "trump",
@@ -1139,7 +1172,10 @@
       "tags": [
         "cto_review",
         "auto-generated"
-      ]
+      ],
+      "started_at": "2026-04-09T03:17:09.157Z",
+      "completed_at": "2026-04-09T03:17:09.158Z",
+      "result_summary": "dispatched to trump via agent-inbox"
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
