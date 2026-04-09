@@ -1962,96 +1962,493 @@
       "type": "agent_review",
       "title": "[Scribe] 补充 meeting-minutes 路由规则及 media-pending 后续处理",
       "owner": "scribe",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
       "started_at": "2026-04-09T19:10:17.207Z",
       "assignee": "scribe",
-      "result_summary": "dispatched to scribe via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.377Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe2-1775761455052",
       "type": "agent_review",
       "title": "[Scribe] 增加日间轻量归档快照，防止 autoDream 遗漏",
       "owner": "scribe",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
       "started_at": "2026-04-09T19:10:17.216Z",
       "assignee": "scribe",
-      "result_summary": "dispatched to scribe via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.377Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops-1775761455053",
       "type": "agent_review",
       "title": "[DevOps] CI/CD 加入 Friday 部署自动断路器",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
       "started_at": "2026-04-09T19:10:17.224Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.377Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops2-1775761455054",
       "type": "agent_review",
       "title": "[DevOps] 补充 SLO 回滚阈值定义及 4h/24h 趋势告警",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
       "started_at": "2026-04-09T19:10:17.233Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.377Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops-1775761817180-0",
       "type": "agent_review",
       "title": "[DEVOPS] [在 CI/CD 管道中加入星期检测断路器，Friday 非 hotfix 自动 block]",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.180Z",
       "started_at": "2026-04-09T19:10:17.240Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.377Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-devops-1775761817180-1",
       "type": "agent_review",
       "title": "[DEVOPS] [补充 SLO 阈值（如错误率 >1%、P99 延迟 >2s），超阈值自动触发回滚流程]",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.180Z",
       "started_at": "2026-04-09T19:10:17.264Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.377Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe-1775761817181-0",
       "type": "agent_review",
       "title": "[SCRIBE] [补充 meeting-minutes 信号词，明确路由到 project notes + 通知相关",
       "owner": "scribe",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.181Z",
       "started_at": "2026-04-09T19:10:17.269Z",
       "assignee": "scribe",
-      "result_summary": "dispatched to scribe via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.378Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
     },
     {
       "id": "wq-ar-scribe-1775761817181-1",
       "type": "agent_review",
       "title": "[SCRIBE] [增加日间快照机制，或在 standup 后触发一次轻量归档]",
       "owner": "scribe",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.181Z",
       "started_at": "2026-04-09T19:10:17.275Z",
       "assignee": "scribe",
-      "result_summary": "dispatched to scribe via agent-inbox"
+      "result_summary": "[watchdog] stale running task reset to failed after 45m",
+      "completed_at": "2026-04-09T19:55:21.378Z",
+      "error": "execution timeout — subagent did not return within 45 minutes"
+    },
+    {
+      "id": "wq-si-frontend-mnrw3i2b",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-09T19:48:21.683Z",
+      "started_at": "2026-04-09T19:48:21.683Z",
+      "completed_at": "2026-04-09T19:48:21.683Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-backend-mnrw3i2b",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-09T19:48:21.683Z",
+      "started_at": "2026-04-09T19:48:21.683Z",
+      "completed_at": "2026-04-09T19:48:21.683Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-dev-mnrw3i2b",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-09T19:48:21.683Z",
+      "started_at": "2026-04-09T19:48:21.683Z",
+      "completed_at": "2026-04-09T19:48:21.683Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnrw3i2c",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-09T19:48:21.684Z",
+      "started_at": "2026-04-09T19:48:21.684Z",
+      "completed_at": "2026-04-09T19:48:21.684Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnrw3i2c",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-09T19:48:21.684Z",
+      "started_at": "2026-04-09T19:48:21.684Z",
+      "completed_at": "2026-04-09T19:48:21.684Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-researcher-mnrw3i2c",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-09T19:48:21.684Z",
+      "started_at": "2026-04-09T19:48:21.684Z",
+      "completed_at": "2026-04-09T19:48:21.684Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-chief-designer-mnrw3i2c",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-09T19:48:21.684Z",
+      "started_at": "2026-04-09T19:48:21.684Z",
+      "completed_at": "2026-04-09T19:48:21.684Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-tech-arch-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-project-pm-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-estimator-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-material-mgr-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-renderer-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-downstream-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-bd-mnrw3i2d",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-09T19:48:21.685Z",
+      "started_at": "2026-04-09T19:48:21.685Z",
+      "completed_at": "2026-04-09T19:48:21.685Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-trump-mnrw3i2e",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-09T19:48:21.686Z",
+      "started_at": "2026-04-09T19:48:21.686Z",
+      "completed_at": "2026-04-09T19:48:21.686Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-si-qa-mnrwchx5",
+      "type": "self_improve",
+      "assignee": "qa",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Run regression test suite"
+      },
+      "created_at": "2026-04-09T19:55:21.401Z",
+      "started_at": "2026-04-09T19:55:21.401Z",
+      "completed_at": "2026-04-09T19:55:21.401Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Run regression test suite"
+    },
+    {
+      "id": "wq-si-tester-mnrwchx5",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-09T19:55:21.401Z",
+      "started_at": "2026-04-09T19:55:21.401Z",
+      "completed_at": "2026-04-09T19:55:21.401Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-pm-mnryhpz8",
+      "type": "self_improve",
+      "assignee": "pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review and improve PM spec templates"
+      },
+      "created_at": "2026-04-09T20:55:24.356Z",
+      "started_at": "2026-04-09T20:55:24.356Z",
+      "completed_at": "2026-04-09T20:55:24.356Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review and improve PM spec templates"
+    },
+    {
+      "id": "wq-si-uiux-mnryhpz8",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-09T20:55:24.356Z",
+      "started_at": "2026-04-09T20:55:24.356Z",
+      "completed_at": "2026-04-09T20:55:24.356Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "wq-ar-bd-1775768662521",
+      "type": "agent_review",
+      "title": "[BD] 新增 bd-brief.md 标准模板与必填字段规范",
+      "owner": "bd",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:04:22.521Z",
+      "started_at": "2026-04-09T21:10:25.083Z",
+      "assignee": "bd",
+      "result_summary": "dispatched to bd via agent-inbox"
+    },
+    {
+      "id": "wq-ar-bd2-1775768662522",
+      "type": "agent_review",
+      "title": "[BD] 增加 spec 草稿阶段早期商业可行性快速扫描触发点",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:04:22.521Z",
+      "started_at": "2026-04-09T21:10:25.111Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-researcher-1775768662523",
+      "type": "agent_review",
+      "title": "[Researcher] 建立 data/research/index.md 统一研究产出索引",
+      "owner": "researcher",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:04:22.521Z",
+      "started_at": "2026-04-09T21:10:25.118Z",
+      "assignee": "researcher",
+      "result_summary": "dispatched to researcher via agent-inbox"
+    },
+    {
+      "id": "wq-ar-researcher2-1775768662524",
+      "type": "agent_review",
+      "title": "[Researcher] 增加最低可信结论输出规范，避免纯粹 gap report",
+      "owner": "researcher",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:04:22.521Z",
+      "started_at": "2026-04-09T21:10:25.125Z",
+      "assignee": "researcher",
+      "result_summary": "dispatched to researcher via agent-inbox"
+    },
+    {
+      "id": "wq-ar-bd-1775769025069-0",
+      "type": "agent_review",
+      "title": "[BD] 建议在 role-soul 中定义必填字段（市场规模/竞品定价/推荐价格区间/verdict）",
+      "owner": "bd",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:10:25.069Z",
+      "started_at": "2026-04-09T21:10:25.133Z",
+      "assignee": "bd",
+      "result_summary": "dispatched to bd via agent-inbox"
+    },
+    {
+      "id": "wq-ar-bd-1775769025069-1",
+      "type": "agent_review",
+      "title": "[BD] 建议在 spec 草稿阶段增加 \"商业可行性快速扫描\" 触发点",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:10:25.069Z",
+      "started_at": "2026-04-09T21:10:25.142Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-researcher-1775769025070-0",
+      "type": "agent_review",
+      "title": "[RESEARCHER] 建议维护 data/research/index.md 汇总所有研究产出",
+      "owner": "researcher",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:10:25.070Z",
+      "started_at": "2026-04-09T21:10:25.165Z",
+      "assignee": "researcher",
+      "result_summary": "dispatched to researcher via agent-inbox"
+    },
+    {
+      "id": "wq-ar-researcher-1775769025070-1",
+      "type": "agent_review",
+      "title": "[RESEARCHER] 建议在 bd 触发条件中增加读取 data/projects/[id]/notes.md 的步骤",
+      "owner": "bd",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-09T21:10:25.070Z",
+      "started_at": "2026-04-09T21:10:25.172Z",
+      "assignee": "bd",
+      "result_summary": "dispatched to bd via agent-inbox"
     }
   ]
 }
