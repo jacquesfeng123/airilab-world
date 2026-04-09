@@ -73,64 +73,72 @@
       "type": "audit",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "审计并清理 work-queue 中的虚假完成项（[virtual] 标记），重置为 pending 并补充具体 assignee"
       },
       "created_at": "2026-04-08T16:08:54.036Z",
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-23-scribe",
-      "started_at": "2026-04-09T03:17:09.087Z",
+      "started_at": "2026-04-09T03:21:03.818Z",
       "retryCount": 3,
-      "lastError": "Unknown type: audit"
+      "lastError": "Unknown type: audit",
+      "failed_at": "2026-04-09T03:21:03.837Z",
+      "error": "Unknown type: audit"
     },
     {
       "id": "wq-be-api-contract-5rfzydfp",
       "type": "backend_task",
       "assignee": "backend",
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "建立 API contract 输出规范，每个接口完成后写入 /data/pipeline/tasks/{id}/api-contract.md"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:17:09.104Z",
+      "started_at": "2026-04-09T03:21:03.840Z",
       "retryCount": 3,
-      "lastError": "Unknown type: backend_task"
+      "lastError": "Unknown type: backend_task",
+      "failed_at": "2026-04-09T03:21:03.844Z",
+      "error": "Unknown type: backend_task"
     },
     {
       "id": "wq-be-llm-client-7yxas3h7",
       "type": "backend_task",
       "assignee": "backend",
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "封装统一 LLM 调用 client 模块（retry + exponential backoff），替代散落在各脚本中的直接调用"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:17:09.106Z",
+      "started_at": "2026-04-09T03:21:03.845Z",
       "retryCount": 3,
-      "lastError": "Unknown type: backend_task"
+      "lastError": "Unknown type: backend_task",
+      "failed_at": "2026-04-09T03:21:03.847Z",
+      "error": "Unknown type: backend_task"
     },
     {
       "id": "wq-fe-browser-test-v18-z9pi2kn1",
       "type": "frontend_task",
       "assignee": "frontend",
       "priority": "medium",
-      "status": "pending",
+      "status": "failed",
       "payload": {
         "title": "补充 v18 Sprint1 相关页面 browser-test 用例（当前仅覆盖 v17）"
       },
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-frontend",
-      "started_at": "2026-04-09T03:17:09.108Z",
+      "started_at": "2026-04-09T03:21:03.848Z",
       "retryCount": 3,
-      "lastError": "Unknown type: frontend_task"
+      "lastError": "Unknown type: frontend_task",
+      "failed_at": "2026-04-09T03:21:03.850Z",
+      "error": "Unknown type: frontend_task"
     },
     {
       "id": "wq-ar-04h-chief-designer-tech-arch",
