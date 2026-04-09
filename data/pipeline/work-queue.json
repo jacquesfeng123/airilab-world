@@ -1213,7 +1213,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "low",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "[Review摘要] 13时 scribe+devops review 建议",
         "content": "Scribe核心建议：补充 work-queue 缺失类型路由映射（audit/backend_task/frontend_task）。DevOps核心建议：为 dispatcher 添加 dead-letter 机制，unknown type 任务隔离+WeCom告警。"
@@ -1222,38 +1222,41 @@
       "created_by": "agent-review-rotation",
       "source_review": "2026-04-09-13-scribe-devops",
       "started_at": "2026-04-09T05:06:23.002Z",
-      "completed_at": "2026-04-09T05:06:26.902Z",
-      "result_summary": "[PM] ✅ Task created: task-mnr0l9z8\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l9z8\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l9z8/spec.md"
+      "completed_at": "2026-04-09T05:17:22.192Z",
+      "result_summary": "[PM] ✅ Task created: task-mnr0l9z8\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l9z8\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l9z8/spec.md",
+      "qa_approved_by": "qa-wq-review-2026040913-scribe-devops-pc0v0t"
     },
     {
       "id": "wq-scribe-type-routing-dwjwxa",
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "补充 work-queue 支持 audit/backend_task/frontend_task 类型的路由映射"
       },
       "created_at": "2026-04-09T05:04:31.364Z",
       "created_by": "agent-review-rotation",
       "started_at": "2026-04-09T05:06:12.710Z",
-      "completed_at": "2026-04-09T05:06:17.710Z",
-      "result_summary": "[PM] ✅ Task created: task-mnr0l1zm\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l1zm\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l1zm/spec.md"
+      "completed_at": "2026-04-09T05:17:22.188Z",
+      "result_summary": "[PM] ✅ Task created: task-mnr0l1zm\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l1zm\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l1zm/spec.md",
+      "qa_approved_by": "qa-wq-scribe-type-routing-dwjwxa"
     },
     {
       "id": "wq-devops-dead-letter-fubekt",
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "为 dispatcher 添加 dead-letter 机制（unknown type 任务隔离+告警）"
       },
       "created_at": "2026-04-09T05:04:31.364Z",
       "created_by": "agent-review-rotation",
       "started_at": "2026-04-09T05:06:17.713Z",
-      "completed_at": "2026-04-09T05:06:22.999Z",
-      "result_summary": "[PM] ✅ Task created: task-mnr0l5uk\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l5uk\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l5uk/spec.md"
+      "completed_at": "2026-04-09T05:17:22.190Z",
+      "result_summary": "[PM] ✅ Task created: task-mnr0l5uk\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l5uk\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnr0l5uk/spec.md",
+      "qa_approved_by": "qa-wq-devops-dead-letter-fubekt"
     },
     {
       "id": "wq-si-tester-mnr0l1sx",
@@ -1500,51 +1503,57 @@
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "补充 work-queue 支持 audit/backend_task/frontend_task 类型的路由映射"
       },
       "created_at": "2026-04-09T05:06:17.710Z",
       "created_by": "dispatcher-auto",
-      "started_at": "2026-04-09T05:15:26.497Z",
+      "started_at": "2026-04-09T05:17:20.482Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs "
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs ",
+      "completed_at": "2026-04-09T05:17:21.380Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnr0l9qv",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "为 dispatcher 添加 dead-letter 机制（unknown type 任务隔离+告警）"
       },
       "created_at": "2026-04-09T05:06:22.999Z",
       "created_by": "dispatcher-auto",
-      "started_at": "2026-04-09T05:15:26.497Z",
+      "started_at": "2026-04-09T05:17:20.482Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs "
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs ",
+      "completed_at": "2026-04-09T05:17:22.186Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnr0lcra",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 13时 scribe+devops review 建议"
       },
       "created_at": "2026-04-09T05:06:26.902Z",
       "created_by": "dispatcher-auto",
-      "started_at": "2026-04-09T05:15:26.497Z",
+      "started_at": "2026-04-09T05:17:20.482Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs "
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs ",
+      "completed_at": "2026-04-09T05:17:22.186Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "qa-wq-review-2026040913-scribe-devops-pc0v0t",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "low",
       "owner": "qa",
       "assignee": "qa",
@@ -1554,15 +1563,17 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-09T05:15:26.497Z",
+      "started_at": "2026-04-09T05:17:20.482Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs "
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs ",
+      "completed_at": "2026-04-09T05:17:22.186Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "qa-wq-scribe-type-routing-dwjwxa",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "qa",
       "assignee": "qa",
@@ -1572,15 +1583,17 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-09T05:15:26.497Z",
+      "started_at": "2026-04-09T05:17:20.482Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs "
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs ",
+      "completed_at": "2026-04-09T05:17:21.380Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "qa-wq-devops-dead-letter-fubekt",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "pending",
+      "status": "done",
       "priority": "high",
       "owner": "qa",
       "assignee": "qa",
@@ -1590,9 +1603,71 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-09T05:15:26.497Z",
+      "started_at": "2026-04-09T05:17:20.482Z",
       "retryCount": 1,
-      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs "
+      "lastError": "Command failed: cd \"/Users/feng/.openclaw/workspace\" && \"/usr/local/Cellar/node@22/22.22.1_1/bin/node\" scripts/regression-test.mjs ",
+      "completed_at": "2026-04-09T05:17:21.380Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "wq-si-trump-mnr0zd1p",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-09T05:17:20.462Z",
+      "started_at": "2026-04-09T05:17:20.462Z",
+      "completed_at": "2026-04-09T05:17:20.462Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "cto-wq-scribe-type-routing-dwjwxa",
+      "title": "[CTO Review] wq-scribe-type-routing-dwjwxa",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-scribe-type-routing-dwjwxa",
+      "createdAt": "2026-04-09T05:17:22.189Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-devops-dead-letter-fubekt",
+      "title": "[CTO Review] wq-devops-dead-letter-fubekt",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-devops-dead-letter-fubekt",
+      "createdAt": "2026-04-09T05:17:22.191Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-review-2026040913-scribe-devops-pc0v0t",
+      "title": "[CTO Review] wq-review-2026040913-scribe-devops-pc0v0t",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-review-2026040913-scribe-devops-pc0v0t",
+      "createdAt": "2026-04-09T05:17:22.193Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
