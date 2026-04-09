@@ -5,7 +5,7 @@
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "手动补写4个卡死 pm_spec_needed 任务的 spec.md（wq-ar-15-res, wq-review-2026040814-chief-designer, wq-review-2026040814-technical-architect, wq-ar-qa-tester-21-mnq28mz4）"
       },
@@ -13,15 +13,16 @@
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-22-pm",
       "started_at": "2026-04-09T03:05:11.821Z",
-      "completed_at": "2026-04-09T03:05:19.339Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqw9fgu\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9fgu\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9fgu/spec.md"
+      "completed_at": "2026-04-09T03:15:30.848Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqw9fgu\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9fgu\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9fgu/spec.md",
+      "qa_approved_by": "qa-wq-pm-spec-backfill-mnq8tf6f"
     },
     {
       "id": "wq-pm-sla-spec-mnq8tf6f",
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "medium",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "建立 PM 任务 SLA 规范：pm_spec_needed 24h 内必须有 spec.md，否则自动升级；制定 spec.md 模板标准版（Acceptance Criteria ≥ 3 条）"
       },
@@ -29,15 +30,16 @@
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-22-pm",
       "started_at": "2026-04-09T03:05:24.821Z",
-      "completed_at": "2026-04-09T03:05:30.385Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqw9pkm\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9pkm\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9pkm/spec.md"
+      "completed_at": "2026-04-09T03:15:30.854Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqw9pkm\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9pkm\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9pkm/spec.md",
+      "qa_approved_by": "qa-wq-pm-sla-spec-mnq8tf6f"
     },
     {
       "id": "wq-pm-ux-gate-mnq8tf6f",
       "type": "pm_spec_needed",
       "assignee": "pm",
       "priority": "high",
-      "status": "pending_review",
+      "status": "pending_cto",
       "payload": {
         "title": "在 pipeline 规范中强制 spec.md 标注 UX Required: yes/no 字段，激活 UX 评审门控"
       },
@@ -45,8 +47,9 @@
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-22-uiux",
       "started_at": "2026-04-09T03:05:19.342Z",
-      "completed_at": "2026-04-09T03:05:24.499Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqw9l9e\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9l9e\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9l9e/spec.md"
+      "completed_at": "2026-04-09T03:15:30.850Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqw9l9e\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9l9e\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9l9e/spec.md",
+      "qa_approved_by": "qa-wq-pm-ux-gate-mnq8tf6f"
     },
     {
       "id": "wq-devops-node-path-mnq8tf6f",
@@ -74,8 +77,8 @@
       "created_at": "2026-04-08T16:08:54.036Z",
       "created_by": "pm-inbox-processor",
       "source_review": "2026-04-08-23-scribe",
-      "started_at": "2026-04-09T03:05:24.571Z",
-      "retryCount": 1,
+      "started_at": "2026-04-09T03:15:30.882Z",
+      "retryCount": 2,
       "lastError": "Unknown type: audit"
     },
     {
@@ -90,8 +93,8 @@
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:05:30.387Z",
-      "retryCount": 1,
+      "started_at": "2026-04-09T03:15:30.885Z",
+      "retryCount": 2,
       "lastError": "Unknown type: backend_task"
     },
     {
@@ -106,8 +109,8 @@
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-backend",
-      "started_at": "2026-04-09T03:05:30.388Z",
-      "retryCount": 1,
+      "started_at": "2026-04-09T03:15:30.887Z",
+      "retryCount": 2,
       "lastError": "Unknown type: backend_task"
     },
     {
@@ -122,8 +125,8 @@
       "created_at": "2026-04-09T00:29:00.000Z",
       "created_by": "pm-agent",
       "source_review": "2026-04-09-00-frontend",
-      "started_at": "2026-04-09T03:05:30.390Z",
-      "retryCount": 1,
+      "started_at": "2026-04-09T03:15:30.889Z",
+      "retryCount": 2,
       "lastError": "Unknown type: frontend_task"
     },
     {
@@ -190,14 +193,15 @@
       "id": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
       "title": "[Review摘要] 03时 scribe+devops review 建议",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-08T19:04:52.557Z",
       "body": "Scribe: work-queue 中存在多个 title=null 条目，需 PM 补全 spec，同时验证 autoDream/learned-common 执行状态。DevOps: QA pipeline 持续 idle 告警缺失，node PATH CI 环境验证待确认，建议明确下次发版门控清单。",
       "started_at": "2026-04-09T03:05:41.626Z",
-      "completed_at": "2026-04-09T03:05:46.522Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqwa2fy\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa2fy\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa2fy/spec.md"
+      "completed_at": "2026-04-09T03:15:30.858Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqwa2fy\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa2fy\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa2fy/spec.md",
+      "qa_approved_by": "qa-wq-pm-review-03h-scribe-devops-mnqf3q6l"
     },
     {
       "id": "wq-ar-05h-bd-researcher",
@@ -305,20 +309,21 @@
       "id": "wq-ar-08h-downstream-estimator",
       "title": "[Review摘要] 08时 downstream-liaison+estimator review 建议",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T00:15:33.577Z",
       "body": "downstream-liaison: 初始化顾问目录+联系人模板，建立 RFI SOP。estimator: 为 v18 pending 任务补充工时区间估算，建立估算字段标准。",
       "source": "agent-review-2026-04-09-08",
       "started_at": "2026-04-09T03:05:46.527Z",
-      "completed_at": "2026-04-09T03:05:50.882Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqwa68m\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa68m\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa68m/spec.md"
+      "completed_at": "2026-04-09T03:15:30.860Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqwa68m\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa68m\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa68m/spec.md",
+      "qa_approved_by": "qa-wq-ar-08h-downstream-estimator"
     },
     {
       "id": "wq-ar-09h-renderer-render-queue",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "medium",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -327,8 +332,9 @@
         "title": "建立渲染任务入队机制：项目进入出图阶段时自动创建 render_task"
       },
       "started_at": "2026-04-09T03:05:30.398Z",
-      "completed_at": "2026-04-09T03:05:35.937Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqw9tsa\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9tsa\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9tsa/spec.md"
+      "completed_at": "2026-04-09T03:15:30.855Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqw9tsa\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9tsa\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9tsa/spec.md",
+      "qa_approved_by": "qa-wq-ar-09h-renderer-render-queue"
     },
     {
       "id": "wq-ar-09h-material-manager-init",
@@ -349,7 +355,7 @@
     {
       "id": "wq-ar-09h-estimator-material-api",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "medium",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -358,13 +364,14 @@
         "title": "建立 Estimator ↔ Material Manager 数据接口规范（材料单价查询 API）"
       },
       "started_at": "2026-04-09T03:05:35.943Z",
-      "completed_at": "2026-04-09T03:05:41.604Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqw9y2y\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9y2y\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9y2y/spec.md"
+      "completed_at": "2026-04-09T03:15:30.857Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqw9y2y\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9y2y\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqw9y2y/spec.md",
+      "qa_approved_by": "qa-wq-ar-09h-estimator-material-api"
     },
     {
       "id": "wq-pm-review-09h-renderer-material",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T01:11:53.947Z",
@@ -373,21 +380,23 @@
         "title": "[Review摘要] 09时 renderer+material-manager review 建议"
       },
       "started_at": "2026-04-09T03:05:50.883Z",
-      "completed_at": "2026-04-09T03:05:55.299Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqwa9lv\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa9lv\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa9lv/spec.md"
+      "completed_at": "2026-04-09T03:15:30.879Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqwa9lv\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa9lv\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwa9lv/spec.md",
+      "qa_approved_by": "qa-wq-pm-review-09h-renderer-material"
     },
     {
       "id": "review-11-qa-tester-summary",
       "title": "[Review摘要] 11时 qa+tester review 建议",
       "type": "pm_spec_needed",
-      "status": "pending_review",
+      "status": "pending_cto",
       "owner": "pm",
       "priority": "low",
       "created_at": "2026-04-09T03:04:33.135Z",
       "content": "QA核心建议：Pipeline增加QA门控强制检查脚本（高优），防止pending_test阶段被跳过；建立AI feature eval+golden-set测试规范。Tester核心建议：建立AI pipeline eval框架选型方案（高优），v18 Sprint缺乏回归测试基线。两者均需DevOps配合CI集成。",
       "started_at": "2026-04-09T03:05:55.301Z",
-      "completed_at": "2026-04-09T03:06:01.153Z",
-      "result_summary": "[PM] ✅ Task created: task-mnqwad1m\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwad1m\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwad1m/spec.md"
+      "completed_at": "2026-04-09T03:15:30.881Z",
+      "result_summary": "[PM] ✅ Task created: task-mnqwad1m\n[PM]    Dir: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwad1m\n[PM]    Spec: /Users/feng/.openclaw/workspace/data/pipeline/tech/tasks/task-mnqwad1m/spec.md",
+      "qa_approved_by": "qa-review-11-qa-tester-summary"
     },
     {
       "id": "review-11-qa-gate-script",
@@ -413,7 +422,9 @@
       "started_at": "2026-04-09T03:05:24.702Z",
       "assignee": "tester",
       "completed_at": "2026-04-09T03:05:24.771Z",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "dispatched to tester via agent-inbox",
+      "approved_at": "2026-04-09T03:15:26.309Z",
+      "auto_approved": true
     },
     {
       "id": "review-11-qa-ai-spec",
@@ -703,108 +714,432 @@
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "手动补写4个卡死 pm_spec_needed 任务的 spec.md（wq-ar-15-res, wq-review-2026040814-chief-designer, wq-review-2026040814-technical-architect, wq-ar-qa-tester-21-mnq28mz4）"
       },
       "created_at": "2026-04-09T03:05:19.339Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:27.139Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqw9p2h",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "在 pipeline 规范中强制 spec.md 标注 UX Required: yes/no 字段，激活 UX 评审门控"
       },
       "created_at": "2026-04-09T03:05:24.521Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:27.932Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqw9tle",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "建立 PM 任务 SLA 规范：pm_spec_needed 24h 内必须有 spec.md，否则自动升级；制定 spec.md 模板标准版（Acceptance Criteria ≥ 3 条）"
       },
       "created_at": "2026-04-09T03:05:30.386Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:27.932Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqw9xvm",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "建立渲染任务入队机制：项目进入出图阶段时自动创建 render_task"
       },
       "created_at": "2026-04-09T03:05:35.938Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:27.932Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqwa290",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "建立 Estimator ↔ Material Manager 数据接口规范（材料单价查询 API）"
       },
       "created_at": "2026-04-09T03:05:41.604Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:28.648Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqwa61n",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 03时 scribe+devops review 建议"
       },
       "created_at": "2026-04-09T03:05:46.523Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:28.648Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqwa9eq",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 08时 downstream-liaison+estimator review 建议"
       },
       "created_at": "2026-04-09T03:05:50.882Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:28.648Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqwactf",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 09时 renderer+material-manager review 建议"
       },
       "created_at": "2026-04-09T03:05:55.299Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:29.397Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
     },
     {
       "id": "wq-mnqwahc1",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "pending",
+      "status": "done",
       "payload": {
         "task": "[Review摘要] 11时 qa+tester review 建议"
       },
       "created_at": "2026-04-09T03:06:01.153Z",
-      "created_by": "dispatcher-auto"
+      "created_by": "dispatcher-auto",
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:29.397Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-pm-spec-backfill-mnq8tf6f",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-pm-spec-backfill-mnq8tf6f",
+      "createdAt": "2026-04-09T03:15:26.310Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:27.139Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-pm-sla-spec-mnq8tf6f",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-pm-sla-spec-mnq8tf6f",
+      "createdAt": "2026-04-09T03:15:26.310Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:29.397Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-pm-ux-gate-mnq8tf6f",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "high",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-pm-ux-gate-mnq8tf6f",
+      "createdAt": "2026-04-09T03:15:26.310Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:27.139Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-pm-review-03h-scribe-devops-mnqf3q6l",
+      "title": "[QA] [Review摘要] 03时 scribe+devops review 建议",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
+      "createdAt": "2026-04-09T03:15:26.310Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:30.135Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-08h-downstream-estimator",
+      "title": "[QA] [Review摘要] 08时 downstream-liaison+estimator review 建议",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-08h-downstream-estimator",
+      "createdAt": "2026-04-09T03:15:26.310Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:30.847Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-09h-renderer-render-queue",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-09h-renderer-render-queue",
+      "createdAt": "2026-04-09T03:15:26.310Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:30.135Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-ar-09h-estimator-material-api",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "medium",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-ar-09h-estimator-material-api",
+      "createdAt": "2026-04-09T03:15:26.311Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:30.135Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-wq-pm-review-09h-renderer-material",
+      "title": "[QA] undefined",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "wq-pm-review-09h-renderer-material",
+      "createdAt": "2026-04-09T03:15:26.327Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:30.847Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "qa-review-11-qa-tester-summary",
+      "title": "[QA] [Review摘要] 11时 qa+tester review 建议",
+      "type": "qa_review_needed",
+      "status": "done",
+      "priority": "low",
+      "owner": "qa",
+      "assignee": "qa",
+      "refTask": "review-11-qa-tester-summary",
+      "createdAt": "2026-04-09T03:15:26.329Z",
+      "tags": [
+        "qa",
+        "auto-generated"
+      ],
+      "started_at": "2026-04-09T03:15:26.333Z",
+      "completed_at": "2026-04-09T03:15:30.847Z",
+      "result_summary": "=== Regression Test Results ===\n\n✅ PASS: All agents have SOUL.md and AGENTS.md\n✅ PASS: All agents have Error Recovery in AGENTS.md\n✅ PASS: registry.json is valid with required fields\n✅ PASS: All project dirs have state.json and brief.md\n✅ PASS: No agent SOUL.md over 200 lines\n✅ PASS: bd-brief-genera"
+    },
+    {
+      "id": "cto-wq-pm-spec-backfill-mnq8tf6f",
+      "title": "[CTO Review] wq-pm-spec-backfill-mnq8tf6f",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-pm-spec-backfill-mnq8tf6f",
+      "createdAt": "2026-04-09T03:15:30.849Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-pm-ux-gate-mnq8tf6f",
+      "title": "[CTO Review] wq-pm-ux-gate-mnq8tf6f",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "high",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-pm-ux-gate-mnq8tf6f",
+      "createdAt": "2026-04-09T03:15:30.851Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-pm-sla-spec-mnq8tf6f",
+      "title": "[CTO Review] wq-pm-sla-spec-mnq8tf6f",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-pm-sla-spec-mnq8tf6f",
+      "createdAt": "2026-04-09T03:15:30.854Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-09h-renderer-render-queue",
+      "title": "[CTO Review] wq-ar-09h-renderer-render-queue",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-09h-renderer-render-queue",
+      "createdAt": "2026-04-09T03:15:30.856Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-09h-estimator-material-api",
+      "title": "[CTO Review] wq-ar-09h-estimator-material-api",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "medium",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-09h-estimator-material-api",
+      "createdAt": "2026-04-09T03:15:30.857Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-pm-review-03h-scribe-devops-mnqf3q6l",
+      "title": "[CTO Review] [Review摘要] 03时 scribe+devops review 建议",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-pm-review-03h-scribe-devops-mnqf3q6l",
+      "createdAt": "2026-04-09T03:15:30.858Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-ar-08h-downstream-estimator",
+      "title": "[CTO Review] [Review摘要] 08时 downstream-liaison+estimator review 建议",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-ar-08h-downstream-estimator",
+      "createdAt": "2026-04-09T03:15:30.860Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-wq-pm-review-09h-renderer-material",
+      "title": "[CTO Review] wq-pm-review-09h-renderer-material",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "wq-pm-review-09h-renderer-material",
+      "createdAt": "2026-04-09T03:15:30.880Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
+    },
+    {
+      "id": "cto-review-11-qa-tester-summary",
+      "title": "[CTO Review] [Review摘要] 11时 qa+tester review 建议",
+      "type": "cto_review",
+      "status": "pending",
+      "priority": "low",
+      "owner": "trump",
+      "assignee": "trump",
+      "refTask": "review-11-qa-tester-summary",
+      "createdAt": "2026-04-09T03:15:30.881Z",
+      "tags": [
+        "cto_review",
+        "auto-generated"
+      ]
     }
   ],
   "last_archived_at": "2026-04-08T01:40:47.017Z",
