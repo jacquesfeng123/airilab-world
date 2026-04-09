@@ -146,6 +146,7 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
     <div id="qv-running"></div>
     <div id="qv-pending"></div>
     <div id="qv-review"></div>
+    <div id="qv-failed" style="margin-top:8px"></div>
     <div id="qv-active" style="margin-top:16px"></div>
     <div id="qv-done" style="margin-top:16px"></div>
   </div>
@@ -647,7 +648,7 @@ let dataSource = 'SIMULATED';
 let _firstLoad = true;
 async function fetchQueue() {
   try {
-    const resp = await fetch('/data/pipeline/work-queue.json', {cache:'no-store'});
+    const resp = await fetch('/data/pipeline/work-queue.json', {cache:'no-store', headers:{'ngrok-skip-browser-warning':'1'}});
     if (!resp.ok) throw new Error('non-ok');
     const data = await resp.json();
     lastGoodData = data; dataSource = 'LIVE';
@@ -1901,8 +1902,8 @@ function openSidePanel(agentId) {
       return;
     }
     const [soulRes, agentsRes] = await Promise.allSettled([
-      fetch('/agents/' + dirName + '/SOUL.md', {cache:'no-store'}),
-      fetch('/agents/' + dirName + '/AGENTS.md', {cache:'no-store'}),
+      fetch('/agents/' + dirName + '/SOUL.md', {cache:'no-store', headers:{'ngrok-skip-browser-warning':'1'}}),
+      fetch('/agents/' + dirName + '/AGENTS.md', {cache:'no-store', headers:{'ngrok-skip-browser-warning':'1'}}),
     ]);
     // Re-query elements after innerHTML was set
     const soulEl2 = document.getElementById('soul-viewer');
@@ -1929,7 +1930,7 @@ function openSidePanel(agentId) {
     }
     // Load work-queue tasks for this agent
     try {
-      const wqRes = await fetch('/data/pipeline/work-queue.json', {cache:'no-store'});
+      const wqRes = await fetch('/data/pipeline/work-queue.json', {cache:'no-store', headers:{'ngrok-skip-browser-warning':'1'}});
       if (wqRes.ok) {
         const wqData = await wqRes.json();
         const wq = wqData.queue || wqData;
@@ -2107,15 +2108,29 @@ function buildQueueView() {
     {id:'qv-running', label:'▶ Running', color:'#E84040', statuses:['running']},
     {id:'qv-pending', label:'◻ Pending', color:'#A8A8B8', statuses:['pending']},
     {id:'qv-review', label:'⏳ In Review', color:'#F5A623', statuses:['pending_review','pending_cto']},
+    {id:'qv-failed', label:'❌ Failed', color:'#FF4444', statuses:['failed']},
     {id:'qv-done', label:'✅ Done', color:'#52C41A', statuses:['done']},
   ];
   const prioColor = {critical:'#FF4444',high:'#FF8800',medium:'#FFCC00',low:'#666'};
-  const renderTaskRow = t => `<div style="display:flex;align-items:center;gap:8px;padding:5px 8px;margin-bottom:3px;background:#1A1A2E;border-radius:4px;font-size:9px;font-family:monospace">`
-    + `<span style="background:${prioColor[t.priority]||'#666'};width:8px;height:8px;border-radius:50%;flex-shrink:0"></span>`
-    + `<span style="color:#A0B0C0;width:120px;flex-shrink:0">${escHtml((t.id||'').slice(0,18))}</span>`
-    + `<span style="color:#E0E0E0;flex:1">${escHtml((t.title||'').slice(0,55))}</span>`
-    + `<span style="color:#6070A0;width:80px;text-align:right;flex-shrink:0">${escHtml((t.owner||'').slice(0,12))}</span>`
-    + `</div>`;
+  const typeColor = {agent_review:'#7060A0',pm_spec_needed:'#4080C0',frontend_task:'#20A060',backend_task:'#2080C0',design_spec:'#C06020',cto_review:'#C04040',qa_review_needed:'#80A020',devops_task:'#4060A0',audit:'#806040',self_improve:'#507050'};
+  const renderTaskRow = t => {
+    const hasError = t.error || t.lastError;
+    const summary = t.result_summary || t.notes || t.output || '';
+    const elapsed = t.started_at ? Math.round((Date.now() - new Date(t.started_at).getTime())/60000) + 'm' : '';
+    const completedAt = (t.completed_at||'').slice(11,16);
+    const typeLabel = (t.type||'').slice(0,14);
+    return `<div style="padding:5px 8px;margin-bottom:4px;background:#1A1A2E;border-radius:4px;border-left:3px solid ${prioColor[t.priority]||'#444'};cursor:pointer" title="${escHtml(summary.slice(0,200) || t.id)}">`
+      + `<div style="display:flex;align-items:center;gap:6px;font-size:9px;font-family:monospace">`
+      + `<span style="background:${typeColor[t.type]||'#444'};color:#fff;padding:1px 5px;border-radius:3px;font-size:8px;flex-shrink:0">${escHtml(typeLabel)}</span>`
+      + `<span style="color:#E0E0E0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml((t.title||t.id||'').slice(0,60))}</span>`
+      + `<span style="color:#6070A0;flex-shrink:0;font-size:8px">${escHtml((t.owner||'').slice(0,10))}</span>`
+      + (elapsed ? `<span style="color:#F5A623;flex-shrink:0;font-size:8px">${elapsed}</span>` : '')
+      + (completedAt ? `<span style="color:#52C41A;flex-shrink:0;font-size:8px">${completedAt}</span>` : '')
+      + `</div>`
+      + (hasError ? `<div style="color:#FF6060;font-size:8px;margin-top:3px;font-family:monospace">⚠ ${escHtml((t.error||t.lastError||'').slice(0,80))}</div>` : '')
+      + (summary && !hasError ? `<div style="color:#808898;font-size:8px;margin-top:2px;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(summary.slice(0,80))}</div>` : '')
+      + `</div>`;
+  };
   groups.forEach(g => {
     let items = all.filter(t => g.statuses.includes(t.status));
     const el = document.getElementById(g.id);
