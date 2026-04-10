@@ -5389,13 +5389,16 @@
       "type": "agent_review",
       "title": "[TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表",
       "owner": "technical-architect",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T06:04:17.741Z",
       "started_at": "2026-04-10T07:37:44.615Z",
       "assignee": "technical-architect",
-      "result_summary": "dispatched to technical-architect via agent-inbox",
-      "retryCount": 2
+      "result_summary": "创建 feasibility-precheck-mep-reference.md，包含预检触发规范及四类建筑MEP空间参考表",
+      "retryCount": 2,
+      "completed_at": "2026-04-10T08:00:22.703Z",
+      "approved_at": "2026-04-10T08:04:09.997Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-chief-designer-1775801221672-0",
@@ -5418,39 +5421,44 @@
       "type": "agent_review",
       "title": "[CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流",
       "owner": "chief-designer",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.672Z",
       "started_at": "2026-04-10T07:37:44.623Z",
       "assignee": "chief-designer",
-      "result_summary": "dispatched to chief-designer via agent-inbox",
-      "retryCount": 2
+      "result_summary": "role-soul.md 中已存在完整的标准化完成通知格式，验证确认已到位",
+      "retryCount": 2,
+      "completed_at": "2026-04-10T08:00:22.668Z",
+      "approved_at": "2026-04-10T08:04:09.997Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-technical-architect-1775801221673-0",
       "type": "agent_review",
       "title": "[TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡时）",
       "owner": "technical-architect",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.673Z",
       "started_at": "2026-04-10T07:37:44.628Z",
       "assignee": "technical-architect",
-      "result_summary": "dispatched to technical-architect via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[qa-fail] silent fail",
+      "retryCount": 2,
+      "completed_at": "2026-04-10T08:00:22.703Z"
     },
     {
       "id": "wq-ar-technical-architect-1775801221673-1",
       "type": "agent_review",
       "title": "[TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规",
       "owner": "technical-architect",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.673Z",
       "started_at": "2026-04-10T07:37:44.635Z",
       "assignee": "technical-architect",
-      "result_summary": "dispatched to technical-architect via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[qa-fail] silent fail",
+      "retryCount": 2,
+      "completed_at": "2026-04-10T08:00:22.703Z"
     },
     {
       "id": "wq-si-backend-mnsie41h",
@@ -5616,6 +5624,228 @@
       "completed_at": "2026-04-10T07:37:44.588Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnslz4cf",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-10T07:52:47.295Z",
+      "started_at": "2026-04-10T07:52:47.295Z",
+      "completed_at": "2026-04-10T07:52:47.295Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnslz4cf",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-10T07:52:47.295Z",
+      "started_at": "2026-04-10T07:52:47.295Z",
+      "completed_at": "2026-04-10T07:52:47.295Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-tech-arch-mnslz4cg",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-10T07:52:47.296Z",
+      "started_at": "2026-04-10T07:52:47.296Z",
+      "completed_at": "2026-04-10T07:52:47.296Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-material-mgr-mnslz4cg",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-10T07:52:47.296Z",
+      "started_at": "2026-04-10T07:52:47.296Z",
+      "completed_at": "2026-04-10T07:52:47.296Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-downstream-mnslz4cg",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-10T07:52:47.296Z",
+      "started_at": "2026-04-10T07:52:47.296Z",
+      "completed_at": "2026-04-10T07:52:47.296Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-backend-mnsmojsv",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-10T08:12:33.727Z",
+      "started_at": "2026-04-10T08:12:33.727Z",
+      "completed_at": "2026-04-10T08:12:33.727Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-dev-mnsn1q8t",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-10T08:22:48.605Z",
+      "started_at": "2026-04-10T08:22:48.605Z",
+      "completed_at": "2026-04-10T08:22:48.605Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-uiux-mnsn1q8u",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-10T08:22:48.606Z",
+      "started_at": "2026-04-10T08:22:48.606Z",
+      "completed_at": "2026-04-10T08:22:48.606Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "wq-si-frontend-mnsn7uwd",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-10T08:27:34.573Z",
+      "started_at": "2026-04-10T08:27:34.573Z",
+      "completed_at": "2026-04-10T08:27:34.573Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-pm-mnso4cbd",
+      "type": "self_improve",
+      "assignee": "pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review and improve PM spec templates"
+      },
+      "created_at": "2026-04-10T08:52:50.137Z",
+      "started_at": "2026-04-10T08:52:50.137Z",
+      "completed_at": "2026-04-10T08:52:50.137Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review and improve PM spec templates"
+    },
+    {
+      "id": "wq-ar-project-pm-1775811873204",
+      "type": "agent_review",
+      "title": "[PROJECT-PM] 增加每周里程碑状态主动推送规则",
+      "owner": "project-pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T09:04:33.204Z",
+      "started_at": "2026-04-10T09:07:50.850Z",
+      "assignee": "project-pm",
+      "result_summary": "dispatched to project-pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-dev-1775811873204",
+      "type": "agent_review",
+      "title": "[DEV] escalation超时后自动将task置为blocked状态",
+      "owner": "dev",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T09:04:33.204Z",
+      "started_at": "2026-04-10T09:07:50.859Z",
+      "assignee": "dev",
+      "result_summary": "dispatched to dev via agent-inbox"
+    },
+    {
+      "id": "wq-ar-dev-1775812070812-0",
+      "type": "agent_review",
+      "title": "[DEV] 超时后应自动将task状态置为blocked并通知main agent，避免任务挂起",
+      "owner": "dev",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T09:07:50.812Z",
+      "started_at": "2026-04-10T09:07:50.863Z",
+      "assignee": "dev",
+      "result_summary": "dispatched to dev via agent-inbox"
+    },
+    {
+      "id": "wq-ar-dev-1775812070812-1",
+      "type": "agent_review",
+      "title": "[DEV] 建议每次拉取队列时都执行优先级排序，保持一致性",
+      "owner": "dev",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T09:07:50.812Z",
+      "started_at": "2026-04-10T09:07:50.889Z",
+      "assignee": "dev",
+      "result_summary": "dispatched to dev via agent-inbox"
+    },
+    {
+      "id": "wq-ar-project-pm-1775812070812-0",
+      "type": "agent_review",
+      "title": "[PROJECT-PM] 增加\"每周里程碑状态主动推送\"规则，不依赖被问才汇报",
+      "owner": "project-pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T09:07:50.812Z",
+      "started_at": "2026-04-10T09:07:50.895Z",
+      "assignee": "project-pm",
+      "result_summary": "dispatched to project-pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-project-pm-1775812070812-1",
+      "type": "agent_review",
+      "title": "[PROJECT-PM] 每个阶段补充\"验收条件(Acceptance Criteria)\"字段，避免交付争议",
+      "owner": "project-pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T09:07:50.812Z",
+      "started_at": "2026-04-10T09:07:50.903Z",
+      "assignee": "project-pm",
+      "result_summary": "dispatched to project-pm via agent-inbox"
     }
   ],
   "entries": [
