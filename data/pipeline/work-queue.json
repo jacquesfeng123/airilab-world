@@ -1987,30 +1987,34 @@
       "type": "agent_review",
       "title": "[DEVOPS] 建议在 role-soul 中明确 key metrics（P99 延迟、GPU 利用率、错误率）的",
       "owner": "devops",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-10T02:41:53.941Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
+      "result_summary": "已在 agents/devops/role-soul.md 追加 key metrics 监控阈值表（P99延迟、GPU利用率、错误率、推理失败率等），含告警升级规则",
       "completed_at": null,
       "error": null,
-      "retryCount": 2
+      "retryCount": 2,
+      "approved_at": "2026-04-10T03:04:14.552Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-devops-1775754089117-1",
       "type": "agent_review",
       "title": "[DEVOPS] 建议在 data/runbooks/ 创建标准 rollback checklist",
       "owner": "devops",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
       "started_at": "2026-04-10T02:41:53.948Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
+      "result_summary": "已创建 data/runbooks/rollback-checklist.md，包含完整7步回滚SOP：触发条件、版本确认、WeCom通知、执行命令、验证、日志、复盘",
       "completed_at": null,
       "error": null,
-      "retryCount": 2
+      "retryCount": 2,
+      "approved_at": "2026-04-10T03:04:14.553Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-scribe-1775754089118-0",
@@ -2573,15 +2577,17 @@
       "type": "agent_review",
       "title": "[DevOps] CI/CD 加入 Friday 部署自动断路器",
       "owner": "devops",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
       "started_at": "2026-04-10T02:41:54.053Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
+      "result_summary": "已创建 data/runbooks/friday-deploy-circuit-breaker.md，定义周五14:00+到周日禁止非紧急deploy，含CI/CD脚本集成方案和豁免条件",
       "completed_at": null,
       "error": null,
-      "retryCount": 2
+      "retryCount": 2,
+      "approved_at": "2026-04-10T03:04:14.553Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-devops2-1775761455054",
@@ -4073,6 +4079,54 @@
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
       "retryCount": 1
+    },
+    {
+      "id": "wq-ar-qa-1775790254548-0",
+      "type": "agent_review",
+      "title": "[QA] 增加并发任务队列处理规则",
+      "owner": "qa",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T03:04:14.548Z",
+      "started_at": "2026-04-10T03:04:14.563Z",
+      "assignee": "qa",
+      "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "wq-ar-qa-1775790254548-1",
+      "type": "agent_review",
+      "title": "[QA] 文件名加入时间戳或task-id后缀",
+      "owner": "qa",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T03:04:14.548Z",
+      "started_at": "2026-04-10T03:04:14.568Z",
+      "assignee": "qa",
+      "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "wq-ar-tester-1775790254549-0",
+      "type": "agent_review",
+      "title": "[TESTER] 增加golden-set版本管理与更新触发条件说明",
+      "owner": "tester",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T03:04:14.549Z",
+      "started_at": "2026-04-10T03:04:14.571Z",
+      "assignee": "tester",
+      "result_summary": "dispatched to tester via agent-inbox"
+    },
+    {
+      "id": "wq-ar-tester-1775790254549-1",
+      "type": "agent_review",
+      "title": "[TESTER] 补充视觉回归基准图存储路径与diff阈值配置",
+      "owner": "tester",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T03:04:14.549Z",
+      "started_at": "2026-04-10T03:04:14.591Z",
+      "assignee": "tester",
+      "result_summary": "dispatched to tester via agent-inbox"
     }
   ]
 }
