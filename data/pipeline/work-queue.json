@@ -5780,12 +5780,15 @@
       "type": "agent_review",
       "title": "[PROJECT-PM] 增加每周里程碑状态主动推送规则",
       "owner": "project-pm",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T09:04:33.204Z",
       "started_at": "2026-04-10T09:07:50.850Z",
       "assignee": "project-pm",
-      "result_summary": "dispatched to project-pm via agent-inbox"
+      "result_summary": "PM agent applied improvement: spec updated",
+      "completed_at": "2026-04-10T09:28:37.104Z",
+      "approved_at": "2026-04-10T09:31:08.435Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-dev-1775811873204",
@@ -5795,9 +5798,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T09:04:33.204Z",
-      "started_at": "2026-04-10T09:07:50.859Z",
+      "started_at": "2026-04-10T09:52:55.301Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox"
+      "result_summary": "dispatched to dev via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-dev-1775812070812-0",
@@ -5807,9 +5811,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
-      "started_at": "2026-04-10T09:07:50.863Z",
+      "started_at": "2026-04-10T09:52:55.310Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox"
+      "result_summary": "dispatched to dev via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-dev-1775812070812-1",
@@ -5819,33 +5824,250 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
-      "started_at": "2026-04-10T09:07:50.889Z",
+      "started_at": "2026-04-10T09:52:55.332Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox"
+      "result_summary": "dispatched to dev via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-project-pm-1775812070812-0",
       "type": "agent_review",
       "title": "[PROJECT-PM] 增加\"每周里程碑状态主动推送\"规则，不依赖被问才汇报",
       "owner": "project-pm",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
       "started_at": "2026-04-10T09:07:50.895Z",
       "assignee": "project-pm",
-      "result_summary": "dispatched to project-pm via agent-inbox"
+      "result_summary": "PM agent applied improvement: spec updated",
+      "completed_at": "2026-04-10T09:28:37.105Z",
+      "approved_at": "2026-04-10T09:31:08.435Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-project-pm-1775812070812-1",
       "type": "agent_review",
       "title": "[PROJECT-PM] 每个阶段补充\"验收条件(Acceptance Criteria)\"字段，避免交付争议",
       "owner": "project-pm",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
       "started_at": "2026-04-10T09:07:50.903Z",
       "assignee": "project-pm",
-      "result_summary": "dispatched to project-pm via agent-inbox"
+      "result_summary": "PM agent applied improvement: spec updated",
+      "completed_at": "2026-04-10T09:28:37.105Z",
+      "approved_at": "2026-04-10T09:31:08.436Z",
+      "auto_approved": true
+    },
+    {
+      "id": "wq-si-trump-mnsotrum",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-10T09:12:36.670Z",
+      "started_at": "2026-04-10T09:12:36.670Z",
+      "completed_at": "2026-04-10T09:12:36.670Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-si-devops-mnsp705s",
+      "type": "self_improve",
+      "assignee": "devops",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review CI/CD pipeline health"
+      },
+      "created_at": "2026-04-10T09:22:53.968Z",
+      "started_at": "2026-04-10T09:22:53.968Z",
+      "completed_at": "2026-04-10T09:22:53.968Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review CI/CD pipeline health"
+    },
+    {
+      "id": "wq-si-scribe-mnsp705s",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-10T09:22:53.968Z",
+      "started_at": "2026-04-10T09:22:53.968Z",
+      "completed_at": "2026-04-10T09:22:53.968Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-qa-mnspd2wb",
+      "type": "self_improve",
+      "assignee": "qa",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Run regression test suite"
+      },
+      "created_at": "2026-04-10T09:27:37.451Z",
+      "started_at": "2026-04-10T09:27:37.451Z",
+      "completed_at": "2026-04-10T09:27:37.451Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Run regression test suite"
+    },
+    {
+      "id": "wq-si-tester-mnspd2wc",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-10T09:27:37.452Z",
+      "started_at": "2026-04-10T09:27:37.452Z",
+      "completed_at": "2026-04-10T09:27:37.452Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-researcher-mnspd2wd",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-10T09:27:37.453Z",
+      "started_at": "2026-04-10T09:27:37.453Z",
+      "completed_at": "2026-04-10T09:27:37.453Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-bd-mnspd2wd",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-10T09:27:37.453Z",
+      "started_at": "2026-04-10T09:27:37.453Z",
+      "completed_at": "2026-04-10T09:27:37.453Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-estimator-mnspqb2k",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-10T09:37:54.572Z",
+      "started_at": "2026-04-10T09:37:54.572Z",
+      "completed_at": "2026-04-10T09:37:54.572Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-renderer-mnspqb2k",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-10T09:37:54.572Z",
+      "started_at": "2026-04-10T09:37:54.572Z",
+      "completed_at": "2026-04-10T09:37:54.572Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnsq9m2f",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-10T09:52:55.287Z",
+      "started_at": "2026-04-10T09:52:55.287Z",
+      "completed_at": "2026-04-10T09:52:55.287Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnsq9m2g",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-10T09:52:55.288Z",
+      "started_at": "2026-04-10T09:52:55.288Z",
+      "completed_at": "2026-04-10T09:52:55.288Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-tech-arch-mnsq9m2g",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-10T09:52:55.288Z",
+      "started_at": "2026-04-10T09:52:55.288Z",
+      "completed_at": "2026-04-10T09:52:55.288Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-material-mgr-mnsq9m2h",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-10T09:52:55.289Z",
+      "started_at": "2026-04-10T09:52:55.289Z",
+      "completed_at": "2026-04-10T09:52:55.289Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-downstream-mnsq9m2h",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-10T09:52:55.289Z",
+      "started_at": "2026-04-10T09:52:55.289Z",
+      "completed_at": "2026-04-10T09:52:55.289Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
     }
   ],
   "entries": [
