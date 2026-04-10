@@ -1724,6 +1724,54 @@
       "source_file": "wq-ar-renderer2-1775819061857-renderer.json",
       "original_type": "agent_review",
       "created_at": "2026-04-10T12:06:07.820605Z"
+    },
+    {
+      "id": "wq-ar-backend-1775822662012",
+      "title": "[Backend] 指定API契约文档标准模板路径",
+      "type": "pm_spec_needed",
+      "status": "pm_spec_needed",
+      "priority": "low",
+      "created_at": "2026-04-10T12:34:00.000Z"
+    },
+    {
+      "id": "wq-ar-backend-1775822954121-0",
+      "title": "[BACKEND] 建议指定契约文档模板路径(如 data/api-contracts/{task-id}.md)",
+      "type": "pm_spec_needed",
+      "status": "pm_spec_needed",
+      "priority": "low",
+      "created_at": "2026-04-10T12:34:00.000Z"
+    },
+    {
+      "id": "wq-ar-backend-1775822954121-1",
+      "title": "[BACKEND] 建议补充background job失败的告警与重试规范",
+      "type": "pm_spec_needed",
+      "status": "pm_spec_needed",
+      "priority": "low",
+      "created_at": "2026-04-10T12:34:00.000Z"
+    },
+    {
+      "id": "wq-ar-frontend-1775822662011",
+      "title": "[Frontend] 添加browser-test失败的降级fallback流程",
+      "type": "pm_spec_needed",
+      "status": "pm_spec_needed",
+      "priority": "low",
+      "created_at": "2026-04-10T12:34:00.000Z"
+    },
+    {
+      "id": "wq-ar-frontend-1775822954122-0",
+      "title": "[FRONTEND] 建议添加\"测试失败时的最小化fallback流程\"，避免单点卡死",
+      "type": "pm_spec_needed",
+      "status": "pm_spec_needed",
+      "priority": "low",
+      "created_at": "2026-04-10T12:34:00.000Z"
+    },
+    {
+      "id": "wq-ar-frontend-1775822954122-1",
+      "title": "[FRONTEND] 建议集成 pixelmatch 或 Percy 自动化视觉diff",
+      "type": "pm_spec_needed",
+      "status": "pm_spec_needed",
+      "priority": "low",
+      "created_at": "2026-04-10T12:34:00.000Z"
     }
   ],
   "queue": [
@@ -6223,65 +6271,75 @@
       "type": "agent_review",
       "title": "[ESTIMATOR] 造价基准数据版本化与置信度量化标准",
       "owner": "estimator",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T10:05:07.633Z",
       "started_at": "2026-04-10T11:38:40.838Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T12:24:16.875Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-downstream-liaison-1775815678145-0",
       "type": "agent_review",
       "title": "[DOWNSTREAM-LIAISON] 补充明确的响应时限（如结构工程师48h、MEP 24h），避免\"escalate after 48h",
       "owner": "downstream-liaison",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.145Z",
       "started_at": "2026-04-10T11:38:40.844Z",
       "assignee": "downstream-liaison",
-      "result_summary": "dispatched to downstream-liaison via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T12:24:17.254Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-downstream-liaison-1775815678145-1",
       "type": "agent_review",
       "title": "[DOWNSTREAM-LIAISON] 建议引入联系人状态字段（active/inactive/pending），避免contacts.js",
       "owner": "downstream-liaison",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.145Z",
       "started_at": "2026-04-10T11:38:40.849Z",
       "assignee": "downstream-liaison",
-      "result_summary": "dispatched to downstream-liaison via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T12:24:17.482Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-estimator-1775815678146-0",
       "type": "agent_review",
       "title": "[ESTIMATOR] 建议增加benchmark数据的版本/更新日期字段，防止使用过期造价参考导致系统性偏差",
       "owner": "estimator",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.146Z",
       "started_at": "2026-04-10T11:38:40.853Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T12:24:17.754Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-estimator-1775815678146-1",
       "type": "agent_review",
       "title": "[ESTIMATOR] \"Low/Medium/High\"置信度需补充量化标准（如数据覆盖率、参考项目相似度评分），提升估算",
       "owner": "estimator",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.146Z",
       "started_at": "2026-04-10T11:38:40.877Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T12:24:18.016Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-si-backend-mnsqyzzp",
@@ -6351,10 +6409,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
-      "started_at": "2026-04-10T11:54:11.246Z",
+      "started_at": "2026-04-10T12:39:19.041Z",
       "assignee": "renderer",
       "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-renderer2-1775819061857",
@@ -6364,10 +6422,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
-      "started_at": "2026-04-10T11:54:11.254Z",
+      "started_at": "2026-04-10T12:39:19.068Z",
       "assignee": "renderer",
       "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-matmgr-1775819061858",
@@ -6377,10 +6435,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
-      "started_at": "2026-04-10T11:54:11.258Z",
+      "started_at": "2026-04-10T12:39:19.077Z",
       "assignee": "material-manager",
       "result_summary": "dispatched to material-manager via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-matmgr2-1775819061859",
@@ -6390,10 +6448,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
-      "started_at": "2026-04-10T11:54:11.279Z",
+      "started_at": "2026-04-10T12:39:19.081Z",
       "assignee": "material-manager",
       "result_summary": "dispatched to material-manager via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-material-manager-1775819315974-0",
@@ -6403,10 +6461,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.974Z",
-      "started_at": "2026-04-10T11:54:11.287Z",
+      "started_at": "2026-04-10T12:39:19.087Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-material-manager-1775819315974-1",
@@ -6416,10 +6474,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.974Z",
-      "started_at": "2026-04-10T11:54:11.299Z",
+      "started_at": "2026-04-10T12:39:19.100Z",
       "assignee": "material-manager",
       "result_summary": "dispatched to material-manager via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-renderer-1775819315975-0",
@@ -6429,10 +6487,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.975Z",
-      "started_at": "2026-04-10T11:54:11.303Z",
+      "started_at": "2026-04-10T12:39:19.121Z",
       "assignee": "renderer",
       "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-renderer-1775819315975-1",
@@ -6442,10 +6500,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.975Z",
-      "started_at": "2026-04-10T11:54:11.307Z",
+      "started_at": "2026-04-10T12:39:19.124Z",
       "assignee": "renderer",
       "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-trump-mnst49gj",
@@ -6644,12 +6702,15 @@
       "type": "agent_review",
       "title": "[Backend] 指定API契约文档标准模板路径",
       "owner": "backend",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T12:04:22.011Z",
       "started_at": "2026-04-10T12:09:14.169Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "Created API contract standard template at data/api-contracts/API-CONTRACT-TEMPLATE.md",
+      "completed_at": "2026-04-10T12:28:22.465Z",
+      "approved_at": "2026-04-10T12:30:58.089Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-backend-1775822954121-0",
@@ -6713,6 +6774,21 @@
       "completed_at": "2026-04-10T12:09:14.130Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-uiux-mnsvoajm",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-10T12:24:18.274Z",
+      "started_at": "2026-04-10T12:24:18.274Z",
+      "completed_at": "2026-04-10T12:24:18.274Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
     }
   ],
   "entries": [
