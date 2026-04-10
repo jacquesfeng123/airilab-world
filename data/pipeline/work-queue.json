@@ -579,9 +579,10 @@
       "priority": "low",
       "agentRole": "bd",
       "status": "pending_review",
-      "result_summary": "创建了 agents/bd/templates/bd-brief.md 标准模板，包含8个必填章节：功能概述、目标客群、收入估算、竞争定位、定价模型、GTM策略、风险标记、依赖事项。",
+      "result_summary": "已创建 docs/bd-brief-template.md，含必填字段清单和填写规范",
       "dispatched_at": "2026-04-09T21:10:25.085Z",
-      "completed_at": "2026-04-10T00:07:00.000Z"
+      "completed_at": "2026-04-10T00:07:00.000Z",
+      "updated_at": "2026-04-10T01:59:22.291Z"
     },
     {
       "id": "pm-1775781604458-0",
@@ -1799,15 +1800,18 @@
       "type": "agent_review",
       "title": "[BE] endpoint完成后强制写入 api-contracts/ 目录",
       "owner": "backend",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
+      "result_summary": "已创建 api-contracts/README.md，规范 endpoint 完成后强制写入 api-contracts/ 目录，OpenAPI 3.0 格式",
       "started_at": "2026-04-10T01:56:44.707Z",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 1,
+      "updated_at": "2026-04-10T01:59:52.123Z",
+      "approved_at": "2026-04-10T02:01:51.002Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-be-error-handler-1775752535827",
@@ -2034,30 +2038,36 @@
       "type": "agent_review",
       "title": "[BACKEND] 仅说\"rollback DB migrations\"，建议补充具体回滚脚本规范和 smoke tes",
       "owner": "backend",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
       "started_at": "2026-04-10T01:56:44.766Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
+      "result_summary": "已确认 DB Migration 回滚脚本规范已存在于 backend/role-soul.md（含命名规范、IRREVERSIBLE标注、CI检查）",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 1,
+      "updated_at": "2026-04-10T01:59:52.121Z",
+      "approved_at": "2026-04-10T02:01:51.002Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-backend-1775754089118-1",
       "type": "agent_review",
       "title": "[BACKEND] API contract 写入位置未统一，建议指定固定路径（如 docs/api/）并纳入 CI 检",
       "owner": "backend",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
       "started_at": "2026-04-10T01:56:44.788Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
+      "result_summary": "已统一 API contract 路径规范至 docs/api/，创建 docs/api/README.md 说明",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 1,
+      "updated_at": "2026-04-10T01:59:52.123Z",
+      "approved_at": "2026-04-10T02:01:51.002Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-frontend-1775754089119-0",
@@ -2927,15 +2937,18 @@
       "type": "agent_review",
       "title": "[BD] 新增 bd-brief.md 标准模板与必填字段规范",
       "owner": "bd",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T21:04:22.521Z",
       "started_at": "2026-04-10T01:56:44.941Z",
       "assignee": "bd",
-      "result_summary": "dispatched to bd via agent-inbox",
+      "result_summary": "已创建 docs/bd-brief-template.md，含必填字段清单和填写规范",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 1,
+      "updated_at": "2026-04-10T01:59:52.123Z",
+      "approved_at": "2026-04-10T02:01:51.002Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-bd2-1775768662522",
@@ -2989,15 +3002,18 @@
       "type": "agent_review",
       "title": "[BD] 建议在 role-soul 中定义必填字段（市场规模/竞品定价/推荐价格区间/verdict）",
       "owner": "bd",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-09T21:10:25.069Z",
       "started_at": "2026-04-10T01:56:44.955Z",
       "assignee": "bd",
-      "result_summary": "dispatched to bd via agent-inbox",
+      "result_summary": "已在 agents/bd/role-soul.md 添加定价分析必填字段（market_size/competitor_pricing/recommended_price_range/verdict）",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 1,
+      "updated_at": "2026-04-10T01:59:52.123Z",
+      "approved_at": "2026-04-10T02:01:51.002Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-bd-1775769025069-1",
@@ -3794,9 +3810,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:13:16.798Z",
-      "started_at": "2026-04-10T01:15:46.654Z",
+      "started_at": "2026-04-10T02:01:51.011Z",
       "assignee": "renderer",
-      "result_summary": "dispatched to renderer via agent-inbox"
+      "result_summary": "dispatched to renderer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-renderer2-1775783596799",
@@ -3806,9 +3823,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:13:16.798Z",
-      "started_at": "2026-04-10T01:15:46.659Z",
+      "started_at": "2026-04-10T02:01:51.034Z",
       "assignee": "chief-designer",
-      "result_summary": "dispatched to chief-designer via agent-inbox"
+      "result_summary": "dispatched to chief-designer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-matmgr-1775783596798",
@@ -3818,9 +3836,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:13:16.798Z",
-      "started_at": "2026-04-10T01:15:46.681Z",
+      "started_at": "2026-04-10T02:01:51.039Z",
       "assignee": "material-manager",
-      "result_summary": "dispatched to material-manager via agent-inbox"
+      "result_summary": "dispatched to material-manager via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-matmgr2-1775783596799",
@@ -3830,9 +3849,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:13:16.798Z",
-      "started_at": "2026-04-10T01:15:46.688Z",
+      "started_at": "2026-04-10T02:01:51.042Z",
       "assignee": "material-manager",
-      "result_summary": "dispatched to material-manager via agent-inbox"
+      "result_summary": "dispatched to material-manager via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-material-manager-1775783746634-0",
@@ -3842,9 +3862,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:15:46.634Z",
-      "started_at": "2026-04-10T01:15:46.692Z",
+      "started_at": "2026-04-10T02:01:51.047Z",
       "assignee": "material-manager",
-      "result_summary": "dispatched to material-manager via agent-inbox"
+      "result_summary": "dispatched to material-manager via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-material-manager-1775783746634-1",
@@ -3854,9 +3875,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:15:46.634Z",
-      "started_at": "2026-04-10T01:15:46.699Z",
+      "started_at": "2026-04-10T02:01:51.059Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox"
+      "result_summary": "dispatched to estimator via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-renderer-1775783746635-0",
@@ -3866,9 +3888,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:15:46.635Z",
-      "started_at": "2026-04-10T01:15:46.703Z",
+      "started_at": "2026-04-10T02:01:51.062Z",
       "assignee": "chief-designer",
-      "result_summary": "dispatched to chief-designer via agent-inbox"
+      "result_summary": "dispatched to chief-designer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-renderer-1775783746635-1",
@@ -3878,9 +3901,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T01:15:46.635Z",
-      "started_at": "2026-04-10T01:15:46.706Z",
+      "started_at": "2026-04-10T02:01:51.083Z",
       "assignee": "renderer",
-      "result_summary": "dispatched to renderer via agent-inbox"
+      "result_summary": "dispatched to renderer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-si-ai-engineer-mns8yvta",
