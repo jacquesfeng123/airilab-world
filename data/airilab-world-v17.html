@@ -45,6 +45,16 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
 .card-badge{display:inline-block;padding:1px 5px;border-radius:6px;font-size:7px;font-weight:bold;font-family:'Press Start 2P','Courier New',monospace;margin-left:3px;vertical-align:middle}
 .card-badge.done-badge{background:#27AE60;color:#fff}
 .card-badge.fail-badge{background:#E74C3C;color:#fff}
+.task-chip{background:#1A1A2E;border:1px solid #303048;color:#889090;padding:3px 8px;cursor:pointer;font-size:7px;font-family:'Press Start 2P',monospace;border-radius:3px}
+.task-chip.active{background:#2A3A5A;border-color:#4A90D9;color:#4A90D9}
+.task-card{background:#1A1A28;border:1px solid #303048;padding:10px;margin-bottom:6px;border-radius:4px;cursor:pointer}
+.task-card:hover{background:#1E2030}
+.task-card.t-running{border-left:3px solid #E84040}
+.task-card.t-queueing{border-left:3px solid #F5A623}
+.task-card.t-success{border-left:3px solid #52C41A}
+.task-card.t-failed{border-left:3px solid #E74C3C}
+.job-row{display:flex;gap:6px;align-items:center;padding:3px 0;font-size:7px;font-family:monospace;color:#A8A8B8}
+.job-status{padding:1px 5px;border-radius:2px;font-size:7px;font-family:'Press Start 2P',monospace}
 .card-task-name{font-size:7px;color:#C8D8E8;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'Press Start 2P','Courier New',monospace}
 .card-blocked{color:#E04040;font-size:10px;margin-top:3px}
 .card-collab{color:#4080E0;font-size:10px;margin-top:2px}
@@ -126,6 +136,7 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
     <button class="tab active" id="tab-office" data-tab="office">🏢 Office View</button>
     <button class="tab" id="tab-cards" data-tab="cards">👥 Agent Cards</button>
     <button class="tab" id="tab-queue" data-tab="queue">📋 Work Queue</button>
+    <button class="tab" id="tab-tasks" data-tab="tasks">🗂 Tasks</button>
   </div>
   <div id="header-right">
     <span id="status-stats" style="font-size:8px;color:#A8A8B8;font-family:'Press Start 2P','Courier New',monospace;letter-spacing:0.05em">BUSY: 0 | IDLE: 0 | BLOCKED: 0</span>
@@ -149,9 +160,14 @@ body{background:#0A0A14;font-family:'Press Start 2P','Courier New',monospace;ove
     <div id="qv-failed" style="margin-top:8px"></div>
     <div id="qv-active" style="margin-top:16px"></div>
     <div id="qv-done" style="margin-top:16px"></div>
-  </div>
 </div>
-<div id="side-panel">
+<div id="tasks-view" style="display:none;width:100%;height:calc(100vh - 60px);overflow-y:auto;background:#0A0A14;padding:16px;box-sizing:border-box">
+  <div style="max-width:900px;margin:0 auto">
+    <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap" id="task-filter-chips"></div>
+    <div id="tasks-concurrency" style="font-size:8px;color:#A878E8;font-family:'Press Start 2P',monospace;margin-bottom:10px">JOBS: 0/3</div>
+    <div id="tasks-list"></div>
+  </div>
+</div>>
   <div id="side-panel-header">
     <h2 id="side-panel-title">Agent Detail</h2>
     <button id="side-close">✕</button>
@@ -2086,6 +2102,7 @@ document.querySelectorAll('.tab').forEach(btn => {
     document.getElementById('office-wrap').style.display = 'none';
     document.getElementById('cards-view').style.display = 'none';
     document.getElementById('queue-view').style.display = 'none';
+    document.getElementById('tasks-view').style.display = 'none';
     if (tab === 'office') {
       document.getElementById('office-wrap').style.display = 'block';
       currentTab = 'office';
@@ -2096,6 +2113,9 @@ document.querySelectorAll('.tab').forEach(btn => {
     } else if (tab === 'queue') {
       document.getElementById('queue-view').style.display = 'block';
       currentTab = 'queue'; buildQueueView();
+    } else if (tab === 'tasks') {
+      document.getElementById('tasks-view').style.display = 'block';
+      currentTab = 'tasks'; buildTasksView();
     }
   });
 });
@@ -2158,6 +2178,85 @@ function buildQueueView() {
         + items.map(renderTaskRow).join('');
     }
   });
+}
+
+// ==================== TASKS VIEW ====================
+let tasksData = null;
+async function fetchTasksData() {
+  try {
+    const r = await fetch('/data/pipeline/tasks.json?t=' + Date.now());
+    if (r.ok) tasksData = await r.json();
+  } catch {}
+}
+
+function buildTasksView() {
+  fetchTasksData().then(() => renderTasksView());
+}
+
+function renderTasksView() {
+  const container = document.getElementById('tasks-list');
+  const concEl = document.getElementById('tasks-concurrency');
+  if (!tasksData) { container.innerHTML = '<p style="color:#606070">Loading tasks...</p>'; return; }
+
+  const tasks = tasksData.tasks || [];
+  const maxJobs = tasksData.max_concurrent_jobs || 3;
+  let doingCount = 0;
+  tasks.forEach(t => (t.jobs||[]).forEach(j => { if(j.status==='doing') doingCount++; }));
+  concEl.textContent = `JOBS: ${doingCount}/${maxJobs}`;
+  concEl.style.color = doingCount >= maxJobs ? '#FF4444' : '#A878E8';
+
+  // Group tasks by status
+  const statusOrder = ['running','queueing','failed','success'];
+  const statusLabel = {running:'▶ Running',queueing:'◻ Queued',failed:'❌ Failed',success:'✅ Completed'};
+  const statusColor = {running:'#E84040',queueing:'#A8A8B8',failed:'#FF4444',success:'#52C41A'};
+  const prioColor = {critical:'#FF4444',high:'#FF8800',medium:'#FFCC00',low:'#666'};
+  const jobStatusIcon = {not_started:'⬜',doing:'🔵',waiting:'⏳',success:'✅',failed:'❌'};
+
+  let html = '';
+  for (const st of statusOrder) {
+    const group = tasks.filter(t => t.status === st);
+    if (!group.length) continue;
+    html += `<div style="margin-bottom:12px">`;
+    html += `<div style="font-size:10px;font-family:'Press Start 2P',monospace;color:${statusColor[st]};margin-bottom:6px">${statusLabel[st]} (${group.length})</div>`;
+    for (const task of group) {
+      const jobs = task.jobs || [];
+      const doneJobs = jobs.filter(j => j.status === 'success').length;
+      const totalJobs = jobs.length;
+      const prio = task.priority || 'medium';
+      const taskElId = 'task-' + task.id.replace(/[^a-zA-Z0-9-]/g,'');
+      html += `<div style="background:#1A1A2E;border-radius:4px;border-left:3px solid ${prioColor[prio]};margin-bottom:4px;cursor:pointer" onclick="document.getElementById('${taskElId}').style.display=document.getElementById('${taskElId}').style.display==='none'?'block':'none'">`;
+      html += `<div style="padding:5px 8px;display:flex;align-items:center;gap:6px;font-size:9px;font-family:monospace">`;
+      html += `<span style="background:${statusColor[st]};color:#fff;padding:1px 5px;border-radius:3px;font-size:8px">${escHtml(prio)}</span>`;
+      html += `<span style="color:#E0E0E0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml((task.name||'').slice(0,60))}</span>`;
+      html += `<span style="color:#A878E8;font-size:8px;flex-shrink:0">${doneJobs}/${totalJobs} jobs</span>`;
+      html += `</div>`;
+      // Expandable job list
+      html += `<div id="${taskElId}" style="display:none;padding:4px 8px 8px 20px;font-size:8px;font-family:monospace">`;
+      if (task.summary) html += `<div style="color:#808898;margin-bottom:4px;white-space:pre-wrap">${escHtml(task.summary.slice(0,200))}</div>`;
+      for (const job of jobs) {
+        const icon = jobStatusIcon[job.status] || '⬜';
+        const elapsed = job.started_at && !job.completed_at ? Math.round((Date.now()-new Date(job.started_at).getTime())/60000)+'m' : '';
+        const completedAt = (job.completed_at||'').slice(11,16);
+        html += `<div style="display:flex;gap:6px;align-items:center;padding:2px 0;color:#C0C0D0">`;
+        html += `<span>${icon}</span>`;
+        html += `<span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(job.title||job.id)}</span>`;
+        html += `<span style="color:#6070A0">${escHtml(job.agent)}</span>`;
+        if (elapsed) html += `<span style="color:#F5A623">${elapsed}</span>`;
+        if (completedAt) html += `<span style="color:#52C41A">${completedAt}</span>`;
+        html += `</div>`;
+      }
+      html += `</div></div>`;
+    }
+    html += `</div>`;
+  }
+  container.innerHTML = html || '<p style="color:#606070">No tasks yet.</p>';
+
+  // Filter chips
+  const chipEl = document.getElementById('task-filter-chips');
+  if (chipEl) {
+    const counts = {}; statusOrder.forEach(s => counts[s] = tasks.filter(t=>t.status===s).length);
+    chipEl.innerHTML = statusOrder.map(s => `<span style="background:${statusColor[s]}22;color:${statusColor[s]};padding:2px 8px;border-radius:10px;font-size:8px;font-family:monospace">${statusLabel[s].split(' ')[1]}: ${counts[s]}</span>`).join('');
+  }
 }
 
 // ==================== AUTO-SCALE (mobile-fixed) ====================
@@ -2296,6 +2395,118 @@ if (window.innerWidth < 768) {
   const cardsBtn = document.getElementById('tab-cards');
   if (cardsBtn) cardsBtn.click();
 }
+
+// ==================== TASKS VIEW ====================
+let _tasksCache = null;
+let _taskFilter = 'all';
+let _expandedTask = null;
+
+async function fetchTasks() {
+  try {
+    const resp = await fetch('/data/pipeline/tasks.json', {cache:'no-store', headers:{'ngrok-skip-browser-warning':'1'}});
+    if (!resp.ok) return;
+    _tasksCache = await resp.json();
+    if (document.getElementById('tasks-view')?.style.display !== 'none') buildTasksView();
+  } catch(e) {}
+}
+
+function filterTasks(f) {
+  _taskFilter = f;
+  document.querySelectorAll('.task-chip').forEach(c => c.classList.toggle('active', c.dataset.f === f));
+  buildTasksView();
+}
+
+function buildTasksView() {
+  const data = _tasksCache;
+  if (!data) return;
+  const tasks = data.tasks || [];
+
+  // Concurrency display
+  let doing = 0;
+  tasks.forEach(t => (t.jobs||[]).forEach(j => { if(j.status==='doing') doing++; }));
+  const cc = document.getElementById('tasks-concurrency');
+  if (cc) cc.textContent = `JOBS: ${doing}/${data.max_concurrent_jobs||3} concurrent`;
+
+  // Filter chips
+  const chipEl = document.getElementById('task-filter-chips');
+  if (chipEl && !chipEl.children.length) {
+    ['all','running','queueing','success','failed'].forEach(f => {
+      const span = document.createElement('span');
+      span.className = 'task-chip' + (f===_taskFilter?' active':'');
+      span.dataset.f = f;
+      span.textContent = {all:'All',running:'▶ Running',queueing:'⏳ Queued',success:'✅ Done',failed:'❌ Failed'}[f];
+      span.onclick = () => filterTasks(f);
+      chipEl.appendChild(span);
+    });
+  }
+
+  const filtered = _taskFilter === 'all' ? tasks : tasks.filter(t => t.status === _taskFilter);
+  const statusOrder = {running:0,queueing:1,failed:2,success:3};
+  filtered.sort((a,b) => (statusOrder[a.status]??9) - (statusOrder[b.status]??9));
+
+  const STATUS_COLOR = {running:'#E84040',queueing:'#F5A623',success:'#52C41A',failed:'#E74C3C'};
+  const JOB_STATUS_COLOR = {doing:'#E84040',not_started:'#606070',waiting:'#F5A623',success:'#52C41A',failed:'#E74C3C'};
+  const JOB_STATUS_LABEL = {doing:'DOING',not_started:'WAITING',waiting:'⏸ WAIT',success:'✓ DONE',failed:'✗ FAIL'};
+
+  const listEl = document.getElementById('tasks-list');
+  if (!listEl) return;
+
+  listEl.innerHTML = filtered.length ? '' : '<div style="color:#606070;font-size:8px;font-family:monospace">No tasks</div>';
+
+  filtered.forEach(task => {
+    const div = document.createElement('div');
+    div.className = `task-card t-${task.status}`;
+    const jobsDone = (task.jobs||[]).filter(j=>j.status==='success').length;
+    const jobsTotal = (task.jobs||[]).length;
+    const expanded = _expandedTask === task.id;
+
+    div.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <div style="flex:1;min-width:0">
+          <div style="font-size:8px;color:#F8F8F8;font-family:'Press Start 2P',monospace;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(task.name)}</div>
+          <div style="font-size:7px;color:#A8A8B8;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml((task.summary||'').slice(0,80))}</div>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center;flex-shrink:0">
+          <span style="font-size:7px;color:#606070;font-family:monospace">${jobsDone}/${jobsTotal} jobs</span>
+          <span style="color:${STATUS_COLOR[task.status]||'#888'};font-size:7px;font-family:'Press Start 2P',monospace">${task.status.toUpperCase()}</span>
+          <span style="color:#4A90D9;font-size:10px">${expanded?'▲':'▼'}</span>
+        </div>
+      </div>
+      ${expanded ? `<div style="margin-top:8px;border-top:1px solid #252535;padding-top:6px">
+        <div style="font-size:7px;color:#606070;font-family:monospace;margin-bottom:4px">Source: ${task.source||'?'} | Priority: ${task.priority||'?'} | Created: ${(task.created_at||'').slice(0,10)}</div>
+        ${(task.jobs||[]).map(job => `
+          <div class="job-row">
+            <span style="background:${JOB_STATUS_COLOR[job.status]||'#444'};color:#fff;padding:1px 5px;border-radius:2px;font-size:6px;flex-shrink:0">${JOB_STATUS_LABEL[job.status]||job.status}</span>
+            <span style="color:#C8D8E8;flex:1">${escHtml(job.title)}</span>
+            <span style="color:#A878E8;flex-shrink:0">${job.agent}</span>
+            <span style="color:#606070;flex-shrink:0">${(job.completed_at||job.started_at||'').slice(11,16)||'-'}</span>
+          </div>
+          ${job.result ? `<div style="font-size:7px;color:#808898;font-family:monospace;padding:2px 0 2px 60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escHtml(job.result.slice(0,80))}</div>` : ''}
+        `).join('')}
+      </div>` : ''}
+    `;
+    div.onclick = () => { _expandedTask = expanded ? null : task.id; buildTasksView(); };
+    listEl.appendChild(div);
+  });
+}
+
+fetchTasks();
+setInterval(fetchTasks, 10000);
+
+// Wire tasks tab
+document.getElementById('tab-tasks')?.addEventListener('click', () => {
+  document.getElementById('queue-view').style.display = 'none';
+  document.getElementById('tasks-view').style.display = 'block';
+  buildTasksView();
+});
+// Also hide tasks-view when other tabs clicked
+const _origTabHandler = document.querySelector('#tabs');
+document.querySelectorAll('.tab:not(#tab-tasks)').forEach(btn => {
+  const orig = btn.onclick;
+  btn.addEventListener('click', () => {
+    document.getElementById('tasks-view').style.display = 'none';
+  });
+});
 </script>
 </body>
 </html>
