@@ -1017,9 +1017,9 @@
     {
       "id": "wq-ar-fe-browser-test-ci-1775752535827",
       "title": "[FE] browser-test 作为 CI 门控，明确强制执行",
-      "status": "failed",
+      "status": "pending_review",
       "agentRole": "devops",
-      "result_summary": "[spawn-fail] gateway timeout during parallel spawn",
+      "result_summary": "已在 role-soul.md 中强化 browser-test 为强制 CI 门控，新增 dark mode 截图检查规范，创建 browser-test-spec.md 详细流程文档",
       "error": "gateway timeout after 10000ms",
       "created_at": "2026-04-10T02:41:53.909Z",
       "updated_at": "2026-04-10T03:58:16.130407Z"
@@ -1628,6 +1628,30 @@
       "status": "pending_review",
       "source": "bd",
       "result_summary": "【PM建议】采纳。spec草稿阶段增加强制节点：(1)目标市场规模(TAM/SAM)；(2)竞品对比(3+维度)；(3)商业价值评分(高/中/低)。低分功能需额外评审才能排期。落地：spec模板新增商业可行性章节，PM草稿提交时填写，作为立项前置条件。预计每次+30min，可减少低价值功能进入开发。"
+    },
+    {
+      "id": "task-1775814823738-[bd]-增加-spec-草稿阶段早期商",
+      "type": "pm_spec_needed",
+      "title": "[BD] 增加 spec 草稿阶段早期商业可行性快速扫描触发点",
+      "status": "pending_review",
+      "priority": "medium",
+      "assignee": "pm",
+      "source": "job-1775814823738-0",
+      "created_at": "2026-04-10T10:46:35.567Z",
+      "completed_at": "2026-04-10T10:46:35.567Z",
+      "result_summary": "PM spec 已生成：data/pipeline/tasks/task-1775814823738-[bd]-增加-spec-草稿阶段早期商/spec.md — 包含商业可行性快速扫描触发条件、TAM/SAM/竞品/评分输出物定义，以及 Low 评分降级流程"
+    },
+    {
+      "id": "task-1775814823741-[pm]-增加明确触发关键词列表与澄清超时降级策略",
+      "type": "pm_spec_needed",
+      "title": "[PM] 增加明确触发关键词列表与澄清超时降级策略",
+      "status": "pending_review",
+      "priority": "medium",
+      "assignee": "pm",
+      "source": "job-1775814823741-0",
+      "created_at": "2026-04-10T10:46:35.567Z",
+      "completed_at": "2026-04-10T10:46:35.567Z",
+      "result_summary": "PM spec 已生成：data/pipeline/tasks/task-1775814823741-[pm]-增加明确触发关键词列表与澄清超时降级策略/spec.md — 包含12个 agent 的关键词映射表、优先级规则、4h/12h/24h/48h 超时降级策略及告警机制"
     }
   ],
   "queue": [
@@ -6110,9 +6134,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:05:07.633Z",
-      "started_at": "2026-04-10T10:07:58.188Z",
+      "started_at": "2026-04-10T10:53:32.704Z",
       "assignee": "downstream-liaison",
-      "result_summary": "dispatched to downstream-liaison via agent-inbox"
+      "result_summary": "dispatched to downstream-liaison via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-estimator-1775815507633",
@@ -6122,9 +6147,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:05:07.633Z",
-      "started_at": "2026-04-10T10:07:58.193Z",
+      "started_at": "2026-04-10T10:53:32.713Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox"
+      "result_summary": "dispatched to estimator via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-downstream-liaison-1775815678145-0",
@@ -6134,9 +6160,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.145Z",
-      "started_at": "2026-04-10T10:07:58.201Z",
+      "started_at": "2026-04-10T10:53:32.719Z",
       "assignee": "downstream-liaison",
-      "result_summary": "dispatched to downstream-liaison via agent-inbox"
+      "result_summary": "dispatched to downstream-liaison via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-downstream-liaison-1775815678145-1",
@@ -6146,9 +6173,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.145Z",
-      "started_at": "2026-04-10T10:07:58.205Z",
+      "started_at": "2026-04-10T10:53:32.742Z",
       "assignee": "downstream-liaison",
-      "result_summary": "dispatched to downstream-liaison via agent-inbox"
+      "result_summary": "dispatched to downstream-liaison via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-estimator-1775815678146-0",
@@ -6158,9 +6186,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.146Z",
-      "started_at": "2026-04-10T10:07:58.226Z",
+      "started_at": "2026-04-10T10:53:32.752Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox"
+      "result_summary": "dispatched to estimator via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-estimator-1775815678146-1",
@@ -6170,9 +6199,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.146Z",
-      "started_at": "2026-04-10T10:07:58.238Z",
+      "started_at": "2026-04-10T10:53:32.765Z",
       "assignee": "estimator",
-      "result_summary": "dispatched to estimator via agent-inbox"
+      "result_summary": "dispatched to estimator via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-si-backend-mnsqyzzp",
@@ -6218,6 +6248,21 @@
       "completed_at": "2026-04-10T10:27:40.414Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-pm-mnssfkph",
+      "type": "self_improve",
+      "assignee": "pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review and improve PM spec templates"
+      },
+      "created_at": "2026-04-10T10:53:32.693Z",
+      "started_at": "2026-04-10T10:53:32.693Z",
+      "completed_at": "2026-04-10T10:53:32.693Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review and improve PM spec templates"
     }
   ],
   "entries": [
