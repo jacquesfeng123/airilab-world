@@ -5850,26 +5850,30 @@
       "type": "agent_review",
       "title": "[DEV] 超时后应自动将task状态置为blocked并通知main agent，避免任务挂起",
       "owner": "dev",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
       "started_at": "2026-04-10T10:38:29.810Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T11:23:39.230Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-dev-1775812070812-1",
       "type": "agent_review",
       "title": "[DEV] 建议每次拉取队列时都执行优先级排序，保持一致性",
       "owner": "dev",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
       "started_at": "2026-04-10T10:38:29.817Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T11:23:39.711Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-project-pm-1775812070812-0",
@@ -6134,10 +6138,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:05:07.633Z",
-      "started_at": "2026-04-10T10:53:32.704Z",
+      "started_at": "2026-04-10T11:38:40.833Z",
       "assignee": "downstream-liaison",
       "result_summary": "dispatched to downstream-liaison via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-estimator-1775815507633",
@@ -6147,10 +6151,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:05:07.633Z",
-      "started_at": "2026-04-10T10:53:32.713Z",
+      "started_at": "2026-04-10T11:38:40.838Z",
       "assignee": "estimator",
       "result_summary": "dispatched to estimator via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-downstream-liaison-1775815678145-0",
@@ -6160,10 +6164,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.145Z",
-      "started_at": "2026-04-10T10:53:32.719Z",
+      "started_at": "2026-04-10T11:38:40.844Z",
       "assignee": "downstream-liaison",
       "result_summary": "dispatched to downstream-liaison via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-downstream-liaison-1775815678145-1",
@@ -6173,10 +6177,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.145Z",
-      "started_at": "2026-04-10T10:53:32.742Z",
+      "started_at": "2026-04-10T11:38:40.849Z",
       "assignee": "downstream-liaison",
       "result_summary": "dispatched to downstream-liaison via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-estimator-1775815678146-0",
@@ -6186,10 +6190,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.146Z",
-      "started_at": "2026-04-10T10:53:32.752Z",
+      "started_at": "2026-04-10T11:38:40.853Z",
       "assignee": "estimator",
       "result_summary": "dispatched to estimator via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-estimator-1775815678146-1",
@@ -6199,10 +6203,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T10:07:58.146Z",
-      "started_at": "2026-04-10T10:53:32.765Z",
+      "started_at": "2026-04-10T11:38:40.877Z",
       "assignee": "estimator",
       "result_summary": "dispatched to estimator via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-backend-mnsqyzzp",
@@ -6359,6 +6363,111 @@
       "started_at": "2026-04-10T11:08:36.108Z",
       "assignee": "renderer",
       "result_summary": "dispatched to renderer via agent-inbox"
+    },
+    {
+      "id": "wq-si-trump-mnst49gj",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-10T11:12:44.515Z",
+      "started_at": "2026-04-10T11:12:44.515Z",
+      "completed_at": "2026-04-10T11:12:44.515Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-si-scribe-mnstibbw",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-10T11:23:40.124Z",
+      "started_at": "2026-04-10T11:23:40.124Z",
+      "completed_at": "2026-04-10T11:23:40.124Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-qa-mnstnkot",
+      "type": "self_improve",
+      "assignee": "qa",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Run regression test suite"
+      },
+      "created_at": "2026-04-10T11:27:45.534Z",
+      "started_at": "2026-04-10T11:27:45.534Z",
+      "completed_at": "2026-04-10T11:27:45.534Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Run regression test suite"
+    },
+    {
+      "id": "wq-si-tester-mnstnkou",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-10T11:27:45.534Z",
+      "started_at": "2026-04-10T11:27:45.534Z",
+      "completed_at": "2026-04-10T11:27:45.534Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-researcher-mnstnkov",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-10T11:27:45.535Z",
+      "started_at": "2026-04-10T11:27:45.535Z",
+      "completed_at": "2026-04-10T11:27:45.535Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-bd-mnstnkow",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-10T11:27:45.536Z",
+      "started_at": "2026-04-10T11:27:45.536Z",
+      "completed_at": "2026-04-10T11:27:45.536Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-project-pm-mnstsd7s",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-10T11:31:29.128Z",
+      "started_at": "2026-04-10T11:31:29.128Z",
+      "completed_at": "2026-04-10T11:31:29.128Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
     }
   ],
   "entries": [
@@ -6472,6 +6581,39 @@
       "title": "[Scribe] autoDream增加tag:keep保留机制",
       "source_file": "wq-ar-scribe2-1775797446271-scribe.json",
       "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-job-1-2",
+      "title": "验证规则已写入",
+      "type": "pm_spec_needed",
+      "source_job_id": "job-1-2",
+      "source_type": "job_execution",
+      "agentRole": "qa",
+      "priority": "low",
+      "created_at": "2026-04-10T10:53:32.673Z",
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-job-1-3",
+      "title": "review 变更",
+      "type": "pm_spec_needed",
+      "source_job_id": "job-1-3",
+      "source_type": "job_execution",
+      "agentRole": "reviewer",
+      "priority": "low",
+      "created_at": "2026-04-10T10:57:43.801Z",
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-wq-ar-estimator-1775815507633",
+      "title": "[ESTIMATOR] 造价基准数据版本化与置信度量化标准",
+      "type": "pm_spec_needed",
+      "source_job_id": "wq-ar-estimator-1775815507633",
+      "source_type": "agent_review",
+      "agentRole": "estimator",
+      "priority": "low",
+      "created_at": "2026-04-10T10:53:32.716Z",
       "status": "pending"
     }
   ]
