@@ -24,7 +24,8 @@
           "id": "job-1-3",
           "title": "review 变更",
           "agent": "reviewer",
-          "status": "not_started"
+          "status": "doing",
+          "started_at": "2026-04-10T10:57:43.801Z"
         }
       ],
       "started_at": "2026-04-10T10:45:29.355Z"
@@ -183,5 +184,5 @@
     }
   ],
   "max_concurrent_jobs": 3,
-  "last_updated": "2026-04-10T10:53:32.672Z"
+  "last_updated": "2026-04-10T10:57:43.801Z"
 }

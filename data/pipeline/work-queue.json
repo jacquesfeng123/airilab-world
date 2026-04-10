@@ -6263,6 +6263,102 @@
       "completed_at": "2026-04-10T10:53:32.693Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review and improve PM spec templates"
+    },
+    {
+      "id": "wq-ar-renderer-1775819061856",
+      "type": "agent_review",
+      "title": "[Renderer] 补充质量门量化通过/拒绝阈值",
+      "owner": "renderer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:04:21.856Z",
+      "started_at": "2026-04-10T11:08:36.015Z",
+      "assignee": "renderer",
+      "result_summary": "dispatched to renderer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer2-1775819061857",
+      "type": "agent_review",
+      "title": "[Renderer] 增加 airilab.com API 异常处理 fallback 流程",
+      "owner": "renderer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:04:21.856Z",
+      "started_at": "2026-04-10T11:08:36.023Z",
+      "assignee": "renderer",
+      "result_summary": "dispatched to renderer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-matmgr-1775819061858",
+      "type": "agent_review",
+      "title": "[Material Manager] 为 library.json 添加 JSON Schema 校验",
+      "owner": "material-manager",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:04:21.856Z",
+      "started_at": "2026-04-10T11:08:36.063Z",
+      "assignee": "material-manager",
+      "result_summary": "dispatched to material-manager via agent-inbox"
+    },
+    {
+      "id": "wq-ar-matmgr2-1775819061859",
+      "type": "agent_review",
+      "title": "[Material Manager] 定义 material-cost-response schema 规范 Estimator 接口",
+      "owner": "material-manager",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:04:21.856Z",
+      "started_at": "2026-04-10T11:08:36.070Z",
+      "assignee": "material-manager",
+      "result_summary": "dispatched to material-manager via agent-inbox"
+    },
+    {
+      "id": "wq-ar-material-manager-1775819315974-0",
+      "type": "agent_review",
+      "title": "[MATERIAL-MANAGER] library.json 和 suppliers.json 缺乏 JSON Schema 校验，容易",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:08:35.974Z",
+      "started_at": "2026-04-10T11:08:36.074Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-material-manager-1775819315974-1",
+      "type": "agent_review",
+      "title": "[MATERIAL-MANAGER] \"label estimates clearly\" 规则过于模糊，建议统一标注格式（如：`price",
+      "owner": "material-manager",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:08:35.974Z",
+      "started_at": "2026-04-10T11:08:36.081Z",
+      "assignee": "material-manager",
+      "result_summary": "dispatched to material-manager via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer-1775819315975-0",
+      "type": "agent_review",
+      "title": "[RENDERER] 在 Quality Checklist 中增加明确的通过/拒绝阈值（如：AI artifact 数量",
+      "owner": "renderer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:08:35.975Z",
+      "started_at": "2026-04-10T11:08:36.087Z",
+      "assignee": "renderer",
+      "result_summary": "dispatched to renderer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer-1775819315975-1",
+      "type": "agent_review",
+      "title": "[RENDERER] 当 airilab.com API 调用失败时，缺少重试/降级流程说明，建议在 role-soul.",
+      "owner": "renderer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T11:08:35.975Z",
+      "started_at": "2026-04-10T11:08:36.108Z",
+      "assignee": "renderer",
+      "result_summary": "dispatched to renderer via agent-inbox"
     }
   ],
   "entries": [
