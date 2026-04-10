@@ -4180,9 +4180,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:17.157Z",
-      "started_at": "2026-04-10T03:12:01.526Z",
+      "started_at": "2026-04-10T03:57:16.111Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "dispatched to qa via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-tester-1775790257157",
@@ -4192,9 +4193,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:17.157Z",
-      "started_at": "2026-04-10T03:12:01.532Z",
+      "started_at": "2026-04-10T03:57:16.133Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "dispatched to tester via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-si-pm-mnsby223",
