@@ -1652,6 +1652,78 @@
       "created_at": "2026-04-10T10:46:35.567Z",
       "completed_at": "2026-04-10T10:46:35.567Z",
       "result_summary": "PM spec 已生成：data/pipeline/tasks/task-1775814823741-[pm]-增加明确触发关键词列表与澄清超时降级策略/spec.md — 包含12个 agent 的关键词映射表、优先级规则、4h/12h/24h/48h 超时降级策略及告警机制"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-downstream-liaison-1775815507633-downstream-liaison",
+      "type": "pm_spec_needed",
+      "title": "[DOWNSTREAM-LIAISON] 补充RFI响应SLA与联系人状态管理",
+      "source_file": "wq-ar-downstream-liaison-1775815507633-downstream-liaison.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.757862Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-downstream-liaison-1775815678145-0-downstream-liaison",
+      "type": "pm_spec_needed",
+      "title": "[DOWNSTREAM-LIAISON] 补充明确的响应时限（如结构工程师48h、MEP 24h），避免\"escalate after 48h",
+      "source_file": "wq-ar-downstream-liaison-1775815678145-0-downstream-liaison.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.761191Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-downstream-liaison-1775815678145-1-downstream-liaison",
+      "type": "pm_spec_needed",
+      "title": "[DOWNSTREAM-LIAISON] 建议引入联系人状态字段（active/inactive/pending），避免contacts.js",
+      "source_file": "wq-ar-downstream-liaison-1775815678145-1-downstream-liaison.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.764337Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-estimator-1775815507633-estimator",
+      "type": "pm_spec_needed",
+      "title": "[ESTIMATOR] 造价基准数据版本化与置信度量化标准",
+      "source_file": "wq-ar-estimator-1775815507633-estimator.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.769132Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-estimator-1775815678146-0-estimator",
+      "type": "pm_spec_needed",
+      "title": "[ESTIMATOR] 建议增加benchmark数据的版本/更新日期字段，防止使用过期造价参考导致系统性偏差",
+      "source_file": "wq-ar-estimator-1775815678146-0-estimator.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.772265Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-material-manager-1775819315974-1-material-manager",
+      "type": "pm_spec_needed",
+      "title": "[MATERIAL-MANAGER] \"label estimates clearly\" 规则过于模糊，建议统一标注格式（如：`price",
+      "source_file": "wq-ar-material-manager-1775819315974-1-material-manager.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.797300Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-renderer-1775819061856-renderer",
+      "type": "pm_spec_needed",
+      "title": "[Renderer] 补充质量门量化通过/拒绝阈值",
+      "source_file": "wq-ar-renderer-1775819061856-renderer.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.806595Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-renderer-1775819315975-0-renderer",
+      "type": "pm_spec_needed",
+      "title": "[RENDERER] 在 Quality Checklist 中增加明确的通过/拒绝阈值（如：AI artifact 数量",
+      "source_file": "wq-ar-renderer-1775819315975-0-renderer.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.809626Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-renderer2-1775819061857-renderer",
+      "type": "pm_spec_needed",
+      "title": "[Renderer] 增加 airilab.com API 异常处理 fallback 流程",
+      "source_file": "wq-ar-renderer2-1775819061857-renderer.json",
+      "original_type": "agent_review",
+      "created_at": "2026-04-10T12:06:07.820605Z"
     }
   ],
   "queue": [
@@ -6135,13 +6207,16 @@
       "type": "agent_review",
       "title": "[DOWNSTREAM-LIAISON] 补充RFI响应SLA与联系人状态管理",
       "owner": "downstream-liaison",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T10:05:07.633Z",
       "started_at": "2026-04-10T11:38:40.833Z",
       "assignee": "downstream-liaison",
       "result_summary": "dispatched to downstream-liaison via agent-inbox",
-      "retryCount": 2
+      "retryCount": 2,
+      "completed_at": "2026-04-10T11:58:23.956Z",
+      "approved_at": "2026-04-10T12:00:59.863Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-estimator-1775815507633",
@@ -6551,6 +6626,93 @@
       "completed_at": "2026-04-10T11:54:11.237Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-ar-frontend-1775822662011",
+      "type": "agent_review",
+      "title": "[Frontend] 添加browser-test失败的降级fallback流程",
+      "owner": "qa",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T12:04:22.011Z",
+      "started_at": "2026-04-10T12:09:14.160Z",
+      "assignee": "qa",
+      "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775822662012",
+      "type": "agent_review",
+      "title": "[Backend] 指定API契约文档标准模板路径",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T12:04:22.011Z",
+      "started_at": "2026-04-10T12:09:14.169Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775822954121-0",
+      "type": "agent_review",
+      "title": "[BACKEND] 建议指定契约文档模板路径(如 data/api-contracts/{task-id}.md)",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T12:09:14.121Z",
+      "started_at": "2026-04-10T12:09:14.175Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775822954121-1",
+      "type": "agent_review",
+      "title": "[BACKEND] 建议补充background job失败的告警与重试规范",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T12:09:14.121Z",
+      "started_at": "2026-04-10T12:09:14.179Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775822954122-0",
+      "type": "agent_review",
+      "title": "[FRONTEND] 建议添加\"测试失败时的最小化fallback流程\"，避免单点卡死",
+      "owner": "qa",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T12:09:14.122Z",
+      "started_at": "2026-04-10T12:09:14.201Z",
+      "assignee": "qa",
+      "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775822954122-1",
+      "type": "agent_review",
+      "title": "[FRONTEND] 建议集成 pixelmatch 或 Percy 自动化视觉diff",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T12:09:14.122Z",
+      "started_at": "2026-04-10T12:09:14.207Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-si-chief-designer-mnsv4wwi",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-10T12:09:14.130Z",
+      "started_at": "2026-04-10T12:09:14.130Z",
+      "completed_at": "2026-04-10T12:09:14.130Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
     }
   ],
   "entries": [
