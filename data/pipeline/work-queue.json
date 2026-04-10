@@ -5147,6 +5147,78 @@
       "completed_at": "2026-04-10T05:51:31.207Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-ar-chief-designer-1775801057741",
+      "type": "agent_review",
+      "title": "[CHIEF-DESIGNER] 增加自触发条件段落及创新评估维度",
+      "owner": "chief-designer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T06:04:17.741Z",
+      "started_at": "2026-04-10T06:07:01.705Z",
+      "assignee": "chief-designer",
+      "result_summary": "dispatched to chief-designer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-technical-architect-1775801057741",
+      "type": "agent_review",
+      "title": "[TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表",
+      "owner": "technical-architect",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T06:04:17.741Z",
+      "started_at": "2026-04-10T06:07:01.712Z",
+      "assignee": "technical-architect",
+      "result_summary": "dispatched to technical-architect via agent-inbox"
+    },
+    {
+      "id": "wq-ar-chief-designer-1775801221672-0",
+      "type": "agent_review",
+      "title": "[CHIEF-DESIGNER] 建议在role-soul中增加\"自触发条件\"段落，明确设计日志满足什么条件时主动进行阶段性质量检查",
+      "owner": "chief-designer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T06:07:01.672Z",
+      "started_at": "2026-04-10T06:07:01.718Z",
+      "assignee": "chief-designer",
+      "result_summary": "dispatched to chief-designer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-chief-designer-1775801221672-1",
+      "type": "agent_review",
+      "title": "[CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流",
+      "owner": "chief-designer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T06:07:01.672Z",
+      "started_at": "2026-04-10T06:07:01.723Z",
+      "assignee": "chief-designer",
+      "result_summary": "dispatched to chief-designer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-technical-architect-1775801221673-0",
+      "type": "agent_review",
+      "title": "[TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡时）",
+      "owner": "technical-architect",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T06:07:01.673Z",
+      "started_at": "2026-04-10T06:07:01.743Z",
+      "assignee": "technical-architect",
+      "result_summary": "dispatched to technical-architect via agent-inbox"
+    },
+    {
+      "id": "wq-ar-technical-architect-1775801221673-1",
+      "type": "agent_review",
+      "title": "[TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规",
+      "owner": "technical-architect",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T06:07:01.673Z",
+      "started_at": "2026-04-10T06:07:01.753Z",
+      "assignee": "technical-architect",
+      "result_summary": "dispatched to technical-architect via agent-inbox"
     }
   ],
   "entries": [
