@@ -7140,6 +7140,93 @@
       "completed_at": "2026-04-10T13:55:05.842Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-ar-uiux-1775829859906",
+      "type": "agent_review",
+      "title": "[UIUX] 创建设计令牌文件并在role-soul中引用",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T14:04:19.906Z",
+      "started_at": "2026-04-10T14:10:09.503Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-1775829859906",
+      "type": "agent_review",
+      "title": "[PM] 补充spec确认机制与Chief Designer边界规则",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T14:04:19.906Z",
+      "started_at": "2026-04-10T14:10:09.513Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-1775830209465-0",
+      "type": "agent_review",
+      "title": "[PM] 写完 spec 后如何确认 Jacques 已 approve？建议添加 \"等待确认\" 状态并在 s",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T14:10:09.465Z",
+      "started_at": "2026-04-10T14:10:09.520Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-pm-1775830209465-1",
+      "type": "agent_review",
+      "title": "[PM] 多个同时进入的任务如何排序？建议补充优先级排序标准（紧急度 × 影响面）",
+      "owner": "pm",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T14:10:09.465Z",
+      "started_at": "2026-04-10T14:10:09.541Z",
+      "assignee": "pm",
+      "result_summary": "dispatched to pm via agent-inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775830209465-0",
+      "type": "agent_review",
+      "title": "[UIUX] 在 role-soul.md 中引用 \"8px base\" 但没有指向实际设计令牌文件，建议创建并链",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T14:10:09.465Z",
+      "started_at": "2026-04-10T14:10:09.548Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775830209465-1",
+      "type": "agent_review",
+      "title": "[UIUX] 角色说明输出格式但无标准模板，建议提供 `design-template.md` 参考",
+      "owner": "uiux",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T14:10:09.465Z",
+      "started_at": "2026-04-10T14:10:09.555Z",
+      "assignee": "uiux",
+      "result_summary": "dispatched to uiux via agent-inbox"
+    },
+    {
+      "id": "wq-si-chief-designer-mnszgf6a",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-10T14:10:09.490Z",
+      "started_at": "2026-04-10T14:10:09.490Z",
+      "completed_at": "2026-04-10T14:10:09.490Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
     }
   ],
   "entries": [
