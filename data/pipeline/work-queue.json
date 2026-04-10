@@ -1015,6 +1015,314 @@
       "error": "gateway timeout after 10000ms",
       "created_at": "2026-04-10T02:41:53.909Z",
       "updated_at": "2026-04-10T03:58:16.130407Z"
+    },
+    {
+      "id": "pm-48cbd897e934",
+      "title": "[PM] Spec: [Frontend] 增加browser-test失败分类机制与dark-mode具体验收标准",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-frontend-1775786896859-frontend.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-b6cd71d1c6e0",
+      "title": "[PM] Spec: [FRONTEND] 建议增加browser-test失败时的详细错误分类（网络/渲染/逻辑），便于快速定位",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-frontend-1775787108022-0-frontend.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-1b3d04a1278b",
+      "title": "[PM] Spec: [FRONTEND] 建议在checklist中增加dark-mode的具体检查点（对比度/颜色token/图标可见性）",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-frontend-1775787108022-1-frontend.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-c83078d0de45",
+      "title": "[PM] Spec: [MATERIAL-MANAGER] 建议在 library.json 每条记录添加 last_updated 字段，便于定期审查过期数据",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-material-manager-1775783746634-0-material-manager.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-60130a163bd8",
+      "title": "[PM] Spec: [MATERIAL-MANAGER] 建议在 suppliers.json 中添加 price_valid_until 字段，避免使用过期",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-material-manager-1775783746634-1-estimator.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-9fc2717b660c",
+      "title": "[PM] Spec: [MaterialManager] suppliers.json添加price_valid_until字段",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-matmgr-1775783596798-material-manager.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-e3cb2eaebfe8",
+      "title": "[PM] Spec: [MaterialManager] library.json添加last_updated时间戳",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-matmgr2-1775783596799-material-manager.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-09639c6f76da",
+      "title": "[PM] Spec: [PM] spec.md 增加 Changelog 区块",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-pm-1775793853200-pm.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-fb3f0a5b74b0",
+      "title": "[PM] Spec: [PM] [建议 spec.md 末尾增加 Changelog 区块，记录每次修订原因和版本号]",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-pm-1775793892367-0-pm.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-60a3efaf1ae8",
+      "title": "[PM] Spec: [PM] [建议\"Out of Scope\"每条附上说明（为什么不做/何时做），而非仅列项目名]",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-pm-1775793892367-1-pm.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-0a9e633205a7",
+      "title": "[PM] Spec: [QA] 增加并发任务队列处理规则",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-qa-1775790254548-0-qa.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-7fb4891b0d45",
+      "title": "[PM] Spec: [QA] 文件名加入时间戳或task-id后缀",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-qa-1775790254548-1-qa.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-3e1ecaf7823a",
+      "title": "[PM] Spec: [QA] 与Tester职责边界明确化：禁止QA新建测试文件",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-qa-1775790257157-qa.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-b8ca6c5cc17f",
+      "title": "[PM] Spec: [Renderer] 添加渲染质量结构化日志quality-log.json",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-renderer-1775783596798-renderer.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-6868ebe55d50",
+      "title": "[PM] Spec: [RENDERER] 建议在渲染配置中引用 style-profile 版本号，确保跨项目风格一致性可追溯",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-renderer-1775783746635-0-chief-designer.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-043eb967f1c4",
+      "title": "[PM] Spec: [RENDERER] 建议将质量检查结果结构化存入 quality-log.json，支持统计渲染通过率和常见缺陷类型",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-renderer-1775783746635-1-renderer.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm-0329828ecfdc",
+      "title": "[PM] Spec: [Renderer] style-profile版本号引用机制",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "owner": "pm",
+      "assignee": "pm",
+      "source_file": "wq-ar-renderer2-1775783596799-chief-designer.json",
+      "created_at": "2026-04-10T04:14:00.000Z"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-tester-1775790254549-0-tester",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[TESTER] 增加golden-set版本管理与更新触发条件说明",
+        "source": "wq-ar-tester-1775790254549-0-tester.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-tester-1775790254549-1-tester",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[TESTER] 补充视觉回归基准图存储路径与diff阈值配置",
+        "source": "wq-ar-tester-1775790254549-1-tester.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-tester-1775790257157-tester",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
+        "source": "wq-ar-tester-1775790257157-tester.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-uiux-1775757847564-uiux",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[UIUX] 建立 components-catalog.md 定期维护设计令牌",
+        "source": "wq-ar-uiux-1775757847564-uiux.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-uiux-1775793853199-uiux",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[UIUX] 增加有条件批准结论至design-review.md",
+        "source": "wq-ar-uiux-1775793853199-uiux.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-uiux-1775793892368-0-pm",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[UIUX] [建议增加主动扫描逻辑：当新任务进入 in_progress 且无 design.md 时自动提醒 ",
+        "source": "wq-ar-uiux-1775793892368-0-pm.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-uiux-1775793892368-1-dev",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[UIUX] [建议支持输出 Figma-ready token 结构或简化组件状态表，提升 dev 可读性]",
+        "source": "wq-ar-uiux-1775793892368-1-dev.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-ar-wq-archive-1775671487788-devops",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[CTO Review] Work-queue 归档机制设计与实现",
+        "source": "wq-ar-wq-archive-1775671487788-devops.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-be-radar-schema-nzebz3-backend",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[CTO Review] [Radar BE] DB schema + API server for arch-ai-radar v2",
+        "source": "wq-be-radar-schema-nzebz3-backend.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-debt-004-uiux",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[v19] UX 改进实际执行 — 完成 v18 未做项（热区/碰撞/z-index）",
+        "source": "wq-debt-004-uiux.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
+    },
+    {
+      "id": "pm_spec_needed-wq-fix-004-uiux",
+      "type": "pm_spec_needed",
+      "payload": {
+        "title": "[CTO Review] airilab-world v18 UX 改进规划",
+        "source": "wq-fix-004-uiux.json"
+      },
+      "created_at": "2026-04-10T04:19:43Z",
+      "status": "pending",
+      "assignee": "pm"
     }
   ],
   "queue": [
@@ -4084,13 +4392,15 @@
       "type": "agent_review",
       "title": "[Frontend] 增加browser-test失败分类机制与dark-mode具体验收标准",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T02:08:16.859Z",
       "started_at": "2026-04-10T03:42:13.231Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T04:27:19.538Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-backend-1775786896860",
@@ -4139,26 +4449,30 @@
       "type": "agent_review",
       "title": "[FRONTEND] 建议增加browser-test失败时的详细错误分类（网络/渲染/逻辑），便于快速定位",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T02:11:48.022Z",
       "started_at": "2026-04-10T03:42:13.236Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T04:27:20.016Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-frontend-1775787108022-1",
       "type": "agent_review",
       "title": "[FRONTEND] 建议在checklist中增加dark-mode的具体检查点（对比度/颜色token/图标可见性）",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T02:11:48.022Z",
       "started_at": "2026-04-10T03:42:13.241Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T04:27:20.412Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-qa-1775790254548-0",
@@ -4168,10 +4482,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.548Z",
-      "started_at": "2026-04-10T03:49:49.940Z",
+      "started_at": "2026-04-10T04:34:55.685Z",
       "assignee": "qa",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-qa-1775790254548-1",
@@ -4181,10 +4495,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.548Z",
-      "started_at": "2026-04-10T03:49:49.946Z",
+      "started_at": "2026-04-10T04:34:55.711Z",
       "assignee": "qa",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-tester-1775790254549-0",
@@ -4194,10 +4508,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.549Z",
-      "started_at": "2026-04-10T03:49:49.966Z",
+      "started_at": "2026-04-10T04:34:55.715Z",
       "assignee": "tester",
       "result_summary": "dispatched to tester via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-tester-1775790254549-1",
@@ -4207,10 +4521,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.549Z",
-      "started_at": "2026-04-10T03:49:49.969Z",
+      "started_at": "2026-04-10T04:34:55.719Z",
       "assignee": "tester",
       "result_summary": "dispatched to tester via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-qa-1775790257157",
@@ -4414,6 +4728,21 @@
       "started_at": "2026-04-10T04:04:52.441Z",
       "assignee": "dev",
       "result_summary": "dispatched to dev via agent-inbox"
+    },
+    {
+      "id": "wq-si-backend-mnse3l9g",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-10T04:12:18.916Z",
+      "started_at": "2026-04-10T04:12:18.916Z",
+      "completed_at": "2026-04-10T04:12:18.916Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
     }
   ]
 }
