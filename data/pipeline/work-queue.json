@@ -1782,6 +1782,51 @@
       "status": "pending",
       "created_at": "",
       "priority": "low"
+    },
+    {
+      "id": "pm-spec-wq-ar-backend-1775826566266-0",
+      "type": "pm_spec_needed",
+      "title": "[PM SPEC] [BACKEND] 建议将 API contract 统一归档到 data/api-contracts/ 并加入索引文件",
+      "origin_id": "wq-ar-backend-1775826566266-0",
+      "status": "queued",
+      "priority": "low",
+      "created_at": "2026-04-10T13:35:48Z"
+    },
+    {
+      "id": "pm-spec-wq-ar-backend-1775826566267-1",
+      "type": "pm_spec_needed",
+      "title": "[PM SPEC] [BACKEND] 对外部 API 调用应在 checklist 中将 rate limiting 升级为必须项",
+      "origin_id": "wq-ar-backend-1775826566267-1",
+      "status": "queued",
+      "priority": "low",
+      "created_at": "2026-04-10T13:35:48Z"
+    },
+    {
+      "id": "pm-spec-wq-ar-frontend-1775826268441",
+      "type": "pm_spec_needed",
+      "title": "[PM SPEC] [Frontend] 将深色模式截图对比集成到 CI 自动化流程",
+      "origin_id": "wq-ar-frontend-1775826268441",
+      "status": "queued",
+      "priority": "low",
+      "created_at": "2026-04-10T13:35:48Z"
+    },
+    {
+      "id": "pm-spec-wq-ar-frontend-1775826566267-0",
+      "type": "pm_spec_needed",
+      "title": "[PM SPEC] [FRONTEND] 建议为核心 UI 组件添加 Storybook stories",
+      "origin_id": "wq-ar-frontend-1775826566267-0",
+      "status": "queued",
+      "priority": "low",
+      "created_at": "2026-04-10T13:35:48Z"
+    },
+    {
+      "id": "pm-spec-wq-ar-frontend-1775826566267-1",
+      "type": "pm_spec_needed",
+      "title": "[PM SPEC] [FRONTEND] browser-test.mjs 中 localhost:8899 应从 config 读取",
+      "origin_id": "wq-ar-frontend-1775826566267-1",
+      "status": "queued",
+      "priority": "low",
+      "created_at": "2026-04-10T13:35:48Z"
     }
   ],
   "queue": [
@@ -6416,104 +6461,120 @@
       "type": "agent_review",
       "title": "[Renderer] 补充质量门量化通过/拒绝阈值",
       "owner": "renderer",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
       "started_at": "2026-04-10T12:39:19.041Z",
       "assignee": "renderer",
-      "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:30.123Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-renderer2-1775819061857",
       "type": "agent_review",
       "title": "[Renderer] 增加 airilab.com API 异常处理 fallback 流程",
       "owner": "renderer",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
       "started_at": "2026-04-10T12:39:19.068Z",
       "assignee": "renderer",
-      "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:30.649Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-matmgr-1775819061858",
       "type": "agent_review",
       "title": "[Material Manager] 为 library.json 添加 JSON Schema 校验",
       "owner": "material-manager",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
       "started_at": "2026-04-10T12:39:19.077Z",
       "assignee": "material-manager",
-      "result_summary": "dispatched to material-manager via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:31.048Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-matmgr2-1775819061859",
       "type": "agent_review",
       "title": "[Material Manager] 定义 material-cost-response schema 规范 Estimator 接口",
       "owner": "material-manager",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:04:21.856Z",
       "started_at": "2026-04-10T12:39:19.081Z",
       "assignee": "material-manager",
-      "result_summary": "dispatched to material-manager via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:31.399Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-material-manager-1775819315974-0",
       "type": "agent_review",
       "title": "[MATERIAL-MANAGER] library.json 和 suppliers.json 缺乏 JSON Schema 校验，容易",
       "owner": "devops",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.974Z",
       "started_at": "2026-04-10T12:39:19.087Z",
       "assignee": "devops",
-      "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:31.796Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-material-manager-1775819315974-1",
       "type": "agent_review",
       "title": "[MATERIAL-MANAGER] \"label estimates clearly\" 规则过于模糊，建议统一标注格式（如：`price",
       "owner": "material-manager",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.974Z",
       "started_at": "2026-04-10T12:39:19.100Z",
       "assignee": "material-manager",
-      "result_summary": "dispatched to material-manager via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:32.146Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-renderer-1775819315975-0",
       "type": "agent_review",
       "title": "[RENDERER] 在 Quality Checklist 中增加明确的通过/拒绝阈值（如：AI artifact 数量",
       "owner": "renderer",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.975Z",
       "started_at": "2026-04-10T12:39:19.121Z",
       "assignee": "renderer",
-      "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:32.154Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-renderer-1775819315975-1",
       "type": "agent_review",
       "title": "[RENDERER] 当 airilab.com API 调用失败时，缺少重试/降级流程说明，建议在 role-soul.",
       "owner": "renderer",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T11:08:35.975Z",
       "started_at": "2026-04-10T12:39:19.124Z",
       "assignee": "renderer",
-      "result_summary": "dispatched to renderer via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T13:24:32.508Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-si-trump-mnst49gj",
@@ -6703,10 +6764,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T12:04:22.011Z",
-      "started_at": "2026-04-10T12:54:22.351Z",
+      "started_at": "2026-04-10T13:39:35.247Z",
       "assignee": "qa",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-backend-1775822662012",
@@ -6731,10 +6792,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.121Z",
-      "started_at": "2026-04-10T12:54:22.376Z",
+      "started_at": "2026-04-10T13:39:35.373Z",
       "assignee": "backend",
       "result_summary": "dispatched to backend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-backend-1775822954121-1",
@@ -6744,10 +6805,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.121Z",
-      "started_at": "2026-04-10T12:54:22.386Z",
+      "started_at": "2026-04-10T13:39:35.387Z",
       "assignee": "backend",
       "result_summary": "dispatched to backend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-frontend-1775822954122-0",
@@ -6757,10 +6818,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.122Z",
-      "started_at": "2026-04-10T12:54:22.397Z",
+      "started_at": "2026-04-10T13:39:35.398Z",
       "assignee": "qa",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-frontend-1775822954122-1",
@@ -6770,10 +6831,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.122Z",
-      "started_at": "2026-04-10T12:54:22.402Z",
+      "started_at": "2026-04-10T13:39:35.426Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-chief-designer-mnsv4wwi",
@@ -6837,12 +6898,15 @@
       "type": "agent_review",
       "title": "[Backend] 将 rate limiting 升级为 checklist 必须项并补充 migration rollback 文档",
       "owner": "backend",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T13:04:28.441Z",
       "started_at": "2026-04-10T13:09:26.308Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "完成。具体执行了两项：1）将agents/backend/role-soul.md中的checklist升级为强制必须项（含rate limiting从considered改为MUST且明确要求记录策略和限额）；2）创建了data/runbooks/migration-rollback.md，补充完整的migration rollback文档（含DRY RUN流程、不可逆操作规范、rate limiting相关migration注意事项）。",
+      "completed_at": "2026-04-10T13:29:27.009Z",
+      "approved_at": "2026-04-10T13:31:16.557Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-backend-1775826566266-0",
@@ -6891,6 +6955,111 @@
       "started_at": "2026-04-10T13:09:26.350Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-si-trump-mnsxeplc",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-10T13:12:50.448Z",
+      "started_at": "2026-04-10T13:12:50.448Z",
+      "completed_at": "2026-04-10T13:12:50.448Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-si-dev-mnsxtrm3",
+      "type": "self_improve",
+      "assignee": "dev",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Refactor lowest-quality code file"
+      },
+      "created_at": "2026-04-10T13:24:32.907Z",
+      "started_at": "2026-04-10T13:24:32.907Z",
+      "completed_at": "2026-04-10T13:24:32.907Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Refactor lowest-quality code file"
+    },
+    {
+      "id": "wq-si-scribe-mnsxtrm4",
+      "type": "self_improve",
+      "assignee": "scribe",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Archive and route memory backlog"
+      },
+      "created_at": "2026-04-10T13:24:32.908Z",
+      "started_at": "2026-04-10T13:24:32.908Z",
+      "completed_at": "2026-04-10T13:24:32.908Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Archive and route memory backlog"
+    },
+    {
+      "id": "wq-si-tester-mnsxy0ky",
+      "type": "self_improve",
+      "assignee": "tester",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Add edge case tests for recent features"
+      },
+      "created_at": "2026-04-10T13:27:51.154Z",
+      "started_at": "2026-04-10T13:27:51.154Z",
+      "completed_at": "2026-04-10T13:27:51.154Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Add edge case tests for recent features"
+    },
+    {
+      "id": "wq-si-researcher-mnsxy0kz",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-10T13:27:51.155Z",
+      "started_at": "2026-04-10T13:27:51.155Z",
+      "completed_at": "2026-04-10T13:27:51.155Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-bd-mnsxy0l0",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-10T13:27:51.156Z",
+      "started_at": "2026-04-10T13:27:51.156Z",
+      "completed_at": "2026-04-10T13:27:51.156Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-project-pm-mnsyd2v0",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-10T13:39:33.948Z",
+      "started_at": "2026-04-10T13:39:33.948Z",
+      "completed_at": "2026-04-10T13:39:33.948Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
     }
   ],
   "entries": [
