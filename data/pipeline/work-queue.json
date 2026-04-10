@@ -363,7 +363,7 @@
       "id": "pm-design-tokens-ux-reviewed-1775743523155",
       "title": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "pending_review",
       "priority": "medium",
       "owner": "pm",
       "assignee": "pm",
@@ -375,13 +375,15 @@
         "UX门控"
       ],
       "createdAt": "2026-04-09T14:52:18.000Z",
-      "sourceInbox": "wq-ar-1775743523155-uiux-pm"
+      "sourceInbox": "wq-ar-1775743523155-uiux-pm",
+      "result_summary": "Spec: data/pipeline/tasks/task-1775814823685-design-tokens/spec.md",
+      "completed_at": "2026-04-10T10:15:49.180Z"
     },
     {
       "id": "pm-confirmed-by-audit-trail-1775743523156",
       "title": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "pending_review",
       "priority": "medium",
       "owner": "pm",
       "assignee": "pm",
@@ -393,7 +395,9 @@
         "CTO审批"
       ],
       "createdAt": "2026-04-09T14:52:18.000Z",
-      "sourceInbox": "wq-ar-1775743523156-pm-pm"
+      "sourceInbox": "wq-ar-1775743523156-pm-pm",
+      "result_summary": "Spec: data/pipeline/tasks/task-1775814823690-confirmed-by/spec.md",
+      "completed_at": "2026-04-10T10:15:49.180Z"
     },
     {
       "id": "pm-scribe-routing-warn-1775755971006",
@@ -435,7 +439,7 @@
       "id": "pm-be-api-contract-1775757719824",
       "title": "[PM] Spec: 统一 API contract 文档路径至 docs/api/ 并纳入 CI 强制检查",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "pending_review",
       "priority": "medium",
       "owner": "pm",
       "assignee": "pm",
@@ -448,13 +452,15 @@
         "ci"
       ],
       "createdAt": "2026-04-10T02:00:00.000Z",
-      "sourceInbox": "wq-ar-backend-1775753254303-backend,wq-ar-backend-1775754089118-1-backend,wq-ar-backend-1775754138757-1-backend,wq-ar-be-api-contract-1775752535827-backend"
+      "sourceInbox": "wq-ar-backend-1775753254303-backend,wq-ar-backend-1775754089118-1-backend,wq-ar-backend-1775754138757-1-backend,wq-ar-be-api-contract-1775752535827-backend",
+      "result_summary": "Spec: data/pipeline/tasks/task-1775814823715-api-contract/spec.md",
+      "completed_at": "2026-04-10T10:15:49.180Z"
     },
     {
       "id": "pm-be-rollback-runbook-1775757719825",
       "title": "[PM] Spec: 补充具体回滚脚本规范和 runbook",
       "type": "pm_spec_needed",
-      "status": "pending",
+      "status": "pending_review",
       "priority": "medium",
       "owner": "pm",
       "assignee": "pm",
@@ -466,7 +472,9 @@
         "runbook"
       ],
       "createdAt": "2026-04-10T02:00:00.000Z",
-      "sourceInbox": "wq-ar-backend-1775754089118-0-backend,wq-ar-backend-1775754138757-0-backend"
+      "sourceInbox": "wq-ar-backend-1775754089118-0-backend,wq-ar-backend-1775754138757-0-backend",
+      "result_summary": "PM spec written: data/pipeline/tasks/task-rollback-runbook/spec.md — 回滚规范和 runbook spec，含决策树、触发条件、DB migration 回滚、hotfix 豁免 SOP",
+      "completed_at": "2026-04-10T10:20:31.588Z"
     },
     {
       "id": "pm-spec-1775775778251-0",
@@ -1613,6 +1621,13 @@
         "prompt": "你是 Airi Lab 的 technical-architect agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-technical-architect-1775801221673-1\n建议: [TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-technical-architect-1775801221673-1 的 status 为 pending_review。"
       },
       "created_at": 1775801776535
+    },
+    {
+      "id": "task-1775814823735-[bd]-jianyi-spec-shang-ye-keban",
+      "title": "[BD] 建议在 spec 草稿阶段增加商业可行性快速扫描触发点",
+      "status": "pending_review",
+      "source": "bd",
+      "result_summary": "【PM建议】采纳。spec草稿阶段增加强制节点：(1)目标市场规模(TAM/SAM)；(2)竞品对比(3+维度)；(3)商业价值评分(高/中/低)。低分功能需额外评审才能排期。落地：spec模板新增商业可行性章节，PM草稿提交时填写，作为立项前置条件。预计每次+30min，可减少低价值功能进入开发。"
     }
   ],
   "queue": [
@@ -5795,13 +5810,16 @@
       "type": "agent_review",
       "title": "[DEV] escalation超时后自动将task置为blocked状态",
       "owner": "dev",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T09:04:33.204Z",
       "started_at": "2026-04-10T09:52:55.301Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 1
+      "result_summary": "Implemented escalation timeout → blocked status in watchdogReset(): 2h escalation timeout auto-blocks task, blocked tasks pinged each heartbeat, 3+ unanswered pings escalate to critical + WeCom alert.",
+      "retryCount": 1,
+      "completed_at": "2026-04-10T10:24:13.697Z",
+      "approved_at": "2026-04-10T10:27:40.409Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-dev-1775812070812-0",
@@ -5811,10 +5829,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
-      "started_at": "2026-04-10T09:52:55.310Z",
+      "started_at": "2026-04-10T10:38:29.810Z",
       "assignee": "dev",
       "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-dev-1775812070812-1",
@@ -5824,10 +5842,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T09:07:50.812Z",
-      "started_at": "2026-04-10T09:52:55.332Z",
+      "started_at": "2026-04-10T10:38:29.817Z",
       "assignee": "dev",
       "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-project-pm-1775812070812-0",
@@ -6155,6 +6173,51 @@
       "started_at": "2026-04-10T10:07:58.238Z",
       "assignee": "estimator",
       "result_summary": "dispatched to estimator via agent-inbox"
+    },
+    {
+      "id": "wq-si-backend-mnsqyzzp",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-10T10:12:39.733Z",
+      "started_at": "2026-04-10T10:12:39.733Z",
+      "completed_at": "2026-04-10T10:12:39.733Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-uiux-mnsrcwru",
+      "type": "self_improve",
+      "assignee": "uiux",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit airilab-world dashboard UX"
+      },
+      "created_at": "2026-04-10T10:23:28.746Z",
+      "started_at": "2026-04-10T10:23:28.746Z",
+      "completed_at": "2026-04-10T10:23:28.746Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit airilab-world dashboard UX"
+    },
+    {
+      "id": "wq-si-frontend-mnsriaym",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-10T10:27:40.414Z",
+      "started_at": "2026-04-10T10:27:40.414Z",
+      "completed_at": "2026-04-10T10:27:40.414Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
     }
   ],
   "entries": [

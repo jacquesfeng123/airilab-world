@@ -18,11 +18,11 @@
           "task_id": "task-1775814823685-[pm]-spec:-design-to",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "doing",
+          "status": "success",
           "depends_on": [],
           "started_at": "2026-04-10T09:57:39.030Z",
-          "completed_at": "",
-          "result": "",
+          "completed_at": "2026-04-10T10:15:37.255Z",
+          "result": "Spec written: data/pipeline/tasks/task-1775814823685-design-tokens/spec.md",
           "error": ""
         },
         {
@@ -71,11 +71,11 @@
           "task_id": "task-1775814823690-[pm]-spec:-confirmed",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "doing",
+          "status": "success",
           "depends_on": [],
           "started_at": "2026-04-10T10:01:22.227Z",
-          "completed_at": "",
-          "result": "",
+          "completed_at": "2026-04-10T10:15:37.255Z",
+          "result": "Spec written: data/pipeline/tasks/task-1775814823690-confirmed-by/spec.md",
           "error": ""
         },
         {
@@ -230,11 +230,11 @@
           "task_id": "task-1775814823715-[pm]-spec:-统一-api-co",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "doing",
+          "status": "success",
           "depends_on": [],
           "started_at": "2026-04-10T10:07:58.173Z",
-          "completed_at": "",
-          "result": "",
+          "completed_at": "2026-04-10T10:15:37.255Z",
+          "result": "Spec written: data/pipeline/tasks/task-1775814823715-api-contract/spec.md",
           "error": ""
         },
         {
@@ -272,10 +272,10 @@
       "name": "[PM] Spec: 补充具体回滚脚本规范和 runbook",
       "summary": "[PM] Spec: 补充具体回滚脚本规范和 runbook",
       "source": "system",
-      "status": "queueing",
+      "status": "running",
       "priority": "medium",
       "created_at": "2026-04-10T09:53:43.733Z",
-      "started_at": "",
+      "started_at": "2026-04-10T10:16:01.294Z",
       "completed_at": "",
       "jobs": [
         {
@@ -283,11 +283,11 @@
           "task_id": "task-1775814823733-[pm]-spec:-补充具体回滚脚本规",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "not_started",
+          "status": "success",
           "depends_on": [],
-          "started_at": "",
-          "completed_at": "",
-          "result": "",
+          "started_at": "2026-04-10T10:16:01.294Z",
+          "completed_at": "2026-04-10T10:20:39.857Z",
+          "result": "Spec written: data/pipeline/tasks/task-rollback-runbook/spec.md",
           "error": ""
         },
         {
@@ -325,10 +325,10 @@
       "name": "[BD] 建议在 spec 草稿阶段增加 \"商业可行性快速扫描\" 触发点",
       "summary": "[BD] 建议在 spec 草稿阶段增加 \"商业可行性快速扫描\" 触发点",
       "source": "system",
-      "status": "queueing",
+      "status": "running",
       "priority": "medium",
       "created_at": "2026-04-10T09:53:43.735Z",
-      "started_at": "",
+      "started_at": "2026-04-10T10:23:28.741Z",
       "completed_at": "",
       "jobs": [
         {
@@ -336,9 +336,9 @@
           "task_id": "task-1775814823735-[bd]-建议在-spec-草稿阶段增加",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "not_started",
+          "status": "doing",
           "depends_on": [],
-          "started_at": "",
+          "started_at": "2026-04-10T10:23:28.741Z",
           "completed_at": "",
           "result": "",
           "error": ""
@@ -378,10 +378,10 @@
       "name": "[BD] 增加 spec 草稿阶段早期商业可行性快速扫描触发点",
       "summary": "[BD] 增加 spec 草稿阶段早期商业可行性快速扫描触发点",
       "source": "system",
-      "status": "queueing",
+      "status": "running",
       "priority": "medium",
       "created_at": "2026-04-10T09:53:43.738Z",
-      "started_at": "",
+      "started_at": "2026-04-10T10:27:40.404Z",
       "completed_at": "",
       "jobs": [
         {
@@ -389,9 +389,9 @@
           "task_id": "task-1775814823738-[bd]-增加-spec-草稿阶段早期商",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "not_started",
+          "status": "doing",
           "depends_on": [],
-          "started_at": "",
+          "started_at": "2026-04-10T10:27:40.404Z",
           "completed_at": "",
           "result": "",
           "error": ""
@@ -431,10 +431,10 @@
       "name": "[PM] 增加明确触发关键词列表与澄清超时降级策略",
       "summary": "[PM] 增加明确触发关键词列表与澄清超时降级策略",
       "source": "system",
-      "status": "queueing",
+      "status": "running",
       "priority": "medium",
       "created_at": "2026-04-10T09:53:43.741Z",
-      "started_at": "",
+      "started_at": "2026-04-10T10:33:38.894Z",
       "completed_at": "",
       "jobs": [
         {
@@ -442,9 +442,9 @@
           "task_id": "task-1775814823741-[pm]-增加明确触发关键词列表与澄清超",
           "title": "PM Review & Spec",
           "agent": "pm",
-          "status": "not_started",
+          "status": "doing",
           "depends_on": [],
-          "started_at": "",
+          "started_at": "2026-04-10T10:33:38.894Z",
           "completed_at": "",
           "result": "",
           "error": ""
@@ -5197,5 +5197,5 @@
       ]
     }
   ],
-  "last_updated": "2026-04-10T10:07:58.173Z"
+  "last_updated": "2026-04-10T10:33:38.894Z"
 }
