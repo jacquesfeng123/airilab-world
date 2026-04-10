@@ -1772,6 +1772,16 @@
       "status": "pm_spec_needed",
       "priority": "low",
       "created_at": "2026-04-10T12:34:00.000Z"
+    },
+    {
+      "id": "pm-wq-ar-matmgr2-1775819061859-material-manager",
+      "type": "pm_spec_needed",
+      "title": "[Material Manager] 定义 material-cost-response schema 规范 Estimator 接口",
+      "source_file": "wq-ar-matmgr2-1775819061859-material-manager.json",
+      "source_type": "agent_review",
+      "status": "pending",
+      "created_at": "",
+      "priority": "low"
     }
   ],
   "queue": [
@@ -6809,6 +6819,78 @@
       "completed_at": "2026-04-10T12:54:22.337Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review and improve PM spec templates"
+    },
+    {
+      "id": "wq-ar-frontend-1775826268441",
+      "type": "agent_review",
+      "title": "[Frontend] 将深色模式截图对比集成到 CI 自动化流程",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T13:04:28.441Z",
+      "started_at": "2026-04-10T13:09:26.302Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775826268442",
+      "type": "agent_review",
+      "title": "[Backend] 将 rate limiting 升级为 checklist 必须项并补充 migration rollback 文档",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T13:04:28.441Z",
+      "started_at": "2026-04-10T13:09:26.308Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775826566266-0",
+      "type": "agent_review",
+      "title": "[BACKEND] 建议将 API contract 统一归档到 data/api-contracts/ 并加入索引文件",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T13:09:26.267Z",
+      "started_at": "2026-04-10T13:09:26.314Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775826566267-1",
+      "type": "agent_review",
+      "title": "[BACKEND] 对外部 API 调用应在 checklist 中将 rate limiting 升级为必须项，防止生",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T13:09:26.267Z",
+      "started_at": "2026-04-10T13:09:26.319Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775826566267-0",
+      "type": "agent_review",
+      "title": "[FRONTEND] 建议为核心 UI 组件添加 Storybook stories，提升组件可复用性和团队协作效率",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T13:09:26.267Z",
+      "started_at": "2026-04-10T13:09:26.342Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775826566267-1",
+      "type": "agent_review",
+      "title": "[FRONTEND] `browser-test.mjs` 中 localhost:8899 应从 config 读取，避",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T13:09:26.267Z",
+      "started_at": "2026-04-10T13:09:26.350Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
     }
   ],
   "entries": [
