@@ -1758,10 +1758,10 @@
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "started_at": "2026-04-10T01:56:44.695Z",
+      "started_at": "2026-04-10T02:41:53.898Z",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-routing-1775752535827",
@@ -1790,10 +1790,10 @@
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "started_at": "2026-04-10T01:56:44.700Z",
+      "started_at": "2026-04-10T02:41:53.902Z",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-be-api-contract-1775752535827",
@@ -1818,15 +1818,16 @@
       "type": "agent_review",
       "title": "[BE] 建立 centralized error handler + 统一重试策略",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
+      "result_summary": "[qa-fail] gateway timeout - subagent spawn failed",
       "started_at": "2026-04-10T01:56:44.711Z",
       "completed_at": null,
-      "error": null,
-      "retryCount": 1
+      "error": "gateway timeout after 10000ms - subagent unavailable",
+      "retryCount": 1,
+      "updated_at": "2026-04-10T02:27:36.472Z"
     },
     {
       "id": "wq-ar-fe-browser-test-ci-1775752535827",
@@ -1838,10 +1839,10 @@
       "created_at": "2026-04-09T16:35:35.826Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "started_at": "2026-04-10T01:56:44.715Z",
+      "started_at": "2026-04-10T02:41:53.907Z",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-fe-design-spec-gate-1775752535827",
@@ -1868,12 +1869,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T16:47:34.303Z",
-      "started_at": "2026-04-10T01:56:44.741Z",
+      "started_at": "2026-04-10T02:41:53.910Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-backend-1775753254303",
@@ -1949,12 +1950,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
-      "started_at": "2026-04-10T01:56:44.744Z",
+      "started_at": "2026-04-10T02:41:53.915Z",
       "assignee": "uiux",
       "result_summary": "dispatched to uiux via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-uiux-1775754089117-1",
@@ -1964,12 +1965,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
-      "started_at": "2026-04-10T01:56:44.747Z",
+      "started_at": "2026-04-10T02:41:53.938Z",
       "assignee": "uiux",
       "result_summary": "dispatched to uiux via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775754089117-0",
@@ -1979,12 +1980,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
-      "started_at": "2026-04-10T01:56:44.751Z",
+      "started_at": "2026-04-10T02:41:53.941Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775754089117-1",
@@ -1994,12 +1995,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.117Z",
-      "started_at": "2026-04-10T01:56:44.755Z",
+      "started_at": "2026-04-10T02:41:53.948Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-1775754089118-0",
@@ -2009,12 +2010,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.118Z",
-      "started_at": "2026-04-10T01:56:44.762Z",
+      "started_at": "2026-04-10T02:41:53.952Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-1775754089118-1",
@@ -2077,12 +2078,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.119Z",
-      "started_at": "2026-04-10T01:56:44.791Z",
+      "started_at": "2026-04-10T02:41:53.956Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-frontend-1775754089119-1",
@@ -2092,12 +2093,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:01:29.119Z",
-      "started_at": "2026-04-10T01:56:44.796Z",
+      "started_at": "2026-04-10T02:41:53.964Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-qa-1775754250518",
@@ -2107,12 +2108,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
-      "started_at": "2026-04-10T01:56:44.803Z",
+      "started_at": "2026-04-10T02:41:53.968Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-qa-1775754250519",
@@ -2122,12 +2123,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
-      "started_at": "2026-04-10T01:56:44.809Z",
+      "started_at": "2026-04-10T02:41:53.971Z",
       "assignee": "qa",
       "result_summary": "dispatched to qa via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-tester-1775754250520",
@@ -2137,12 +2138,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
-      "started_at": "2026-04-10T01:56:44.837Z",
+      "started_at": "2026-04-10T02:41:53.990Z",
       "assignee": "tester",
       "result_summary": "dispatched to tester via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-tester-1775754250521",
@@ -2152,12 +2153,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:04:10.518Z",
-      "started_at": "2026-04-10T01:56:44.841Z",
+      "started_at": "2026-04-10T02:41:53.993Z",
       "assignee": "tester",
       "result_summary": "dispatched to tester via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-qa-1775754606262-0",
@@ -2167,12 +2168,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.262Z",
-      "started_at": "2026-04-10T01:56:44.845Z",
+      "started_at": "2026-04-10T02:41:54.000Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-qa-1775754606262-1",
@@ -2182,12 +2183,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.262Z",
-      "started_at": "2026-04-10T01:56:44.851Z",
+      "started_at": "2026-04-10T02:41:54.004Z",
       "assignee": "qa",
       "result_summary": "dispatched to qa via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-tester-1775754606263-0",
@@ -2197,12 +2198,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.263Z",
-      "started_at": "2026-04-10T01:56:44.856Z",
+      "started_at": "2026-04-10T02:41:54.007Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-tester-1775754606263-1",
@@ -2212,12 +2213,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T17:10:06.263Z",
-      "started_at": "2026-04-10T01:56:44.860Z",
+      "started_at": "2026-04-10T02:41:54.010Z",
       "assignee": "tester",
       "result_summary": "dispatched to tester via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-dev-mnrrphmw",
@@ -2437,12 +2438,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T18:04:07.564Z",
-      "started_at": "2026-04-10T01:56:44.863Z",
+      "started_at": "2026-04-10T02:41:54.015Z",
       "assignee": "uiux",
       "result_summary": "dispatched to uiux via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-pm-17757578475641",
@@ -2503,12 +2504,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T18:10:11.175Z",
-      "started_at": "2026-04-10T01:56:44.867Z",
+      "started_at": "2026-04-10T02:41:54.040Z",
       "assignee": "uiux",
       "result_summary": "dispatched to uiux via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-uiux-1775758211175-1",
@@ -2535,12 +2536,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
-      "started_at": "2026-04-10T01:56:44.892Z",
+      "started_at": "2026-04-10T02:41:54.043Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe2-1775761455052",
@@ -2550,12 +2551,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
-      "started_at": "2026-04-10T01:56:44.895Z",
+      "started_at": "2026-04-10T02:41:54.050Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775761455053",
@@ -2565,12 +2566,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
-      "started_at": "2026-04-10T01:56:44.898Z",
+      "started_at": "2026-04-10T02:41:54.053Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops2-1775761455054",
@@ -2580,12 +2581,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:04:15.051Z",
-      "started_at": "2026-04-10T01:56:44.901Z",
+      "started_at": "2026-04-10T02:41:54.056Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775761817180-0",
@@ -2595,12 +2596,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.180Z",
-      "started_at": "2026-04-10T01:56:44.907Z",
+      "started_at": "2026-04-10T02:41:54.092Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775761817180-1",
@@ -2610,12 +2611,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.180Z",
-      "started_at": "2026-04-10T01:56:44.912Z",
+      "started_at": "2026-04-10T02:41:54.099Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-1775761817181-0",
@@ -2625,12 +2626,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.181Z",
-      "started_at": "2026-04-10T01:56:44.915Z",
+      "started_at": "2026-04-10T02:41:54.102Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-1775761817181-1",
@@ -2640,12 +2641,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T19:10:17.181Z",
-      "started_at": "2026-04-10T01:56:44.937Z",
+      "started_at": "2026-04-10T02:41:54.105Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-frontend-mnrw3i2b",
@@ -2975,12 +2976,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T21:04:22.521Z",
-      "started_at": "2026-04-10T01:56:44.944Z",
+      "started_at": "2026-04-10T02:41:54.108Z",
       "assignee": "researcher",
       "result_summary": "dispatched to researcher via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-researcher2-1775768662524",
@@ -2990,12 +2991,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T21:04:22.521Z",
-      "started_at": "2026-04-10T01:56:44.949Z",
+      "started_at": "2026-04-10T02:41:54.115Z",
       "assignee": "researcher",
       "result_summary": "dispatched to researcher via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-bd-1775769025069-0",
@@ -3040,12 +3041,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T21:10:25.070Z",
-      "started_at": "2026-04-10T01:56:44.962Z",
+      "started_at": "2026-04-10T02:41:54.118Z",
       "assignee": "researcher",
       "result_summary": "dispatched to researcher via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-researcher-1775769025070-1",
@@ -3055,12 +3056,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T21:10:25.070Z",
-      "started_at": "2026-04-10T01:56:44.965Z",
+      "started_at": "2026-04-10T02:41:54.121Z",
       "assignee": "bd",
       "result_summary": "dispatched to bd via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-frontend-mns0dxv7",
@@ -3354,15 +3355,16 @@
       "type": "agent_review",
       "title": "[Dev] 添加并发任务优先级规则与spec escalate SLA",
       "owner": "dev",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-09T23:04:27.055Z",
       "started_at": "2026-04-10T01:56:44.988Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox",
+      "result_summary": "[qa-fail] gateway timeout - subagent spawn failed",
       "completed_at": null,
-      "error": null,
-      "retryCount": 1
+      "error": "gateway timeout after 10000ms - subagent unavailable",
+      "retryCount": 1,
+      "updated_at": "2026-04-10T02:27:36.473Z"
     },
     {
       "id": "wq-ar-dev-1775776261496-0",
@@ -3372,12 +3374,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T23:11:01.496Z",
-      "started_at": "2026-04-10T01:56:44.994Z",
+      "started_at": "2026-04-10T02:41:54.141Z",
       "assignee": "dev",
       "result_summary": "dispatched to dev via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-dev-1775776261496-1",
@@ -3387,12 +3389,12 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-09T23:11:01.496Z",
-      "started_at": "2026-04-10T01:56:44.998Z",
+      "started_at": "2026-04-10T02:41:54.144Z",
       "assignee": "dev",
       "result_summary": "dispatched to dev via agent-inbox",
       "completed_at": null,
       "error": null,
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-project-pm-1775776261497-0",
@@ -3998,36 +4000,42 @@
       "type": "agent_review",
       "title": "[Backend] 补充API contract模板及rate-limiting强制范围说明",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T02:08:16.859Z",
       "started_at": "2026-04-10T02:11:48.060Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "[qa-fail] gateway timeout - subagent spawn failed",
+      "error": "gateway timeout after 10000ms - subagent unavailable",
+      "updated_at": "2026-04-10T02:27:36.473Z"
     },
     {
       "id": "wq-ar-backend-1775787108022-0",
       "type": "agent_review",
       "title": "[BACKEND] 建议在role-soul.md中给出最简API contract示例模板，减少输出不一致",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T02:11:48.022Z",
       "started_at": "2026-04-10T02:11:48.069Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "[qa-fail] gateway timeout - subagent spawn failed",
+      "error": "gateway timeout after 10000ms - subagent unavailable",
+      "updated_at": "2026-04-10T02:27:36.473Z"
     },
     {
       "id": "wq-ar-backend-1775787108022-1",
       "type": "agent_review",
       "title": "[BACKEND] 建议明确哪类外部API调用必须实现rate limiting（如OpenAI/Anthropic），",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T02:11:48.022Z",
       "started_at": "2026-04-10T02:11:48.073Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox"
+      "result_summary": "[qa-fail] gateway timeout - subagent spawn failed",
+      "error": "gateway timeout after 10000ms - subagent unavailable",
+      "updated_at": "2026-04-10T02:27:36.473Z"
     },
     {
       "id": "wq-ar-frontend-1775787108022-0",
