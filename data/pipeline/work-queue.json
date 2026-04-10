@@ -1295,7 +1295,7 @@
       "id": "qa-qa-wq-ar-fe-retest-mnrfjkgh",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -1306,16 +1306,16 @@
         "auto-generated"
       ],
       "started_at": "2026-04-10T02:26:50.976Z",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "completed_at": null,
-      "retryCount": 2,
-      "error": null
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "completed_at": "2026-04-10T03:11:59.557Z",
+      "retryCount": 3,
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "qa-wq-ai-eval-gate-f7ab0h",
       "title": "[QA] undefined",
       "type": "qa_review_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -1326,10 +1326,10 @@
         "auto-generated"
       ],
       "started_at": "2026-04-10T02:26:50.984Z",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "completed_at": null,
-      "retryCount": 2,
-      "error": null
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "completed_at": "2026-04-10T03:11:59.959Z",
+      "retryCount": 3,
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-1775743523155-uiux",
@@ -3720,7 +3720,7 @@
       "id": "cto-qa-wq-ar-fe-retest-mnrfjkgh",
       "title": "[CTO Review] qa-wq-ar-fe-retest-mnrfjkgh",
       "type": "cto_review",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -3731,14 +3731,16 @@
         "auto-generated"
       ],
       "started_at": "2026-04-10T02:26:51.030Z",
-      "result_summary": "dispatched to trump via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T03:12:00.218Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "cto-wq-ai-eval-gate-f7ab0h",
       "title": "[CTO Review] wq-ai-eval-gate-f7ab0h",
       "type": "cto_review",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "trump",
       "assignee": "trump",
@@ -3749,38 +3751,44 @@
         "auto-generated"
       ],
       "started_at": "2026-04-10T02:26:51.037Z",
-      "result_summary": "dispatched to trump via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T03:12:00.463Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-mns6vtmt",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "running",
+      "status": "failed",
       "payload": {
         "task": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate"
       },
       "created_at": "2026-04-10T00:50:19.205Z",
       "created_by": "dispatcher-auto",
       "started_at": "2026-04-10T02:26:50.991Z",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T03:12:00.714Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-mns6vtmz",
       "type": "qa_review_needed",
       "assignee": "qa",
       "priority": "medium",
-      "status": "running",
+      "status": "failed",
       "payload": {
         "task": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail"
       },
       "created_at": "2026-04-10T00:50:19.211Z",
       "created_by": "dispatcher-auto",
       "started_at": "2026-04-10T02:26:51.015Z",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T03:12:00.984Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "qa-pm-design-tokens-ux-reviewed-1775743523155",
@@ -3806,7 +3814,7 @@
       "id": "qa-pm-confirmed-by-audit-trail-1775743523156",
       "title": "[QA] [PM] Spec: confirmed_by field + CTO代理审批 audit trail",
       "type": "qa_review_needed",
-      "status": "running",
+      "status": "failed",
       "priority": "medium",
       "owner": "qa",
       "assignee": "qa",
@@ -3817,8 +3825,10 @@
         "auto-generated"
       ],
       "started_at": "2026-04-10T02:26:51.019Z",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T03:12:01.258Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-renderer-1775783596798",
@@ -4127,6 +4137,60 @@
       "started_at": "2026-04-10T03:04:14.591Z",
       "assignee": "tester",
       "result_summary": "dispatched to tester via agent-inbox"
+    },
+    {
+      "id": "wq-ar-qa-1775790257157",
+      "type": "agent_review",
+      "title": "[QA] 与Tester职责边界明确化：禁止QA新建测试文件",
+      "owner": "qa",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T03:04:17.157Z",
+      "started_at": "2026-04-10T03:12:01.526Z",
+      "assignee": "qa",
+      "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "wq-ar-tester-1775790257157",
+      "type": "agent_review",
+      "title": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
+      "owner": "tester",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T03:04:17.157Z",
+      "started_at": "2026-04-10T03:12:01.532Z",
+      "assignee": "tester",
+      "result_summary": "dispatched to tester via agent-inbox"
+    },
+    {
+      "id": "wq-si-pm-mnsby223",
+      "type": "self_improve",
+      "assignee": "pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review and improve PM spec templates"
+      },
+      "created_at": "2026-04-10T03:12:01.515Z",
+      "started_at": "2026-04-10T03:12:01.515Z",
+      "completed_at": "2026-04-10T03:12:01.515Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review and improve PM spec templates"
+    },
+    {
+      "id": "wq-si-project-pm-mnsby224",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-10T03:12:01.516Z",
+      "started_at": "2026-04-10T03:12:01.516Z",
+      "completed_at": "2026-04-10T03:12:01.516Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
     }
   ]
 }
