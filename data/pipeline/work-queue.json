@@ -4665,9 +4665,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:13.199Z",
-      "started_at": "2026-04-10T04:04:52.398Z",
+      "started_at": "2026-04-10T04:50:26.079Z",
       "assignee": "uiux",
-      "result_summary": "dispatched to uiux via agent-inbox"
+      "result_summary": "dispatched to uiux via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-pm-1775793853200",
@@ -4677,9 +4678,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:13.199Z",
-      "started_at": "2026-04-10T04:04:52.405Z",
+      "started_at": "2026-04-10T04:50:26.086Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-pm-1775793892367-0",
@@ -4689,9 +4691,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:52.367Z",
-      "started_at": "2026-04-10T04:04:52.409Z",
+      "started_at": "2026-04-10T04:50:26.090Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-pm-1775793892367-1",
@@ -4701,9 +4704,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:52.367Z",
-      "started_at": "2026-04-10T04:04:52.414Z",
+      "started_at": "2026-04-10T04:50:26.096Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-uiux-1775793892368-0",
@@ -4713,9 +4717,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:52.368Z",
-      "started_at": "2026-04-10T04:04:52.419Z",
+      "started_at": "2026-04-10T04:50:26.117Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "dispatched to pm via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-uiux-1775793892368-1",
@@ -4725,9 +4730,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:52.368Z",
-      "started_at": "2026-04-10T04:04:52.441Z",
+      "started_at": "2026-04-10T04:50:26.123Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox"
+      "result_summary": "dispatched to dev via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-si-backend-mnse3l9g",
@@ -4743,6 +4749,56 @@
       "completed_at": "2026-04-10T04:12:18.916Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review API error handling"
+    }
+  ],
+  "entries": [
+    {
+      "id": "pm-spec-1775796335829-0",
+      "type": "pm_spec_needed",
+      "title": "[QA] 增加并发任务队列处理规则",
+      "source_file": "wq-ar-qa-1775790254548-0-qa.json",
+      "created_at": 1775796335,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775796335830-1",
+      "type": "pm_spec_needed",
+      "title": "[QA] 文件名加入时间戳或task-id后缀",
+      "source_file": "wq-ar-qa-1775790254548-1-qa.json",
+      "created_at": 1775796335,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775796335830-2",
+      "type": "pm_spec_needed",
+      "title": "[QA] 与Tester职责边界明确化：禁止QA新建测试文件",
+      "source_file": "wq-ar-qa-1775790257157-qa.json",
+      "created_at": 1775796335,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775796335830-3",
+      "type": "pm_spec_needed",
+      "title": "[TESTER] 增加golden-set版本管理与更新触发条件说明",
+      "source_file": "wq-ar-tester-1775790254549-0-tester.json",
+      "created_at": 1775796335,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775796335831-4",
+      "type": "pm_spec_needed",
+      "title": "[TESTER] 补充视觉回归基准图存储路径与diff阈值配置",
+      "source_file": "wq-ar-tester-1775790254549-1-tester.json",
+      "created_at": 1775796335,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775796335831-5",
+      "type": "pm_spec_needed",
+      "title": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
+      "source_file": "wq-ar-tester-1775790257157-tester.json",
+      "created_at": 1775796335,
+      "status": "pending"
     }
   ]
 }
