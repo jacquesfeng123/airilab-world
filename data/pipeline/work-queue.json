@@ -1863,6 +1863,33 @@
       "agentRole": "uiux",
       "status": "pending",
       "created_at": "2026-04-10T14:34:00.000Z"
+    },
+    {
+      "id": "wq-ar-uiux-1775829859906",
+      "title": "[UIUX] 创建设计令牌文件并在role-soul中引用",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "uiux",
+      "status": "pending",
+      "dispatched_at": "2026-04-10T14:56:12.893Z"
+    },
+    {
+      "id": "wq-ar-uiux-1775830209465-0",
+      "title": "[UIUX] 在 role-soul.md 中引用 \"8px base\" 但没有指向实际设计令牌文件，建议创建并链接",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "uiux",
+      "status": "pending",
+      "dispatched_at": "2026-04-10T14:56:12.917Z"
+    },
+    {
+      "id": "wq-ar-uiux-1775830209465-1",
+      "title": "[UIUX] 角色说明输出格式但无标准模板，建议提供 design-template.md 参考",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "uiux",
+      "status": "pending",
+      "dispatched_at": "2026-04-10T14:56:12.924Z"
     }
   ],
   "queue": [
@@ -7300,6 +7327,102 @@
       "completed_at": "2026-04-10T14:25:41.806Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-ar-scribe-1775833491995",
+      "type": "agent_review",
+      "title": "[SCRIBE] 添加路由优先级冲突处理规则",
+      "owner": "scribe",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:04:51.995Z",
+      "started_at": "2026-04-10T15:11:43.355Z",
+      "assignee": "scribe",
+      "result_summary": "dispatched to scribe via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe2-1775833491996",
+      "type": "agent_review",
+      "title": "[SCRIBE] autoDream并发写入风险 - 加文件锁",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:04:51.995Z",
+      "started_at": "2026-04-10T15:11:43.365Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops-1775833491997",
+      "type": "agent_review",
+      "title": "[DEVOPS] 补充critical hotfix判定标准和审批流程",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:04:51.995Z",
+      "started_at": "2026-04-10T15:11:43.370Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops2-1775833491998",
+      "type": "agent_review",
+      "title": "[DEVOPS] 定义自动回滚触发阈值",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:04:51.995Z",
+      "started_at": "2026-04-10T15:11:43.392Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops-1775833903316-0",
+      "type": "agent_review",
+      "title": "[DEVOPS] 规则写明\"不在周五部署除非 critical hotfix\"，但未定义 critical 的判定标准",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:11:43.316Z",
+      "started_at": "2026-04-10T15:11:43.397Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-devops-1775833903316-1",
+      "type": "agent_review",
+      "title": "[DEVOPS] 部署后观测15分钟是好习惯，但 role-soul 未定义具体监控指标阈值和自动回滚触发条件，建议添",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:11:43.316Z",
+      "started_at": "2026-04-10T15:11:43.405Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775833903317-0",
+      "type": "agent_review",
+      "title": "[SCRIBE] 当输入同时匹配多个路由目标时（如既有项目名又有bug），规则表未说明优先级顺序，建议添加\"多信号冲突",
+      "owner": "scribe",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:11:43.317Z",
+      "started_at": "2026-04-10T15:11:43.412Z",
+      "assignee": "scribe",
+      "result_summary": "dispatched to scribe via agent-inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775833903317-1",
+      "type": "agent_review",
+      "title": "[SCRIBE] autoDream 在23:30执行，但本 review cron 在23:03触发，若 scrib",
+      "owner": "devops",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T15:11:43.317Z",
+      "started_at": "2026-04-10T15:11:43.418Z",
+      "assignee": "devops",
+      "result_summary": "dispatched to devops via agent-inbox"
     }
   ],
   "entries": [
