@@ -4128,9 +4128,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.548Z",
-      "started_at": "2026-04-10T03:04:14.563Z",
+      "started_at": "2026-04-10T03:49:49.940Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "dispatched to qa via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-qa-1775790254548-1",
@@ -4140,9 +4141,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.548Z",
-      "started_at": "2026-04-10T03:04:14.568Z",
+      "started_at": "2026-04-10T03:49:49.946Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox"
+      "result_summary": "dispatched to qa via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-tester-1775790254549-0",
@@ -4152,9 +4154,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.549Z",
-      "started_at": "2026-04-10T03:04:14.571Z",
+      "started_at": "2026-04-10T03:49:49.966Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "dispatched to tester via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-tester-1775790254549-1",
@@ -4164,9 +4167,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.549Z",
-      "started_at": "2026-04-10T03:04:14.591Z",
+      "started_at": "2026-04-10T03:49:49.969Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox"
+      "result_summary": "dispatched to tester via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-qa-1775790257157",
@@ -4221,6 +4225,81 @@
       "completed_at": "2026-04-10T03:12:01.516Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-ai-engineer-mnsdaodm",
+      "type": "self_improve",
+      "assignee": "ai-engineer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Benchmark embedding model performance"
+      },
+      "created_at": "2026-04-10T03:49:49.930Z",
+      "started_at": "2026-04-10T03:49:49.930Z",
+      "completed_at": "2026-04-10T03:49:49.930Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Benchmark embedding model performance"
+    },
+    {
+      "id": "wq-si-reviewer-mnsdaodn",
+      "type": "self_improve",
+      "assignee": "reviewer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review open PRs and pending specs"
+      },
+      "created_at": "2026-04-10T03:49:49.931Z",
+      "started_at": "2026-04-10T03:49:49.931Z",
+      "completed_at": "2026-04-10T03:49:49.931Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review open PRs and pending specs"
+    },
+    {
+      "id": "wq-si-tech-arch-mnsdaodn",
+      "type": "self_improve",
+      "assignee": "tech-arch",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review system architecture diagrams"
+      },
+      "created_at": "2026-04-10T03:49:49.931Z",
+      "started_at": "2026-04-10T03:49:49.931Z",
+      "completed_at": "2026-04-10T03:49:49.931Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review system architecture diagrams"
+    },
+    {
+      "id": "wq-si-material-mgr-mnsdaodn",
+      "type": "self_improve",
+      "assignee": "material-mgr",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update material library catalog"
+      },
+      "created_at": "2026-04-10T03:49:49.931Z",
+      "started_at": "2026-04-10T03:49:49.931Z",
+      "completed_at": "2026-04-10T03:49:49.931Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update material library catalog"
+    },
+    {
+      "id": "wq-si-downstream-mnsdaodo",
+      "type": "self_improve",
+      "assignee": "downstream",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review vendor communication templates"
+      },
+      "created_at": "2026-04-10T03:49:49.932Z",
+      "started_at": "2026-04-10T03:49:49.932Z",
+      "completed_at": "2026-04-10T03:49:49.932Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review vendor communication templates"
     }
   ]
 }
