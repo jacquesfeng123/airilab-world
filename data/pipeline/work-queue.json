@@ -1413,6 +1413,206 @@
       "agentRole": "dev",
       "created_at": "2026-04-10T05:16:26.457Z",
       "source": "agent_review_inbox"
+    },
+    {
+      "id": "pm-spec-wq-ar-chief-designer-1775801057741-chief-designer-1775801776507",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[CHIEF-DESIGNER] 增加自触发条件段落及创新评估维度",
+      "source_file": "wq-ar-chief-designer-1775801057741-chief-designer.json",
+      "payload": {
+        "id": "wq-ar-chief-designer-1775801057741",
+        "title": "[CHIEF-DESIGNER] 增加自触发条件段落及创新评估维度",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "chief-designer",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T06:07:01.708Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 chief-designer agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-chief-designer-1775801057741\n建议: [CHIEF-DESIGNER] 增加自触发条件段落及创新评估维度\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-chief-designer-1775801057741 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776507
+    },
+    {
+      "id": "pm-spec-wq-ar-chief-designer-1775801221672-0-chief-designer-1775801776511",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[CHIEF-DESIGNER] 建议在role-soul中增加\"自触发条件\"段落，明确设计日志满足什么条件时主动进行阶段性质量检查",
+      "source_file": "wq-ar-chief-designer-1775801221672-0-chief-designer.json",
+      "payload": {
+        "id": "wq-ar-chief-designer-1775801221672-0",
+        "title": "[CHIEF-DESIGNER] 建议在role-soul中增加\"自触发条件\"段落，明确设计日志满足什么条件时主动进行阶段性质量检查",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "chief-designer",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T06:07:01.722Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 chief-designer agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-chief-designer-1775801221672-0\n建议: [CHIEF-DESIGNER] 建议在role-soul中增加\"自触发条件\"段落，明确设计日志满足什么条件时主动进行阶段性质量检查\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-chief-designer-1775801221672-0 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776511
+    },
+    {
+      "id": "pm-spec-wq-ar-chief-designer-1775801221672-1-chief-designer-1775801776513",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流",
+      "source_file": "wq-ar-chief-designer-1775801221672-1-chief-designer.json",
+      "payload": {
+        "id": "wq-ar-chief-designer-1775801221672-1",
+        "title": "[CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "chief-designer",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T06:07:01.742Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 chief-designer agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-chief-designer-1775801221672-1\n建议: [CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-chief-designer-1775801221672-1 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776513
+    },
+    {
+      "id": "pm-spec-wq-ar-devops-1775797446272-devops-1775801776515",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "source_file": "wq-ar-devops-1775797446272-devops.json",
+      "payload": {
+        "id": "wq-ar-devops-1775797446272",
+        "title": "[DevOps] 补充hotfix周五部署豁免SOP",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "devops",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T05:51:31.250Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 devops agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-devops-1775797446272\n建议: [DevOps] 补充hotfix周五部署豁免SOP\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-devops-1775797446272 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776515
+    },
+    {
+      "id": "pm-spec-wq-ar-devops2-1775797446273-devops-1775801776521",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[DevOps] 明确rollback指标阈值与决策树",
+      "source_file": "wq-ar-devops2-1775797446273-devops.json",
+      "payload": {
+        "id": "wq-ar-devops2-1775797446273",
+        "title": "[DevOps] 明确rollback指标阈值与决策树",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "devops",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T05:51:31.254Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 devops agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-devops2-1775797446273\n建议: [DevOps] 明确rollback指标阈值与决策树\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-devops2-1775797446273 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776521
+    },
+    {
+      "id": "pm-spec-wq-ar-scribe-1775797446270-scribe-1775801776523",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "source_file": "wq-ar-scribe-1775797446270-scribe.json",
+      "payload": {
+        "id": "wq-ar-scribe-1775797446270",
+        "title": "[Scribe] 增加路由冲突分拆优先级逻辑",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "scribe",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T05:51:31.237Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 scribe agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-scribe-1775797446270\n建议: [Scribe] 增加路由冲突分拆优先级逻辑\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-scribe-1775797446270 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776523
+    },
+    {
+      "id": "pm-spec-wq-ar-scribe-1775797556470-0-scribe-1775801776524",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[SCRIBE] 当输入同时匹配多条路由规则时（如\"某客户的bug\"既属tech又属project），Scribe需明",
+      "source_file": "wq-ar-scribe-1775797556470-0-scribe.json",
+      "payload": {
+        "id": "wq-ar-scribe-1775797556470-0",
+        "title": "[SCRIBE] 当输入同时匹配多条路由规则时（如\"某客户的bug\"既属tech又属project），Scribe需明",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "scribe",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T05:51:31.285Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 scribe agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-scribe-1775797556470-0\n建议: [SCRIBE] 当输入同时匹配多条路由规则时（如\"某客户的bug\"既属tech又属project），Scribe需明\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-scribe-1775797556470-0 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776524
+    },
+    {
+      "id": "pm-spec-wq-ar-technical-architect-1775801057741-technical-architect-1775801776532",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表",
+      "source_file": "wq-ar-technical-architect-1775801057741-technical-architect.json",
+      "payload": {
+        "id": "wq-ar-technical-architect-1775801057741",
+        "title": "[TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "technical-architect",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T06:07:01.716Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 technical-architect agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-technical-architect-1775801057741\n建议: [TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-technical-architect-1775801057741 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776532
+    },
+    {
+      "id": "pm-spec-wq-ar-technical-architect-1775801221673-0-technical-architect-1775801776534",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡时）",
+      "source_file": "wq-ar-technical-architect-1775801221673-0-technical-architect.json",
+      "payload": {
+        "id": "wq-ar-technical-architect-1775801221673-0",
+        "title": "[TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡时）",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "technical-architect",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T06:07:01.746Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 technical-architect agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-technical-architect-1775801221673-0\n建议: [TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡时）\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-technical-architect-1775801221673-0 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776534
+    },
+    {
+      "id": "pm-spec-wq-ar-technical-architect-1775801221673-1-technical-architect-1775801776535",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "title": "[TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规",
+      "source_file": "wq-ar-technical-architect-1775801221673-1-technical-architect.json",
+      "payload": {
+        "id": "wq-ar-technical-architect-1775801221673-1",
+        "title": "[TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规",
+        "type": "agent_review",
+        "priority": "low",
+        "agentRole": "technical-architect",
+        "specContent": null,
+        "payload": {},
+        "dispatched_at": "2026-04-10T06:07:01.754Z",
+        "runTimeoutSeconds": 120,
+        "prompt": "你是 Airi Lab 的 technical-architect agent。\n\n执行以下改进建议（这是来自系统审计的具体行动项）：\n任务ID: wq-ar-technical-architect-1775801221673-1\n建议: [TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规\n\n## 执行要求\n根据建议内容，实际完成以下一项或多项：\n- 如果是“建立文档” → 创建对应的 .md 文件，写入有意义的内容（不少于10行）\n- 如果是“修改配置/代码” → 找到对应文件，做具体修改\n- 如果是“添加规范” → 在对应的 role-soul.md 或 spec.md 里追加内容\n- 如果不知道怎么做 → 在 data/audit/blocked-tasks.md 里记录原因\n\n## 完成标准（必须执行）\n用 node 脚本更新 work-queue.json 中 wq-ar-technical-architect-1775801221673-1 的 status 为 pending_review。"
+      },
+      "created_at": 1775801776535
     }
   ],
   "queue": [
@@ -4764,13 +4964,15 @@
       "type": "agent_review",
       "title": "[UIUX] 增加有条件批准结论至design-review.md",
       "owner": "uiux",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T04:04:13.199Z",
       "started_at": "2026-04-10T05:36:00.836Z",
       "assignee": "uiux",
-      "result_summary": "dispatched to uiux via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T06:22:04.511Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-pm-1775793853200",
@@ -4841,13 +5043,15 @@
       "type": "agent_review",
       "title": "[UIUX] [建议支持输出 Figma-ready token 结构或简化组件状态表，提升 dev 可读性]",
       "owner": "dev",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T04:04:52.368Z",
       "started_at": "2026-04-10T05:36:00.841Z",
       "assignee": "dev",
-      "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T06:22:04.857Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-si-backend-mnse3l9g",
@@ -4872,10 +5076,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:04:06.270Z",
-      "started_at": "2026-04-10T05:51:31.235Z",
+      "started_at": "2026-04-10T06:37:05.730Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe2-1775797446271",
@@ -4885,10 +5089,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:04:06.270Z",
-      "started_at": "2026-04-10T05:51:31.244Z",
+      "started_at": "2026-04-10T06:37:05.740Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775797446272",
@@ -4898,10 +5102,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:04:06.270Z",
-      "started_at": "2026-04-10T05:51:31.248Z",
+      "started_at": "2026-04-10T06:37:05.744Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops2-1775797446273",
@@ -4911,10 +5115,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:04:06.270Z",
-      "started_at": "2026-04-10T05:51:31.251Z",
+      "started_at": "2026-04-10T06:37:05.766Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775797556470-0",
@@ -4924,10 +5128,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:05:56.470Z",
-      "started_at": "2026-04-10T05:51:31.255Z",
+      "started_at": "2026-04-10T06:37:05.771Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-devops-1775797556470-1",
@@ -4937,10 +5141,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:05:56.470Z",
-      "started_at": "2026-04-10T05:51:31.280Z",
+      "started_at": "2026-04-10T06:37:05.777Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-1775797556470-0",
@@ -4950,10 +5154,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:05:56.470Z",
-      "started_at": "2026-04-10T05:51:31.283Z",
+      "started_at": "2026-04-10T06:37:05.780Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-scribe-1775797556470-1",
@@ -4963,10 +5167,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T05:05:56.470Z",
-      "started_at": "2026-04-10T05:51:31.286Z",
+      "started_at": "2026-04-10T06:37:05.788Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-project-pm-mnsg8vm1",
@@ -5219,6 +5423,36 @@
       "started_at": "2026-04-10T06:07:01.753Z",
       "assignee": "technical-architect",
       "result_summary": "dispatched to technical-architect via agent-inbox"
+    },
+    {
+      "id": "wq-si-backend-mnsie41h",
+      "type": "self_improve",
+      "assignee": "backend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review API error handling"
+      },
+      "created_at": "2026-04-10T06:12:28.277Z",
+      "started_at": "2026-04-10T06:12:28.277Z",
+      "completed_at": "2026-04-10T06:12:28.277Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review API error handling"
+    },
+    {
+      "id": "wq-si-frontend-mnsixezx",
+      "type": "self_improve",
+      "assignee": "frontend",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Audit UI components for consistency"
+      },
+      "created_at": "2026-04-10T06:27:28.941Z",
+      "started_at": "2026-04-10T06:27:28.941Z",
+      "completed_at": "2026-04-10T06:27:28.941Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Audit UI components for consistency"
     }
   ],
   "entries": [
