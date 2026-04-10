@@ -1323,6 +1323,96 @@
       "created_at": "2026-04-10T04:19:43Z",
       "status": "pending",
       "assignee": "pm"
+    },
+    {
+      "id": "wq-ar-devops-1775797446272",
+      "title": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "devops",
+      "created_at": "2026-04-10T05:16:26.455Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-devops-1775797556470-0",
+      "title": "[DEVOPS] 当前规则禁止周五部署但无明确hotfix豁免SOP，建议补充hotfix审批链",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "devops",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-devops2-1775797446273",
+      "title": "[DevOps] 明确rollback指标阈值与决策树",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "devops",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775797446270",
+      "title": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "scribe",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775797556470-0",
+      "title": "[SCRIBE] 当输入同时匹配多条路由规则时需明确分拆优先级",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "scribe",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-scribe-1775797556470-1",
+      "title": "[SCRIBE] state.json缺失或损坏时standup会静默失败，建议加fallback",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "scribe",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-scribe2-1775797446271",
+      "title": "[Scribe] autoDream增加tag:keep保留机制",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "scribe",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775793853199",
+      "title": "[UIUX] 增加有条件批准结论至design-review.md",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "uiux",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
+    },
+    {
+      "id": "wq-ar-uiux-1775793892368-1",
+      "title": "[UIUX] 建议支持输出Figma-ready token结构或简化组件状态表",
+      "type": "pm_spec_needed",
+      "status": "pending",
+      "priority": "low",
+      "agentRole": "dev",
+      "created_at": "2026-04-10T05:16:26.457Z",
+      "source": "agent_review_inbox"
     }
   ],
   "queue": [
@@ -4479,78 +4569,90 @@
       "type": "agent_review",
       "title": "[QA] 增加并发任务队列处理规则",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.548Z",
       "started_at": "2026-04-10T04:34:55.685Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T05:20:59.096Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-qa-1775790254548-1",
       "type": "agent_review",
       "title": "[QA] 文件名加入时间戳或task-id后缀",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.548Z",
       "started_at": "2026-04-10T04:34:55.711Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T05:20:59.488Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-tester-1775790254549-0",
       "type": "agent_review",
       "title": "[TESTER] 增加golden-set版本管理与更新触发条件说明",
       "owner": "tester",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.549Z",
       "started_at": "2026-04-10T04:34:55.715Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T05:20:59.738Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-tester-1775790254549-1",
       "type": "agent_review",
       "title": "[TESTER] 补充视觉回归基准图存储路径与diff阈值配置",
       "owner": "tester",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T03:04:14.549Z",
       "started_at": "2026-04-10T04:34:55.719Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T05:20:59.988Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-qa-1775790257157",
       "type": "agent_review",
       "title": "[QA] 与Tester职责边界明确化：禁止QA新建测试文件",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T03:04:17.157Z",
       "started_at": "2026-04-10T04:42:21.452Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T05:27:25.514Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-tester-1775790257157",
       "type": "agent_review",
       "title": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
       "owner": "tester",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T03:04:17.157Z",
       "started_at": "2026-04-10T04:42:21.476Z",
       "assignee": "tester",
-      "result_summary": "dispatched to tester via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 45m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T05:27:25.848Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-si-pm-mnsby223",
@@ -4665,10 +4767,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:13.199Z",
-      "started_at": "2026-04-10T04:50:26.079Z",
+      "started_at": "2026-04-10T05:36:00.836Z",
       "assignee": "uiux",
       "result_summary": "dispatched to uiux via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-pm-1775793853200",
@@ -4742,10 +4844,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T04:04:52.368Z",
-      "started_at": "2026-04-10T04:50:26.123Z",
+      "started_at": "2026-04-10T05:36:00.841Z",
       "assignee": "dev",
       "result_summary": "dispatched to dev via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-backend-mnse3l9g",
@@ -4857,6 +4959,111 @@
       "started_at": "2026-04-10T05:05:56.543Z",
       "assignee": "scribe",
       "result_summary": "dispatched to scribe via agent-inbox"
+    },
+    {
+      "id": "wq-si-project-pm-mnsg8vm1",
+      "type": "self_improve",
+      "assignee": "project-pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update project tracking and milestones"
+      },
+      "created_at": "2026-04-10T05:12:24.841Z",
+      "started_at": "2026-04-10T05:12:24.841Z",
+      "completed_at": "2026-04-10T05:12:24.841Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update project tracking and milestones"
+    },
+    {
+      "id": "wq-si-trump-mnsg8vm1",
+      "type": "self_improve",
+      "assignee": "trump",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Monitor system health and routing"
+      },
+      "created_at": "2026-04-10T05:12:24.841Z",
+      "started_at": "2026-04-10T05:12:24.841Z",
+      "completed_at": "2026-04-10T05:12:24.841Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Monitor system health and routing"
+    },
+    {
+      "id": "wq-si-researcher-mnsgs70v",
+      "type": "self_improve",
+      "assignee": "researcher",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Scan for new relevant research papers"
+      },
+      "created_at": "2026-04-10T05:27:26.095Z",
+      "started_at": "2026-04-10T05:27:26.095Z",
+      "completed_at": "2026-04-10T05:27:26.095Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Scan for new relevant research papers"
+    },
+    {
+      "id": "wq-si-bd-mnsgs70w",
+      "type": "self_improve",
+      "assignee": "bd",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Research new opportunity pipeline"
+      },
+      "created_at": "2026-04-10T05:27:26.096Z",
+      "started_at": "2026-04-10T05:27:26.096Z",
+      "completed_at": "2026-04-10T05:27:26.096Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Research new opportunity pipeline"
+    },
+    {
+      "id": "wq-si-chief-designer-mnsh386y",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-10T05:36:00.826Z",
+      "started_at": "2026-04-10T05:36:00.826Z",
+      "completed_at": "2026-04-10T05:36:00.826Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-estimator-mnsh386z",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-10T05:36:00.827Z",
+      "started_at": "2026-04-10T05:36:00.827Z",
+      "completed_at": "2026-04-10T05:36:00.827Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
+    },
+    {
+      "id": "wq-si-renderer-mnsh386z",
+      "type": "self_improve",
+      "assignee": "renderer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Optimize render pipeline settings"
+      },
+      "created_at": "2026-04-10T05:36:00.827Z",
+      "started_at": "2026-04-10T05:36:00.827Z",
+      "completed_at": "2026-04-10T05:36:00.827Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Optimize render pipeline settings"
     }
   ],
   "entries": [
