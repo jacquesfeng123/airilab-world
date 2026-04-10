@@ -5360,9 +5360,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T06:04:17.741Z",
-      "started_at": "2026-04-10T06:07:01.705Z",
+      "started_at": "2026-04-10T06:52:08.511Z",
       "assignee": "chief-designer",
-      "result_summary": "dispatched to chief-designer via agent-inbox"
+      "result_summary": "dispatched to chief-designer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-technical-architect-1775801057741",
@@ -5372,9 +5373,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T06:04:17.741Z",
-      "started_at": "2026-04-10T06:07:01.712Z",
+      "started_at": "2026-04-10T06:52:08.537Z",
       "assignee": "technical-architect",
-      "result_summary": "dispatched to technical-architect via agent-inbox"
+      "result_summary": "dispatched to technical-architect via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-chief-designer-1775801221672-0",
@@ -5384,9 +5386,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.672Z",
-      "started_at": "2026-04-10T06:07:01.718Z",
+      "started_at": "2026-04-10T06:52:08.545Z",
       "assignee": "chief-designer",
-      "result_summary": "dispatched to chief-designer via agent-inbox"
+      "result_summary": "dispatched to chief-designer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-chief-designer-1775801221672-1",
@@ -5396,9 +5399,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.672Z",
-      "started_at": "2026-04-10T06:07:01.723Z",
+      "started_at": "2026-04-10T06:52:08.559Z",
       "assignee": "chief-designer",
-      "result_summary": "dispatched to chief-designer via agent-inbox"
+      "result_summary": "dispatched to chief-designer via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-technical-architect-1775801221673-0",
@@ -5408,9 +5412,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.673Z",
-      "started_at": "2026-04-10T06:07:01.743Z",
+      "started_at": "2026-04-10T06:52:08.583Z",
       "assignee": "technical-architect",
-      "result_summary": "dispatched to technical-architect via agent-inbox"
+      "result_summary": "dispatched to technical-architect via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-technical-architect-1775801221673-1",
@@ -5420,9 +5425,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T06:07:01.673Z",
-      "started_at": "2026-04-10T06:07:01.753Z",
+      "started_at": "2026-04-10T06:52:08.590Z",
       "assignee": "technical-architect",
-      "result_summary": "dispatched to technical-architect via agent-inbox"
+      "result_summary": "dispatched to technical-architect via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-si-backend-mnsie41h",
@@ -5453,6 +5459,21 @@
       "completed_at": "2026-04-10T06:27:28.941Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Audit UI components for consistency"
+    },
+    {
+      "id": "wq-si-pm-mnsjt4mj",
+      "type": "self_improve",
+      "assignee": "pm",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Review and improve PM spec templates"
+      },
+      "created_at": "2026-04-10T06:52:08.491Z",
+      "started_at": "2026-04-10T06:52:08.491Z",
+      "completed_at": "2026-04-10T06:52:08.491Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Review and improve PM spec templates"
     }
   ],
   "entries": [
@@ -5502,6 +5523,70 @@
       "title": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
       "source_file": "wq-ar-tester-1775790257157-tester.json",
       "created_at": 1775796335,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-0",
+      "type": "pm_spec_needed",
+      "title": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "source_file": "wq-ar-devops-1775797446272-devops.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-1",
+      "type": "pm_spec_needed",
+      "title": "[DEVOPS] 当前规则禁止周五部署但无明确hotfix豁免SOP，建议补充hotfix审批链（Jacques确认→",
+      "source_file": "wq-ar-devops-1775797556470-0-devops.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-2",
+      "type": "pm_spec_needed",
+      "title": "[DEVOPS] \"watch metrics 15 min\"未指定具体告警阈值（如error rate、p99 latency）",
+      "source_file": "wq-ar-devops-1775797556470-1-devops.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-3",
+      "type": "pm_spec_needed",
+      "title": "[DevOps] 明确rollback指标阈值与决策树",
+      "source_file": "wq-ar-devops2-1775797446273-devops.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-4",
+      "type": "pm_spec_needed",
+      "title": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "source_file": "wq-ar-scribe-1775797446270-scribe.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-5",
+      "type": "pm_spec_needed",
+      "title": "[SCRIBE] 当输入同时匹配多条路由规则时（如\"某客户的bug\"既属tech又属project），Scribe需明确优先级",
+      "source_file": "wq-ar-scribe-1775797556470-0-scribe.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-6",
+      "type": "pm_spec_needed",
+      "title": "[SCRIBE] state.json缺失或损坏时standup会静默失败，建议加fallback降级为\"无数据\"占位",
+      "source_file": "wq-ar-scribe-1775797556470-1-scribe.json",
+      "created_at": 1775803652,
+      "status": "pending"
+    },
+    {
+      "id": "pm-spec-1775803652-inbox-7",
+      "type": "pm_spec_needed",
+      "title": "[Scribe] autoDream增加tag:keep保留机制",
+      "source_file": "wq-ar-scribe2-1775797446271-scribe.json",
+      "created_at": 1775803652,
       "status": "pending"
     }
   ]
