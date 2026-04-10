@@ -1295,10 +1295,10 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-10T01:41:41.893Z",
+      "started_at": "2026-04-10T02:26:50.976Z",
       "result_summary": "dispatched to qa via agent-inbox",
       "completed_at": null,
-      "retryCount": 1,
+      "retryCount": 2,
       "error": null
     },
     {
@@ -1315,10 +1315,10 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-10T01:41:41.903Z",
+      "started_at": "2026-04-10T02:26:50.984Z",
       "result_summary": "dispatched to qa via agent-inbox",
       "completed_at": null,
-      "retryCount": 1,
+      "retryCount": 2,
       "error": null
     },
     {
@@ -3712,9 +3712,9 @@
         "cto_review",
         "auto-generated"
       ],
-      "started_at": "2026-04-10T01:41:41.948Z",
+      "started_at": "2026-04-10T02:26:51.030Z",
       "result_summary": "dispatched to trump via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "cto-wq-ai-eval-gate-f7ab0h",
@@ -3730,9 +3730,9 @@
         "cto_review",
         "auto-generated"
       ],
-      "started_at": "2026-04-10T01:41:41.957Z",
+      "started_at": "2026-04-10T02:26:51.037Z",
       "result_summary": "dispatched to trump via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-mns6vtmt",
@@ -3745,9 +3745,9 @@
       },
       "created_at": "2026-04-10T00:50:19.205Z",
       "created_by": "dispatcher-auto",
-      "started_at": "2026-04-10T01:41:41.906Z",
+      "started_at": "2026-04-10T02:26:50.991Z",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-mns6vtmz",
@@ -3760,9 +3760,9 @@
       },
       "created_at": "2026-04-10T00:50:19.211Z",
       "created_by": "dispatcher-auto",
-      "started_at": "2026-04-10T01:41:41.928Z",
+      "started_at": "2026-04-10T02:26:51.015Z",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "qa-pm-design-tokens-ux-reviewed-1775743523155",
@@ -3798,9 +3798,9 @@
         "qa",
         "auto-generated"
       ],
-      "started_at": "2026-04-10T01:41:41.935Z",
+      "started_at": "2026-04-10T02:26:51.019Z",
       "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-renderer-1775783596798",
