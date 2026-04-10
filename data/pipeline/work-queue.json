@@ -3730,6 +3730,102 @@
       ],
       "started_at": "2026-04-10T00:56:36.569Z",
       "result_summary": "dispatched to qa via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer-1775783596798",
+      "type": "agent_review",
+      "title": "[Renderer] 添加渲染质量结构化日志quality-log.json",
+      "owner": "renderer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:13:16.798Z",
+      "started_at": "2026-04-10T01:15:46.654Z",
+      "assignee": "renderer",
+      "result_summary": "dispatched to renderer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer2-1775783596799",
+      "type": "agent_review",
+      "title": "[Renderer] style-profile版本号引用机制",
+      "owner": "chief-designer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:13:16.798Z",
+      "started_at": "2026-04-10T01:15:46.659Z",
+      "assignee": "chief-designer",
+      "result_summary": "dispatched to chief-designer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-matmgr-1775783596798",
+      "type": "agent_review",
+      "title": "[MaterialManager] suppliers.json添加price_valid_until字段",
+      "owner": "material-manager",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:13:16.798Z",
+      "started_at": "2026-04-10T01:15:46.681Z",
+      "assignee": "material-manager",
+      "result_summary": "dispatched to material-manager via agent-inbox"
+    },
+    {
+      "id": "wq-ar-matmgr2-1775783596799",
+      "type": "agent_review",
+      "title": "[MaterialManager] library.json添加last_updated时间戳",
+      "owner": "material-manager",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:13:16.798Z",
+      "started_at": "2026-04-10T01:15:46.688Z",
+      "assignee": "material-manager",
+      "result_summary": "dispatched to material-manager via agent-inbox"
+    },
+    {
+      "id": "wq-ar-material-manager-1775783746634-0",
+      "type": "agent_review",
+      "title": "[MATERIAL-MANAGER] 建议在 library.json 每条记录添加 last_updated 字段，便于定期审查过期数据",
+      "owner": "material-manager",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:15:46.634Z",
+      "started_at": "2026-04-10T01:15:46.692Z",
+      "assignee": "material-manager",
+      "result_summary": "dispatched to material-manager via agent-inbox"
+    },
+    {
+      "id": "wq-ar-material-manager-1775783746634-1",
+      "type": "agent_review",
+      "title": "[MATERIAL-MANAGER] 建议在 suppliers.json 中添加 price_valid_until 字段，避免使用过期",
+      "owner": "estimator",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:15:46.634Z",
+      "started_at": "2026-04-10T01:15:46.699Z",
+      "assignee": "estimator",
+      "result_summary": "dispatched to estimator via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer-1775783746635-0",
+      "type": "agent_review",
+      "title": "[RENDERER] 建议在渲染配置中引用 style-profile 版本号，确保跨项目风格一致性可追溯",
+      "owner": "chief-designer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:15:46.635Z",
+      "started_at": "2026-04-10T01:15:46.703Z",
+      "assignee": "chief-designer",
+      "result_summary": "dispatched to chief-designer via agent-inbox"
+    },
+    {
+      "id": "wq-ar-renderer-1775783746635-1",
+      "type": "agent_review",
+      "title": "[RENDERER] 建议将质量检查结果结构化存入 quality-log.json，支持统计渲染通过率和常见缺陷类型",
+      "owner": "renderer",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T01:15:46.635Z",
+      "started_at": "2026-04-10T01:15:46.706Z",
+      "assignee": "renderer",
+      "result_summary": "dispatched to renderer via agent-inbox"
     }
   ]
 }
