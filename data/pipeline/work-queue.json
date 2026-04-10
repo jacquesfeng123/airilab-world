@@ -6068,6 +6068,93 @@
       "completed_at": "2026-04-10T09:52:55.289Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-si-chief-designer-mnsqkh89",
+      "type": "self_improve",
+      "assignee": "chief-designer",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Update design standards documentation"
+      },
+      "created_at": "2026-04-10T10:01:22.233Z",
+      "started_at": "2026-04-10T10:01:22.233Z",
+      "completed_at": "2026-04-10T10:01:22.233Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-ar-downstream-liaison-1775815507633",
+      "type": "agent_review",
+      "title": "[DOWNSTREAM-LIAISON] 补充RFI响应SLA与联系人状态管理",
+      "owner": "downstream-liaison",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T10:05:07.633Z",
+      "started_at": "2026-04-10T10:07:58.188Z",
+      "assignee": "downstream-liaison",
+      "result_summary": "dispatched to downstream-liaison via agent-inbox"
+    },
+    {
+      "id": "wq-ar-estimator-1775815507633",
+      "type": "agent_review",
+      "title": "[ESTIMATOR] 造价基准数据版本化与置信度量化标准",
+      "owner": "estimator",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T10:05:07.633Z",
+      "started_at": "2026-04-10T10:07:58.193Z",
+      "assignee": "estimator",
+      "result_summary": "dispatched to estimator via agent-inbox"
+    },
+    {
+      "id": "wq-ar-downstream-liaison-1775815678145-0",
+      "type": "agent_review",
+      "title": "[DOWNSTREAM-LIAISON] 补充明确的响应时限（如结构工程师48h、MEP 24h），避免\"escalate after 48h",
+      "owner": "downstream-liaison",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T10:07:58.145Z",
+      "started_at": "2026-04-10T10:07:58.201Z",
+      "assignee": "downstream-liaison",
+      "result_summary": "dispatched to downstream-liaison via agent-inbox"
+    },
+    {
+      "id": "wq-ar-downstream-liaison-1775815678145-1",
+      "type": "agent_review",
+      "title": "[DOWNSTREAM-LIAISON] 建议引入联系人状态字段（active/inactive/pending），避免contacts.js",
+      "owner": "downstream-liaison",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T10:07:58.145Z",
+      "started_at": "2026-04-10T10:07:58.205Z",
+      "assignee": "downstream-liaison",
+      "result_summary": "dispatched to downstream-liaison via agent-inbox"
+    },
+    {
+      "id": "wq-ar-estimator-1775815678146-0",
+      "type": "agent_review",
+      "title": "[ESTIMATOR] 建议增加benchmark数据的版本/更新日期字段，防止使用过期造价参考导致系统性偏差",
+      "owner": "estimator",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T10:07:58.146Z",
+      "started_at": "2026-04-10T10:07:58.226Z",
+      "assignee": "estimator",
+      "result_summary": "dispatched to estimator via agent-inbox"
+    },
+    {
+      "id": "wq-ar-estimator-1775815678146-1",
+      "type": "agent_review",
+      "title": "[ESTIMATOR] \"Low/Medium/High\"置信度需补充量化标准（如数据覆盖率、参考项目相似度评分），提升估算",
+      "owner": "estimator",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T10:07:58.146Z",
+      "started_at": "2026-04-10T10:07:58.238Z",
+      "assignee": "estimator",
+      "result_summary": "dispatched to estimator via agent-inbox"
     }
   ],
   "entries": [

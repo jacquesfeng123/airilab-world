@@ -1,0 +1,5201 @@
+{
+  "version": "2.0",
+  "max_concurrent_jobs": 3,
+  "tasks": [
+    {
+      "id": "task-1775814823685-[pm]-spec:-design-to",
+      "name": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate",
+      "summary": "[PM] Spec: design-tokens.md + ux_reviewed field + UX gate",
+      "source": "system",
+      "status": "running",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.686Z",
+      "started_at": "2026-04-10T09:57:39.030Z",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823685-0",
+          "task_id": "task-1775814823685-[pm]-spec:-design-to",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "doing",
+          "depends_on": [],
+          "started_at": "2026-04-10T09:57:39.030Z",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823685-1",
+          "task_id": "task-1775814823685-[pm]-spec:-design-to",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823684-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823685-2",
+          "task_id": "task-1775814823685-[pm]-spec:-design-to",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823684-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823690-[pm]-spec:-confirmed",
+      "name": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail",
+      "summary": "[PM] Spec: confirmed_by field + CTO代理审批 audit trail",
+      "source": "system",
+      "status": "running",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.690Z",
+      "started_at": "2026-04-10T10:01:22.227Z",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823690-0",
+          "task_id": "task-1775814823690-[pm]-spec:-confirmed",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "doing",
+          "depends_on": [],
+          "started_at": "2026-04-10T10:01:22.227Z",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823690-1",
+          "task_id": "task-1775814823690-[pm]-spec:-confirmed",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823690-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823690-2",
+          "task_id": "task-1775814823690-[pm]-spec:-confirmed",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823690-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823693-[pm]-spec:-scribe-路由",
+      "name": "[PM] Spec: Scribe 路由不匹配时写 warn 日志",
+      "summary": "[PM] Spec: Scribe 路由不匹配时写 warn 日志",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:43.693Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823693-0",
+          "task_id": "task-1775814823693-[pm]-spec:-scribe-路由",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823693-1",
+          "task_id": "task-1775814823693-[pm]-spec:-scribe-路由",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823693-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823693-2",
+          "task_id": "task-1775814823693-[pm]-spec:-scribe-路由",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823693-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823699-[pm]-spec:-fe-design",
+      "name": "[PM] Spec: FE design spec ready 前置检查，未到位时 auto-pending",
+      "summary": "[PM] Spec: FE design spec ready 前置检查，未到位时 auto-pending",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:43.699Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823699-0",
+          "task_id": "task-1775814823699-[pm]-spec:-fe-design",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823699-1",
+          "task_id": "task-1775814823699-[pm]-spec:-fe-design",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823698-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823699-2",
+          "task_id": "task-1775814823699-[pm]-spec:-fe-design",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823698-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823715-[pm]-spec:-统一-api-co",
+      "name": "[PM] Spec: 统一 API contract 文档路径至 docs/api/ 并纳入 CI 强制检查",
+      "summary": "[PM] Spec: 统一 API contract 文档路径至 docs/api/ 并纳入 CI 强制检查",
+      "source": "system",
+      "status": "running",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.715Z",
+      "started_at": "2026-04-10T10:07:58.173Z",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823715-0",
+          "task_id": "task-1775814823715-[pm]-spec:-统一-api-co",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "doing",
+          "depends_on": [],
+          "started_at": "2026-04-10T10:07:58.173Z",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823715-1",
+          "task_id": "task-1775814823715-[pm]-spec:-统一-api-co",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823701-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823715-2",
+          "task_id": "task-1775814823715-[pm]-spec:-统一-api-co",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823701-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823733-[pm]-spec:-补充具体回滚脚本规",
+      "name": "[PM] Spec: 补充具体回滚脚本规范和 runbook",
+      "summary": "[PM] Spec: 补充具体回滚脚本规范和 runbook",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.733Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823733-0",
+          "task_id": "task-1775814823733-[pm]-spec:-补充具体回滚脚本规",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823733-1",
+          "task_id": "task-1775814823733-[pm]-spec:-补充具体回滚脚本规",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823733-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823733-2",
+          "task_id": "task-1775814823733-[pm]-spec:-补充具体回滚脚本规",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823733-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823735-[bd]-建议在-spec-草稿阶段增加",
+      "name": "[BD] 建议在 spec 草稿阶段增加 \"商业可行性快速扫描\" 触发点",
+      "summary": "[BD] 建议在 spec 草稿阶段增加 \"商业可行性快速扫描\" 触发点",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.735Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823735-0",
+          "task_id": "task-1775814823735-[bd]-建议在-spec-草稿阶段增加",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823735-1",
+          "task_id": "task-1775814823735-[bd]-建议在-spec-草稿阶段增加",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823735-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823735-2",
+          "task_id": "task-1775814823735-[bd]-建议在-spec-草稿阶段增加",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823735-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823738-[bd]-增加-spec-草稿阶段早期商",
+      "name": "[BD] 增加 spec 草稿阶段早期商业可行性快速扫描触发点",
+      "summary": "[BD] 增加 spec 草稿阶段早期商业可行性快速扫描触发点",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.738Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823738-0",
+          "task_id": "task-1775814823738-[bd]-增加-spec-草稿阶段早期商",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823738-1",
+          "task_id": "task-1775814823738-[bd]-增加-spec-草稿阶段早期商",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823737-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823738-2",
+          "task_id": "task-1775814823738-[bd]-增加-spec-草稿阶段早期商",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823737-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823741-[pm]-增加明确触发关键词列表与澄清超",
+      "name": "[PM] 增加明确触发关键词列表与澄清超时降级策略",
+      "summary": "[PM] 增加明确触发关键词列表与澄清超时降级策略",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.741Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823741-0",
+          "task_id": "task-1775814823741-[pm]-增加明确触发关键词列表与澄清超",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823741-1",
+          "task_id": "task-1775814823741-[pm]-增加明确触发关键词列表与澄清超",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823741-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823741-2",
+          "task_id": "task-1775814823741-[pm]-增加明确触发关键词列表与澄清超",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823741-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823743-[pm]-建议-pm-在写-spec-前",
+      "name": "[PM] 建议 PM 在写 spec 前必须读取 devops/infra 约束文件，填充依赖信息",
+      "summary": "[PM] 建议 PM 在写 spec 前必须读取 devops/infra 约束文件，填充依赖信息",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.743Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823743-0",
+          "task_id": "task-1775814823743-[pm]-建议-pm-在写-spec-前",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823743-1",
+          "task_id": "task-1775814823743-[pm]-建议-pm-在写-spec-前",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823743-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823743-2",
+          "task_id": "task-1775814823743-[pm]-建议-pm-在写-spec-前",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823743-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823746-[pm]-建议增加明确触发关键词列表（如",
+      "name": "[PM] 建议增加明确触发关键词列表（如\"排期\"、\"做\"、\"上线\"）",
+      "summary": "[PM] 建议增加明确触发关键词列表（如\"排期\"、\"做\"、\"上线\"）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.746Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823746-0",
+          "task_id": "task-1775814823746-[pm]-建议增加明确触发关键词列表（如",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823746-1",
+          "task_id": "task-1775814823746-[pm]-建议增加明确触发关键词列表（如",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823746-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823746-2",
+          "task_id": "task-1775814823746-[pm]-建议增加明确触发关键词列表（如",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823746-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823748-[uiux]-建议对-m-级任务保留轻量",
+      "name": "[UIUX] 建议对 M 级任务保留轻量 UX checklist 检查",
+      "summary": "[UIUX] 建议对 M 级任务保留轻量 UX checklist 检查",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.748Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823748-0",
+          "task_id": "task-1775814823748-[uiux]-建议对-m-级任务保留轻量",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823748-1",
+          "task_id": "task-1775814823748-[uiux]-建议对-m-级任务保留轻量",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823748-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823748-2",
+          "task_id": "task-1775814823748-[uiux]-建议对-m-级任务保留轻量",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823748-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823750-[project-pm]-建议补充通过哪",
+      "name": "[PROJECT-PM] 建议补充通过哪个渠道（wecom/email）联系客户，统一沟通规范",
+      "summary": "[PROJECT-PM] 建议补充通过哪个渠道（wecom/email）联系客户，统一沟通规范",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.750Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823750-0",
+          "task_id": "task-1775814823750-[project-pm]-建议补充通过哪",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823750-1",
+          "task_id": "task-1775814823750-[project-pm]-建议补充通过哪",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823750-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823750-2",
+          "task_id": "task-1775814823750-[project-pm]-建议补充通过哪",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823750-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823752-[project-pm]-补充延期风险预",
+      "name": "[Project-PM] 补充延期风险预警阈值与客户沟通渠道规范",
+      "summary": "[Project-PM] 补充延期风险预警阈值与客户沟通渠道规范",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.752Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823752-0",
+          "task_id": "task-1775814823752-[project-pm]-补充延期风险预",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823752-1",
+          "task_id": "task-1775814823752-[project-pm]-补充延期风险预",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823752-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823752-2",
+          "task_id": "task-1775814823752-[project-pm]-补充延期风险预",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823752-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823754-[project-pm]-建议在-rol",
+      "name": "[PROJECT-PM] 建议在 role-soul 中明确\"延期超X天\"自动触发 escalate 的阈值，而非依赖模",
+      "summary": "[PROJECT-PM] 建议在 role-soul 中明确\"延期超X天\"自动触发 escalate 的阈值，而非依赖模糊判断",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.754Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823754-0",
+          "task_id": "task-1775814823754-[project-pm]-建议在-rol",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823754-1",
+          "task_id": "task-1775814823754-[project-pm]-建议在-rol",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823754-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823754-2",
+          "task_id": "task-1775814823754-[project-pm]-建议在-rol",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823754-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823757-[bd]-建议在-role-soul-中",
+      "name": "[BD] 建议在 role-soul 中定义必填字段（市场规模/竞品定价/推荐价格区间/verdict）",
+      "summary": "[BD] 建议在 role-soul 中定义必填字段（市场规模/竞品定价/推荐价格区间/verdict）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.757Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823757-0",
+          "task_id": "task-1775814823757-[bd]-建议在-role-soul-中",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823757-1",
+          "task_id": "task-1775814823757-[bd]-建议在-role-soul-中",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823757-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823757-2",
+          "task_id": "task-1775814823757-[bd]-建议在-role-soul-中",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823757-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823759-[be]-建立-centralized-",
+      "name": "[BE] 建立 centralized error handler + 统一重试策略",
+      "summary": "[BE] 建立 centralized error handler + 统一重试策略",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.759Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823759-0",
+          "task_id": "task-1775814823759-[be]-建立-centralized-",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823759-1",
+          "task_id": "task-1775814823759-[be]-建立-centralized-",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823759-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823759-2",
+          "task_id": "task-1775814823759-[be]-建立-centralized-",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823759-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823764-[dev]-添加并发任务优先级规则与sp",
+      "name": "[Dev] 添加并发任务优先级规则与spec escalate SLA",
+      "summary": "[Dev] 添加并发任务优先级规则与spec escalate SLA",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.764Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823764-0",
+          "task_id": "task-1775814823764-[dev]-添加并发任务优先级规则与sp",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823764-1",
+          "task_id": "task-1775814823764-[dev]-添加并发任务优先级规则与sp",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823763-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823764-2",
+          "task_id": "task-1775814823764-[dev]-添加并发任务优先级规则与sp",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823763-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823783-[dev]-当多个任务同时分配时，建议添",
+      "name": "[DEV] 当多个任务同时分配时，建议添加优先级排序规则（如按 priority 字段），避免随机执行",
+      "summary": "[DEV] 当多个任务同时分配时，建议添加优先级排序规则（如按 priority 字段），避免随机执行",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.783Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823783-0",
+          "task_id": "task-1775814823783-[dev]-当多个任务同时分配时，建议添",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823783-1",
+          "task_id": "task-1775814823783-[dev]-当多个任务同时分配时，建议添",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823783-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823783-2",
+          "task_id": "task-1775814823783-[dev]-当多个任务同时分配时，建议添",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823783-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823787-[devops]-建议在-role-so",
+      "name": "[DEVOPS] 建议在 role-soul 中明确 key metrics（P99 延迟、GPU 利用率、错误率）的",
+      "summary": "[DEVOPS] 建议在 role-soul 中明确 key metrics（P99 延迟、GPU 利用率、错误率）的",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.787Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823787-0",
+          "task_id": "task-1775814823787-[devops]-建议在-role-so",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823787-1",
+          "task_id": "task-1775814823787-[devops]-建议在-role-so",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823787-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823787-2",
+          "task_id": "task-1775814823787-[devops]-建议在-role-so",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823787-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823793-[devops]-建议在-data/ru",
+      "name": "[DEVOPS] 建议在 data/runbooks/ 创建标准 rollback checklist",
+      "summary": "[DEVOPS] 建议在 data/runbooks/ 创建标准 rollback checklist",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.793Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823793-0",
+          "task_id": "task-1775814823793-[devops]-建议在-data/ru",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823793-1",
+          "task_id": "task-1775814823793-[devops]-建议在-data/ru",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823792-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823793-2",
+          "task_id": "task-1775814823793-[devops]-建议在-data/ru",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823792-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823800-[devops]-ci/cd-加入-fr",
+      "name": "[DevOps] CI/CD 加入 Friday 部署自动断路器",
+      "summary": "[DevOps] CI/CD 加入 Friday 部署自动断路器",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.800Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823800-0",
+          "task_id": "task-1775814823800-[devops]-ci/cd-加入-fr",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823800-1",
+          "task_id": "task-1775814823800-[devops]-ci/cd-加入-fr",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823799-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823800-2",
+          "task_id": "task-1775814823800-[devops]-ci/cd-加入-fr",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823799-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823803-[devops]-[补充-slo-阈值（",
+      "name": "[DEVOPS] [补充 SLO 阈值（如错误率 >1%、P99 延迟 >2s），超阈值自动触发回滚流程]",
+      "summary": "[DEVOPS] [补充 SLO 阈值（如错误率 >1%、P99 延迟 >2s），超阈值自动触发回滚流程]",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.803Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823803-0",
+          "task_id": "task-1775814823803-[devops]-[补充-slo-阈值（",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823803-1",
+          "task_id": "task-1775814823803-[devops]-[补充-slo-阈值（",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823803-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823803-2",
+          "task_id": "task-1775814823803-[devops]-[补充-slo-阈值（",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823803-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823806-[devops]-补充-slo-回滚阈值",
+      "name": "[DevOps] 补充 SLO 回滚阈值定义及 4h/24h 趋势告警",
+      "summary": "[DevOps] 补充 SLO 回滚阈值定义及 4h/24h 趋势告警",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.806Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823806-0",
+          "task_id": "task-1775814823806-[devops]-补充-slo-回滚阈值",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823806-1",
+          "task_id": "task-1775814823806-[devops]-补充-slo-回滚阈值",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823806-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823806-2",
+          "task_id": "task-1775814823806-[devops]-补充-slo-回滚阈值",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823806-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823809-[fe]-browser-test-作为",
+      "name": "[FE] browser-test 作为 CI 门控，明确强制执行",
+      "summary": "[FE] browser-test 作为 CI 门控，明确强制执行",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.809Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823809-0",
+          "task_id": "task-1775814823809-[fe]-browser-test-作为",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823809-1",
+          "task_id": "task-1775814823809-[fe]-browser-test-作为",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823809-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823809-2",
+          "task_id": "task-1775814823809-[fe]-browser-test-作为",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823809-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823835-[frontend]-补充-browse",
+      "name": "[Frontend] 补充 browser-test 失败重试策略与超时上限",
+      "summary": "[Frontend] 补充 browser-test 失败重试策略与超时上限",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.835Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823835-0",
+          "task_id": "task-1775814823835-[frontend]-补充-browse",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823835-1",
+          "task_id": "task-1775814823835-[frontend]-补充-browse",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823816-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823835-2",
+          "task_id": "task-1775814823835-[frontend]-补充-browse",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823816-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823855-[frontend]-checklist",
+      "name": "[FRONTEND] Checklist 中增加\"暗色模式截图对比\"步骤，防止浅色组件意外遗漏",
+      "summary": "[FRONTEND] Checklist 中增加\"暗色模式截图对比\"步骤，防止浅色组件意外遗漏",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.855Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823855-0",
+          "task_id": "task-1775814823855-[frontend]-checklist",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823855-1",
+          "task_id": "task-1775814823855-[frontend]-checklist",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823852-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823855-2",
+          "task_id": "task-1775814823855-[frontend]-checklist",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823852-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823863-为-work-queue-process",
+      "name": "为 work-queue processor 注册 audit 类型或 reroute 策略",
+      "summary": "为 work-queue processor 注册 audit 类型或 reroute 策略",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.863Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823863-0",
+          "task_id": "task-1775814823863-为-work-queue-process",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823863-1",
+          "task_id": "task-1775814823863-为-work-queue-process",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823859-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823863-2",
+          "task_id": "task-1775814823863-为-work-queue-process",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823859-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823885-为-watchdog-添加-max-re",
+      "name": "为 watchdog 添加 max retry 上限（3次后转 manual_review）",
+      "summary": "为 watchdog 添加 max retry 上限（3次后转 manual_review）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.885Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823885-0",
+          "task_id": "task-1775814823885-为-watchdog-添加-max-re",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823885-1",
+          "task_id": "task-1775814823885-为-watchdog-添加-max-re",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823883-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823885-2",
+          "task_id": "task-1775814823885-为-watchdog-添加-max-re",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823883-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823889-[qa]-增加15分钟-state-监听",
+      "name": "[QA] 增加15分钟 state 监听超时 alert 机制",
+      "summary": "[QA] 增加15分钟 state 监听超时 alert 机制",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.889Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823889-0",
+          "task_id": "task-1775814823889-[qa]-增加15分钟-state-监听",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823889-1",
+          "task_id": "task-1775814823889-[qa]-增加15分钟-state-监听",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823889-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823889-2",
+          "task_id": "task-1775814823889-[qa]-增加15分钟-state-监听",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823889-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823897-[qa]-block-时同步推送单行失败",
+      "name": "[QA] block 时同步推送单行失败摘要至 main",
+      "summary": "[QA] block 时同步推送单行失败摘要至 main",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.897Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823897-0",
+          "task_id": "task-1775814823897-[qa]-block-时同步推送单行失败",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823897-1",
+          "task_id": "task-1775814823897-[qa]-block-时同步推送单行失败",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823893-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823897-2",
+          "task_id": "task-1775814823897-[qa]-block-时同步推送单行失败",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823893-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823902-[qa]-建议增加主动-timeout-",
+      "name": "[QA] 建议增加主动 timeout 检测（如15分钟无触发则 alert main）",
+      "summary": "[QA] 建议增加主动 timeout 检测（如15分钟无触发则 alert main）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.902Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823902-0",
+          "task_id": "task-1775814823902-[qa]-建议增加主动-timeout-",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823902-1",
+          "task_id": "task-1775814823902-[qa]-建议增加主动-timeout-",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823901-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823902-2",
+          "task_id": "task-1775814823902-[qa]-建议增加主动-timeout-",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823901-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823905-[qa]-建议-block-时同步发送单",
+      "name": "[QA] 建议 block 时同步发送单行失败摘要到 main，加快响应",
+      "summary": "[QA] 建议 block 时同步发送单行失败摘要到 main，加快响应",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.905Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823905-0",
+          "task_id": "task-1775814823905-[qa]-建议-block-时同步发送单",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823905-1",
+          "task_id": "task-1775814823905-[qa]-建议-block-时同步发送单",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823905-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823905-2",
+          "task_id": "task-1775814823905-[qa]-建议-block-时同步发送单",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823905-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823910-[researcher]-建立-data",
+      "name": "[Researcher] 建立 data/research/index.md 统一研究产出索引",
+      "summary": "[Researcher] 建立 data/research/index.md 统一研究产出索引",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.913Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823910-0",
+          "task_id": "task-1775814823910-[researcher]-建立-data",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823910-1",
+          "task_id": "task-1775814823910-[researcher]-建立-data",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823909-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823910-2",
+          "task_id": "task-1775814823910-[researcher]-建立-data",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823909-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823933-[researcher]-建议维护-da",
+      "name": "[RESEARCHER] 建议维护 data/research/index.md 汇总所有研究产出",
+      "summary": "[RESEARCHER] 建议维护 data/research/index.md 汇总所有研究产出",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.933Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823933-0",
+          "task_id": "task-1775814823933-[researcher]-建议维护-da",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823933-1",
+          "task_id": "task-1775814823933-[researcher]-建议维护-da",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823933-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823933-2",
+          "task_id": "task-1775814823933-[researcher]-建议维护-da",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823933-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823940-[researcher]-建议在-bd-",
+      "name": "[RESEARCHER] 建议在 bd 触发条件中增加读取 data/projects/[id]/notes.md 的步",
+      "summary": "[RESEARCHER] 建议在 bd 触发条件中增加读取 data/projects/[id]/notes.md 的步骤",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.940Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823940-0",
+          "task_id": "task-1775814823940-[researcher]-建议在-bd-",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823940-1",
+          "task_id": "task-1775814823940-[researcher]-建议在-bd-",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823940-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823940-2",
+          "task_id": "task-1775814823940-[researcher]-建议在-bd-",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823940-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823943-[researcher]-增加最低可信结",
+      "name": "[Researcher] 增加最低可信结论输出规范，避免纯粹 gap report",
+      "summary": "[Researcher] 增加最低可信结论输出规范，避免纯粹 gap report",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.943Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823943-0",
+          "task_id": "task-1775814823943-[researcher]-增加最低可信结",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823943-1",
+          "task_id": "task-1775814823943-[researcher]-增加最低可信结",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823943-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823943-2",
+          "task_id": "task-1775814823943-[researcher]-增加最低可信结",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823943-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823949-[scribe]-建议在追加前检查-me",
+      "name": "[SCRIBE] 建议在追加前检查 MEMORY.md 现有条目哈希，防止重复写入",
+      "summary": "[SCRIBE] 建议在追加前检查 MEMORY.md 现有条目哈希，防止重复写入",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.949Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823949-0",
+          "task_id": "task-1775814823949-[scribe]-建议在追加前检查-me",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823949-1",
+          "task_id": "task-1775814823949-[scribe]-建议在追加前检查-me",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823949-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823949-2",
+          "task_id": "task-1775814823949-[scribe]-建议在追加前检查-me",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823949-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823952-[scribe]-建议在追加前检查-me",
+      "name": "[SCRIBE] 建议在追加前检查 MEMORY.md 现有条目哈希，防止重复写入",
+      "summary": "[SCRIBE] 建议在追加前检查 MEMORY.md 现有条目哈希，防止重复写入",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.952Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823952-0",
+          "task_id": "task-1775814823952-[scribe]-建议在追加前检查-me",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823952-1",
+          "task_id": "task-1775814823952-[scribe]-建议在追加前检查-me",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823952-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823952-2",
+          "task_id": "task-1775814823952-[scribe]-建议在追加前检查-me",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823952-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823955-[scribe]-补充-meeting-",
+      "name": "[Scribe] 补充 meeting-minutes 路由规则及 media-pending 后续处理",
+      "summary": "[Scribe] 补充 meeting-minutes 路由规则及 media-pending 后续处理",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.955Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823955-0",
+          "task_id": "task-1775814823955-[scribe]-补充-meeting-",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823955-1",
+          "task_id": "task-1775814823955-[scribe]-补充-meeting-",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823955-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823955-2",
+          "task_id": "task-1775814823955-[scribe]-补充-meeting-",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823955-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823958-[scribe]-[补充-meeting",
+      "name": "[SCRIBE] [补充 meeting-minutes 信号词，明确路由到 project notes + 通知相关",
+      "summary": "[SCRIBE] [补充 meeting-minutes 信号词，明确路由到 project notes + 通知相关",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.958Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823958-0",
+          "task_id": "task-1775814823958-[scribe]-[补充-meeting",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823958-1",
+          "task_id": "task-1775814823958-[scribe]-[补充-meeting",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823958-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823958-2",
+          "task_id": "task-1775814823958-[scribe]-[补充-meeting",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823958-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823963-[scribe]-[增加日间快照机制，或",
+      "name": "[SCRIBE] [增加日间快照机制，或在 standup 后触发一次轻量归档]",
+      "summary": "[SCRIBE] [增加日间快照机制，或在 standup 后触发一次轻量归档]",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.963Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823963-0",
+          "task_id": "task-1775814823963-[scribe]-[增加日间快照机制，或",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823963-1",
+          "task_id": "task-1775814823963-[scribe]-[增加日间快照机制，或",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823961-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823963-2",
+          "task_id": "task-1775814823963-[scribe]-[增加日间快照机制，或",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823961-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823984-[scribe]-autodream-追",
+      "name": "[Scribe] autoDream 追加前检查 MEMORY.md 去重",
+      "summary": "[Scribe] autoDream 追加前检查 MEMORY.md 去重",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.984Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823984-0",
+          "task_id": "task-1775814823984-[scribe]-autodream-追",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823984-1",
+          "task_id": "task-1775814823984-[scribe]-autodream-追",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823983-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823984-2",
+          "task_id": "task-1775814823984-[scribe]-autodream-追",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823983-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823987-[scribe]-增加日间轻量归档快照，",
+      "name": "[Scribe] 增加日间轻量归档快照，防止 autoDream 遗漏",
+      "summary": "[Scribe] 增加日间轻量归档快照，防止 autoDream 遗漏",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.987Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823987-0",
+          "task_id": "task-1775814823987-[scribe]-增加日间轻量归档快照，",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823987-1",
+          "task_id": "task-1775814823987-[scribe]-增加日间轻量归档快照，",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823987-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823987-2",
+          "task_id": "task-1775814823987-[scribe]-增加日间轻量归档快照，",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823987-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823990-[tester]-建立-golden-s",
+      "name": "[Tester] 建立 golden-sets/ 标准目录并在 role-soul 中引用",
+      "summary": "[Tester] 建立 golden-sets/ 标准目录并在 role-soul 中引用",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.990Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823990-0",
+          "task_id": "task-1775814823990-[tester]-建立-golden-s",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823990-1",
+          "task_id": "task-1775814823990-[tester]-建立-golden-s",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823990-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823990-2",
+          "task_id": "task-1775814823990-[tester]-建立-golden-s",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823990-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823996-[tester]-agent-brows",
+      "name": "[Tester] agent-browser preflight 检查，缺失时回退 puppeteer",
+      "summary": "[Tester] agent-browser preflight 检查，缺失时回退 puppeteer",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.996Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823996-0",
+          "task_id": "task-1775814823996-[tester]-agent-brows",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823996-1",
+          "task_id": "task-1775814823996-[tester]-agent-brows",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823995-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823996-2",
+          "task_id": "task-1775814823996-[tester]-agent-brows",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823995-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814823999-[tester]-建议在-base-so",
+      "name": "[TESTER] 建议在 base-soul 中增加明确的互斥规则文档",
+      "summary": "[TESTER] 建议在 base-soul 中增加明确的互斥规则文档",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:43.999Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814823999-0",
+          "task_id": "task-1775814823999-[tester]-建议在-base-so",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823999-1",
+          "task_id": "task-1775814823999-[tester]-建议在-base-so",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823999-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814823999-2",
+          "task_id": "task-1775814823999-[tester]-建议在-base-so",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814823999-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824002-[tester]-建议在-workspa",
+      "name": "[TESTER] 建议在 workspace/data/ 下建立 golden-sets/ 标准目录并在 role-s",
+      "summary": "[TESTER] 建议在 workspace/data/ 下建立 golden-sets/ 标准目录并在 role-s",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.002Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824002-0",
+          "task_id": "task-1775814824002-[tester]-建议在-workspa",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824002-1",
+          "task_id": "task-1775814824002-[tester]-建议在-workspa",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824002-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824002-2",
+          "task_id": "task-1775814824002-[tester]-建议在-workspa",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824002-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824006-[cto-review]-制定-airi",
+      "name": "[CTO Review] 制定 Airi agent 系统整体测试策略文档",
+      "summary": "[CTO Review] 制定 Airi agent 系统整体测试策略文档",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.006Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824006-0",
+          "task_id": "task-1775814824006-[cto-review]-制定-airi",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824006-1",
+          "task_id": "task-1775814824006-[cto-review]-制定-airi",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824006-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824006-2",
+          "task_id": "task-1775814824006-[cto-review]-制定-airi",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824006-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824016-[uiux]-建立-`design-to",
+      "name": "[UIUX] 建立 `design-tokens.md` 集中管理颜色/间距/字体基准",
+      "summary": "[UIUX] 建立 `design-tokens.md` 集中管理颜色/间距/字体基准",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.016Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824016-0",
+          "task_id": "task-1775814824016-[uiux]-建立-`design-to",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824016-1",
+          "task_id": "task-1775814824016-[uiux]-建立-`design-to",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824013-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824016-2",
+          "task_id": "task-1775814824016-[uiux]-建立-`design-to",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824013-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824035-[uiux]-每次更新时追加-chang",
+      "name": "[UIUX] 每次更新时追加 changelog 区块，便于 dev/qa 对齐",
+      "summary": "[UIUX] 每次更新时追加 changelog 区块，便于 dev/qa 对齐",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.035Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824035-0",
+          "task_id": "task-1775814824035-[uiux]-每次更新时追加-chang",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824035-1",
+          "task_id": "task-1775814824035-[uiux]-每次更新时追加-chang",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824035-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824035-2",
+          "task_id": "task-1775814824035-[uiux]-每次更新时追加-chang",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824035-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824039-[pm]-spec:-[frontend",
+      "name": "[PM] Spec: [Frontend] 增加browser-test失败分类机制与dark-mode具体验收标准",
+      "summary": "[PM] Spec: [Frontend] 增加browser-test失败分类机制与dark-mode具体验收标准",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.039Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824039-0",
+          "task_id": "task-1775814824039-[pm]-spec:-[frontend",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824039-1",
+          "task_id": "task-1775814824039-[pm]-spec:-[frontend",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824039-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824039-2",
+          "task_id": "task-1775814824039-[pm]-spec:-[frontend",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824039-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824045-[pm]-spec:-[frontend",
+      "name": "[PM] Spec: [FRONTEND] 建议增加browser-test失败时的详细错误分类（网络/渲染/逻辑），便",
+      "summary": "[PM] Spec: [FRONTEND] 建议增加browser-test失败时的详细错误分类（网络/渲染/逻辑），便于快速定位",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.045Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824045-0",
+          "task_id": "task-1775814824045-[pm]-spec:-[frontend",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824045-1",
+          "task_id": "task-1775814824045-[pm]-spec:-[frontend",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824043-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824045-2",
+          "task_id": "task-1775814824045-[pm]-spec:-[frontend",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824043-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824049-[pm]-spec:-[frontend",
+      "name": "[PM] Spec: [FRONTEND] 建议在checklist中增加dark-mode的具体检查点（对比度/颜色t",
+      "summary": "[PM] Spec: [FRONTEND] 建议在checklist中增加dark-mode的具体检查点（对比度/颜色token/图标可见性）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.049Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824049-0",
+          "task_id": "task-1775814824049-[pm]-spec:-[frontend",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824049-1",
+          "task_id": "task-1775814824049-[pm]-spec:-[frontend",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824049-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824049-2",
+          "task_id": "task-1775814824049-[pm]-spec:-[frontend",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824049-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824052-[pm]-spec:-[material",
+      "name": "[PM] Spec: [MATERIAL-MANAGER] 建议在 library.json 每条记录添加 last_u",
+      "summary": "[PM] Spec: [MATERIAL-MANAGER] 建议在 library.json 每条记录添加 last_updated 字段，便于定期审查过期数据",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.052Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824052-0",
+          "task_id": "task-1775814824052-[pm]-spec:-[material",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824052-1",
+          "task_id": "task-1775814824052-[pm]-spec:-[material",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824052-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824052-2",
+          "task_id": "task-1775814824052-[pm]-spec:-[material",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824052-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824056-[pm]-spec:-[material",
+      "name": "[PM] Spec: [MATERIAL-MANAGER] 建议在 suppliers.json 中添加 price_v",
+      "summary": "[PM] Spec: [MATERIAL-MANAGER] 建议在 suppliers.json 中添加 price_valid_until 字段，避免使用过期",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.056Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824056-0",
+          "task_id": "task-1775814824056-[pm]-spec:-[material",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824056-1",
+          "task_id": "task-1775814824056-[pm]-spec:-[material",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824056-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824056-2",
+          "task_id": "task-1775814824056-[pm]-spec:-[material",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824056-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824059-[pm]-spec:-[material",
+      "name": "[PM] Spec: [MaterialManager] suppliers.json添加price_valid_unt",
+      "summary": "[PM] Spec: [MaterialManager] suppliers.json添加price_valid_until字段",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.059Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824059-0",
+          "task_id": "task-1775814824059-[pm]-spec:-[material",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824059-1",
+          "task_id": "task-1775814824059-[pm]-spec:-[material",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824059-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824059-2",
+          "task_id": "task-1775814824059-[pm]-spec:-[material",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824059-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824064-[pm]-spec:-[material",
+      "name": "[PM] Spec: [MaterialManager] library.json添加last_updated时间戳",
+      "summary": "[PM] Spec: [MaterialManager] library.json添加last_updated时间戳",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.064Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824064-0",
+          "task_id": "task-1775814824064-[pm]-spec:-[material",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824064-1",
+          "task_id": "task-1775814824064-[pm]-spec:-[material",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824064-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824064-2",
+          "task_id": "task-1775814824064-[pm]-spec:-[material",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824064-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824085-[pm]-spec:-[pm]-spec",
+      "name": "[PM] Spec: [PM] spec.md 增加 Changelog 区块",
+      "summary": "[PM] Spec: [PM] spec.md 增加 Changelog 区块",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.085Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824085-0",
+          "task_id": "task-1775814824085-[pm]-spec:-[pm]-spec",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824085-1",
+          "task_id": "task-1775814824085-[pm]-spec:-[pm]-spec",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824083-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824085-2",
+          "task_id": "task-1775814824085-[pm]-spec:-[pm]-spec",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824083-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824097-[pm]-spec:-[pm]-[建议-",
+      "name": "[PM] Spec: [PM] [建议 spec.md 末尾增加 Changelog 区块，记录每次修订原因和版本号]",
+      "summary": "[PM] Spec: [PM] [建议 spec.md 末尾增加 Changelog 区块，记录每次修订原因和版本号]",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.097Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824097-0",
+          "task_id": "task-1775814824097-[pm]-spec:-[pm]-[建议-",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824097-1",
+          "task_id": "task-1775814824097-[pm]-spec:-[pm]-[建议-",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824092-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824097-2",
+          "task_id": "task-1775814824097-[pm]-spec:-[pm]-[建议-",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824092-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824101-[pm]-spec:-[pm]-[建议\"",
+      "name": "[PM] Spec: [PM] [建议\"Out of Scope\"每条附上说明（为什么不做/何时做），而非仅列项目名]",
+      "summary": "[PM] Spec: [PM] [建议\"Out of Scope\"每条附上说明（为什么不做/何时做），而非仅列项目名]",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.101Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824101-0",
+          "task_id": "task-1775814824101-[pm]-spec:-[pm]-[建议\"",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824101-1",
+          "task_id": "task-1775814824101-[pm]-spec:-[pm]-[建议\"",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824100-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824101-2",
+          "task_id": "task-1775814824101-[pm]-spec:-[pm]-[建议\"",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824100-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824106-[pm]-spec:-[qa]-增加并发",
+      "name": "[PM] Spec: [QA] 增加并发任务队列处理规则",
+      "summary": "[PM] Spec: [QA] 增加并发任务队列处理规则",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.106Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824106-0",
+          "task_id": "task-1775814824106-[pm]-spec:-[qa]-增加并发",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824106-1",
+          "task_id": "task-1775814824106-[pm]-spec:-[qa]-增加并发",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824104-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824106-2",
+          "task_id": "task-1775814824106-[pm]-spec:-[qa]-增加并发",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824104-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824111-[pm]-spec:-[qa]-文件名加",
+      "name": "[PM] Spec: [QA] 文件名加入时间戳或task-id后缀",
+      "summary": "[PM] Spec: [QA] 文件名加入时间戳或task-id后缀",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.111Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824111-0",
+          "task_id": "task-1775814824111-[pm]-spec:-[qa]-文件名加",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824111-1",
+          "task_id": "task-1775814824111-[pm]-spec:-[qa]-文件名加",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824109-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824111-2",
+          "task_id": "task-1775814824111-[pm]-spec:-[qa]-文件名加",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824109-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824115-[pm]-spec:-[qa]-与tes",
+      "name": "[PM] Spec: [QA] 与Tester职责边界明确化：禁止QA新建测试文件",
+      "summary": "[PM] Spec: [QA] 与Tester职责边界明确化：禁止QA新建测试文件",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.115Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824115-0",
+          "task_id": "task-1775814824115-[pm]-spec:-[qa]-与tes",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824115-1",
+          "task_id": "task-1775814824115-[pm]-spec:-[qa]-与tes",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824115-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824115-2",
+          "task_id": "task-1775814824115-[pm]-spec:-[qa]-与tes",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824115-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824139-[pm]-spec:-[renderer",
+      "name": "[PM] Spec: [Renderer] 添加渲染质量结构化日志quality-log.json",
+      "summary": "[PM] Spec: [Renderer] 添加渲染质量结构化日志quality-log.json",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.139Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824139-0",
+          "task_id": "task-1775814824139-[pm]-spec:-[renderer",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824139-1",
+          "task_id": "task-1775814824139-[pm]-spec:-[renderer",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824138-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824139-2",
+          "task_id": "task-1775814824139-[pm]-spec:-[renderer",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824138-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824142-[pm]-spec:-[renderer",
+      "name": "[PM] Spec: [RENDERER] 建议在渲染配置中引用 style-profile 版本号，确保跨项目风格一致",
+      "summary": "[PM] Spec: [RENDERER] 建议在渲染配置中引用 style-profile 版本号，确保跨项目风格一致性可追溯",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.142Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824142-0",
+          "task_id": "task-1775814824142-[pm]-spec:-[renderer",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824142-1",
+          "task_id": "task-1775814824142-[pm]-spec:-[renderer",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824142-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824142-2",
+          "task_id": "task-1775814824142-[pm]-spec:-[renderer",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824142-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824150-[pm]-spec:-[renderer",
+      "name": "[PM] Spec: [RENDERER] 建议将质量检查结果结构化存入 quality-log.json，支持统计渲染",
+      "summary": "[PM] Spec: [RENDERER] 建议将质量检查结果结构化存入 quality-log.json，支持统计渲染通过率和常见缺陷类型",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.150Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824150-0",
+          "task_id": "task-1775814824150-[pm]-spec:-[renderer",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824150-1",
+          "task_id": "task-1775814824150-[pm]-spec:-[renderer",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824149-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824150-2",
+          "task_id": "task-1775814824150-[pm]-spec:-[renderer",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824149-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824154-[pm]-spec:-[renderer",
+      "name": "[PM] Spec: [Renderer] style-profile版本号引用机制",
+      "summary": "[PM] Spec: [Renderer] style-profile版本号引用机制",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.154Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824154-0",
+          "task_id": "task-1775814824154-[pm]-spec:-[renderer",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824154-1",
+          "task_id": "task-1775814824154-[pm]-spec:-[renderer",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824153-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824154-2",
+          "task_id": "task-1775814824154-[pm]-spec:-[renderer",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824153-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824158-[tester]-增加golden-se",
+      "name": "[TESTER] 增加golden-set版本管理与更新触发条件说明",
+      "summary": "[TESTER] 增加golden-set版本管理与更新触发条件说明",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.158Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824158-0",
+          "task_id": "task-1775814824158-[tester]-增加golden-se",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824158-1",
+          "task_id": "task-1775814824158-[tester]-增加golden-se",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824157-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824158-2",
+          "task_id": "task-1775814824158-[tester]-增加golden-se",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824157-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824164-[tester]-补充视觉回归基准图存储",
+      "name": "[TESTER] 补充视觉回归基准图存储路径与diff阈值配置",
+      "summary": "[TESTER] 补充视觉回归基准图存储路径与diff阈值配置",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.164Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824164-0",
+          "task_id": "task-1775814824164-[tester]-补充视觉回归基准图存储",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824164-1",
+          "task_id": "task-1775814824164-[tester]-补充视觉回归基准图存储",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824163-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824164-2",
+          "task_id": "task-1775814824164-[tester]-补充视觉回归基准图存储",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824163-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824186-[tester]-测试覆盖率报告输出规范",
+      "name": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
+      "summary": "[Tester] 测试覆盖率报告输出规范：低于80%告警并通知main",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.186Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824186-0",
+          "task_id": "task-1775814824186-[tester]-测试覆盖率报告输出规范",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824186-1",
+          "task_id": "task-1775814824186-[tester]-测试覆盖率报告输出规范",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824185-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824186-2",
+          "task_id": "task-1775814824186-[tester]-测试覆盖率报告输出规范",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824185-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824190-[uiux]-建立-components",
+      "name": "[UIUX] 建立 components-catalog.md 定期维护设计令牌",
+      "summary": "[UIUX] 建立 components-catalog.md 定期维护设计令牌",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.190Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824190-0",
+          "task_id": "task-1775814824190-[uiux]-建立-components",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824190-1",
+          "task_id": "task-1775814824190-[uiux]-建立-components",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824189-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824190-2",
+          "task_id": "task-1775814824190-[uiux]-建立-components",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824189-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824195-[uiux]-增加有条件批准结论至des",
+      "name": "[UIUX] 增加有条件批准结论至design-review.md",
+      "summary": "[UIUX] 增加有条件批准结论至design-review.md",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.195Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824195-0",
+          "task_id": "task-1775814824195-[uiux]-增加有条件批准结论至des",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824195-1",
+          "task_id": "task-1775814824195-[uiux]-增加有条件批准结论至des",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824193-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824195-2",
+          "task_id": "task-1775814824195-[uiux]-增加有条件批准结论至des",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824193-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824200-[uiux]-[建议增加主动扫描逻辑：当",
+      "name": "[UIUX] [建议增加主动扫描逻辑：当新任务进入 in_progress 且无 design.md 时自动提醒 ",
+      "summary": "[UIUX] [建议增加主动扫描逻辑：当新任务进入 in_progress 且无 design.md 时自动提醒 ",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.200Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824200-0",
+          "task_id": "task-1775814824200-[uiux]-[建议增加主动扫描逻辑：当",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824200-1",
+          "task_id": "task-1775814824200-[uiux]-[建议增加主动扫描逻辑：当",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824199-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824200-2",
+          "task_id": "task-1775814824200-[uiux]-[建议增加主动扫描逻辑：当",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824199-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824204-[uiux]-[建议支持输出-figma",
+      "name": "[UIUX] [建议支持输出 Figma-ready token 结构或简化组件状态表，提升 dev 可读性]",
+      "summary": "[UIUX] [建议支持输出 Figma-ready token 结构或简化组件状态表，提升 dev 可读性]",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.204Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824204-0",
+          "task_id": "task-1775814824204-[uiux]-[建议支持输出-figma",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824204-1",
+          "task_id": "task-1775814824204-[uiux]-[建议支持输出-figma",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824203-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824204-2",
+          "task_id": "task-1775814824204-[uiux]-[建议支持输出-figma",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824203-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824208-[cto-review]-work-qu",
+      "name": "[CTO Review] Work-queue 归档机制设计与实现",
+      "summary": "[CTO Review] Work-queue 归档机制设计与实现",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.208Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824208-0",
+          "task_id": "task-1775814824208-[cto-review]-work-qu",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824208-1",
+          "task_id": "task-1775814824208-[cto-review]-work-qu",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824207-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824208-2",
+          "task_id": "task-1775814824208-[cto-review]-work-qu",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824207-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824215-[cto-review]-[radar-",
+      "name": "[CTO Review] [Radar BE] DB schema + API server for arch-ai-r",
+      "summary": "[CTO Review] [Radar BE] DB schema + API server for arch-ai-radar v2",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.215Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824215-0",
+          "task_id": "task-1775814824215-[cto-review]-[radar-",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824215-1",
+          "task_id": "task-1775814824215-[cto-review]-[radar-",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824211-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824215-2",
+          "task_id": "task-1775814824215-[cto-review]-[radar-",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824211-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824237-[v19]-ux-改进实际执行-—-完成",
+      "name": "[v19] UX 改进实际执行 — 完成 v18 未做项（热区/碰撞/z-index）",
+      "summary": "[v19] UX 改进实际执行 — 完成 v18 未做项（热区/碰撞/z-index）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.237Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824237-0",
+          "task_id": "task-1775814824237-[v19]-ux-改进实际执行-—-完成",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824237-1",
+          "task_id": "task-1775814824237-[v19]-ux-改进实际执行-—-完成",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824236-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824237-2",
+          "task_id": "task-1775814824237-[v19]-ux-改进实际执行-—-完成",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824236-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824242-[cto-review]-airilab",
+      "name": "[CTO Review] airilab-world v18 UX 改进规划",
+      "summary": "[CTO Review] airilab-world v18 UX 改进规划",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.242Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824242-0",
+          "task_id": "task-1775814824242-[cto-review]-airilab",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824242-1",
+          "task_id": "task-1775814824242-[cto-review]-airilab",
+          "title": "Execute Implementation",
+          "agent": "pm",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824241-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824242-2",
+          "task_id": "task-1775814824242-[cto-review]-airilab",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824241-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824247-[devops]-补充hotfix周五部",
+      "name": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "summary": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.247Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824247-0",
+          "task_id": "task-1775814824247-[devops]-补充hotfix周五部",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824247-1",
+          "task_id": "task-1775814824247-[devops]-补充hotfix周五部",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824245-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824247-2",
+          "task_id": "task-1775814824247-[devops]-补充hotfix周五部",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824245-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824251-[devops]-当前规则禁止周五部署但",
+      "name": "[DEVOPS] 当前规则禁止周五部署但无明确hotfix豁免SOP，建议补充hotfix审批链",
+      "summary": "[DEVOPS] 当前规则禁止周五部署但无明确hotfix豁免SOP，建议补充hotfix审批链",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.251Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824251-0",
+          "task_id": "task-1775814824251-[devops]-当前规则禁止周五部署但",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824251-1",
+          "task_id": "task-1775814824251-[devops]-当前规则禁止周五部署但",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824250-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824251-2",
+          "task_id": "task-1775814824251-[devops]-当前规则禁止周五部署但",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824250-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824256-[devops]-明确rollback指",
+      "name": "[DevOps] 明确rollback指标阈值与决策树",
+      "summary": "[DevOps] 明确rollback指标阈值与决策树",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.256Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824256-0",
+          "task_id": "task-1775814824256-[devops]-明确rollback指",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824256-1",
+          "task_id": "task-1775814824256-[devops]-明确rollback指",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824255-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824256-2",
+          "task_id": "task-1775814824256-[devops]-明确rollback指",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824255-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824262-[scribe]-增加路由冲突分拆优先级",
+      "name": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "summary": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.262Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824262-0",
+          "task_id": "task-1775814824262-[scribe]-增加路由冲突分拆优先级",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824262-1",
+          "task_id": "task-1775814824262-[scribe]-增加路由冲突分拆优先级",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824260-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824262-2",
+          "task_id": "task-1775814824262-[scribe]-增加路由冲突分拆优先级",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824260-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824283-[scribe]-当输入同时匹配多条路由",
+      "name": "[SCRIBE] 当输入同时匹配多条路由规则时需明确分拆优先级",
+      "summary": "[SCRIBE] 当输入同时匹配多条路由规则时需明确分拆优先级",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.283Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824283-0",
+          "task_id": "task-1775814824283-[scribe]-当输入同时匹配多条路由",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824283-1",
+          "task_id": "task-1775814824283-[scribe]-当输入同时匹配多条路由",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824266-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824283-2",
+          "task_id": "task-1775814824283-[scribe]-当输入同时匹配多条路由",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824266-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824288-[scribe]-state.json缺",
+      "name": "[SCRIBE] state.json缺失或损坏时standup会静默失败，建议加fallback",
+      "summary": "[SCRIBE] state.json缺失或损坏时standup会静默失败，建议加fallback",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.288Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824288-0",
+          "task_id": "task-1775814824288-[scribe]-state.json缺",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824288-1",
+          "task_id": "task-1775814824288-[scribe]-state.json缺",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824287-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824288-2",
+          "task_id": "task-1775814824288-[scribe]-state.json缺",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824287-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824292-[scribe]-autodream增加",
+      "name": "[Scribe] autoDream增加tag:keep保留机制",
+      "summary": "[Scribe] autoDream增加tag:keep保留机制",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.292Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824292-0",
+          "task_id": "task-1775814824292-[scribe]-autodream增加",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824292-1",
+          "task_id": "task-1775814824292-[scribe]-autodream增加",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824291-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824292-2",
+          "task_id": "task-1775814824292-[scribe]-autodream增加",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824291-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824297-[uiux]-增加有条件批准结论至des",
+      "name": "[UIUX] 增加有条件批准结论至design-review.md",
+      "summary": "[UIUX] 增加有条件批准结论至design-review.md",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.297Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824297-0",
+          "task_id": "task-1775814824297-[uiux]-增加有条件批准结论至des",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824297-1",
+          "task_id": "task-1775814824297-[uiux]-增加有条件批准结论至des",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824296-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824297-2",
+          "task_id": "task-1775814824297-[uiux]-增加有条件批准结论至des",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824296-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824301-[uiux]-建议支持输出figma-r",
+      "name": "[UIUX] 建议支持输出Figma-ready token结构或简化组件状态表",
+      "summary": "[UIUX] 建议支持输出Figma-ready token结构或简化组件状态表",
+      "source": "system",
+      "status": "queueing",
+      "priority": "low",
+      "created_at": "2026-04-10T09:53:44.301Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824301-0",
+          "task_id": "task-1775814824301-[uiux]-建议支持输出figma-r",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824301-1",
+          "task_id": "task-1775814824301-[uiux]-建议支持输出figma-r",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824300-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824301-2",
+          "task_id": "task-1775814824301-[uiux]-建议支持输出figma-r",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824300-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824306-[chief-designer]-增加自",
+      "name": "[CHIEF-DESIGNER] 增加自触发条件段落及创新评估维度",
+      "summary": "[CHIEF-DESIGNER] 增加自触发条件段落及创新评估维度",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.306Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824306-0",
+          "task_id": "task-1775814824306-[chief-designer]-增加自",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824306-1",
+          "task_id": "task-1775814824306-[chief-designer]-增加自",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824305-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824306-2",
+          "task_id": "task-1775814824306-[chief-designer]-增加自",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824305-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824313-[chief-designer]-建议在",
+      "name": "[CHIEF-DESIGNER] 建议在role-soul中增加\"自触发条件\"段落，明确设计日志满足什么条件时主动进行阶",
+      "summary": "[CHIEF-DESIGNER] 建议在role-soul中增加\"自触发条件\"段落，明确设计日志满足什么条件时主动进行阶段性质量检查",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.313Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824313-0",
+          "task_id": "task-1775814824313-[chief-designer]-建议在",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824313-1",
+          "task_id": "task-1775814824313-[chief-designer]-建议在",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824310-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824313-2",
+          "task_id": "task-1775814824313-[chief-designer]-建议在",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824310-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824333-[chief-designer]-建议添",
+      "name": "[CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流",
+      "summary": "[CHIEF-DESIGNER] 建议添加标准化完成通知格式，统一信息流",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.333Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824333-0",
+          "task_id": "task-1775814824333-[chief-designer]-建议添",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824333-1",
+          "task_id": "task-1775814824333-[chief-designer]-建议添",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824316-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824333-2",
+          "task_id": "task-1775814824333-[chief-designer]-建议添",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824316-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824341-[devops]-补充hotfix周五部",
+      "name": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "summary": "[DevOps] 补充hotfix周五部署豁免SOP",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.341Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824341-0",
+          "task_id": "task-1775814824341-[devops]-补充hotfix周五部",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824341-1",
+          "task_id": "task-1775814824341-[devops]-补充hotfix周五部",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824340-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824341-2",
+          "task_id": "task-1775814824341-[devops]-补充hotfix周五部",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824340-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824346-[devops]-明确rollback指",
+      "name": "[DevOps] 明确rollback指标阈值与决策树",
+      "summary": "[DevOps] 明确rollback指标阈值与决策树",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.346Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824346-0",
+          "task_id": "task-1775814824346-[devops]-明确rollback指",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824346-1",
+          "task_id": "task-1775814824346-[devops]-明确rollback指",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824344-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824346-2",
+          "task_id": "task-1775814824346-[devops]-明确rollback指",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824344-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824349-[scribe]-增加路由冲突分拆优先级",
+      "name": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "summary": "[Scribe] 增加路由冲突分拆优先级逻辑",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.349Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824349-0",
+          "task_id": "task-1775814824349-[scribe]-增加路由冲突分拆优先级",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824349-1",
+          "task_id": "task-1775814824349-[scribe]-增加路由冲突分拆优先级",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824349-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824349-2",
+          "task_id": "task-1775814824349-[scribe]-增加路由冲突分拆优先级",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824349-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824354-[scribe]-当输入同时匹配多条路由",
+      "name": "[SCRIBE] 当输入同时匹配多条路由规则时（如\"某客户的bug\"既属tech又属project），Scribe需明",
+      "summary": "[SCRIBE] 当输入同时匹配多条路由规则时（如\"某客户的bug\"既属tech又属project），Scribe需明",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.354Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824354-0",
+          "task_id": "task-1775814824354-[scribe]-当输入同时匹配多条路由",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824354-1",
+          "task_id": "task-1775814824354-[scribe]-当输入同时匹配多条路由",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824353-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824354-2",
+          "task_id": "task-1775814824354-[scribe]-当输入同时匹配多条路由",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824353-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824359-[technical-architect",
+      "name": "[TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表",
+      "summary": "[TECHNICAL-ARCHITECT] 增加方案阶段可行性预检触发及MEP空间参考表",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.359Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824359-0",
+          "task_id": "task-1775814824359-[technical-architect",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824359-1",
+          "task_id": "task-1775814824359-[technical-architect",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824358-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824359-2",
+          "task_id": "task-1775814824359-[technical-architect",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824358-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824366-[technical-architect",
+      "name": "[TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡",
+      "summary": "[TECHNICAL-ARCHITECT] 建议增加\"方案阶段可行性快速审查\"触发条件（schematic → DD过渡时）",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.366Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824366-0",
+          "task_id": "task-1775814824366-[technical-architect",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824366-1",
+          "task_id": "task-1775814824366-[technical-architect",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824365-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824366-2",
+          "task_id": "task-1775814824366-[technical-architect",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824365-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "id": "task-1775814824387-[technical-architect",
+      "name": "[TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规",
+      "summary": "[TECHNICAL-ARCHITECT] 建议增加地方标准查找SOP，确保项目落地合规",
+      "source": "system",
+      "status": "queueing",
+      "priority": "medium",
+      "created_at": "2026-04-10T09:53:44.387Z",
+      "started_at": "",
+      "completed_at": "",
+      "jobs": [
+        {
+          "id": "job-1775814824387-0",
+          "task_id": "task-1775814824387-[technical-architect",
+          "title": "PM Review & Spec",
+          "agent": "pm",
+          "status": "not_started",
+          "depends_on": [],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824387-1",
+          "task_id": "task-1775814824387-[technical-architect",
+          "title": "Execute Implementation",
+          "agent": "backend",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824386-0"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        },
+        {
+          "id": "job-1775814824387-2",
+          "task_id": "task-1775814824387-[technical-architect",
+          "title": "QA Verification",
+          "agent": "qa",
+          "status": "waiting",
+          "depends_on": [
+            "job-1775814824386-1"
+          ],
+          "started_at": "",
+          "completed_at": "",
+          "result": "",
+          "error": ""
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-04-10T10:07:58.173Z"
+}
