@@ -951,6 +951,16 @@
       "agent": "qa",
       "created_at": "2026-04-10",
       "result_summary": "QA审核结论：confirmed_by字段已在agents/pm/role-soul.md中完整定义规范，pm-approvals.md存在但无confirmed_by字段记录，work-queue.json中现有任务均未包含confirmed_by字段，spec规范已在PM soul文件中落地，但尚未在实际任务数据中执行。状态：部分实现。"
+    },
+    {
+      "id": "wq-ar-dev-1775776261496-0",
+      "status": "pending_review",
+      "result_summary": "已在 agents/dev/role-soul.md 追加「Task Priority Execution Rules」规范（6条），规定多任务并发时按 critical>high>medium>low 排序执行，同优先级按 created_at 时间序，并要求在完成报告中记录执行顺序。"
+    },
+    {
+      "id": "wq-ar-dev-1775776261496-1",
+      "status": "pending_review",
+      "result_summary": "已在 agents/dev/role-soul.md 追加「Escalation Timeout Rules」规范（6条），明确 escalate 等待上限为 2h，超时自动标 blocked 并附 blocked_reason，3次无回应则升级严重度并写入 dispatcher 报告。"
     }
   ],
   "queue": [
@@ -3991,9 +4001,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T02:08:16.859Z",
-      "started_at": "2026-04-10T02:11:48.055Z",
+      "started_at": "2026-04-10T02:56:56.978Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox"
+      "result_summary": "dispatched to frontend via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-backend-1775786896860",
@@ -4045,9 +4056,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T02:11:48.022Z",
-      "started_at": "2026-04-10T02:11:48.077Z",
+      "started_at": "2026-04-10T02:56:56.983Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox"
+      "result_summary": "dispatched to frontend via agent-inbox",
+      "retryCount": 1
     },
     {
       "id": "wq-ar-frontend-1775787108022-1",
@@ -4057,9 +4069,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T02:11:48.022Z",
-      "started_at": "2026-04-10T02:11:48.104Z",
+      "started_at": "2026-04-10T02:56:56.990Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox"
+      "result_summary": "dispatched to frontend via agent-inbox",
+      "retryCount": 1
     }
   ]
 }
