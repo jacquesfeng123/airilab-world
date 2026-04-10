@@ -1827,6 +1827,42 @@
       "status": "queued",
       "priority": "low",
       "created_at": "2026-04-10T13:35:48Z"
+    },
+    {
+      "id": "wq-pm-spec-1775831750052-0",
+      "title": "[PM] 补充spec确认机制与Chief Designer边界规则",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "pm",
+      "status": "pending",
+      "created_at": "2026-04-10T14:34:00.000Z"
+    },
+    {
+      "id": "wq-pm-spec-1775831750052-1",
+      "title": "[PM] 写完 spec 后如何确认 Jacques 已 approve？建议添加等待确认状态并在系统中体现",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "pm",
+      "status": "pending",
+      "created_at": "2026-04-10T14:34:00.000Z"
+    },
+    {
+      "id": "wq-pm-spec-1775831750052-2",
+      "title": "[PM] 多个同时进入的任务如何排序？建议补充优先级排序标准（紧急度 × 影响面）",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "pm",
+      "status": "pending",
+      "created_at": "2026-04-10T14:34:00.000Z"
+    },
+    {
+      "id": "wq-pm-spec-1775831750052-3",
+      "title": "[UIUX] 创建设计令牌文件并在role-soul中引用",
+      "type": "pm_spec_needed",
+      "priority": "low",
+      "agentRole": "uiux",
+      "status": "pending",
+      "created_at": "2026-04-10T14:34:00.000Z"
     }
   ],
   "queue": [
@@ -6761,13 +6797,15 @@
       "type": "agent_review",
       "title": "[Frontend] 添加browser-test失败的降级fallback流程",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T12:04:22.011Z",
       "started_at": "2026-04-10T13:39:35.247Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T14:25:39.883Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-backend-1775822662012",
@@ -6789,52 +6827,60 @@
       "type": "agent_review",
       "title": "[BACKEND] 建议指定契约文档模板路径(如 data/api-contracts/{task-id}.md)",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.121Z",
       "started_at": "2026-04-10T13:39:35.373Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T14:25:40.405Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-backend-1775822954121-1",
       "type": "agent_review",
       "title": "[BACKEND] 建议补充background job失败的告警与重试规范",
       "owner": "backend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.121Z",
       "started_at": "2026-04-10T13:39:35.387Z",
       "assignee": "backend",
-      "result_summary": "dispatched to backend via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T14:25:40.753Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-frontend-1775822954122-0",
       "type": "agent_review",
       "title": "[FRONTEND] 建议添加\"测试失败时的最小化fallback流程\"，避免单点卡死",
       "owner": "qa",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.122Z",
       "started_at": "2026-04-10T13:39:35.398Z",
       "assignee": "qa",
-      "result_summary": "dispatched to qa via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T14:25:41.104Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-ar-frontend-1775822954122-1",
       "type": "agent_review",
       "title": "[FRONTEND] 建议集成 pixelmatch 或 Percy 自动化视觉diff",
       "owner": "frontend",
-      "status": "running",
+      "status": "failed",
       "priority": "low",
       "created_at": "2026-04-10T12:09:14.122Z",
       "started_at": "2026-04-10T13:39:35.426Z",
       "assignee": "frontend",
-      "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 2
+      "result_summary": "[watchdog] failed after 3 retries (last: 46m)",
+      "retryCount": 3,
+      "completed_at": "2026-04-10T14:25:41.458Z",
+      "error": "execution timeout — exhausted 3 retries"
     },
     {
       "id": "wq-si-chief-designer-mnsv4wwi",
@@ -6889,10 +6935,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T13:04:28.441Z",
-      "started_at": "2026-04-10T13:55:05.854Z",
+      "started_at": "2026-04-10T14:40:42.427Z",
       "assignee": "devops",
       "result_summary": "dispatched to devops via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-backend-1775826268442",
@@ -6917,10 +6963,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T13:09:26.267Z",
-      "started_at": "2026-04-10T13:55:05.879Z",
+      "started_at": "2026-04-10T14:40:42.434Z",
       "assignee": "backend",
       "result_summary": "dispatched to backend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-backend-1775826566267-1",
@@ -6930,10 +6976,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T13:09:26.267Z",
-      "started_at": "2026-04-10T13:55:05.887Z",
+      "started_at": "2026-04-10T14:40:42.438Z",
       "assignee": "backend",
       "result_summary": "dispatched to backend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-frontend-1775826566267-0",
@@ -6943,10 +6989,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T13:09:26.267Z",
-      "started_at": "2026-04-10T13:55:05.891Z",
+      "started_at": "2026-04-10T14:40:42.462Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-ar-frontend-1775826566267-1",
@@ -6956,10 +7002,10 @@
       "status": "running",
       "priority": "low",
       "created_at": "2026-04-10T13:09:26.267Z",
-      "started_at": "2026-04-10T13:55:05.896Z",
+      "started_at": "2026-04-10T14:40:42.469Z",
       "assignee": "frontend",
       "result_summary": "dispatched to frontend via agent-inbox",
-      "retryCount": 1
+      "retryCount": 2
     },
     {
       "id": "wq-si-trump-mnsxeplc",
@@ -7158,36 +7204,45 @@
       "type": "agent_review",
       "title": "[PM] 补充spec确认机制与Chief Designer边界规则",
       "owner": "pm",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T14:04:19.906Z",
       "started_at": "2026-04-10T14:10:09.513Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "已追加 spec 确认机制与 Chief Designer 边界规则（11条）至 data/agents/pm/role-soul.md",
+      "completed_at": "2026-04-10T14:30:27.677Z",
+      "approved_at": "2026-04-10T14:31:38.506Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-pm-1775830209465-0",
       "type": "agent_review",
       "title": "[PM] 写完 spec 后如何确认 Jacques 已 approve？建议添加 \"等待确认\" 状态并在 s",
       "owner": "pm",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T14:10:09.465Z",
       "started_at": "2026-04-10T14:10:09.520Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "已追加 waiting_approval 状态定义与完整处理流程（10条）至 data/agents/pm/role-soul.md",
+      "completed_at": "2026-04-10T14:30:27.710Z",
+      "approved_at": "2026-04-10T14:31:38.506Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-pm-1775830209465-1",
       "type": "agent_review",
       "title": "[PM] 多个同时进入的任务如何排序？建议补充优先级排序标准（紧急度 × 影响面）",
       "owner": "pm",
-      "status": "running",
+      "status": "done",
       "priority": "low",
       "created_at": "2026-04-10T14:10:09.465Z",
       "started_at": "2026-04-10T14:10:09.541Z",
       "assignee": "pm",
-      "result_summary": "dispatched to pm via agent-inbox"
+      "result_summary": "已追加优先级排序标准（U×I 矩阵，10条规则）至 data/agents/pm/role-soul.md",
+      "completed_at": "2026-04-10T14:30:27.710Z",
+      "approved_at": "2026-04-10T14:31:38.507Z",
+      "auto_approved": true
     },
     {
       "id": "wq-ar-uiux-1775830209465-0",
@@ -7227,6 +7282,21 @@
       "completed_at": "2026-04-10T14:10:09.490Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Update design standards documentation"
+    },
+    {
+      "id": "wq-si-estimator-mnt00ejy",
+      "type": "self_improve",
+      "assignee": "estimator",
+      "priority": "low",
+      "status": "done",
+      "payload": {
+        "title": "Calibrate cost estimation models"
+      },
+      "created_at": "2026-04-10T14:25:41.806Z",
+      "started_at": "2026-04-10T14:25:41.806Z",
+      "completed_at": "2026-04-10T14:25:41.806Z",
+      "created_by": "idle-task-generator",
+      "result_summary": "[virtual] Calibrate cost estimation models"
     }
   ],
   "entries": [
