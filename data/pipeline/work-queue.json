@@ -3980,6 +3980,78 @@
       "completed_at": "2026-04-10T01:48:41.231Z",
       "created_by": "idle-task-generator",
       "result_summary": "[virtual] Review vendor communication templates"
+    },
+    {
+      "id": "wq-ar-frontend-1775786896859",
+      "type": "agent_review",
+      "title": "[Frontend] 增加browser-test失败分类机制与dark-mode具体验收标准",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T02:08:16.859Z",
+      "started_at": "2026-04-10T02:11:48.055Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775786896860",
+      "type": "agent_review",
+      "title": "[Backend] 补充API contract模板及rate-limiting强制范围说明",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T02:08:16.859Z",
+      "started_at": "2026-04-10T02:11:48.060Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775787108022-0",
+      "type": "agent_review",
+      "title": "[BACKEND] 建议在role-soul.md中给出最简API contract示例模板，减少输出不一致",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T02:11:48.022Z",
+      "started_at": "2026-04-10T02:11:48.069Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-backend-1775787108022-1",
+      "type": "agent_review",
+      "title": "[BACKEND] 建议明确哪类外部API调用必须实现rate limiting（如OpenAI/Anthropic），",
+      "owner": "backend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T02:11:48.022Z",
+      "started_at": "2026-04-10T02:11:48.073Z",
+      "assignee": "backend",
+      "result_summary": "dispatched to backend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775787108022-0",
+      "type": "agent_review",
+      "title": "[FRONTEND] 建议增加browser-test失败时的详细错误分类（网络/渲染/逻辑），便于快速定位",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T02:11:48.022Z",
+      "started_at": "2026-04-10T02:11:48.077Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
+    },
+    {
+      "id": "wq-ar-frontend-1775787108022-1",
+      "type": "agent_review",
+      "title": "[FRONTEND] 建议在checklist中增加dark-mode的具体检查点（对比度/颜色token/图标可见性）",
+      "owner": "frontend",
+      "status": "running",
+      "priority": "low",
+      "created_at": "2026-04-10T02:11:48.022Z",
+      "started_at": "2026-04-10T02:11:48.104Z",
+      "assignee": "frontend",
+      "result_summary": "dispatched to frontend via agent-inbox"
     }
   ]
 }
